@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+  client:
+    container_name: webserver
+    restart: always
+    build: ./
+    ports:
+      - "81:3000"

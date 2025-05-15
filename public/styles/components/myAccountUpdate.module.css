@@ -1,0 +1,13 @@
+.password_input_container {
+    position: relative;
+    display: flex;
+  }
+  
+  .password_toggle_icon {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  

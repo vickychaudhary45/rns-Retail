@@ -1,0 +1,71 @@
+{
+  "parentId17": [
+    {
+      "id": 3,
+      "name": "All",
+      "slug": "All"
+    },
+    {
+      "id": 34,
+      "name": "Alibaba Cloud Certifications",
+      "slug": "alibaba-cloud-certifications"
+    },
+    {
+      "id": 15,
+      "name": "AWS Certifications - Practice Exams, Video Courses & Hands-on Labs",
+      "slug": "aws-certifications"
+    },
+    {
+      "id": 20,
+      "name": "Cloud Security Certifications",
+      "slug": "cloud-security-certifications"
+    },
+    {
+      "id": 19,
+      "name": "Google Cloud Certifications",
+      "slug": "google-cloud-certifications"
+    },
+    {
+      "id": 18,
+      "name": "Microsoft Azure Certifications",
+      "slug": "microsoft-azure-certification-training-courses"
+    },
+    {
+      "id": 174,
+      "name": "Oracle  Cloud Certifications",
+      "slug": "oracle--cloud-certifications"
+    },
+    {
+      "id": 24,
+      "name": "Salesforce Certifications",
+      "slug": "salesforce-certifications"
+    },
+    {
+      "id": 207,
+      "name": "VMware Certifications",
+      "slug": "vmware-certifications"
+    }
+  ],
+  "parentId1": [
+    {
+      "id":1,
+      "name":"All",
+      "slug":"All"
+    },
+    {
+      "id": 240,
+      "name": "Dynamics 365 Certifications",
+      "slug": "dynamics-365-certifications"
+    },
+    {
+      "id": 2,
+      "name": "Microsoft 365 Certifications",
+      "slug": "microsoft-365-certifications"
+    },
+    {
+      "id": 41,
+      "name": "Microsoft Power Platform Certifications",
+      "slug": "microsoft-power-platform"
+    }
+  ]
+}

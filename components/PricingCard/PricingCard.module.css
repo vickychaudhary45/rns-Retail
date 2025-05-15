@@ -1,0 +1,186 @@
+.pricing_box{
+    width: 280px;
+    border-radius: 10px;
+    background: white;
+    margin: 0;
+    position: relative;
+    z-index: 998;
+    border: 1.79px solid #FFDECF;
+}
+.colorhead{
+    width: 100%;
+    padding: 5px 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    background-color: #F06421;
+}
+.inner_box{
+    padding: 10px;
+}
+.plan_title{
+    font-weight: 600;
+    text-align: center;
+    font-size: 21px;
+    margin: 10px 0px;
+}
+.discount{
+    font-size: 37px;
+    font-weight: 600;
+    text-align: center;
+    color: #F06421;
+}
+.planprice{
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    /* margin: 8px 0px; */
+}
+.strike{
+    text-decoration: line-through !important;
+    text-decoration-thickness:1px !important; 
+}
+.month{
+    font-size: 18px !important;
+    font-weight: 400;
+}
+.campaign{
+    font-size: 25px;
+}
+.cmonth{
+    color:#e5906c;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+.pricinginfo{
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+}
+.enterprise_desc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 29px;
+    word-wrap: break-word;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+.button{
+    width: 180px;
+    padding: 3px 2px;
+    text-align: center;
+    color: #F06421;
+    border: 1px solid #F06421;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 10px auto;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.subplanname{
+    font-weight: 700;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.planinfo{
+    font-size: 12px;
+    font-weight: 500;
+    padding: 5px 0px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+.planinfocol{
+    margin: 8px 0px 0px 15px;
+    padding-left: 15px;
+    min-height: 110px;
+}
+.planinfo svg{
+    padding-right: 5px;
+    font-size: 14px;
+}
+.popular{
+  color: #E30C3B;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  height: 50px;
+}
+.para{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    color:#000000
+}
+
+#valuebox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width:1px) and (max-width:767px){
+    .pricing_box{
+        width: 100%;
+        max-height: fit-content;
+    }
+    .planinfo{
+        font-size: 10px;
+    }
+    .planinfocol{
+        height: 100px;
+        padding: 0;
+    }
+    .planprice{
+        font-size: 28px;
+    }
+    .discount{
+        font-size: 28px;
+    }
+    .enterprise_desc{
+        font-size: 22px;
+    }
+    .colorhead{
+        font-size: 14px;
+    }
+}   
+
+/* .value .enterprise_desc{
+    max-width: 140px;
+} */
+
+@media (min-width:767px) and (max-width:860px){
+    .pricing_box{
+        width: 225px;
+    }
+}
+
+@media (min-width:767px){
+    .pricing_block_mobile{
+       display: none;
+    }
+}
+
+@media (min-width:1px) and (max-width:676px){
+    .planinfocol{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        min-height: fit-content !important;
+    }
+    .planinfo{
+        min-width: 155px;
+    }
+}
