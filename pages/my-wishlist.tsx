@@ -512,12 +512,12 @@ const MyWishList = ({
                                     padding: "0px 5px",
                                     backgroundColor:
                                       subscribesUser == true
-                                        ? "#F06421"
+                                        ? "#2aa0d1"
                                         : courseBought.includes(Itm.id)
                                         ? "#0C66E4"
                                         : stateCart.map((item) => item.courseId).includes(Itm.id)
-                                        ? "#f0642173"
-                                        : "#F06421",
+                                        ? "#2aa0d173"
+                                        : "#2aa0d1",
                                     fontWeight:
                                       subscribesUser || courseBought.includes(Itm.id) ? "500" : "",
                                   }}

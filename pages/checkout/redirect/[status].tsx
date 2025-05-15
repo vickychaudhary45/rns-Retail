@@ -243,7 +243,7 @@ const ccAvRedirect = ({
                         <a
                           style={{
                             marginTop: "20px",
-                            background: "#F06421",
+                            background: "#2aa0d1",
                             textDecoration: "none",
                             borderRadius: "5px",
                             padding: "5px 25px 5px 25px",

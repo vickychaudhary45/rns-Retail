@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const mystyle = {
   border: "none",
-  backgroundColor: "#FF6D00",
+  backgroundColor: "#2aa0d1",
   borderRadius: "25px",
   height: "45px",
   width: "200px",

@@ -257,12 +257,12 @@ const LibraryCourses = ({
                   minWidth: "85px",
                   backgroundColor:
                     subscribeUser == true
-                      ? "#F06421"
+                      ? "#2aa0d1"
                       : courseEnrolled.includes(course.data_id)
                       ? "#0C66E4"
                       : stateCart.map((item) => item.courseId).includes(course.data_id)
-                      ? "#f0642173"
-                      : "#F06421",
+                      ? "#2aa0d173"
+                      : "#2aa0d1",
                   fontWeight: subscribeUser || courseEnrolled.includes(course.data_id) ? "500" : "",
                   // width: stateCart.map((item) => item.courseId).includes(course.id) ? "42%" : "35%",
                 }}

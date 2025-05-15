@@ -585,7 +585,7 @@ const Awscsa = ({
                   <div className="lp-tabitem">
                     <div
                       className="lp-tab-content"
-                      style={activeTabType == "PT" ? { background: "#fff", color: "#F06421" } : {}}
+                      style={activeTabType == "PT" ? { background: "#fff", color: "#2aa0d1" } : {}}
                       onClick={(e) => {
                         changeCourseLibrary(e, "PT");
                       }}
@@ -597,7 +597,7 @@ const Awscsa = ({
                     </div>
                     <div
                       className="lp-tab-content1"
-                      style={activeTabType == "OC" ? { background: "#fff", color: "#F06421" } : {}}
+                      style={activeTabType == "OC" ? { background: "#fff", color: "#2aa0d1" } : {}}
                       onClick={(e) => {
                         changeCourseLibrary(e, "OC");
                       }}
@@ -609,7 +609,7 @@ const Awscsa = ({
                     </div>
                     <div
                       className="lp-tab-content2"
-                      style={activeTabType == "LAB" ? { background: "#fff", color: "#F06421" } : {}}
+                      style={activeTabType == "LAB" ? { background: "#fff", color: "#2aa0d1" } : {}}
                       onClick={(e) => {
                         changeCourseLibrary(e, "LAB");
                       }}

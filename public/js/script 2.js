@@ -148,7 +148,7 @@ $(window).resize(function() {
 					$(this).siblings().children('ul').removeClass('drawerer').hide();
 					$(this).siblings().removeClass("active");
 					$(this).children('ul').addClass('drawerer').show();
-					$(this).children('a').css({'color':'#F06421'});
+					$(this).children('a').css({'color':'#2aa0d1'});
 					$(this).siblings().children('a').css({'color':''});
 
 					if($(this).children('ul').children('li').find('ul').length > 0){
@@ -763,7 +763,7 @@ $(document).ready(function(){
 					$(this).siblings().children('ul').removeClass('drawerer').hide();
 					$(this).siblings().removeClass("active");
 					$(this).children('ul').addClass('drawerer').show();
-					$(this).children('a').css({'color':'#F06421'});
+					$(this).children('a').css({'color':'#2aa0d1'});
 					$(this).siblings().children('a').css({'color':''});
 
 					if($(this).children('ul').children('li').find('ul').length > 0){

@@ -68,7 +68,7 @@ const EmptyCart = () => (
             style={{
               width: "100%",
               maxWidth: "180px",
-              backgroundColor: "#F06421",
+              backgroundColor: "#2aa0d1",
               textDecoration: "none",
               color: "#fff",
             }}

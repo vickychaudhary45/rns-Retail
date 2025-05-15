@@ -1076,7 +1076,7 @@ const handleAvailabilityChange = (event, newValue) => {
               <Button
                 type="submit"
                 variant="contained"
-                style={{ color: "#FFFFFF", background: "#F06421", textTransform: "none" }}
+                style={{ color: "#FFFFFF", background: "#2aa0d1", textTransform: "none" }}
                 onClick={() => submitFeedbackForm()}
               >
                 Submit feedback

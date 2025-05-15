@@ -1264,7 +1264,7 @@ const SingleCheckout = ({
                     {courseData[0].combo_type == 0 && (
                       <>
                         <span style={{display:"flex",alignItems:"center"}}>
-                        <TimerOutlinedIcon style={{fontSize:"18px",color:'#F06421'}} className="timer_icons_combo"/>
+                        <TimerOutlinedIcon style={{fontSize:"18px",color:'#2aa0d1'}} className="timer_icons_combo"/>
                         <span>
                          
                           &nbsp;<span id="mytimer-hours-checkout" className="timer_offer_combo"></span>&nbsp;

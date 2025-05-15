@@ -23,7 +23,7 @@ const PricingCard = ({ plan_data,currentPlan,disableButton,openCheckoutPage,user
       <div style={{ margin: "0" }}>
         {/* <div className={styles.popular}>{plan_data.is_sandbox_access && <>Popular choice</>}</div> */}
         <div className={styles.pricing_box} 
-        style={plan_data.is_sandbox_access ?{border:'1px solid #F06421'}:{}}
+        style={plan_data.is_sandbox_access ?{border:'1px solid #2aa0d1'}:{}}
         id="pricing_card">
           { plan_data.is_sandbox_access &&
             <div
@@ -117,7 +117,7 @@ const PricingCard = ({ plan_data,currentPlan,disableButton,openCheckoutPage,user
               }
               </div>
             </div>
-            <div className={styles.button} style={plan_data.is_sandbox_access ?{ background:"#F06421",color:"white"}:{}}
+            <div className={styles.button} style={plan_data.is_sandbox_access ?{ background:"#2aa0d1",color:"white"}:{}}
                onClick={(e) => {
                 e.preventDefault();
                 plan_data.type == "subs"? currentPlan && currentPlan?.plan_id === plan_data.id

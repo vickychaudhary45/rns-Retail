@@ -23,7 +23,7 @@
     font-size: 30px;
 }
 .upskill{
-    color: #F06421;
+    color: #2aa0d1;
     font-size: 36px;
     font-weight: 700;
 }
@@ -55,7 +55,7 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background-color: #F06421;
+    background-color: #2aa0d1;
     margin: 0;
     left: 5px;
     top:4px;
@@ -113,7 +113,7 @@ text-align: center;
     width: 100%;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    background-color: #F06421;
+    background-color: #2aa0d1;
     color:white;
 }
 

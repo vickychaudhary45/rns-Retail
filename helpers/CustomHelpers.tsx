@@ -245,7 +245,7 @@ export function materialColor() {
       a100: "#ffd180",
       a200: "#ffab40",
       a400: "#ff9100",
-      a700: "#ff6d00",
+      a700: "#2aa0d1",
     },
     deepOrange: {
       "50": "#fbe9e7",

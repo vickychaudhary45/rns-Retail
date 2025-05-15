@@ -492,7 +492,7 @@ const WriteReview = ({
                 </>
                 ):(
                 <span className="white-box" style={{ display:"flex", justifyContent:"center" }}>
-                  <button style={{ background: "#F06421" }} className="btn" onClick={userLog}>
+                  <button style={{ background: "#2aa0d1" }} className="btn" onClick={userLog}>
                     Sign in to Submit Review
                   </button>
                 </span>

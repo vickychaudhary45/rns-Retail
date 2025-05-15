@@ -167,7 +167,7 @@ const CourseFeedback = ({ alertBox }) => {
 
             <Button
               sx={{
-                backgroundColor: "#F06421",
+                backgroundColor: "#2aa0d1",
                 marginTop: "30px !important",
                 color: "#fff !important",
                 padding: "10px 20px !important",
@@ -178,7 +178,7 @@ const CourseFeedback = ({ alertBox }) => {
                 lineHight: "30px !important",
                 textAlign: "center !important",
                 "&:hover": {
-                  backgroundColor: "#F06421",
+                  backgroundColor: "#2aa0d1",
                 },
               }}
               onClick={() => {

@@ -2501,7 +2501,7 @@ const handleLike = (id) => {
                           display: "flex",
                           marginBottom: "10px",
                           background: "none",
-                          color: "#f06421",
+                          color: "#2aa0d1",
                         }}
                         onClick={(e) => handleReadmore(e)}
                       >
@@ -2844,13 +2844,13 @@ const handleLike = (id) => {
                                     <AccordionSummary
                                       expandIcon={
                                         <ExpandMoreIcon
-                                          style={expanded === "panel0" ? { color: "#f06421" } : {}}
+                                          style={expanded === "panel0" ? { color: "#2aa0d1" } : {}}
                                         />
                                       }
                                     >
                                       <div
                                         className="pp-mobile-acc"
-                                        style={expanded === "panel0" ? { color: "#f06421" } : {}}
+                                        style={expanded === "panel0" ? { color: "#2aa0d1" } : {}}
                                       >
                                         <div className="icon">
                                           {" "}
@@ -2909,13 +2909,13 @@ const handleLike = (id) => {
                                     <AccordionSummary
                                       expandIcon={
                                         <ExpandMoreIcon
-                                          style={expanded === "panel1" ? { color: "#f06421" } : {}}
+                                          style={expanded === "panel1" ? { color: "#2aa0d1" } : {}}
                                         />
                                       }
                                     >
                                       <div
                                         className="pp-mobile-acc"
-                                        style={expanded === "panel1" ? { color: "#f06421" } : {}}
+                                        style={expanded === "panel1" ? { color: "#2aa0d1" } : {}}
                                       >
                                         <div className="icon">
                                           {" "}
@@ -2968,13 +2968,13 @@ const handleLike = (id) => {
                                     <AccordionSummary
                                       expandIcon={
                                         <ExpandMoreIcon
-                                          style={expanded === "panel2" ? { color: "#f06421" } : {}}
+                                          style={expanded === "panel2" ? { color: "#2aa0d1" } : {}}
                                         />
                                       }
                                     >
                                       <div
                                         className="pp-mobile-acc"
-                                        style={expanded === "panel2" ? { color: "#f06421" } : {}}
+                                        style={expanded === "panel2" ? { color: "#2aa0d1" } : {}}
                                       >
                                         <div className="icon">
                                           {" "}
@@ -3034,13 +3034,13 @@ const handleLike = (id) => {
                                     <AccordionSummary
                                       expandIcon={
                                         <ExpandMoreIcon
-                                          style={expanded === "panel2" ? { color: "#f06421" } : {}}
+                                          style={expanded === "panel2" ? { color: "#2aa0d1" } : {}}
                                         />
                                       }
                                     >
                                       <div
                                         className="pp-mobile-acc"
-                                        style={expanded === "panel2" ? { color: "#f06421" } : {}}
+                                        style={expanded === "panel2" ? { color: "#2aa0d1" } : {}}
                                       >
                                         <div className="icon">
                                           {" "}

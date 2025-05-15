@@ -315,7 +315,7 @@ const AWSFreeLabs = ({
                       wrapperClass=""
                       visible={true}
                       ariaLabel="oval-loading"
-                      secondaryColor="#ff6d00"
+                      secondaryColor="#2aa0d1"
                       strokeWidth={10}
                       strokeWidthSecondary={5}
                       

@@ -262,7 +262,7 @@ const ResetPassword = ({ alertBox, seoHomePageData }) => {
                 disabled={isLoading || isExpired || !recaptchaVerified}
                 style={{
                   backgroundColor:
-                    isLoading || isExpired || !recaptchaVerified ? "#e2e2e2" : "#f06421",
+                    isLoading || isExpired || !recaptchaVerified ? "#e2e2e2" : "#2aa0d1",
                   cursor: isLoading || isExpired || !recaptchaVerified ? "not-allowed" : "pointer",
                 }}
               >

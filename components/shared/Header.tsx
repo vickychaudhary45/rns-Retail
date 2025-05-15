@@ -1623,7 +1623,7 @@ const Header = ({
                   style={{
                     height: "25px",
                     lineHeight: "25px",
-                    background: "#F06421",
+                    background: "#2aa0d1",
                   }}
                   target="_blank"
                 >

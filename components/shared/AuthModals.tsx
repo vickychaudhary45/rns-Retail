@@ -338,7 +338,7 @@ export const LoginModal = ({
                     type="button"
                     disabled
                     className="btn"
-                    style={{ background: "#f0642169" }}
+                    style={{ background: "#2aa0d169" }}
                   >
                     <Image src="/images/loader.svg" width={40} height={40} alt="loader" />
                   </button>
@@ -728,7 +728,7 @@ export const SignupModal = ({
                     type="button"
                     disabled
                     className="btn"
-                    style={{ background: "#f0642169" }}
+                    style={{ background: "#2aa0d169" }}
                   >
                     <Image src="/images/loader.svg" width={40} height={40} alt="loader" />
                   </button>
@@ -898,7 +898,7 @@ export const ResetPassModal = () => {
                       type="button"
                       disabled
                       className="btn"
-                      style={{ background: "#f0642169" }}
+                      style={{ background: "#2aa0d169" }}
                     >
                       Loading....
                     </button>

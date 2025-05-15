@@ -353,7 +353,7 @@ button.btn.btn-checkout:disabled {
 .cookies-msg .question, .cookies-msg .button{margin-top: 15px;  display: flex; align-items: center; justify-content: center;}
 .cookies-msg p{color: #000000; font-size: 16px; padding: 5px 40px 10px 50px}
 .cookies-msg p strong{color: #000000; margin-left: 10px;}
-.cookies-msg p button{background-color: #F06421; color: #fff; border-radius: 30px; padding: 0px 25px; margin-left: 10px;}
+.cookies-msg p button{background-color: #2aa0d1; color: #fff; border-radius: 30px; padding: 0px 25px; margin-left: 10px;}
 .cookies-msg p button:hover{background-color: #ca4508;}
 
 #decline-button.icon-font-cross::before { font-size: 10px; padding-right: 5px; }
@@ -573,7 +573,7 @@ span.prod_coming_soon {
 }
 
 .dropdown-menu .step-1 ul li a:hover {
-  color: #f06421 !important;
+  color: #2aa0d1 !important;
 }
 
 .dropdown-menu.desktop .submenu.detail {
@@ -768,11 +768,11 @@ span.prod_coming_soon {
 }
 
 .step-1 li a:hover {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .step-1 li a:hover a {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .step-1 li a .icon {
@@ -846,7 +846,7 @@ span.prod_coming_soon {
 }
 
 .step-1 li .step-2 li a:hover {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .step-1 li .step-2 li a span {
@@ -903,7 +903,7 @@ span.prod_coming_soon {
 }
 
 .step-1 li .step-2 li .step-3 li a:hover {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .step-1 li .step-2 li .step-3 li a span {
@@ -924,7 +924,7 @@ span.prod_coming_soon {
 
 .step-1 li .step-2 li .step-3 li a .new:after {
   content: "New";
-  background: #f06421;
+  background: #2aa0d1;
   color: white;
 }
 
@@ -980,7 +980,7 @@ span.prod_coming_soon {
 }
 
 .step-1 li .step_22 li a:hover {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .step-1 li .step_22 li a span {
@@ -1001,7 +1001,7 @@ span.prod_coming_soon {
 
 .step-1 li .step_22 li a .new:after {
   content: "New";
-  background: #f06421;
+  background: #2aa0d1;
   border-radius: 8px;
   font-size: 10px;
   padding: 0px 7px 0px 6px;
@@ -1028,7 +1028,7 @@ span.prod_coming_soon {
 
 .step-1 li .step-2 li a .new:after {
   content: "New";
-  background: #f06421;
+  background: #2aa0d1;
   color: white;
   border-radius: 8px;
   font-size: 10px;
@@ -1081,9 +1081,9 @@ span.prod_coming_soon {
   width: 48%;
   font-size: 14px;
   font-weight: 500;
-  color: #f06421;
+  color: #2aa0d1;
   background: #fff;
-  border: 1px solid #f06421;
+  border: 1px solid #2aa0d1;
   border-radius: 6px;
   transition: 0.2s ease-in-out;
   padding: 6px 5px;
@@ -1096,7 +1096,7 @@ span.prod_coming_soon {
 
 .mobile-sidebar .mobile-nav .nav-btn-group .btn-sign-up {
   color: #fff;
-  background: #f06421;
+  background: #2aa0d1;
 }
 
 .mobile-sidebar .mobile-nav .nav-btn-group .btn-sign-up:hover {
@@ -1162,20 +1162,20 @@ span.prod_coming_soon {
 }
 
 #react-sidebar .sidebar-main .sidebar-main-content ul li:hover {
-  color: #f06421;
+  color: #2aa0d1;
   background-color: transparent;
 }
 
 #react-sidebar .sidebar-main .sidebar-main-content ul li:hover .icon {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 #react-sidebar .sidebar-main .sidebar-main-content ul li:hover span a {
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 #react-sidebar .sidebar-main .sidebar-main-content ul li:hover g#Icon\/Arrow\/Right\/Gray {
-  fill: #f06421;
+  fill: #2aa0d1;
 }
 
 #react-sidebar .sidebar-main .sidebar-main-content .first-back-btn {
@@ -1530,7 +1530,7 @@ span.prod_coming_soon {
 
 .review-banner .left-part a p {
   margin: 3px 0px 0px 5px;
-  color: #F06421;
+  color: #2aa0d1;
   font-weight: bold;
 }
 
@@ -2234,7 +2234,7 @@ h3 {
   }
 
   .product-banner .right-part .btn-free-test {
-    background: "#F06421";
+    background: "#2aa0d1";
   }
 
   .btn-free-test:hover {
@@ -3858,7 +3858,7 @@ button.btn.add-to-cart.disabled {
   line-height: 45px;
   font-size: 14px;
   font-weight: 600;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 8px;
 }
 
@@ -3925,7 +3925,7 @@ button.btn.add-to-cart.disabled {
 
 .enroll-now-block .inner .btn {
   width: 100%;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 8px;
   margin: 0;
   transition: 0.2s all;
@@ -4065,7 +4065,7 @@ button.btn.add-to-cart.disabled {
   height: 45px;
   line-height: 45px;
   width: 100%;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 8px;
   transition: 0.2s all;
 }
@@ -4260,7 +4260,7 @@ header .header-right .nav:after {
 .btn-add-cart-lp-aws {
   color: #fff;
   margin-top: 8px;
-  background: #F06421;
+  background: #2aa0d1;
   width: 100%;
   height: 35px;
   line-height: 35px;
@@ -4687,7 +4687,7 @@ header .header-right .nav:after {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 10px;
   transition: 0.2s ease-in-out;
   margin-bottom: 20px;
@@ -5341,7 +5341,7 @@ header .header-right .nav:after {
   display: block;
   width: 100%;
   color: #fff;
-  background: #F06421;
+  background: #2aa0d1;
   font-size: 16px;
   text-decoration: none;
   cursor: pointer;
@@ -5460,7 +5460,7 @@ header .header-right .nav:after {
 }
 
 .banner-block .banner .container .caption .start-now {
-  background: #F06421;
+  background: #2aa0d1;
   color: white;
 }
 
@@ -5664,7 +5664,7 @@ header .header-right .nav:after {
 }
 
 .category-page .market-dmand .content .caption p a {
-  color: #F06421;
+  color: #2aa0d1;
 }
 
 /* grow-skill */
@@ -6237,14 +6237,14 @@ header .header-left .nav .dropdown {
 }
 
 header .header-left .nav .dropdown:hover {
-  color: #F06421;
+  color: #2aa0d1;
 }
 header .header-left .nav .szh-menu-button:hover {
-  color: #F06421;
+  color: #2aa0d1;
   /* background-color: #e3e4e4; */
 }
 header .header-left .nav .szh-menu-button span:hover {
-  /* color: #F06421; */
+  /* color: #2aa0d1; */
   background-color: #e3e4e4 !important;
 }
 
@@ -6285,7 +6285,7 @@ header .header-left .nav ul li a {
 }
 
 header .header-left .nav ul li a:hover {
-  color: #F06421;
+  color: #2aa0d1;
 }
 
 /* -------- video-course-landing-page -------- */
@@ -6350,7 +6350,7 @@ header .header-left .nav ul li a:hover {
   line-height: 45px;
   font-size: 16px;
   font-weight: 600;
-  background: #F06421;
+  background: #2aa0d1;
   transition: 0.2s ease-in-out;
 }
 
@@ -6517,7 +6517,7 @@ header .header-left .nav ul li a:hover {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 8px;
   transition: 0.2s ease-in-out;
 }
@@ -6617,7 +6617,7 @@ header .header-left .nav ul li a:hover {
   justify-content: center;
   font-size: 16px;
   font-weight: 600;
-  background: #F06421;
+  background: #2aa0d1;
   transition: 0.2s ease-in-out;
 }
 
@@ -6731,7 +6731,7 @@ header .header-left .nav ul li a:hover {
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background: #F06421;
+  background: #2aa0d1;
   border-radius: 8px;
   transition: 0.2s ease-in-out;
   padding: 0 65px;
@@ -7753,7 +7753,7 @@ footer .footer-copyright .social-icon .icon {
   font-size: 22px;
   line-height: 40px;
   font-weight: 500;
-  color: #F06421;
+  color: #2aa0d1;
 }
 
 .pricing-block table .premium-section .arrow-img {
@@ -7783,7 +7783,7 @@ footer .footer-copyright .social-icon .icon {
   text-align: center;
   font-weight: 400;
   white-space: nowrap;
-  color: #F06421;
+  color: #2aa0d1;
 }
 
 .pricing-block .pricing-respo .block.premium-section {
@@ -7936,7 +7936,7 @@ footer .footer-copyright .social-icon .icon {
   color: #FFF;
   height: 25px;
   line-height: 25px;
-  background: #f06421;
+  background: #2aa0d1;
   border-radius: 5px;
   flex-grow: 1;
   margin: 0 5px;
@@ -9560,7 +9560,7 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
 
 /* .expert-support-group .block .caption .catbuttons {
   border: none !important;
-  background-color: '#FF6D00' !important;
+  background-color: '#2aa0d1' !important;
   border-radius: '25px' !important;
   height: '45px' !important;
   width: '200px'!important;
@@ -9572,7 +9572,7 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
 :root {
   --athens-gray: #eff0f2;
   --black: #000000;
-  --blaze-orange: #ff6d00;
+  --blaze-orange: #2aa0d1;
   --chicago: #585858;
   --papaya-whip: #fff0d5;
   --steel-gray: #1f2430;
@@ -9592,7 +9592,7 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
   --font-family-montserrat: "Montserrat", Helvetica;
   --font-family-poppins: "Poppins", Helvetica;
   --black: #000000;
-  --blaze-orange: #ff6d00;
+  --blaze-orange: #2aa0d1;
   --chicago: #585858;
   --thunder: #2e2e2e;
   --white: #ffffff;
@@ -9935,7 +9935,7 @@ explore section css starts heres
 .MuiTab-textColorPrimary.Mui-selected {
   color: white !important;
   opacity: 1;
-  background-color: #ff6d00;
+  background-color: #2aa0d1;
   border-radius: 50px;
 }
 .PrivateTabIndicator-root-1 {
@@ -10027,7 +10027,7 @@ explore section css starts heres
 .MuiTab-textColorPrimary.Mui-selected {
   color: white !important;
   opacity: 1;
-  background-color: #ff6d00;
+  background-color: #2aa0d1;
   border-radius: 50px;
 }
 .PrivateTabIndicator-root-1 {
@@ -10478,7 +10478,7 @@ font-size: 1.8rem;
 }
 .tabs-library .tab{display: flex;} 
 .tabs-library .tab-1{padding: 10px;height: 45px;cursor: pointer;}
-.tabs-library .active{border-bottom: 2px solid #F06421;}
+.tabs-library .active{border-bottom: 2px solid #2aa0d1;}
 .up-box-group {
   width: 100%;
   display: flex;
@@ -10758,7 +10758,7 @@ font-size: 1.8rem;
   left: 73px;}
 .bf-footer .percent .per{font-size: 60px;
   font-weight: 800;
-  color: #f06421;}
+  color: #2aa0d1;}
   .exclusive-banner .container:before{
     display: none;
   }
@@ -10771,7 +10771,7 @@ font-size: 1.8rem;
 }
 .sub-col .buy-now{border-radius: 100px;
   color: white;
-  background-color: #ff6d00;
+  background-color: #2aa0d1;
   padding: 5px;
   font-size: 12px;
   font-weight: 800;
@@ -10895,7 +10895,7 @@ font-size: 1.8rem;
 }
 .popup .link-pricing{
   color: #fff;
-  background: #f06421;
+  background: #2aa0d1;
   padding: 0 25px;
   cursor: pointer;
 }
@@ -11264,7 +11264,7 @@ div .pricing-popup{
 .amazonBannerNew .usersSection .box{max-width: 410px; width: 100%; display: flex; flex-direction: column; text-align: center; background: #fff; box-shadow: 0 16px 20px #000; border-radius: 5px; padding: 21px 25px;}
 .amazonBannerNew .usersSection .box .title{font-size: 24px; color: #1f2430; font-weight: 600; margin-bottom: 8px;}
 .amazonBannerNew .usersSection .box p{flex: 1; font-size: 13px; line-height: 1.6; color: #51596a; margin-bottom: 15px;}
-.amazonBannerNew .usersSection .box .btn-amazon{width: 100%; height: 45px; line-height: 45px; display: -webkit-inline-box; background: #f06421; color: #fff; font-size: 14px; text-transform: uppercase; border-radius: 6px; white-space: nowrap; transition: 0.2s ease-in-out; text-decoration: none; padding: 0 15px;cursor: pointer;}
+.amazonBannerNew .usersSection .box .btn-amazon{width: 100%; height: 45px; line-height: 45px; display: -webkit-inline-box; background: #2aa0d1; color: #fff; font-size: 14px; text-transform: uppercase; border-radius: 6px; white-space: nowrap; transition: 0.2s ease-in-out; text-decoration: none; padding: 0 15px;cursor: pointer;}
 .amazonBannerNew .usersSection .box .btn-amazon strong{font-weight: 700; margin: 0 2px;}
 .amazonBannerNew .usersSection .box .btn-amazon:hover{background: #e05613;}
 .amazonBannerNew .usersSection .box .btn-amazon.yellow{background: #f6a22a;cursor: pointer;}
@@ -11694,7 +11694,7 @@ padding: 35px;
     padding: 13px;
     color: white;
     font-size: 16px;
-    background: #f06421;
+    background: #2aa0d1;
     /* display: inline; */
     border-radius: 30px;
     margin-top: 30px;
@@ -12064,7 +12064,7 @@ header .header-right  .icon-notification {
 }
 
 .buy-box .option-group .custom-checkbox .name .status button{
-  color: #F06421; 
+  color: #2aa0d1; 
   background: transparent; 
   padding: 0; 
   font-size: 13px; 
@@ -12252,8 +12252,8 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
 .buy-box .subscribe-course .subscribe-course-in{align-items: center; justify-content: center; font-family: 'Poppins'; font-size: 12px;  font-weight: 500; padding-top: 10px}
 .buy-box .subscribe-course .subscribe-course-in .subsc{padding: 10px 0px;}
 .buy-box .subscribe-course .subscribe-course-in .subsc .sub-btn{padding: 5px 0px;}
-.buy-box .subscribe-course .subscribe-course-in .sub-btn{ border: 1px solid #F06421; border-radius: 5px; background-color: white; min-width: 150px; color: #F06421;}
-.buy-box .subscribe-course .subscribe-course-in .sub-btn:hover{color: white; background-color: #F06421;}
+.buy-box .subscribe-course .subscribe-course-in .sub-btn{ border: 1px solid #2aa0d1; border-radius: 5px; background-color: white; min-width: 150px; color: #2aa0d1;}
+.buy-box .subscribe-course .subscribe-course-in .sub-btn:hover{color: white; background-color: #2aa0d1;}
 
 
 .sandbox_description{
@@ -12407,7 +12407,7 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
 }
 
 .timer_offer_combo{
-  color: #F06421 !important;
+  color: #2aa0d1 !important;
   font-weight: 800;
 }
 
@@ -12553,10 +12553,10 @@ background: rgba(255,225,201,1);
   width: 100%;
 }
 .pricing-block .circle.active {
-  background: #F06421;
+  background: #2aa0d1;
 }
 .pricing-block .circle.active figure {
-  background: #F06421;
+  background: #2aa0d1;
 }
 
 .coursepage_overview p{

@@ -1379,7 +1379,7 @@ export const UserAccountCloseModal = ({ handleUserAccountClose }) => {
                 onClick={cancelUserAccount}
                 style={{
                   color: "#fff",
-                  background: "#F06421",
+                  background: "#2aa0d1",
                   minWidth: "130px",
                   margin: 0,
                   border: 0,

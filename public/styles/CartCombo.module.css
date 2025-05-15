@@ -181,10 +181,10 @@
 
 .discount_box {
   text-align: right;
-  background: #f0642136;
+  background: #2aa0d136;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .discount_price {
@@ -196,7 +196,7 @@
   font-weight: 700;
   line-height: 33px;
   letter-spacing: 0em;
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .greenbox {
@@ -227,7 +227,7 @@
   padding: 10px;
   margin-right: 40px;
   border-radius: 4px;
-  background: #f06421;
+  background: #2aa0d1;
   font-weight: 600;
   color: white;
   width: fit-content;
@@ -414,7 +414,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 0.5px solid #f06421;
+  border-bottom: 0.5px solid #2aa0d1;
 }
 
 .c_name {
@@ -442,7 +442,7 @@
 }
 
 .border {
-  border: 0.5px solid #f06421;
+  border: 0.5px solid #2aa0d1;
 }
 
 .nopadding {
@@ -450,7 +450,7 @@
 }
 
 .border_bottom {
-  border-bottom: 0.5px solid #f06421;
+  border-bottom: 0.5px solid #2aa0d1;
 }
 
 .marginLeftRight {
@@ -505,7 +505,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 0.5px solid #f06421;
+  border-bottom: 0.5px solid #2aa0d1;
 }
 
 .product_list .c_name {
@@ -533,7 +533,7 @@
 }
 
 .product_list .border {
-  border: 0.5px solid #f06421;
+  border: 0.5px solid #2aa0d1;
 }
 
 .product_list .nopadding {
@@ -541,7 +541,7 @@
 }
 
 .product_list .border_bottom {
-  border-bottom: 0.5px solid #f06421;
+  border-bottom: 0.5px solid #2aa0d1;
 }
 
 .product_list .marginLeftRight {
@@ -655,7 +655,7 @@
   padding: 10px;
   margin-right: 40px;
   border-radius: 4px;
-  background: #f06421;
+  background: #2aa0d1;
   font-weight: 600;
   text-align: center;
   color: white;
@@ -820,7 +820,7 @@
   background: transparent;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
   font-family: Poppins;
 }
 
@@ -837,10 +837,10 @@
   line-height: 40px;
 
   text-align: right;
-  /* background: #F0642136; */
+  /* background: #2aa0d136; */
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .product_list4 .discount_price {
@@ -975,7 +975,7 @@
   background: transparent;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
   font-family: Poppins;
 }
 
@@ -992,10 +992,10 @@
   line-height: 40px;
 
   text-align: right;
-  /* background: #F0642136; */
+  /* background: #2aa0d136; */
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .product_list3 .discount_price {
@@ -1132,7 +1132,7 @@
   background: transparent;
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
   font-family: Poppins;
 }
 
@@ -1149,10 +1149,10 @@
   line-height: 40px;
 
   text-align: right;
-  /* background: #F0642136; */
+  /* background: #2aa0d136; */
   padding: 10px 15px;
   border-radius: 4px;
-  color: #f06421;
+  color: #2aa0d1;
 }
 
 .product_list2 .discount_price {

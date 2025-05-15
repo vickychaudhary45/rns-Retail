@@ -83,7 +83,7 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
               .header-controls span.active {
                 font-weight: 500;
                 background: #fff3ea;
-                color: #f06421;
+                color: #2aa0d1;
               }
               .header-controls span:first-child {
                 margin-right: 1em;

@@ -143,7 +143,7 @@ const Subscription = ({
         plan_info: ["25,000+ Practice Questions", "4500+ Videos"],
       };
       let corp_plan = {
-        color: "#F06421",
+        color: "#2aa0d1",
         desc: "Let’s Connect",
         ids: 2,
         subInfo: {

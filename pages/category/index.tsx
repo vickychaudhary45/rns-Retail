@@ -989,12 +989,12 @@ const Categories = ({
                                   minWidth: "98px",
                                   backgroundColor:
                                     subscribesUser == true
-                                      ? "#F06421"
+                                      ? "#2aa0d1"
                                       : courseBought.includes(data.id)
                                       ? "#0C66E4"
                                       : stateCart.map((item) => item.courseId).includes(data.id)
-                                      ? "#f0642173"
-                                      : "#F06421",
+                                      ? "#2aa0d173"
+                                      : "#2aa0d1",
                                   fontWeight:
                                     subscribesUser || courseBought.includes(data.id) ? "500" : "",
                                 }}
@@ -1059,7 +1059,7 @@ const Categories = ({
                   <button
                     style={{
                       color: "#fff",
-                      background: "#f0642173",
+                      background: "#2aa0d173",
                       height: "35px",
                       lineHeight: "35px",
                       fontSize: "15px",
@@ -1075,7 +1075,7 @@ const Categories = ({
                     onClick={(e) => handlePaginationClick(e)}
                     style={{
                       color: "#fff",
-                      background: "#F06421",
+                      background: "#2aa0d1",
                       height: "35px",
                       lineHeight: "35px",
                       fontSize: "20px",
