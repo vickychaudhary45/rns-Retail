@@ -691,7 +691,7 @@ const Header = ({
                     <a className="logo">
                       <img
                         width={200}
-                        height={30}
+                        height={30} 
                         className="img-full"
                         src="/images/logo11.svg"
                         alt="Whizlabs Logo"
