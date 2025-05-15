@@ -89,7 +89,7 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
             // image: "https://www.example.com/example_image.jpg",
             url: "https://www.whizlabs.com/",
             sameAs: ["https://www.whizlabs.com/", "https://www.whizlabs.com/about-us/"],
-            logo: "https://www.whizlabs.com/images/logo.svg",
+            logo: "https://www.whizlabs.com/images/logo11.svg",
             name: "whizlabs",
             description: "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We&#039;ve helped over 5M+ professionals to get ahead in their careers.",
             email: "contact@whizlabs.com",

@@ -11,7 +11,12 @@ import "@szhsin/react-menu/dist/index.css";
 import Image from "next/image";
 import { connect } from "react-redux";
 import { useEffect, useState, useRef } from "react";
-import { authRegister, authLogin, authLogout, authSocialLogin } from "../../redux/Auth/auth-actions";
+import {
+  authRegister,
+  authLogin,
+  authLogout,
+  authSocialLogin,
+} from "../../redux/Auth/auth-actions";
 import { useSession, signOut } from "next-auth/react";
 import {
   clearCart,
@@ -30,7 +35,7 @@ import { storeUserProfile } from "../../redux/UserProfile/profile-actions";
 import { checkEmailVerified } from "../../redux/UserProfile/profile-actions";
 import SiteUnderMaintenanceBanner from "./SiteUnderMaintenance";
 import { alertBox } from "../../redux/AlertBox/alert-actions";
-import styles from "../../public/styles/header/header.module.css"
+import styles from "../../public/styles/header/header.module.css";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const Header = ({
   userData,
@@ -109,7 +114,7 @@ const Header = ({
 
   useEffect(() => {
     // Hook for menu  button div Reference
-    if(window){
+    if (window) {
       setClientWidth(window.innerWidth);
     }
     const closeML = (e: any) => {
@@ -165,14 +170,16 @@ const Header = ({
         // if end_date is null then it is lifetime user so we need to keep access for him so 5 years is added durign
         //calculation
 
-        let EndDateUtc = itm.end_date ? new Date(new Date(itm.end_date).toISOString()).getTime() : 
-        new Date(new Date(new Date().setFullYear(new Date().getFullYear() + 5)).toISOString()).getTime()
-        let NowUtc = new Date(new Date().toISOString()).getTime()
+        let EndDateUtc = itm.end_date
+          ? new Date(new Date(itm.end_date).toISOString()).getTime()
+          : new Date(
+              new Date(new Date().setFullYear(new Date().getFullYear() + 5)).toISOString()
+            ).getTime();
+        let NowUtc = new Date(new Date().toISOString()).getTime();
 
         if (itm.is_plan_active && EndDateUtc > NowUtc) {
           data.push(itm);
         }
-
       });
     }
     setplandetails(data);
@@ -186,8 +193,8 @@ const Header = ({
         });
         let plan_title = plandetails[plandetails.length - 1].plan_name;
         let data = plan_details.find((itm) => itm.title === plan_title);
-        if(data.title == "PremiumOld"){
-          data.title = 'Premium'
+        if (data.title == "PremiumOld") {
+          data.title = "Premium";
         }
         setshowplan(data);
       }
@@ -238,7 +245,6 @@ const Header = ({
     };
   }, []); // Empty dependency array ensures that the effect runs only on mount and unmount
 
-
   // useOutsideClick(impactRef, () => setMenuOpen(false));
   useEffect(() => {
     handleResize();
@@ -283,7 +289,11 @@ const Header = ({
       // Logout from LMS
       const urlParams = new URLSearchParams(window.location.search);
       const urlRef = urlParams.get("ref");
-      if (urlRef && urlRef === "LMSlogout" || urlRef === "LABSlogout"  || urlRef === "LABSlogout/") {
+      if (
+        (urlRef && urlRef === "LMSlogout") ||
+        urlRef === "LABSlogout" ||
+        urlRef === "LABSlogout/"
+      ) {
         authLogoutAction();
         clearCartAction();
         signOut({ redirect: false, callbackUrl: "/" });
@@ -303,7 +313,11 @@ const Header = ({
       // Logout from LMS
       const urlParams = new URLSearchParams(window.location.search);
       const urlRef = urlParams.get("ref");
-      if (urlRef && urlRef === "LMSlogout" || urlRef === "LABSlogout"  || urlRef === "LABSlogout/" ) {
+      if (
+        (urlRef && urlRef === "LMSlogout") ||
+        urlRef === "LABSlogout" ||
+        urlRef === "LABSlogout/"
+      ) {
         authLogoutAction();
         clearCartAction();
         signOut({ redirect: false, callbackUrl: "/" });
@@ -497,7 +511,8 @@ const Header = ({
               item.selectedCourseType.includes("sandbox-6") ||
               item.selectedCourseType.includes("sandbox-3") ||
               item.selectedCourseType.includes("sandbox-1")) &&
-            (typeof item.SandboxSalePrice == 'object' && item.SandboxSalePrice[currency.type]) &&
+            typeof item.SandboxSalePrice == "object" &&
+            item.SandboxSalePrice[currency.type] &&
             !item.enrolled_product_types?.includes("sandbox")
           ) {
             SANDBOX += parseFloat(item.SandboxSalePrice[currency.type]);
@@ -548,7 +563,8 @@ const Header = ({
           item.selectedCourseType.includes("sandbox-6") ||
           item.selectedCourseType.includes("sandbox-3") ||
           item.selectedCourseType.includes("sandbox-1")) &&
-        (typeof item.SandboxRegPrice == 'object' && item.SandboxSalePrice[currency.type]) &&
+        typeof item.SandboxRegPrice == "object" &&
+        item.SandboxSalePrice[currency.type] &&
         !item.enrolled_product_types?.includes("sandbox")
       ) {
         SANDBOX += parseFloat(item.SandboxSalePrice[currency.type]);
@@ -600,7 +616,7 @@ const Header = ({
 
   //removing the sign in & sign up group for amazon employee page
   // const { pathname } = router;
- 
+
   // const shouldHideButtons = pathname.includes("/amazon/employees") ? true : false;
 
   return (
@@ -645,11 +661,11 @@ const Header = ({
           ""
         )}
 
-         <AnnouncmentBlock
-            staticpage={staticpage}
-            headless={headless}
-            subscribedUser={subscribedUser}
-          />
+        <AnnouncmentBlock
+          staticpage={staticpage}
+          headless={headless}
+          subscribedUser={subscribedUser}
+        />
 
         {/* {!headless && !subscribedUser && <AnnouncmentBlock />} */}
         {scrolBtn && <ScrollToTop />}
@@ -661,23 +677,23 @@ const Header = ({
                 cookie.get("signupmodal") && !cookie.get("client") ? "background-blurr" : ""
               }`}
               style={{
-                left: loggedIn && clientWidth < 420 ? '40%' : '50%',
+                left: loggedIn && clientWidth < 420 ? "40%" : "50%",
               }}
             >
               {/* <Link legacyBehavior  href={headless? "/ft-course-library" : "/"}>
               <a className="logo">
-                <img width={200} height={30} className="img-full" src="/images/logo.svg" alt="" />
+                <img width={200} height={30} className="img-full" src="/images/logo11.svg" alt="" />
               </a>
             </Link> */}
               {!headless ? (
                 <>
-                  <Link legacyBehavior  href="/">
+                  <Link legacyBehavior href="/">
                     <a className="logo">
                       <img
                         width={200}
                         height={30}
                         className="img-full"
-                        src="/images/logo.svg"
+                        src="/images/logo11.svg"
                         alt="Whizlabs Logo"
                       />
                     </a>
@@ -685,13 +701,13 @@ const Header = ({
                 </>
               ) : staticpage ? (
                 <>
-                  <Link legacyBehavior  href="/training/library">
+                  <Link legacyBehavior href="/training/library">
                     <a className="logo">
                       <img
                         width={200}
                         height={30}
                         className="img-full"
-                        src="/images/logo.svg"
+                        src="/images/logo11.svg"
                         alt="Whizlabs Logo"
                       />
                     </a>
@@ -705,7 +721,7 @@ const Header = ({
                         width={200}
                         height={30}
                         className="img-full"
-                        src="/images/logo.svg"
+                        src="/images/logo11.svg"
                         alt="Whizlabs Logo"
                       />
                     </a>
@@ -997,99 +1013,99 @@ const Header = ({
                           <span>{cart_count}</span>
                         </div>
                       </div>
-                      {
-                        !pathName.includes('cart') && <>
+                      {!pathName.includes("cart") && (
+                        <>
                           <div className="cart-list-menu">
-                        <div className="btn-close" onClick={() => setCartMenu(false)}>
-                          Close
-                        </div>
+                            <div className="btn-close" onClick={() => setCartMenu(false)}>
+                              Close
+                            </div>
 
-                        {!loading ? (
-                          cartItems && cartItems.length ? (
-                            <div className="cart-data">
-                              <ul>
-                                <div className="overflow-handle">
-                                  {cartItems.map((item, index) => {
-                                    let courseType = item.selectedCourseType;
-                                    let str = [];
-                                    if (
-                                      courseType.length == 1 &&
-                                      courseType[0].includes("sandbox-")
-                                    ) {
-                                      let validity = courseType[0].split("-");
-                                      validity[validity.length - 1] == 1
-                                        ? str.push(
-                                            `SANDBOX (${validity[validity.length - 1]} Month)`
-                                          )
-                                        : str.push(
-                                            `SANDBOX (${validity[validity.length - 1]} Months) `
-                                          );
-                                    } else {
-                                      courseType.includes("pt") ? str.push("PT") : "";
-                                      courseType.includes("oc") ? str.push("VC") : "";
-                                      courseType.includes("lab") ? str.push("LABS") : "";
-                                      courseType.includes("sandbox") ? str.push("SANDBOX") : "";
-                                    }
-                                    return (
-                                      <div className="cart-item" key={index}>
-                                        <div className="cart-item-left">
-                                          <img
-                                            src={
-                                              process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-                                              item.courseImage.replace("media/", "")
-                                            }
-                                            alt={item.courseName}
-                                            title={item.courseName}
-                                            onError={({ currentTarget }) => {
-                                              currentTarget.onerror = null; // prevents looping
-                                              currentTarget.src = "/images/no-image.png";
-                                            }}
-                                          />
-                                        </div>
-                                        <div className="cart-item-right">
-                                          <p>{item.courseName}</p>
-                                          <p>[{str.join(" , ")}]</p>
-                                          <span className="price">
-                                            {currency.symbol}
-                                            {item.total.toFixed(2)}
-                                          </span>
-                                        </div>
-                                      </div>
-                                    );
-                                  })}
+                            {!loading ? (
+                              cartItems && cartItems.length ? (
+                                <div className="cart-data">
+                                  <ul>
+                                    <div className="overflow-handle">
+                                      {cartItems.map((item, index) => {
+                                        let courseType = item.selectedCourseType;
+                                        let str = [];
+                                        if (
+                                          courseType.length == 1 &&
+                                          courseType[0].includes("sandbox-")
+                                        ) {
+                                          let validity = courseType[0].split("-");
+                                          validity[validity.length - 1] == 1
+                                            ? str.push(
+                                                `SANDBOX (${validity[validity.length - 1]} Month)`
+                                              )
+                                            : str.push(
+                                                `SANDBOX (${validity[validity.length - 1]} Months) `
+                                              );
+                                        } else {
+                                          courseType.includes("pt") ? str.push("PT") : "";
+                                          courseType.includes("oc") ? str.push("VC") : "";
+                                          courseType.includes("lab") ? str.push("LABS") : "";
+                                          courseType.includes("sandbox") ? str.push("SANDBOX") : "";
+                                        }
+                                        return (
+                                          <div className="cart-item" key={index}>
+                                            <div className="cart-item-left">
+                                              <img
+                                                src={
+                                                  process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
+                                                  item.courseImage.replace("media/", "")
+                                                }
+                                                alt={item.courseName}
+                                                title={item.courseName}
+                                                onError={({ currentTarget }) => {
+                                                  currentTarget.onerror = null; // prevents looping
+                                                  currentTarget.src = "/images/no-image.png";
+                                                }}
+                                              />
+                                            </div>
+                                            <div className="cart-item-right">
+                                              <p>{item.courseName}</p>
+                                              <p>[{str.join(" , ")}]</p>
+                                              <span className="price">
+                                                {currency.symbol}
+                                                {item.total.toFixed(2)}
+                                              </span>
+                                            </div>
+                                          </div>
+                                        );
+                                      })}
+                                    </div>
+                                    <div className="cart-footer">
+                                      <p className="total-amount">
+                                        Total : {currency.symbol}
+                                        {subTotal.toFixed(2)}
+                                      </p>
+                                      <Link legacyBehavior href="/cart">
+                                        <button>Go To Cart</button>
+                                      </Link>
+                                    </div>
+                                  </ul>
                                 </div>
-                                <div className="cart-footer">
-                                  <p className="total-amount">
-                                    Total : {currency.symbol}
-                                    {subTotal.toFixed(2)}
-                                  </p>
-                                  <Link legacyBehavior  href="/cart">
-                                    <button>Go To Cart</button>
+                              ) : (
+                                <div className="empty-cart">
+                                  <p>Your Cart is Empty</p>
+                                  <p>Keep browsing to find a course!</p>
+                                  <Link legacyBehavior href="/library">
+                                    <button>Find a Course</button>
                                   </Link>
                                 </div>
-                              </ul>
-                            </div>
-                          ) : (
-                            <div className="empty-cart">
-                              <p>Your Cart is Empty</p>
-                              <p>Keep browsing to find a course!</p>
-                              <Link legacyBehavior  href="/library">
-                                <button>Find a Course</button>
-                              </Link>
-                            </div>
-                          )
-                        ) : (
-                          <div className="empty-cart">
-                            <p>Your Cart is Empty</p>
-                            <p>Keep browsing to find a course!</p>
-                            <Link legacyBehavior  href="/library">
-                              <button>Find a Course</button>
-                            </Link>
+                              )
+                            ) : (
+                              <div className="empty-cart">
+                                <p>Your Cart is Empty</p>
+                                <p>Keep browsing to find a course!</p>
+                                <Link legacyBehavior href="/library">
+                                  <button>Find a Course</button>
+                                </Link>
+                              </div>
+                            )}
                           </div>
-                        )}
-                      </div>
                         </>
-                      }
+                      )}
                     </div>
                   </>
                 )}
@@ -1144,99 +1160,103 @@ const Header = ({
                             <span>{cart_count}</span>
                           </div>
                         </div>
-                        {
-                          !pathName.includes('cart') && <>
-                                                    <div className="cart-list-menu">
-                          <div className="btn-close" onClick={() => setCartMenu(false)}>
-                            Close
-                          </div>
+                        {!pathName.includes("cart") && (
+                          <>
+                            <div className="cart-list-menu">
+                              <div className="btn-close" onClick={() => setCartMenu(false)}>
+                                Close
+                              </div>
 
-                          {!loading ? (
-                            cartItems && cartItems.length ? (
-                              <div className="cart-data">
-                                <ul>
-                                  <div className="overflow-handle">
-                                    {cartItems.map((item, index) => {
-                                      let courseType = item.selectedCourseType;
-                                      let str = [];
-                                      if (
-                                        courseType.length == 1 &&
-                                        courseType[0].includes("sandbox-")
-                                      ) {
-                                        let validity = courseType[0].split("-");
-                                        validity[validity.length - 1] == 1
-                                          ? str.push(
-                                              `SANDBOX (${validity[validity.length - 1]} Month)`
-                                            )
-                                          : str.push(
-                                              `SANDBOX (${validity[validity.length - 1]} Months) `
-                                            );
-                                      } else {
-                                        courseType.includes("pt") ? str.push("PT") : "";
-                                        courseType.includes("oc") ? str.push("VC") : "";
-                                        courseType.includes("lab") ? str.push("LABS") : "";
-                                        courseType.includes("sandbox") ? str.push("SANDBOX") : "";
-                                      }
-                                      return (
-                                        <div className="cart-item" key={index}>
-                                          <div className="cart-item-left">
-                                            <img
-                                              src={
-                                                process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-                                                item.courseImage.replace("media/", "")
-                                              }
-                                              alt={item.courseName}
-                                              title={item.courseName}
-                                              onError={({ currentTarget }) => {
-                                                currentTarget.onerror = null; // prevents looping
-                                                currentTarget.src = "/images/no-image.png";
-                                              }}
-                                            />
-                                          </div>
-                                          <div className="cart-item-right">
-                                            <p>{item.courseName}</p>
-                                            <p>[{str.join(" , ")}]</p>
-                                            <span className="price">
-                                              {currency.symbol}
-                                              {item.total.toFixed(2)}
-                                            </span>
-                                          </div>
-                                        </div>
-                                      );
-                                    })}
+                              {!loading ? (
+                                cartItems && cartItems.length ? (
+                                  <div className="cart-data">
+                                    <ul>
+                                      <div className="overflow-handle">
+                                        {cartItems.map((item, index) => {
+                                          let courseType = item.selectedCourseType;
+                                          let str = [];
+                                          if (
+                                            courseType.length == 1 &&
+                                            courseType[0].includes("sandbox-")
+                                          ) {
+                                            let validity = courseType[0].split("-");
+                                            validity[validity.length - 1] == 1
+                                              ? str.push(
+                                                  `SANDBOX (${validity[validity.length - 1]} Month)`
+                                                )
+                                              : str.push(
+                                                  `SANDBOX (${
+                                                    validity[validity.length - 1]
+                                                  } Months) `
+                                                );
+                                          } else {
+                                            courseType.includes("pt") ? str.push("PT") : "";
+                                            courseType.includes("oc") ? str.push("VC") : "";
+                                            courseType.includes("lab") ? str.push("LABS") : "";
+                                            courseType.includes("sandbox")
+                                              ? str.push("SANDBOX")
+                                              : "";
+                                          }
+                                          return (
+                                            <div className="cart-item" key={index}>
+                                              <div className="cart-item-left">
+                                                <img
+                                                  src={
+                                                    process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
+                                                    item.courseImage.replace("media/", "")
+                                                  }
+                                                  alt={item.courseName}
+                                                  title={item.courseName}
+                                                  onError={({ currentTarget }) => {
+                                                    currentTarget.onerror = null; // prevents looping
+                                                    currentTarget.src = "/images/no-image.png";
+                                                  }}
+                                                />
+                                              </div>
+                                              <div className="cart-item-right">
+                                                <p>{item.courseName}</p>
+                                                <p>[{str.join(" , ")}]</p>
+                                                <span className="price">
+                                                  {currency.symbol}
+                                                  {item.total.toFixed(2)}
+                                                </span>
+                                              </div>
+                                            </div>
+                                          );
+                                        })}
+                                      </div>
+                                      <div className="cart-footer">
+                                        <p className="total-amount">
+                                          Total :{currency.symbol}
+                                          {subTotal.toFixed(2)}
+                                        </p>
+                                        <Link legacyBehavior href="/cart">
+                                          <button>Go To Cart</button>
+                                        </Link>
+                                      </div>
+                                    </ul>
                                   </div>
-                                  <div className="cart-footer">
-                                    <p className="total-amount">
-                                      Total :{currency.symbol}
-                                      {subTotal.toFixed(2)}
-                                    </p>
-                                    <Link legacyBehavior  href="/cart">
-                                      <button>Go To Cart</button>
+                                ) : (
+                                  <div className="empty-cart">
+                                    <p>Your Cart is Empty</p>
+                                    <p>Keep browsing to find a course!</p>
+                                    <Link legacyBehavior href="/library">
+                                      <button>Find a Course</button>
                                     </Link>
                                   </div>
-                                </ul>
-                              </div>
-                            ) : (
-                              <div className="empty-cart">
-                                <p>Your Cart is Empty</p>
-                                <p>Keep browsing to find a course!</p>
-                                <Link legacyBehavior  href="/library">
-                                  <button>Find a Course</button>
-                                </Link>
-                              </div>
-                            )
-                          ) : (
-                            <div className="empty-cart">
-                              <p>Your Cart is Empty</p>
-                              <p>Keep browsing to find a course!</p>
-                              <Link legacyBehavior  href="/library">
-                                <button>Find a Course</button>
-                              </Link>
+                                )
+                              ) : (
+                                <div className="empty-cart">
+                                  <p>Your Cart is Empty</p>
+                                  <p>Keep browsing to find a course!</p>
+                                  <Link legacyBehavior href="/library">
+                                    <button>Find a Course</button>
+                                  </Link>
+                                </div>
+                              )}
                             </div>
-                          )}
-                        </div>
                           </>
-                        }
+                        )}
                       </div>
                     </>
                   )}
@@ -1303,21 +1323,20 @@ const Header = ({
                             <ul className="user-name">
                               <li>
                                 <p style={{ padding: "0.12rem 0" }}>
-                                  Hello,{" "}
-                                  <strong>
-                                    {userData.data.name.first}          
-                                  </strong>                                  
+                                  Hello, <strong>{userData.data.name.first}</strong>
                                 </p>
                                 {email_verified == true && (
-                                      <i
-                                        className="icon icon-font-verified-buyes"
-                                        style={{
-                                          display: "inline-block",marginTop:'1px', fontSize:'16px',
-                                          marginLeft: "6px",
-                                          color: "#4CAF50",
-                                        }}
-                                      ></i>
-                                    )}
+                                  <i
+                                    className="icon icon-font-verified-buyes"
+                                    style={{
+                                      display: "inline-block",
+                                      marginTop: "1px",
+                                      fontSize: "16px",
+                                      marginLeft: "6px",
+                                      color: "#4CAF50",
+                                    }}
+                                  ></i>
+                                )}
                                 <div className="btn-close" onClick={() => setProfileMenu(false)}>
                                   Close
                                 </div>
@@ -1410,7 +1429,7 @@ const Header = ({
                               </li>
                               */}
                               <li>
-                                <Link legacyBehavior  href="/my-account">
+                                <Link legacyBehavior href="/my-account">
                                   <a>My Account</a>
                                 </Link>
                               </li>
@@ -1467,39 +1486,39 @@ const Header = ({
                   ) : (
                     <>
                       {/* {!shouldHideButtons && ( */}
-                        <div className="login-group">
-                          <a
-                            className="link-signin"
-                            style={{ cursor: "pointer" }}
-                            onClick={(e) => {
-                              if (router.pathname.includes("cart")) {
-                                updateCartAfterSigninAction(true);
-                              }
-                              openSignInModal();
-                            }}
-                          >
-                            Sign in
-                          </a>
-                          <a
-                            className="btn link-signup"
-                            style={{ cursor: "pointer" }}
-                            onClick={(e) => {
-                              if (router.pathname.includes("cart")) {
-                                updateCartAfterSigninAction(true);
-                              }
-                              openSignUpModal();
-                            }}
-                          >
-                            Sign up
-                          </a>
-                        </div>
-                        {/* )} */}
+                      <div className="login-group">
+                        <a
+                          className="link-signin"
+                          style={{ cursor: "pointer" }}
+                          onClick={(e) => {
+                            if (router.pathname.includes("cart")) {
+                              updateCartAfterSigninAction(true);
+                            }
+                            openSignInModal();
+                          }}
+                        >
+                          Sign in
+                        </a>
+                        <a
+                          className="btn link-signup"
+                          style={{ cursor: "pointer" }}
+                          onClick={(e) => {
+                            if (router.pathname.includes("cart")) {
+                              updateCartAfterSigninAction(true);
+                            }
+                            openSignUpModal();
+                          }}
+                        >
+                          Sign up
+                        </a>
+                      </div>
+                      {/* )} */}
                     </>
                   )}
                 </>
               ) : (
                 <>
-                  <Link legacyBehavior  href="/careers">
+                  <Link legacyBehavior href="/careers">
                     <a className="btn-back-careers">
                       <i className="icon icon-font-arrow-right"></i>
                       <span>Back to Careers</span>
@@ -1532,7 +1551,7 @@ const Header = ({
                     </div>
                     <div className="icon-search" id="searchBarInput">
                       <i
-                      id="searchBarInput"
+                        id="searchBarInput"
                         className="icon icon-font-search"
                         onClick={() => {
                           setHeaderSearchOpen(!headerSearchOpen);
@@ -1592,32 +1611,32 @@ const Header = ({
           )}
         </header>
         {/* {isBreakpoint && ( */}
-          <div
-            className={`${styles.mobile_header_new} mobile-header-new`}
-            style={{
-              width: "100%",
-              height: "40px",
-              padding: "8px",
-              position: "sticky",
-              // display: "block",
-              zIndex: "99",
-              background: "white",
-              borderTop: "1px solid #eeeeee",
-              borderBottom: "1px solid #eeeeee",
-              transition: "all 0.1s linear",
-            }}
-          >
-            <div className={containerSmall ? "container-small" : "container"}>
-              <div
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                }}
-              >
-                {/* <Link legacyBehavior  href={process.env.NEXT_PUBLIC_BUSINESS_URL}>
+        <div
+          className={`${styles.mobile_header_new} mobile-header-new`}
+          style={{
+            width: "100%",
+            height: "40px",
+            padding: "8px",
+            position: "sticky",
+            // display: "block",
+            zIndex: "99",
+            background: "white",
+            borderTop: "1px solid #eeeeee",
+            borderBottom: "1px solid #eeeeee",
+            transition: "all 0.1s linear",
+          }}
+        >
+          <div className={containerSmall ? "container-small" : "container"}>
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-around",
+              }}
+            >
+              {/* <Link legacyBehavior  href={process.env.NEXT_PUBLIC_BUSINESS_URL}>
                 <a
                   className="btn"
                   style={{
@@ -1630,97 +1649,97 @@ const Header = ({
                   Business
                 </a>
               </Link> */}
-                <div className="box-mobile">
-                  {/* <Link legacyBehavior  href="/library"> Library</Link> */}
-                  <div
-                    onClick={() => {
-                      router.push("/library");
-                    }}
-                  >
-                    Library
-                  </div>
-                </div>
+              <div className="box-mobile">
+                {/* <Link legacyBehavior  href="/library"> Library</Link> */}
                 <div
-                  className="box-mobile platform-mobile-m"
-                  onClick={(e) => {
-                    mobileplatform(e);
+                  onClick={() => {
+                    router.push("/library");
                   }}
                 >
-                  Platform
+                  Library
                 </div>
-                {user_type != "amazon" && (
-                  <>
-                    <div className="box-mobile">
-                      {/* <Link legacyBehavior  href="/pricing">Pricing</Link> */}
-                      <div
-                        onClick={() => {
-                          router.push("/pricing");
-                        }}
-                      >
-                        Pricing
-                      </div>
-                    </div>
-                  </>
-                )}
               </div>
+              <div
+                className="box-mobile platform-mobile-m"
+                onClick={(e) => {
+                  mobileplatform(e);
+                }}
+              >
+                Platform
+              </div>
+              {user_type != "amazon" && (
+                <>
+                  <div className="box-mobile">
+                    {/* <Link legacyBehavior  href="/pricing">Pricing</Link> */}
+                    <div
+                      onClick={() => {
+                        router.push("/pricing");
+                      }}
+                    >
+                      Pricing
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
-            {mobilepf && (
-              <>
-                <div className="mobile-optimized-platform">
-                  <ul className="list-menu">
-                    <li>
-                      <a href="/platform/practice-test">
-                        <figure>
-                          <img className="img-full" src="/images/exam-simu.svg" alt="" />
-                        </figure>
-                        <div className="link-txt">
-                          <label>Exam Simulators</label>
-                          <p>Learn faster. Move faster. Transform now with Exam Simulators</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/platform/self-study-video-courses">
-                        <figure>
-                          <img className="img-full" src="/images/video-course.svg" alt="" />
-                        </figure>
-                        <div className="link-txt">
-                          <label>Video Courses</label>
-                          <p>Real-time courses crafted by Experts</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href={process.env.NEXT_PUBLIC_PLAY_URL}>
-                        <figure>
-                          <img className="img-full" src="/images/hand-on-labs.svg" alt="" />
-                        </figure>
-                        <div className="link-txt">
-                          <label>Hands-on Labs</label>
-                          <p>Objective-driven. Proven to build cloud skills</p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        // rel="noopener"
-                        // target="_blank"
-                        href={`${process.env.NEXT_PUBLIC_PLAY_URL}/sandbox`}
-                      >
-                        <figure>
-                          <img className="img-full" src="/images/cloud-sand.svg" alt="" />
-                        </figure>
-                        <div className="link-txt">
-                          <label>Cloud Sandboxes</label>
-                          <p>Risk-free cloud sandboxes for AWS, GCP, Azure, and Power BI</p>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </>
-            )}
           </div>
+          {mobilepf && (
+            <>
+              <div className="mobile-optimized-platform">
+                <ul className="list-menu">
+                  <li>
+                    <a href="/platform/practice-test">
+                      <figure>
+                        <img className="img-full" src="/images/exam-simu.svg" alt="" />
+                      </figure>
+                      <div className="link-txt">
+                        <label>Exam Simulators</label>
+                        <p>Learn faster. Move faster. Transform now with Exam Simulators</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/platform/self-study-video-courses">
+                      <figure>
+                        <img className="img-full" src="/images/video-course.svg" alt="" />
+                      </figure>
+                      <div className="link-txt">
+                        <label>Video Courses</label>
+                        <p>Real-time courses crafted by Experts</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={process.env.NEXT_PUBLIC_PLAY_URL}>
+                      <figure>
+                        <img className="img-full" src="/images/hand-on-labs.svg" alt="" />
+                      </figure>
+                      <div className="link-txt">
+                        <label>Hands-on Labs</label>
+                        <p>Objective-driven. Proven to build cloud skills</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      // rel="noopener"
+                      // target="_blank"
+                      href={`${process.env.NEXT_PUBLIC_PLAY_URL}/sandbox`}
+                    >
+                      <figure>
+                        <img className="img-full" src="/images/cloud-sand.svg" alt="" />
+                      </figure>
+                      <div className="link-txt">
+                        <label>Cloud Sandboxes</label>
+                        <p>Risk-free cloud sandboxes for AWS, GCP, Azure, and Power BI</p>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </>
+          )}
+        </div>
         {/* )} */}
 
         {!headless &&

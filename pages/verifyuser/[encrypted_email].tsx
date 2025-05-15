@@ -89,7 +89,7 @@ const VerifyUser = ({ userEmail, isVerifiedUser, seoHomePageData }) => {
                   width={200}
                   height={27}
                   className="img-full"
-                  src="/images/logo.svg"
+                  src="/images/logo11.svg"
                   alt="Whizlabs Logo"
                 />
               </a>

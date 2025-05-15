@@ -71,7 +71,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     height: "100%",
                   }}
                   className="img-full"
-                  src="/images/logo.svg"
+                  src="/images/logo11.svg"
                   alt="Whizlabs Logo"
                 />
               </a>
@@ -428,7 +428,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                   height: "100%",
                 }}
                 className="img-full"
-                src="/images/logo.svg"
+                src="/images/logo11.svg"
                 alt="Whizlabs Logo"
               />
             </a>

@@ -338,7 +338,7 @@ setLike((prevLike) => {
             "itemReviewed": {
               "@type": "Product",
               "name":"whizlabs",
-              "image":"https://www.whizlabs.com/images/logo.svg",
+              "image":"https://www.whizlabs.com/images/logo11.svg",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency":"USD",

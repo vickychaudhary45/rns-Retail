@@ -76,7 +76,7 @@ const Login = ({ storeToLocalStorage, alertBoxAction, userInfo, userData }) => {
                       height: "100%",
                     }}
                     className="img-full"
-                    src="/images/logo.svg"
+                    src="/images/logo11.svg"
                     alt="Whizlabs Logo"
                   />
                 </a>

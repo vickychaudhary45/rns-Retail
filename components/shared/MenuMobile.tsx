@@ -166,7 +166,7 @@ const MenuMobile = ({
                         width={100}
                         height={8}
                         className="img-full"
-                        src="/images/logo.svg"
+                        src="/images/logo11.svg"
                         alt="Whizlabs Logo"
                       />
                     </a>

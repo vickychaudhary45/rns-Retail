@@ -68,7 +68,7 @@ const Banner = ({ width, timer_details1, subscriptionSaving, timerState1 }) => {
   //           alignItems: "center",
   //         }}
   //       >
-  //         <img src="/images/logo.svg" width={"30%"} alt="Whizlabs Logo" />
+  //         <img src="/images/logo11.svg" width={"30%"} alt="Whizlabs Logo" />
   //       </div>
   //     </div>
   //   );

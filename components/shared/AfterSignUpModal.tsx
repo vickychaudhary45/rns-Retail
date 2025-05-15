@@ -192,7 +192,7 @@ const AfterSignUpModal = ({ open, setOpen, userData, searchCourse, searchCourses
                                   width: "100%",
                                   height: "18px",
                                 }}
-                                src="/images/logo.svg"
+                                src="/images/logo11.svg"
                                 alt="Whizlabs Logo"
                               />
                             </div>

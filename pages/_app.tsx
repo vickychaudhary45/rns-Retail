@@ -235,7 +235,7 @@ const MyApp = ({ Component, pageProps, router }) => {
                 padding: "20px",
               }}
             >
-              <img src="/images/logo.svg" width={"500px"} alt="Whizlabs Logo" />
+              <img src="/images/logo11.svg" width={"500px"} alt="Whizlabs Logo" />
             </div>
           )} */}
         </Provider>

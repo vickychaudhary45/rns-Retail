@@ -1692,7 +1692,7 @@ export const Courseexpirypopup = ({userEnrolled,subs})=>{
               }}><CloseIcon/></div>
                 <div className="section">
                   <div className="left-section">
-                    <img width="200" height="30" className="img-full imgpopup" src="/images/logo.svg" alt="Whizlabs Logo"/>
+                    <img width="200" height="30" className="img-full imgpopup" src="/images/logo11.svg" alt="Whizlabs Logo"/>
                     <p className="para">
                       Explore our <a href="/pricing"  onClick={(e)=>{closepoup()}}>Premium Subscription Plans</a> and enjoy unlimited access to Practice Tests, Videos, Labs, Sandbox, and a host of other exclusive features.
                     </p>
