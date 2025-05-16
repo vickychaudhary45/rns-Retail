@@ -164,7 +164,19 @@ const MyApp = ({ Component, pageProps, router }) => {
 
       <SessionProvider session={pageProps?.session}>
         <Provider store={store}>
-          {!loading ? (
+          {loading ? (
+            <div
+              style={{
+                width: "100%",
+                height: "100vh",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <img src="/images/logo-small11.svg" height="300" alt="RNS Logo" />
+            </div>
+          ) : (
             <Layout
               menusList={MenuList}
               promoData={promoData}
@@ -179,18 +191,6 @@ const MyApp = ({ Component, pageProps, router }) => {
             >
               <Component {...pageProps} promoData={promoData} timer_details={timer_details} />
             </Layout>
-          ) : (
-            <div
-              style={{
-                width: "100%",
-                height: "100vh",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img src="/images/logo11.svg" width={"500px"} alt="Whizlabs Logo" />
-            </div>
           )}
         </Provider>
       </SessionProvider>

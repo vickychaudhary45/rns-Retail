@@ -231,7 +231,7 @@ const Home = ({
 export async function getServerSideProps(context) {
   const seoHomePageData = {
     seoPageType: "homePage",
-    title: "Whizlabs - A world class technology training platform for your Teams",
+    title: "R N S PATH - A world class technology training platform for your Teams",
     metaTags: [
       {
         name: "facebook-domain-verification",

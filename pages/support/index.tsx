@@ -10,7 +10,7 @@ const Support = (seoHomePageData) => {
   return (
     <>
       {/* <Head>
-        <title>Whizlabs - A world class technology training platform for your teams</title>
+        <title>R N S PATH - A world class technology training platform for your teams</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 
@@ -581,7 +581,7 @@ export default Support;
 export async function getServerSideProps() {
   const seoHomePageData = {
     seoPageType: "supportPage", // This should be changed to reflect the actual page type
-    title: "Whizlabs - A world class technology training platform for your teams",
+    title: "R N S PATH - A world class technology training platform for your teams",
     metaTags: [
       {
         name: "facebook-domain-verification",
