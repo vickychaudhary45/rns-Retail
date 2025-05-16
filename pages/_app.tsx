@@ -1,30 +1,20 @@
-import { Provider } from "react-redux";
-import store from "../redux/store";
 import axios from "axios";
-import Router from "next/router";
-import NProgress from "nprogress"; //nprogress module
-import "nprogress/nprogress.css"; //styles of nprogress
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 import Head from "next/head";
-import Layout from "@/components/shared/Layout";
-import { SessionProvider } from "next-auth/react";
-import MenuList from "../lib/Menu.json";
-import FooterDataList from "../lib/FooterData.json";
-import ErrorBoundary from "../components/ErrorBoundary";
 import Cookie from "js-cookie";
-import Script from "next/script";
-import dynamic from "next/dynamic";
-const DynamicLayout = dynamic(() => import("@/components/shared/Layout"));
+import Router from "next/router";
+import "nprogress/nprogress.css";
+import NProgress from "nprogress";
+import { Provider } from "react-redux";
+import { useEffect, useState } from "react";
+import { SessionProvider } from "next-auth/react";
+
+import store from "../redux/store";
+import MenuList from "../lib/Menu.json";
+import Layout from "@/components/shared/Layout";
+import FooterDataList from "../lib/FooterData.json";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const baseUrlA = process.env.NEXT_PUBLIC_ASSIST_URL;
-const JS_SCRIPTS = [
-  // "/js/jquery-3.6.1.min.js", // https://code.jquery.com/jquery-3.6.1.min.js
-  // "/js/jquery-ui.js",
-  // "/custom/header.js",
-  "/custom/custom.js",
-];
 
 //Binding events.
 Router.events.on("routeChangeStart", () => {
@@ -36,18 +26,14 @@ Router.events.on("routeChangeComplete", () => {
 Router.events.on("routeChangeError", () => NProgress.done());
 
 const MyApp = ({ Component, pageProps, router }) => {
-  const [ipDetails, setIpDetails] = useState({});
-  const [timer_details, setTimer_details] = useState(null);
-  const [maintenance_details, setMaintenance_details] = useState(null);
-  const [offerHeader, setOfferHeader] = useState(null);
   const [loading, setloading] = useState(true);
-  const [cart_count, setCart_count] = useState(0);
-  const pageData = pageProps?.pageData;
-  const pageContent = pageProps?.pageData;
-  const TEST_PATH = "whizlabs.com";
-
-  const [websiteSettings, setWebsiteSettings] = useState([]);
+  const [ipDetails, setIpDetails] = useState({});
   const [promoData, setPromoData] = useState([]);
+  const [cart_count, setCart_count] = useState(0);
+  const [offerHeader, setOfferHeader] = useState(null);
+  const [timer_details, setTimer_details] = useState(null);
+  const [websiteSettings, setWebsiteSettings] = useState([]);
+  const [maintenance_details, setMaintenance_details] = useState(null);
 
   const fetchCampaignData = async () => {
     let tm_data = await axios.get(baseUrl + "/campaigns/get");
@@ -55,18 +41,6 @@ const MyApp = ({ Component, pageProps, router }) => {
       return tm_data.data.timer;
     } else {
       return {};
-    }
-  };
-  const fetchMaintenanceData = async () => {
-    try {
-      let m_data = await axios.get(`${baseUrlA}/website/banner?domain=${0}&platform=${1}`);
-      if (m_data.data && m_data.data.data && m_data.data.status !== "error") {
-        return m_data.data.data;
-      } else {
-        return null;
-      }
-    } catch (error) {
-      console.error("Error fetching maintenance data:", error);
     }
   };
 
@@ -83,17 +57,18 @@ const MyApp = ({ Component, pageProps, router }) => {
     }
   };
 
-  useEffect(() => {
-    Cookie.remove("cartData");
-    Promise.all([fetchCampaignData(), fetchMaintenanceData(), OfferHeaderData()]).then(
-      (results) => {
-        setTimer_details(results[0]);
-        setMaintenance_details(results[1]);
-        setOfferHeader(results[2]);
-        setloading(false);
+  const fetchMaintenanceData = async () => {
+    try {
+      let m_data = await axios.get(`${baseUrlA}/website/banner?domain=${0}&platform=${1}`);
+      if (m_data.data && m_data.data.data && m_data.data.status !== "error") {
+        return m_data.data.data;
+      } else {
+        return null;
       }
-    );
-  }, []);
+    } catch (error) {
+      console.error("Error fetching maintenance data:", error);
+    }
+  };
 
   useEffect(() => {
     axios.get("https://api64.ipify.org/?format=json").then((resp) => {
@@ -121,6 +96,18 @@ const MyApp = ({ Component, pageProps, router }) => {
       });
   }, []);
 
+  useEffect(() => {
+    Cookie.remove("cartData");
+    Promise.all([fetchCampaignData(), fetchMaintenanceData(), OfferHeaderData()]).then(
+      (results) => {
+        setTimer_details(results[0]);
+        setMaintenance_details(results[1]);
+        setOfferHeader(results[2]);
+        setloading(false);
+      }
+    );
+  }, []);
+
   interface PageProps {
     seoHomePageData?: {
       metaTags: any[];
@@ -134,7 +121,6 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <>
       <Head>
-     
         {seoHomePageData?.seoPageType && (
           <>
             <title>{seoHomePageData?.title != "" && seoHomePageData?.title}</title>
@@ -144,16 +130,16 @@ const MyApp = ({ Component, pageProps, router }) => {
                   <meta
                     key={index}
                     name={tag?.name ? tag.name : ""}
-                    property={tag?.property ? tag.property : ""}
                     content={tag?.content ? tag.content : ""}
+                    property={tag?.property ? tag.property : ""}
                   />
                 );
               } else if (tag.property && tag.content && !tag.name) {
                 return (
                   <meta
                     key={index}
-                    property={tag?.property ? tag.property : ""}
                     content={tag?.content ? tag.content : ""}
+                    property={tag?.property ? tag.property : ""}
                   />
                 );
               } else if (tag.name && tag.content && !tag.property) {
@@ -164,80 +150,48 @@ const MyApp = ({ Component, pageProps, router }) => {
             })}
           </>
         )}
-        {/* {pageContent ? (
-          <>
-            <Script type="application/ld+json">
-              {JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Product",
-                aggregateRating: {
-                  "@type": "AggregateRating",
-                  ratingValue: (Math.floor(pageContent.ratings?.overall_rating * 2) / 2).toFixed(1),
-                  reviewCount: pageContent.ratings?.rating,
-                },
-                description: pageContent.seo_details?.seo_description,
-                mpn: pageContent?.sku,
-                sku: pageContent?.sku,
-                brand: {
-                  "@type": "Brand",
-                  name: "Whizlabs",
-                },
-                name: pageContent.seo_details?.seo_title,
-                seo_title: pageContent.seo_details?.seo_title,
-                image:
-                  process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-                  pageContent.seo_details?.featured_image?.replace("media/", ""),
-              })}
-            </Script>
-          </>
-        ) : null} */}
+
         {/* GOOGLE TAG MANAGER */}
-        {/* <Script
-        strategy="beforeInteractive"
-        >
-          {
-            `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {/* <Script strategy="beforeInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); 
-            })(window,document,'script','dataLayer','GTM-PV9429C')`
-          }
+            })(window,document,'script','dataLayer','GTM-PV9429C')`}
         </Script> */}
-
         {/* END GOOGLE TAG MANAGER */}
       </Head>
 
       <SessionProvider session={pageProps?.session}>
         <Provider store={store}>
-          {/* {!loading ? ( */}
-          <Layout
-            websiteSettings={websiteSettings}
-            menusList={MenuList}
-            footerData={FooterDataList}
-            ip_details={ipDetails}
-            promoData={promoData}
-            timer_details={timer_details}
-            maintenance_details={maintenance_details}
-            offerHeader={offerHeader}
-            cart_count={cart_count}
-            setCart_count={setCart_count}
-          >
-            <Component {...pageProps} promoData={promoData} timer_details={timer_details} />
-          </Layout>
-          {/* ) : (
+          {!loading ? (
+            <Layout
+              menusList={MenuList}
+              promoData={promoData}
+              ip_details={ipDetails}
+              cart_count={cart_count}
+              offerHeader={offerHeader}
+              footerData={FooterDataList}
+              timer_details={timer_details}
+              setCart_count={setCart_count}
+              websiteSettings={websiteSettings}
+              maintenance_details={maintenance_details}
+            >
+              <Component {...pageProps} promoData={promoData} timer_details={timer_details} />
+            </Layout>
+          ) : (
             <div
               style={{
-                display: "flex",
-                justifyContent: "center",
                 width: "100%",
                 height: "100vh",
+                display: "flex",
                 alignItems: "center",
-                padding: "20px",
+                justifyContent: "center",
               }}
             >
               <img src="/images/logo11.svg" width={"500px"} alt="Whizlabs Logo" />
             </div>
-          )} */}
+          )}
         </Provider>
       </SessionProvider>
     </>
