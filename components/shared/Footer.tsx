@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Axios from 'axios';
+import Axios from "axios";
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Footer = ({ data, pathName, bannerActive, user_type }) => {
@@ -43,7 +43,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
     else setFooterBottomMargin("0em");
   }, [bannerActive]);
 
-  //Getting popular courses 
+  //Getting popular courses
   // const [popularCourse, setPopularCourse] = useState([]);
   // const getPopularCourse = async () => {
   //   try {
@@ -98,11 +98,11 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     </li>
                   </>
                 )}
-                <li>
+                {/* <li>
                   <a href={process.env.NEXT_PUBLIC_BUSINESS_URL} target="_blank">
                     For Business
                   </a>
-                </li>
+                </li> */}
 
                 <li>
                   <a href="/library" target="_blank">
@@ -138,7 +138,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                   )}
                 </React.Fragment>
               ))}
-              
+
               {/* <React.Fragment >
                 <div className="block">
                   <div className="title">Categories</div>
@@ -211,12 +211,11 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                   </ul>
                 </div>
               </React.Fragment> */}
-              
             </div>
             <div className="app-block">
               <div className="left-app">
-                <span>Need help? Please</span>
-                <a className="icon-wp" target="_blank" href="//wa.me/916364678444">
+                <span>Need help? Please write us {"\u00A0"}</span>
+                {/* <a className="icon-wp" target="_blank" href="//wa.me/916364678444">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="22"
@@ -275,22 +274,16 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                       fill="black"
                     ></path>
                   </svg>
-                </a>
+                </a> */}
                 <a className="phone-nub" target="_blank" href="tel:+91 6364678444">
-                  +91 6364678444
+                  rnspath@gmail.com
                 </a>
               </div>
               <div className="right-app">
-                <a
-                  target="_blank"
-                  href="https://apps.apple.com/us/app/whizlabs/id1631714050?itsct=apps_box_link&itscg=30200"
-                >
+                <a target="_blank" href="https://apps.apple.com/">
                   <img className="img-full istore-btn" src="/images/app-store.svg" alt="" />
                 </a>
-                <a
-                  target="_blank"
-                  href="https://play.google.com/store/apps/details?id=learning.app.whizlabs"
-                >
+                <a target="_blank" href="https://play.google.com/store/">
                   <Image
                     width={1000}
                     height={1000}
@@ -308,13 +301,11 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
             </div>
 
             <div className="footer-copyright">
-              <p>© {new Date().getFullYear()}, Whizlabs Software Pvt. Ltd. All rights reserved.</p>
+              <p>
+                © {new Date().getFullYear()}, R N S PATH Software Pvt. Ltd. All rights reserved.
+              </p>
               <div className="social-icon">
-                <a
-                  className="icon"
-                  target="_blank"
-                  href="https://www.facebook.com/whizlabs.software/"
-                >
+                <a className="icon" target="_blank" href="https://www.facebook.com/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -328,7 +319,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     ></path>
                   </svg>
                 </a>
-                <a className="icon" target="_blank" href="https://twitter.com/whizlabs/">
+                <a className="icon" target="_blank" href="https://twitter.com/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"
@@ -369,11 +360,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     </g>
                   </svg>
                 </a>
-                <a
-                  className="icon"
-                  target="_blank"
-                  href="https://www.linkedin.com/company/whizlabs-software/"
-                >
+                <a className="icon" target="_blank" href="https://www.linkedin.com/company/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -387,11 +374,7 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     ></path>
                   </svg>
                 </a>
-                <a
-                  className="icon"
-                  target="_blank"
-                  href="https://www.youtube.com/c/WhizlabsSoftware/videos"
-                >
+                <a className="icon" target="_blank" href="https://www.youtube.com/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -422,14 +405,13 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
               <Image
                 width={1000}
                 height={1000}
-                // layout="responsive"
                 style={{
                   width: "100%",
                   height: "100%",
                 }}
                 className="img-full"
                 src="/images/logo11.svg"
-                alt="Whizlabs Logo"
+                alt="R N S PATH Logo"
               />
             </a>
           </Link>

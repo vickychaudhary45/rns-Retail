@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import { removeFromCart } from "../../redux/AddToCart/cart-actions";
 import { CircularProgress } from "@mui/material";
 import InboxIcon from "@mui/icons-material/Inbox";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import Tooltip from '@mui/material/Tooltip';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Tooltip from "@mui/material/Tooltip";
 
 const LibraryCourses = ({
   course,
@@ -31,16 +31,6 @@ const LibraryCourses = ({
       <Fade direction="up" key={idx.toString()}>
         <div className="list-item">
           <div className="couser-img">
-            {/* {userData && userData.data && userData.data.user_id && (
-              <div
-                className={`icon-whishlist ${checkWhislistStatus(course.id)}`}
-                onClick={(e) => handleWhislist(e, course.id, userData.data.user_id)}
-              >
-                <img className="img-full whishlist" src="/images/heart.svg" alt="" />
-                <img className="img-full whishlist-fill" src="/images/heart-border.svg" alt="" />
-              </div>
-            )} */}
-
             <img
               className="img-full"
               src={
@@ -73,22 +63,28 @@ const LibraryCourses = ({
               <div style={{ display: "flex", margin: 0 }}>
                 <a href={"/" + course.slug} target="_blank" style={{ margin: 0 }}>
                   <h3 className="title">
-                    <a target="_blank" style={{ margin: 0 }}>{course.title}</a>
+                    <a target="_blank" style={{ margin: 0 }}>
+                      {course.title}
+                    </a>
                   </h3>
                 </a>
                 {userData ? (
-                  <Tooltip title={whislist.includes(course.data_id) ? 'Remove from Wishlist' : 'Add to Wishlist'}>
-                  {whislist.includes(course.data_id) ? (
-                    <FavoriteIcon
-                      style={{ color: "red", cursor: "pointer", padding: "0 1rem" }}
-                      onClick={(e) => handleWhislist(e, course.data_id, userData.data.user_id)}
-                    />
-                  ) : (
-                    <FavoriteBorderIcon
-                      style={{ cursor: "pointer", padding: "0 1rem" }}
-                      onClick={(e) => handleWhislist(e, course.data_id, userData.data.user_id)}
-                    />
-                  )}
+                  <Tooltip
+                    title={
+                      whislist.includes(course.data_id) ? "Remove from Wishlist" : "Add to Wishlist"
+                    }
+                  >
+                    {whislist.includes(course.data_id) ? (
+                      <FavoriteIcon
+                        style={{ color: "red", cursor: "pointer", padding: "0 1rem" }}
+                        onClick={(e) => handleWhislist(e, course.data_id, userData.data.user_id)}
+                      />
+                    ) : (
+                      <FavoriteBorderIcon
+                        style={{ cursor: "pointer", padding: "0 1rem" }}
+                        onClick={(e) => handleWhislist(e, course.data_id, userData.data.user_id)}
+                      />
+                    )}
                   </Tooltip>
                 ) : (
                   ""
@@ -134,15 +130,6 @@ const LibraryCourses = ({
                     <span>{course.webCounts?.learners_count} Learners</span>
                   </div>
                 )}
-
-                {/* Free Test */}
-                {/* {+course.webCounts?.ft_count > 0 && (
-                  <div>
-                    <i className="icon-font-thumb"></i>
-                    <span>{course.webCounts?.pt_count} Practice Tests</span>
-                  </div>
-                )} */}
-                {/* No.of Questions */}
                 {+course.webCounts?.ques_count > 0 && (
                   <div>
                     <i className="icon-font-note2"></i>
@@ -179,25 +166,6 @@ const LibraryCourses = ({
               </div>
             </div>
             <div className="price-review-block-updated">
-              {/* <div className="price-block">
-                                      {(() => {
-                                        const oldPrice = calculateOldPrice(course);
-                                        const fixedPrice = calculateFixedPrice(course);
-  
-                                        if (fixedPrice === "₹0") {
-                                          return <span className="price test">{oldPrice}</span>;
-                                        } else {
-                                          return (
-                                            <>
-                                              <del className="old-price test">{oldPrice}</del>
-                                              <span className="price test">{fixedPrice}</span>
-                                            </>
-                                          );
-                                        }
-                                      })()}
-                                    </div> */}
-
-              {/* {course.ratings && course.ratings.rating > 0 ? ( */}
               <div
                 className="rating-block"
                 style={{
@@ -212,38 +180,6 @@ const LibraryCourses = ({
                   totalRating={course.ratings?.rating}
                 />
               </div>
-              {/* ) : (
-                ""
-              )} */}
-              {/* {
-                                          !sub_nt_exp && !userbought.includes(course.id) && (<>
-                                            <button
-                                            // style={{ padding: "0px" }}
-                                            className="btn btn-add-cart"
-                                            onClick={(e)=>handleCart(e,course)}
-                                            style={findcartcourse(course.id) != -1 ? {background:"green",padding:"0px",alignItems:"center"}:{}}
-                                          >
-                                              {(selectedCourse.includes(course.id) && findcartcourse(course.id) ==-1) && <>
-                                                <Oval
-                                                  height={25}
-                                                  width={25}
-                                                  color="white"
-                                                  wrapperStyle={{display:"block"}}
-                                                  wrapperClass=""
-                                                  visible={true}
-                                                  ariaLabel='oval-loading'
-                                                  secondaryColor="#f98600"
-                                                  strokeWidth={10}
-                                                  strokeWidthSecondary={10}
-                                                  
-                                                />
-                                              </>}
-                                              {
-                                                findcartcourse(course.id) ==-1?<>Add to cart</>:<>Added to cart</>
-                                              }
-                                          </button>
-                                          </>)
-                                        } */}
               <button
                 className={"btn btn-add-cart"}
                 style={{

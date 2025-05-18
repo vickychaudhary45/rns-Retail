@@ -856,7 +856,7 @@ const Header = ({
                               </div>
                               {/* </div> */}
                             </Menu>
-                            <li>
+                            {/* <li>
                               <a
                                 rel="noopener"
                                 target="_blank"
@@ -864,7 +864,7 @@ const Header = ({
                               >
                                 For Business
                               </a>
-                            </li>
+                            </li> */}
                             {user_type != "amazon" && (
                               <>
                                 <li

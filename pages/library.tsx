@@ -291,7 +291,7 @@ const Category = ({
     setloading(true);
     setExpired([]);
     setPage(0);
-    getcourses()
+    // getcourses()
   }, [
     checkedCategories,
     checkedProductTypes,
@@ -304,10 +304,10 @@ const Category = ({
   useEffect(() => {
     setloading(true)
     if(page != 0){
-      getcourses();
+      // getcourses();
     }
     if (countData == null) {
-      getCounts();
+      // getCounts();
     }
   }, [page]);
 
@@ -707,14 +707,14 @@ const Category = ({
       updateaftersignin == false &&
       handleAddProductToCartLoading == false
     ) {
-      getCartData(userData.data.token);
+      // getCartData(userData.data.token);
     }
   }, [handleAddProductToCartLoading, updateaftersignin, userData]);
 
   useEffect(() => {
     if (userData == null) {
       //post method to get the current price of products
-      getCartfromCookie();
+      // getCartfromCookie();
     }
   }, [cartData, userData]);
 

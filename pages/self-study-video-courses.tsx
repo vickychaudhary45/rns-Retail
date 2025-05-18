@@ -484,7 +484,7 @@ const Videocouse = ({ userSubscriptionData, seoHomePageData }) => {
               <h2>
                 Listen To What <strong>Our Learners Have To Say</strong>
               </h2>
-              <div className="slider-blocks keen-slider" ref={sliderRef}>
+              {/* <div className="slider-blocks keen-slider" ref={sliderRef}>
                 <div
                   className="learner keen-slider__slide"
                   onClick={() =>
@@ -581,7 +581,7 @@ const Videocouse = ({ userSubscriptionData, seoHomePageData }) => {
                   </div>
                   <div className="gradient"></div>
                 </div>
-              </div>
+              </div> */}
               {(loaded && instanceRef.current && isBreakpoint == 2) ||
                 (isBreakpoint == 1 && (
                   <div className="learners-arrow">

@@ -98,14 +98,15 @@ const MyApp = ({ Component, pageProps, router }) => {
 
   useEffect(() => {
     Cookie.remove("cartData");
-    Promise.all([fetchCampaignData(), fetchMaintenanceData(), OfferHeaderData()]).then(
-      (results) => {
-        setTimer_details(results[0]);
-        setMaintenance_details(results[1]);
-        setOfferHeader(results[2]);
-        setloading(false);
-      }
-    );
+    // Promise.all([fetchCampaignData(), fetchMaintenanceData(), OfferHeaderData()]).then(
+    //   (results) => {
+    //     setTimer_details(results[0]);
+    //     setMaintenance_details(results[1]);
+    //     setOfferHeader(results[2]);
+    //     setloading(false);
+    //   }
+    // );
+    setloading(false);
   }, []);
 
   interface PageProps {

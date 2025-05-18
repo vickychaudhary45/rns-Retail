@@ -53,7 +53,7 @@ export default class BaseDoc extends Document {
               __html: `window.fpsetting = {app_id: 1011705058645}`,
             }}
           /> */}
-          <script src='https://www.dwin1.com/76012.js' type='text/javascript'></script>
+          {/* <script src='https://www.dwin1.com/76012.js' type='text/javascript'></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -104,7 +104,7 @@ export default class BaseDoc extends Document {
               width="0"
               style={{ display: "none", visibility: "hidden" }}
             ></iframe>
-          </noscript>
+          </noscript> */}
         </Head>
         <body>
           <Main />

@@ -20,14 +20,14 @@ import * as ga from "../lib/ga";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import InboxIcon from "@mui/icons-material/Inbox";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import {CircularProgress} from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { updateRedirection } from "../redux/Redirection/redirect-actions";
-import {RotatingLines } from "react-loader-spinner";
+import { RotatingLines } from "react-loader-spinner";
 import CartCombo from "@/components/Cartcombo/cartcombo";
 import { StoreWhishlist } from "../redux/whislist/whislist-actions";
 import { alertBox } from "../redux/AlertBox/alert-actions";
 import Tooltip from "@mui/material/Tooltip";
-import Styles from "../public/styles/cart.module.css"
+import Styles from "../public/styles/cart.module.css";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -63,17 +63,19 @@ const EmptyCart = () => (
         >
           Your cart is empty. <br /> Keep browsing to find a course!
         </p>
-        <Link legacyBehavior  href="/library/"
-            className="btn find-course-btn"
-            style={{
-              width: "100%",
-              maxWidth: "180px",
-              backgroundColor: "#2aa0d1",
-              textDecoration: "none",
-              color: "#fff",
-            }}
-          >
-            Find a Course
+        <Link
+          legacyBehavior
+          href="/library/"
+          className="btn find-course-btn"
+          style={{
+            width: "100%",
+            maxWidth: "180px",
+            backgroundColor: "#2aa0d1",
+            textDecoration: "none",
+            color: "#fff",
+          }}
+        >
+          Find a Course
         </Link>
       </div>
     </div>
@@ -121,11 +123,11 @@ const Cart = ({
   });
   const [currentLoadingD, setCurrentlyLoadingD] = useState({
     courseId: null,
-  });  
+  });
   const [loading, setloading] = useState(false);
-  const [showFreebies,setfreebies] = useState(false)
-  const [fullcourseSelected,setfullcourseSelected] = useState(false)
-  const [autoApplycoupon,setautoapplycoupon] = useState(false)
+  const [showFreebies, setfreebies] = useState(false);
+  const [fullcourseSelected, setfullcourseSelected] = useState(false);
+  const [autoApplycoupon, setautoapplycoupon] = useState(false);
 
   useEffect(() => {
     // Facebook Pixel
@@ -143,7 +145,7 @@ const Cart = ({
 
   useEffect(() => {
     // clear the coupon datas
-    updateCouponDatas(null);
+    // updateCouponDatas(null);
     // if (userData === null) {
     //   router.push("/");
     // }
@@ -162,11 +164,11 @@ const Cart = ({
     if (CartData.data) {
       cartData = CartData.data.cart_details;
     }
-    storeCartCountAction(cartData.length)
+    storeCartCountAction(cartData.length);
     if (cartData && cartData.length > 0) {
       setCartItems(cartData);
-      if(CouponStateData && !autoApplycoupon){
-       await handleCouponApply()
+      if (CouponStateData && !autoApplycoupon) {
+        await handleCouponApply();
       }
       setCurrentlyLoading({
         courseId: null,
@@ -179,12 +181,123 @@ const Cart = ({
   };
 
   const getCartfromCookie = async () => {
-    let cart = await axios.post(`${baseUrl}/cart/getprices`, {
-      cart_details: stateCart,
-    });
-    if (cart.data.cart_details) {
-      setCartItems(cart.data.cart_details);
-      storeCartCountAction(cart.data.cart_details.length)
+    // let cart = await axios.post(`${baseUrl}/cart/getprices`, {
+    //   cart_details: stateCart,
+    // });
+    let cart = {
+      cart_details: [
+        {
+          courseId: 261,
+          selectedCourseType: ["pt", "oc", "lab"],
+          whizcard: "",
+          courseName: "Docker Certified Associate (DCA)",
+          courseSlug: "docker-certified-associate",
+          courseImage: "Docker-Certified-Associate.webp",
+          course_id: 261,
+          course_page_id: 37,
+          course_details: [
+            {
+              course_type: "lab",
+              sale_price: {
+                inr: "1499",
+                usd: "19.95",
+                gbp: "19.95",
+                eur: "19.95",
+              },
+              regular_price: {
+                inr: "1999",
+                usd: "29.95",
+                gbp: "29.95",
+                eur: "29.95",
+              },
+            },
+            {
+              course_type: "oc",
+              sale_price: {
+                usd: "19.95",
+                gbp: "19.95",
+                eur: "19.95",
+                inr: "1499",
+              },
+              regular_price: {
+                usd: "29.95",
+                gbp: "29.95",
+                eur: "29.95",
+                inr: "1999",
+              },
+            },
+            {
+              course_type: "pt",
+              sale_price: {
+                usd: "29.95",
+                gbp: "29.95",
+                eur: "29.95",
+                inr: "1999",
+              },
+              regular_price: {
+                usd: "39.95",
+                gbp: "39.95",
+                eur: "39.95",
+                inr: "2999",
+              },
+            },
+          ],
+          courseType: ["lab", "oc", "pt"],
+          PtRegPrice: {
+            usd: "39.95",
+            gbp: "39.95",
+            eur: "39.95",
+            inr: "2999",
+          },
+          PtSalePrice: {
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+            inr: "1999",
+          },
+          OcSalePrice: {
+            usd: "19.95",
+            gbp: "19.95",
+            eur: "19.95",
+            inr: "1499",
+          },
+          OcRegPrice: {
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+            inr: "1999",
+          },
+          LabSalePrice: {
+            inr: "1499",
+            usd: "19.95",
+            gbp: "19.95",
+            eur: "19.95",
+          },
+          LabRegPrice: {
+            inr: "1999",
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+          },
+          SandboxSalePrice: 0,
+          SandboxRegPrice: 0,
+        },
+      ],
+    };
+    // if (cart.data.cart_details) {
+    //   setCartItems(cart.data.cart_details);
+    //   storeCartCountAction(cart.data.cart_details.length);
+    //   setCurrentlyLoading({
+    //     courseId: null,
+    //     productType: null,
+    //   });
+    //   setloading(false);
+    // } else {
+    //   setCartItems([]);
+    // }
+    if (cart.cart_details) {
+      setCartItems(cart.cart_details);
+      storeCartCountAction(cart.cart_details.length);
       setCurrentlyLoading({
         courseId: null,
         productType: null,
@@ -203,9 +316,9 @@ const Cart = ({
       handleAddProductToCartLoading == false
     ) {
       setloading(true);
-      getCartData(userData.data.token);
+      // getCartData(userData.data.token);
     }
-  }, [handleAddProductToCartLoading,updateaftersignin,userData]);
+  }, [handleAddProductToCartLoading, updateaftersignin, userData]);
 
   useEffect(() => {
     if (userData == null) {
@@ -243,22 +356,22 @@ const Cart = ({
     }
   }, [cartItems]);
 
-  const getFreebies = async()=>{
-    let freebies_sub = await axios.get(`${baseUrl}/orders/freebies/subscription/bf2023`,{
+  const getFreebies = async () => {
+    let freebies_sub = await axios.get(`${baseUrl}/orders/freebies/subscription/bf2023`, {
       headers: {
         Authorization: userData.data.token,
       },
-    })
-    if(freebies_sub.data){
-      setfreebies(freebies_sub.data.showFreebies == true ? true : false)
+    });
+    if (freebies_sub.data) {
+      setfreebies(freebies_sub.data.showFreebies == true ? true : false);
     }
-  }
-  useEffect(()=>{
-    if(removeCoupons && userData){
-      getFreebies()
+  };
+  useEffect(() => {
+    if (removeCoupons && userData) {
+      // getFreebies();
     }
-  },[removeCoupons,userData])
-  
+  }, [removeCoupons, userData]);
+
   const priceFormat = (value) => parseFloat(value).toFixed(2);
 
   const openCheckoutPage = async (e) => {
@@ -267,11 +380,11 @@ const Cart = ({
       router.push("/checkout");
     } else {
       document.querySelector("body").classList.add("open-modal-login");
-      updateCartAfterLoginAction(true)
+      updateCartAfterLoginAction(true);
     }
   };
-  const handleCouponApply = async()=>{
-    setautoapplycoupon(true)
+  const handleCouponApply = async () => {
+    setautoapplycoupon(true);
     setCouponLoading(true);
     const response = await axios.post(`${baseUrl}/cart/coupon/verify`, {
       user_id: userData.data.user_id,
@@ -290,8 +403,8 @@ const Cart = ({
       }
       const finalCal = response.data.data.discounted_price;
       setFinalTotal(finalCal);
-      setCouponData(response.data.data)
-      setSubTotal(response.data.data.total_price)
+      setCouponData(response.data.data);
+      setSubTotal(response.data.data.total_price);
       setSavingsBagWithDisc(savingsBag + response.data.data.total_discount);
       setDiscount(response.data.data.total_discount);
       const cookieCartId = cookie.get("cart_id");
@@ -305,9 +418,9 @@ const Cart = ({
       });
     }
     setCouponLoading(false);
-  }
+  };
   const handleCoupon = async (e) => {
-    if(typeof e == "object"){
+    if (typeof e == "object") {
       e.preventDefault();
     }
     setCouponLoading(true);
@@ -362,7 +475,7 @@ const Cart = ({
       setSavingsBagWithDisc(0);
       setDiscount(0);
       setCouponLoading(false);
-      setautoapplycoupon(false)
+      setautoapplycoupon(false);
     }
   };
 
@@ -375,31 +488,35 @@ const Cart = ({
       let SANDBOX = 0;
       let savingTotal = 0;
 
-      let fullcourse = cartItems.filter((itm)=> itm.selectedCourseType.length == itm.courseType.length)
-      if(fullcourse.length > 0){
-        setfullcourseSelected(true)
-      }else{
-        setfullcourseSelected(false)
+      let fullcourse = cartItems.filter(
+        (itm) => itm.selectedCourseType.length == itm.courseType.length
+      );
+      if (fullcourse.length > 0) {
+        setfullcourseSelected(true);
+      } else {
+        setfullcourseSelected(false);
       }
-      let cart_unwantedCourseFound = false
+      let cart_unwantedCourseFound = false;
       //removing unwanted courseTypes
 
-      cartItems.forEach((itm)=>{
-        if(!(itm.selectedCourseType.length == 1 && itm.selectedCourseType[0].includes('sandbox-'))){
-          itm.selectedCourseType.forEach(async(x)=>{
-            if(!itm.courseType.includes(x)){
+      cartItems.forEach((itm) => {
+        if (
+          !(itm.selectedCourseType.length == 1 && itm.selectedCourseType[0].includes("sandbox-"))
+        ) {
+          itm.selectedCourseType.forEach(async (x) => {
+            if (!itm.courseType.includes(x)) {
               cart_unwantedCourseFound = true;
-              await removeFromCartStore(itm.courseId,x, currency.type);
+              await removeFromCartStore(itm.courseId, x, currency.type);
             }
-          })
+          });
         }
-      })
+      });
 
-      if(cart_unwantedCourseFound){
-        window.location.reload()
+      if (cart_unwantedCourseFound) {
+        window.location.reload();
       }
-      
-      if(CouponStateData == null){
+
+      if (CouponStateData == null) {
         cartItems.forEach((item) => {
           if (item.isCampaign) {
             setRemoveCoupons(item.isCampaign);
@@ -439,7 +556,8 @@ const Cart = ({
               item.selectedCourseType.includes("sandbox-6") ||
               item.selectedCourseType.includes("sandbox-3") ||
               item.selectedCourseType.includes("sandbox-1")) &&
-            (typeof item.SandboxSalePrice == 'object' && item.SandboxSalePrice[currency.type]) &&
+            typeof item.SandboxSalePrice == "object" &&
+            item.SandboxSalePrice[currency.type] &&
             !item.enrolled_product_types?.includes("sandbox")
           ) {
             SANDBOX += parseFloat(item.SandboxSalePrice[currency.type]);
@@ -449,11 +567,11 @@ const Cart = ({
           }
         });
         const total = PT + OC + LAB + SANDBOX;
-          setSubTotal(total);
-          setFinalTotal(total - discount);
-          setSavingsBag(savingTotal);
+        setSubTotal(total);
+        setFinalTotal(total - discount);
+        setSavingsBag(savingTotal);
       }
-    
+
       ga.ecommerceEvent({
         eventType: "addToCart",
         currency: currency?.type || "",
@@ -466,8 +584,8 @@ const Cart = ({
 
   const handleAddProductToCart = async (e, course_id, course_type) => {
     if (currentLoading.courseId != null) return;
-    if(CouponStateData){
-      setautoapplycoupon(false)
+    if (CouponStateData) {
+      setautoapplycoupon(false);
     }
     setHandleAddProductToCartLoading(true);
     setCurrentlyLoading({
@@ -485,8 +603,8 @@ const Cart = ({
 
   const handleRemoveFromcart = async (course_id, type) => {
     if (currentLoading.courseId != null) return;
-    if(CouponStateData){
-      setautoapplycoupon(false)
+    if (CouponStateData) {
+      setautoapplycoupon(false);
     }
     setHandleAddProductToCartLoading(true);
     setCurrentlyLoading({
@@ -510,25 +628,23 @@ const Cart = ({
       // console.log("removed")
     }
     await removeFromCartStore(course_id, type, currency.type);
-    if (
-      course &&
-      course.selectedCourseType.length == 1) {
-        const localCombo = JSON.parse(localStorage.getItem("selectedCombo")) || [];
-        if(localCombo.length > 0){
-         const data=  localCombo.filter((item) => {
-            //@ts-ignore
-            const values: number[] = Object.values(item)[0];
-            return values.includes(course_id)
-          })
+    if (course && course.selectedCourseType.length == 1) {
+      const localCombo = JSON.parse(localStorage.getItem("selectedCombo")) || [];
+      if (localCombo.length > 0) {
+        const data = localCombo.filter((item) => {
+          //@ts-ignore
+          const values: number[] = Object.values(item)[0];
+          return values.includes(course_id);
+        });
 
-          if(data.length > 0){
-            const key = Object.keys(data[0])[0]
-            const newCombo = localCombo.filter((item) => item !== data[0])
-            localStorage.setItem("selectedCombo", JSON.stringify(newCombo))
-          }
+        if (data.length > 0) {
+          const key = Object.keys(data[0])[0];
+          const newCombo = localCombo.filter((item) => item !== data[0]);
+          localStorage.setItem("selectedCombo", JSON.stringify(newCombo));
         }
+      }
     }
-    
+
     // console.log("removed")
     setHandleAddProductToCartLoading(false);
   };
@@ -591,7 +707,7 @@ const Cart = ({
     if (inCart) {
       await handleRemoveFromcartT(product_id);
     }
-    if (checkWhislistStatus(product_id) !== "active") {      
+    if (checkWhislistStatus(product_id) !== "active") {
       await addWhislist(product_id, user_id, currency.type);
       alertBoxAction({
         type: "SUCCESS",
@@ -600,7 +716,6 @@ const Cart = ({
       });
     }
   };
-
 
   return (
     <>
@@ -659,23 +774,23 @@ const Cart = ({
                           {cartItems.map((item, index) => (
                             <div className="item" key={index}>
                               <figure className="course-img">
-                                <Link legacyBehavior  href={"/" + item.courseSlug}>
-                                    <img
-                                      className="img-full"
-                                      src={
-                                        process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-                                        item.courseImage.replace("media/", "")
-                                      }
-                                      alt={item.courseName}
-                                      title={item.courseName}
-                                      onError={({ currentTarget }) => {
-                                        currentTarget.onerror = null; // prevents looping
-                                        currentTarget.src = "/images/no-image.png";
-                                      }}
-                                    />
+                                <Link legacyBehavior href={"/" + item.courseSlug}>
+                                  <img
+                                    className="img-full"
+                                    src={
+                                      process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
+                                      item.courseImage.replace("media/", "")
+                                    }
+                                    alt={item.courseName}
+                                    title={item.courseName}
+                                    onError={({ currentTarget }) => {
+                                      currentTarget.onerror = null; // prevents looping
+                                      currentTarget.src = "/images/no-image.png";
+                                    }}
+                                  />
                                 </Link>
                                 <div className="title">
-                                  <Link legacyBehavior  href={"/" + item.courseSlug}>
+                                  <Link legacyBehavior href={"/" + item.courseSlug}>
                                     {item.courseName}
                                   </Link>
                                 </div>
@@ -683,61 +798,68 @@ const Cart = ({
                               <div className="item-details">
                                 <div style={{ display: "flex", justifyContent: "space-between" }}>
                                   <div className="title" style={{ margin: "0" }}>
-                                    <Link href={"/" + item.courseSlug}>
-                                        {item.courseName}
-                                    </Link>
+                                    <Link href={"/" + item.courseSlug}>{item.courseName}</Link>
                                   </div>
-                                  {
-                                    userData && <>
-                                      {currentLoadingD.courseId == item.courseId
-                                     ? (
-                                      <CircularProgress
-                                        style={{
-                                          color: "green",
-                                          width: "20px",
-                                          height: "20px",
-                                          marginRight: "0",
-                                          padding: "5px",
-                                        }}
-                                      />
-                                    ) : (
-                                      <Tooltip
-                                        title={`${hover == item.courseId ? "Move to Wishlist" : ""}`}
-                                        placement="top"
-                                        arrow
-                                        slotProps={{
-                                          popper: {
-                                            modifiers: [
-                                              {
-                                                name: "offset",
-                                                options: {
-                                                  offset: [0, -5],
+                                  {userData && (
+                                    <>
+                                      {currentLoadingD.courseId == item.courseId ? (
+                                        <CircularProgress
+                                          style={{
+                                            color: "green",
+                                            width: "20px",
+                                            height: "20px",
+                                            marginRight: "0",
+                                            padding: "5px",
+                                          }}
+                                        />
+                                      ) : (
+                                        <Tooltip
+                                          title={`${
+                                            hover == item.courseId ? "Move to Wishlist" : ""
+                                          }`}
+                                          placement="top"
+                                          arrow
+                                          slotProps={{
+                                            popper: {
+                                              modifiers: [
+                                                {
+                                                  name: "offset",
+                                                  options: {
+                                                    offset: [0, -5],
+                                                  },
                                                 },
-                                              },
-                                            ],
-                                          },
-                                        }}
-                                      >
-                                        <div onClick={(e) => handleWhislist(e, item.courseId, userData.data.user_id)}
-                                        className={Styles.imageMain}
+                                              ],
+                                            },
+                                          }}
                                         >
-                                        <div className={Styles.imageContainer}
-                                          onMouseOver={() => setHover(item.courseId)}
-                                        >
-                                          <img
-                                            src="/images/add-to-favorites.png"
-                                            alt="loading..."
-                                            style={{
-                                              width: "20px",
-                                            }}
-                                            className={Styles.favoriteImage}
-                                          />
+                                          <div
+                                            onClick={(e) =>
+                                              handleWhislist(
+                                                e,
+                                                item.courseId,
+                                                userData.data.user_id
+                                              )
+                                            }
+                                            className={Styles.imageMain}
+                                          >
+                                            <div
+                                              className={Styles.imageContainer}
+                                              onMouseOver={() => setHover(item.courseId)}
+                                            >
+                                              <img
+                                                src="/images/add-to-favorites.png"
+                                                alt="loading..."
+                                                style={{
+                                                  width: "20px",
+                                                }}
+                                                className={Styles.favoriteImage}
+                                              />
+                                            </div>
                                           </div>
-                                        </div>
-                                      </Tooltip>                
-                                    )}
+                                        </Tooltip>
+                                      )}
                                     </>
-                                  }
+                                  )}
                                 </div>
                                 <ul className="option-group ankit">
                                   <>
@@ -929,7 +1051,7 @@ const Cart = ({
                                     {/* HANDS-ON-LABS */}
                                     {(() => {
                                       if (
-                                        item.courseType.includes("lab" || "labs") &&
+                                        (item.courseType.includes("lab") || item.courseType.includes("labs")) &&
                                         !item.enrolled_product_types?.includes("LAB")
                                       ) {
                                         if (item.selectedCourseType.includes("lab")) {
@@ -1061,11 +1183,11 @@ const Cart = ({
                                               <div
                                                 className="option-title"
                                                 style={{
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "center",
-                                                marginLeft: "8px"
-                                              }}
+                                                  display: "flex",
+                                                  alignItems: "center",
+                                                  justifyContent: "center",
+                                                  marginLeft: "8px",
+                                                }}
                                               >
                                                 {/* Sandbox ({item.courseType[0].split("-")[1]} Month
                                               {+item.courseType[0].split("-")[1] > 1 ? "s" : ""}) */}
@@ -1087,15 +1209,19 @@ const Cart = ({
                                                 <div className="price-block">
                                                   <del className="old-price">
                                                     {currency.symbol}
-                                                    {typeof item.SandboxRegPrice == 'object' ?priceFormat(
-                                                      item.SandboxRegPrice[currency.type]
-                                                    ):""}
+                                                    {typeof item.SandboxRegPrice == "object"
+                                                      ? priceFormat(
+                                                          item.SandboxRegPrice[currency.type]
+                                                        )
+                                                      : ""}
                                                   </del>
                                                   <span className="price">
                                                     {currency.symbol}
-                                                    {typeof item.SandboxSalePrice == 'object' ? priceFormat(
-                                                      item.SandboxSalePrice[currency.type]
-                                                    ):""}
+                                                    {typeof item.SandboxSalePrice == "object"
+                                                      ? priceFormat(
+                                                          item.SandboxSalePrice[currency.type]
+                                                        )
+                                                      : ""}
                                                   </span>
                                                 </div>
                                                 <div
@@ -1141,7 +1267,11 @@ const Cart = ({
                                                 ) : (
                                                   <>
                                                     Cloud Sandbox &nbsp;
-                                                      {item.sandbox_validity != "global" ?<>({item.sandbox_validity}&nbsp;Months)</>:""}
+                                                    {item.sandbox_validity != "global" ? (
+                                                      <>({item.sandbox_validity}&nbsp;Months)</>
+                                                    ) : (
+                                                      ""
+                                                    )}
                                                     &nbsp;
                                                   </>
                                                 )}
@@ -1184,61 +1314,58 @@ const Cart = ({
                                         }
                                       }
                                     })()}
-                                  {
-                                    userData ? 
-                                      item.whizcard != "" &&
-                                      item.whizcard != null &&
-                                      item.enrolled_product_types?.length == 0 && (
-                                        <>
-                                          <li className="option">
-                                            <div className="option-title">
-                                              <div className="productIconIcon">
-                                                <PictureAsPdfIcon
-                                                  style={{ padding: "0 6px 3px 9px" }}
-                                                />
-                                                &nbsp;Whizcard
+                                    {userData
+                                      ? item.whizcard != "" &&
+                                        item.whizcard != null &&
+                                        item.enrolled_product_types?.length == 0 && (
+                                          <>
+                                            <li className="option">
+                                              <div className="option-title">
+                                                <div className="productIconIcon">
+                                                  <PictureAsPdfIcon
+                                                    style={{ padding: "0 6px 3px 9px" }}
+                                                  />
+                                                  &nbsp;Whizcard
+                                                </div>
                                               </div>
-                                            </div>
-                                            <div className="option-right">
-                                              <div className="price-block">
-                                                <span
-                                                  className="price"
-                                                  style={{ marginRight: "24px" }}
-                                                >
-                                                  FREE
-                                                </span>
+                                              <div className="option-right">
+                                                <div className="price-block">
+                                                  <span
+                                                    className="price"
+                                                    style={{ marginRight: "24px" }}
+                                                  >
+                                                    FREE
+                                                  </span>
+                                                </div>
                                               </div>
-                                            </div>
-                                          </li>
-                                        </>
-                                      )
-                                    : 
-                                    item.whizcard != "" &&
-                                    item.whizcard != null  && (
-                                      <>
-                                        <li className="option">
-                                          <div className="option-title">
-                                            <div className="productIconIcon">
-                                              <PictureAsPdfIcon
-                                                style={{ padding: "0 6px 3px 9px" }}
-                                              />
-                                              &nbsp;Whizcard
-                                            </div>
-                                          </div>
-                                          <div className="option-right">
-                                            <div className="price-block">
-                                              <span
-                                                className="price"
-                                                style={{ marginRight: "24px" }}
-                                              >
-                                                FREE
-                                              </span>
-                                            </div>
-                                          </div>
-                                        </li>
-                                      </>
-                                    )
-                                  }
+                                            </li>
+                                          </>
+                                        )
+                                      : item.whizcard != "" &&
+                                        item.whizcard != null && (
+                                          <>
+                                            <li className="option">
+                                              <div className="option-title">
+                                                <div className="productIconIcon">
+                                                  <PictureAsPdfIcon
+                                                    style={{ padding: "0 6px 3px 9px" }}
+                                                  />
+                                                  &nbsp;Whizcard
+                                                </div>
+                                              </div>
+                                              <div className="option-right">
+                                                <div className="price-block">
+                                                  <span
+                                                    className="price"
+                                                    style={{ marginRight: "24px" }}
+                                                  >
+                                                    FREE
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </li>
+                                          </>
+                                        )}
                                   </>
                                 </ul>
                               </div>
@@ -1246,25 +1373,37 @@ const Cart = ({
                           ))}
 
                           {/* black friday freebies info */}
-                          {
-                          ( !loading && showFreebies  && !fullcourseSelected&& <>
-                            <div className="freebies-cart">
-                              <div className="item">
-                                <div className="item-details small-info" style={{textAlign:"center",padding:"10px"}}>
-                                  <InfoOutlinedIcon/><br></br>
-                                    Buy all course types in <Link legacyBehavior  href='/library'>individuval course</Link> and get<br/>
-                                    <strong>7 Days Free Premium  Subscription plan</strong>
+                          {!loading && showFreebies && !fullcourseSelected && (
+                            <>
+                              <div className="freebies-cart">
+                                <div className="item">
+                                  <div
+                                    className="item-details small-info"
+                                    style={{ textAlign: "center", padding: "10px" }}
+                                  >
+                                    <InfoOutlinedIcon />
+                                    <br></br>
+                                    Buy all course types in{" "}
+                                    <Link legacyBehavior href="/library">
+                                      individuval course
+                                    </Link>{" "}
+                                    and get
+                                    <br />
+                                    <strong>7 Days Free Premium Subscription plan</strong>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                          </>)
-                        }
-                          { !loading && showFreebies  && fullcourseSelected &&
-                              <div className="freebies-cart">
-                                <span className="pay-title">Freebies-Included</span>
-                                {<div className="item">
+                            </>
+                          )}
+                          {!loading && showFreebies && fullcourseSelected && (
+                            <div className="freebies-cart">
+                              <span className="pay-title">Freebies-Included</span>
+                              {
+                                <div className="item">
                                   <div className="item-details">
-                                    <div className="title"><a>Subscription</a></div>
+                                    <div className="title">
+                                      <a>Subscription</a>
+                                    </div>
                                     <ul className="option-group">
                                       <li className="option">
                                         <div className="option-title">Premium Plus (7-Days)</div>
@@ -1276,9 +1415,10 @@ const Cart = ({
                                       </li>
                                     </ul>
                                   </div>
-                                </div>}
-                              </div>
-                            }
+                                </div>
+                              }
+                            </div>
+                          )}
                         </div>
 
                         {/* <!-- Cart Summary --> */}
@@ -1321,7 +1461,7 @@ const Cart = ({
                                     <strong>
                                       {" "}
                                       {currency.symbol}
-                                      {(couponData.discounted_price).toFixed(2)}
+                                      {couponData.discounted_price.toFixed(2)}
                                     </strong>
                                   </span>
                                 </div>
@@ -1330,7 +1470,6 @@ const Cart = ({
                                 {currency && currency.symbol == "$" ? "US" : ""}
                                 {currency.symbol}
                                 {priceFormat(finalTotal)}
-                                
                               </span>
                             </div>
                             <a onClick={openCheckoutPage} className="btn btn-checkout">
@@ -1342,14 +1481,13 @@ const Cart = ({
                             <div className="promo-code">
                               <form>
                                 <input
-                                  value={couponData !== null ? upperCoupon :coupon}
+                                  value={couponData !== null ? upperCoupon : coupon}
                                   readOnly={couponData !== null}
                                   type="text"
-                                  onChange={(e) =>{
-                                      setUpperCoupon(e.target.value.toUpperCase().trim())
-                                      setCoupon(e.target.value.toLowerCase().trim())
-                                    }
-                                  }                                  
+                                  onChange={(e) => {
+                                    setUpperCoupon(e.target.value.toUpperCase().trim());
+                                    setCoupon(e.target.value.toLowerCase().trim());
+                                  }}
                                   placeholder="Enter Promo Code"
                                 />
                                 <button
@@ -1402,7 +1540,7 @@ const Cart = ({
                     {/* <SubscribeCourse /> */}
                   </>
                 )}
-                <CartCombo cart={cartItems} currency={currency} userData = {userData}/>
+                {/* <CartCombo cart={cartItems} currency={currency} userData={userData} /> */}
               </div>
             </>
           )}
@@ -1418,8 +1556,8 @@ const mapStateToProps = (state) => {
     userData: state.authData.userData,
     currencyData: state.ipDetails.currency_detail,
     redirectTo: state.redirectData.redirect_to,
-    updateaftersignin:state.cart.updateaftersignin,
-    CouponStateData:state.cart.couponData,
+    updateaftersignin: state.cart.updateaftersignin,
+    CouponStateData: state.cart.couponData,
     whislist: state.whislist.whislist,
     // subscriptionData : state.userProfileData.userSubscriptionData
   };
@@ -1429,12 +1567,13 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addToCartStore: (id, type, currency) => dispatch(addToCart(id, type, currency)),
     removeFromCartStore: (id, type, currency) => dispatch(removeFromCart(id, type, currency)),
-    removeFromCartStoreWithId: (id, type, currency) => dispatch(removeFromCartWithId(id, type, currency)),
+    removeFromCartStoreWithId: (id, type, currency) =>
+      dispatch(removeFromCartWithId(id, type, currency)),
     updateCouponDatas: (data) => dispatch(updateCoupon(data)),
-    storeCartCountAction:(count)=>dispatch(updateCartCount(count)),
-    updateCartAfterLoginAction:(data)=>dispatch(updateCartAfterLogin(data)),
+    storeCartCountAction: (count) => dispatch(updateCartCount(count)),
+    updateCartAfterLoginAction: (data) => dispatch(updateCartAfterLogin(data)),
     addWhislist: (course_id, user_id, currency) =>
-    dispatch(StoreWhishlist(course_id, user_id, currency)),
+      dispatch(StoreWhishlist(course_id, user_id, currency)),
     alertBoxAction: (data) => dispatch(alertBox(data)),
   };
 };
@@ -1479,17 +1618,21 @@ export async function getServerSideProps() {
     seoPageType: "cart",
     title: "Cart | Whizlabs",
     metaTags: [
-      { httpEquiv: "", name: "facebook-domain-verification", property: "", content: "twh401qzi7r7o3n227q4sg3hghbpzh" },
+      {
+        httpEquiv: "",
+        name: "facebook-domain-verification",
+        property: "",
+        content: "twh401qzi7r7o3n227q4sg3hghbpzh",
+      },
       { httpEquiv: "cache-control", name: "", property: "", content: "no-cache" },
       { httpEquiv: "expires", name: "", property: "", content: "0" },
       { httpEquiv: "pragma", name: "", property: "", content: "no-cache" },
     ],
   };
-  
-  
+
   return {
     props: {
       seoHomePageData,
-    }, 
+    },
   };
 }

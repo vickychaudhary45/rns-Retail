@@ -47,11 +47,10 @@ const Testimonials = ({ data }) => {
               Listen To What Our <strong> Learners Have To Say </strong>
             </h5>
           </div>
-          <div className="keen-theme" style={{ overflow: "hidden" }}>
+          {/* <div className="keen-theme" style={{ overflow: "hidden" }}>
             <div className="slider-blocks keen-slider" ref={sliderRef}>
               {data.map((item) => (
                 <div className="block keen-slider__slide" key={item.id}>
-                  {/* <h5>{data.title}</h5> */}
                   <div
                     className="testimonial-message"
                     dangerouslySetInnerHTML={{ __html: item.message }}
@@ -111,7 +110,7 @@ const Testimonials = ({ data }) => {
                 />
               </div>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </>

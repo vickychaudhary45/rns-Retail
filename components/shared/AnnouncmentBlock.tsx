@@ -12,15 +12,15 @@ const AnnouncmentBlock = ({ staticpage, headless, subscribedUser }) => {
   useEffect(() => {
     let isMounted = true;
 
-    axios.get(baseUrl + "/web/banner").then((resp) => {
-      if (isMounted) {
-        resp.data.data.forEach((item) => {
-          if (item.display_type == "top_bar") {
-            setBanner(item.offer);
-          }
-        });
-      }
-    });
+    // axios.get(baseUrl + "/web/banner").then((resp) => {
+    //   if (isMounted) {
+    //     resp.data.data.forEach((item) => {
+    //       if (item.display_type == "top_bar") {
+    //         setBanner(item.offer);
+    //       }
+    //     });
+    //   }
+    // });
 
     return () => {
       isMounted = false;

@@ -10,30 +10,30 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const FTCourseLibrary = (props) => {
   const { pageData = null } = props;
 
-  let catList = pageData.map((Itm) => Itm.category);
-  catList = [...new Set(catList)];
+  let catList = [];
+  // let catList = pageData.map((Itm) => Itm.category);
+  // catList = [...new Set(catList)];
 
-
-  return pageData ? <FTLibraryBlock catList={catList} pageData={pageData} /> : <>Loading...</>;
+  return !pageData ? <FTLibraryBlock catList={catList} pageData={pageData} /> : <>Loading...</>;
 };
 
-export async function getServerSideProps() {
-  const ftPageResp = await axios.post(`${baseUrl}/courses/ft`);
+// export async function getServerSideProps() {
+//   const ftPageResp = await axios.post(`${baseUrl}/courses/ft`);
 
-  if (!ftPageResp.data || !ftPageResp.data.data) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
+//   if (!ftPageResp.data || !ftPageResp.data.data) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
 
-  return {
-    props: {
-      pageData: ftPageResp.data.data,
-    },
-  };
-}
+//   return {
+//     props: {
+//       pageData: ftPageResp.data.data,
+//     },
+//   };
+// }
 
 export default FTCourseLibrary;

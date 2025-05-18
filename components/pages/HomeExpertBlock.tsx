@@ -87,7 +87,7 @@ const HomeExpertBlock = () => {
           <div className="block">
             <div className="caption">
               <span></span>
-              <h4>WHIZLABS EXAM SIMULATOR</h4>
+              <h4>EXAM SIMULATOR</h4>
               <p style={{ textAlign: "left" }}>
                 Get ready to test your <br /> skill gaps
               </p>

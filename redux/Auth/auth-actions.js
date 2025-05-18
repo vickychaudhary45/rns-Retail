@@ -230,16 +230,16 @@ export const authLogout = () => {
       let UserData = cookie.get('userData')
       if(UserData){
         let token = (JSON.parse(UserData)).data.token
-        await axios
-        .get(`${baseUrl}/auth/logout`, {
-          headers: { Authorization: token },
-        })
-        .then(({ status, statusText }) => {
-          if (status === 500) {
-            console.error(statusText);
-          }
-        })
-        .catch((e) => console.error(e));
+        // await axios
+        // .get(`${baseUrl}/auth/logout`, {
+        //   headers: { Authorization: token },
+        // })
+        // .then(({ status, statusText }) => {
+        //   if (status === 500) {
+        //     console.error(statusText);
+        //   }
+        // })
+        // .catch((e) => console.error(e));
       }
       localStorage.removeItem("cartData");
       cookie.remove('cart_count')

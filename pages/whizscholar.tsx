@@ -51,19 +51,19 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
     });
 
     if (recaptchaVerified) {
-      const { data } = await axios.post(baseUrl + "/web/scholarship-program", insertData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      e.target.reset(); // reset form inputs
-      recaptcha.current.reset();
-      setLoading(false);
-      alertBoxAction({
-        type: "SUCCESS",
-        title: "We have received your submission.",
-        msg: "Your application for the Whizscholar program has successfully reached us.",
-      });
+      // const { data } = await axios.post(baseUrl + "/web/scholarship-program", insertData, {
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      // });
+      // e.target.reset(); // reset form inputs
+      // recaptcha.current.reset();
+      // setLoading(false);
+      // alertBoxAction({
+      //   type: "SUCCESS",
+      //   title: "We have received your submission.",
+      //   msg: "Your application for the Whizscholar program has successfully reached us.",
+      // });
     } else {
       alertBoxAction({
         type: "ERROR",
@@ -155,7 +155,7 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
 
       <div className="scholarship-page">
         {/* <!-- banner-part --> */}
-        <div className="banner-block">
+        {/* <div className="banner-block">
           <div
             className="banner"
             style={{ background: "url('/images/scholar-banner.jpg') no-repeat center" }}
@@ -178,10 +178,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </figure>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- workforce-block --> */}
-        <div className="workforce-block">
+        {/* <div className="workforce-block">
           <div className="container-small">
             <div className="caption">
               <div className="title">
@@ -214,10 +214,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- unique-block --> */}
-        <div className="unique-block">
+        {/* <div className="unique-block">
           <div className="container-small">
             <div className="title">
               <span>How is Whizscholar</span> Program Unique?
@@ -255,10 +255,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- offer-block --> */}
-        <div className="offer-block">
+        {/* <div className="offer-block">
           <div className="container-small">
             <div className="block-group">
               <figure className="img-block">
@@ -319,10 +319,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </figure>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- how-apply --> */}
-        <div className="how-apply">
+        {/* <div className="how-apply">
           <div className="container-small">
             <div className="title">
               <h2>How to apply for the scholarship</h2>
@@ -353,10 +353,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- which-program --> */}
-        <div className="which-program faq-block">
+        {/* <div className="which-program faq-block">
           <div className="container-small">
             <div className="caption">
               <h3 className="title">
@@ -466,7 +466,7 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
                                             </Link>
                                           </h6>
                                           <div className="level-text">
-                                            {/* <label className="bestseller">Bestseller</label> */}
+                                          
                                             {item.other_attributes?.course_level &&
                                               item.other_attributes.course_level.toLowerCase() !==
                                                 "select level" && (
@@ -541,10 +541,10 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* <!-- form-block --> */}
-        <div className="form-block" id="scholar-ship-form">
+        {/* <div className="form-block" id="scholar-ship-form">
           <div className="container-small">
             <div className="caption-block">
               <div className="title">
@@ -679,7 +679,7 @@ const WhizScholar = ({ alertBoxAction, datas, currencyData, categoryList, seoHom
               </form>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <ContactUsAction text={"Give us your contact details, we will contact you back shortly."} />
       </div>
@@ -791,106 +791,106 @@ export async function getStaticProps(context) {
   let java_list = [];
 
   // AWs
-  for (let i = 0; i < aws.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: aws[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        aws_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < aws.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: aws[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       aws_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   // Micorsoft
-  for (let i = 0; i < microsoft.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: microsoft[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        microsoft_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < microsoft.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: microsoft[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       microsoft_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   // Google
-  for (let i = 0; i < google.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: google[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        google_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < google.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: google[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       google_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   // devops
-  for (let i = 0; i < devops.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: devops[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        devops_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < devops.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: devops[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       devops_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   // pmp
-  for (let i = 0; i < pmp.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: pmp[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        pmp_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < pmp.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: pmp[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       pmp_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   // java
-  for (let i = 0; i < java.length; i++) {
-    try {
-      let courseResponse = await axios.get(baseUrl + "/courses", {
-        params: {
-          course_id: java[i],
-          get_detail_info: 1,
-        },
-      });
-      if (courseResponse && courseResponse.data.data.id) {
-        java_list.push(courseResponse.data.data);
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
+  // for (let i = 0; i < java.length; i++) {
+  //   try {
+  //     let courseResponse = await axios.get(baseUrl + "/courses", {
+  //       params: {
+  //         course_id: java[i],
+  //         get_detail_info: 1,
+  //       },
+  //     });
+  //     if (courseResponse && courseResponse.data.data.id) {
+  //       java_list.push(courseResponse.data.data);
+  //     }
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
 
   return {
     props: {

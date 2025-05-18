@@ -8,22 +8,26 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 import { connect } from "react-redux";
 import { alertBox } from "../redux/AlertBox/alert-actions";
 import { loadScript } from "helpers/customHooks";
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/material.css'
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/material.css";
 const JS_SCRIPT = "https://www.google.com/recaptcha/api.js";
 
 const Contact = ({ alertBoxAction, seoHomePageData }) => {
   const recaptcha = useRef(null);
   const [recaptchaVerified, SetRecaptchaVerified] = useState(false);
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const [loading, setLoading] = useState(false);
   const [errMsg, setErrMsg] = useState("");
-  const [phonenumber,setPhonenumber] = useState("91")
-  const [phonewithoutdails,setPhonewithoutdail] = useState("")
-  const [isValidPhone,setIsValidPhone] = useState(true)
-  const [countryData,setCountryData] = useState(null)
-  
-  
+  const [phonenumber, setPhonenumber] = useState("91");
+  const [phonewithoutdails, setPhonewithoutdail] = useState("");
+  const [isValidPhone, setIsValidPhone] = useState(true);
+  const [countryData, setCountryData] = useState(null);
+
   const validateInputFields = (value) => {
     if (value.trim().length !== value.length) {
       return false;
@@ -32,26 +36,24 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
   };
   const validateInputFieldName = (value) => {
     if (!value.trim()) {
-      return 'This field is required';
+      return "This field is required";
     }
     if (!/^(?!^\s+$)[a-zA-Z ]+$/.test(value)) {
-      return 'Only alphabetic characters are allowed';
+      return "Only alphabetic characters are allowed";
     }
     return true;
   };
   useEffect(() => {
     loadScript(JS_SCRIPT);
   }, []);
-  useEffect(()=>{
-    if(countryData && phonenumber)
-    {
-      let new_phone = phonenumber.slice(countryData.countryCode.length)
-      if(new_phone.length == 0)
-      {
-        setIsValidPhone(false)
+  useEffect(() => {
+    if (countryData && phonenumber) {
+      let new_phone = phonenumber.slice(countryData.countryCode.length);
+      if (new_phone.length == 0) {
+        setIsValidPhone(false);
       }
     }
-  },[phonenumber,countryData])
+  }, [phonenumber, countryData]);
   const subjectOptions = {
     data: [
       {
@@ -126,7 +128,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
   };
 
   const onSubmit = async (formData, e) => {
-    let new_phone = phonenumber.slice(countryData.countryCode.length)
+    let new_phone = phonenumber.slice(countryData.countryCode.length);
     // if(new_phone.length > 0 )
     // {
     //   let number = "+" + phonenumber
@@ -142,11 +144,10 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
     // }
     setLoading(true);
 
-
     const insertData = JSON.stringify({
       name: formData.full_name,
       email: formData.email,
-      phone:new_phone.length > 0 ?"+" + phonenumber:"",
+      phone: new_phone.length > 0 ? "+" + phonenumber : "",
       subject: formData.subject,
       description: formData.description,
     });
@@ -159,8 +160,8 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
       });
 
       // setErrMsg("Thank you for contacting us. Our team will contact you shortly.");
-      setPhonenumber("91")
-      setIsValidPhone(false)
+      setPhonenumber("91");
+      setIsValidPhone(false);
       e.target.reset(); // reset form inputs
       alertBoxAction({
         type: "SUCCESS",
@@ -241,7 +242,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               <br />
               <a href="tel:916364678444">+91-6364678444</a>
             </div>
-            <div className="block">
+            {/* <div className="block">
               <figure>
                 <img className="img-full" src="/images/corporate-building.svg" alt="" />
               </figure>
@@ -250,7 +251,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               <br />
               <a href="tel:919091849091">+91-9091849091</a>
             </div>
-            {/* <div className="block">
+            <div className="block">
               <figure>
                 <img className="img-full" src="/images/invoice.svg" alt="" />
               </figure>
@@ -282,50 +283,46 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                   ></a>
                 </li>
                 <li>
-                  <a
-                    href="https://twitter.com/whizlabs"
-                    className="icon"
-                    target="_blank"
-                  >
+                  <a href="https://twitter.com/whizlabs" className="icon" target="_blank">
                     <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="50"
-                    height="30"
-                    zoomAndPan="magnify"
-                    viewBox="0 0 375 374.9999"
-                    preserveAspectRatio="xMidYMid meet"
-                    version="1.0"
-                    fill="#ffffff"
-                  >
-                    <defs>
-                      <path
-                        d="M 7.09375 7.09375 L 367.84375 7.09375 L 367.84375 367.84375 L 7.09375 367.84375 Z M 7.09375 7.09375 "
-                        fill="#ffffff"
-                      ></path>
-                    </defs>
-                    <g>
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="50"
+                      height="30"
+                      zoomAndPan="magnify"
+                      viewBox="0 0 375 374.9999"
+                      preserveAspectRatio="xMidYMid meet"
+                      version="1.0"
+                      fill="#ffffff"
+                    >
+                      <defs>
+                        <path
+                          d="M 7.09375 7.09375 L 367.84375 7.09375 L 367.84375 367.84375 L 7.09375 367.84375 Z M 7.09375 7.09375 "
+                          fill="#ffffff"
+                        ></path>
+                      </defs>
+                      <g>
                         <path
                           d="M 187.46875 7.09375 C 87.851562 7.09375 7.09375 87.851562 7.09375 187.46875 C 7.09375 287.085938 87.851562 367.84375 187.46875 367.84375 C 287.085938 367.84375 367.84375 287.085938 367.84375 187.46875 C 367.84375 87.851562 287.085938 7.09375 187.46875 7.09375 "
                           fillOpacity="1"
                           fillRule="nonzero"
                           fill="#ffffff"
                         ></path>
-                    </g>
-                    <g transform="translate(85, 75)">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        version="1.1"
-                        height="215"
-                        width="215"
-                      >
-                        <path
-                          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                          fill="#000000"
-                        ></path>
-                      </svg>
-                    </g>
-                  </svg>
+                      </g>
+                      <g transform="translate(85, 75)">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          version="1.1"
+                          height="215"
+                          width="215"
+                        >
+                          <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                            fill="#000000"
+                          ></path>
+                        </svg>
+                      </g>
+                    </svg>
                   </a>
                 </li>
                 <li>
@@ -365,7 +362,11 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                       type="text"
                       className="bg-ghostwhite"
                       name="full_name"
-                      {...register("full_name",{ required: true , pattern: /^(?!^\s+$)[a-zA-Z ]+$/ ,validate:validateInputFieldName  })}
+                      {...register("full_name", {
+                        required: true,
+                        pattern: /^(?!^\s+$)[a-zA-Z ]+$/,
+                        validate: validateInputFieldName,
+                      })}
                       // ref={register({ required: true , pattern: /^(?!^\s+$)[a-zA-Z ]+$/ ,validate:validateInputFieldName  })}
                     />
                     {errors.full_name?.type === "required" && (
@@ -383,9 +384,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                       type="email"
                       className="bg-ghostwhite"
                       name="email"
-                      {...register(
-                        "email",
-                        {
+                      {...register("email", {
                         required: true,
                         pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                       })}
@@ -401,7 +400,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                       <span style={{ color: "red" }}>Please enter valid email.</span>
                     )}
                   </div>
-                  <div className="input-box" style={{marginTop:"24px"}}>
+                  <div className="input-box" style={{ marginTop: "24px" }}>
                     {/* <input
                       type="tel"
                       className="bg-ghostwhite"
@@ -413,12 +412,12 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                     {errors.phone && errors.phone.type =="pattern" &&  (
                       <span style={{ color: "red" }}>Please enter valid phone number.</span>
                     )} */}
-                   <PhoneInput
+                    <PhoneInput
                       enableSearch={true}
                       enableTerritories={true}
                       value={phonenumber}
                       countryCodeEditable={false}
-                      onChange={phone => {
+                      onChange={(phone) => {
                         setPhonenumber(phone);
                       }}
                       // defaultErrorMessage='Invalid value'
@@ -426,24 +425,25 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                         setCountryData(country);
                         const phoneNumberRegex = /^[1-9]\d{8,14}$/; // Update the regex as needed
                         //@ts-ignore
-                      const tmpValue =   value.slice(country.countryCode.length)
-                        if(tmpValue.length >0){
-
+                        const tmpValue = value.slice(country.countryCode.length);
+                        if (tmpValue.length > 0) {
                           if (!phoneNumberRegex.test(tmpValue)) {
-                            setIsValidPhone(false)
-                            return false
+                            setIsValidPhone(false);
+                            return false;
                           } else {
-                            setIsValidPhone(true)
+                            setIsValidPhone(true);
                             return true;
                           }
                         }
-                        setIsValidPhone(true)
-                        return true
-                        }}
+                        setIsValidPhone(true);
+                        return true;
+                      }}
                     />
-                    {!isValidPhone &&<>
-                      <span style={{color:"red"}}>Enter Valid Phone Number</span>
-                    </>}
+                    {!isValidPhone && (
+                      <>
+                        <span style={{ color: "red" }}>Enter Valid Phone Number</span>
+                      </>
+                    )}
                   </div>
                   <div className="input-box">
                     <label>
@@ -452,7 +452,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                     <div className="selectbox">
                       <select
                         name="subject"
-                        {...register("subject",{ required: true })}
+                        {...register("subject", { required: true })}
                         // ref={register({ required: true })}
                         style={{
                           display: "block",
@@ -480,17 +480,23 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                     <label>
                       Describe Briefly <span style={{ color: "red" }}>*</span>
                     </label>
-                    <textarea name="description" 
-                    {...register("description",{ required: true ,validate:validateInputFields  })}
-                    // ref={register({ required: true ,validate:validateInputFields  })}
+                    <textarea
+                      name="description"
+                      {...register("description", {
+                        required: true,
+                        validate: validateInputFields,
+                      })}
+                      // ref={register({ required: true ,validate:validateInputFields  })}
                     ></textarea>
-                    {errors.description &&( errors.description.type === "required" || errors.description.type==="validate") && (
-                      <span style={{ color: "red" }}>This field is required</span>
-                    )}
+                    {errors.description &&
+                      (errors.description.type === "required" ||
+                        errors.description.type === "validate") && (
+                        <span style={{ color: "red" }}>This field is required</span>
+                      )}
                   </div>
                 </div>
                 <div className="captcha-img">
-                <ReCAPTCHA
+                  <ReCAPTCHA
                     ref={recaptcha}
                     sitekey="6LeuGo4UAAAAAIZ6-Na4KHV_sIEJNjt-XlRO-Jgk"
                     onChange={verifyCallback}
@@ -524,7 +530,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               </div>
               <div className="block">
                 <h3>
-                Head Office
+                  Head Office
                   <br />
                   <span>Whizlabs Software Private Limited</span>
                 </h3>
@@ -551,10 +557,9 @@ const mapDispatchToProps = (dispatch) => {
 
 export default connect(null, mapDispatchToProps)(Contact);
 
-
 export async function getServerSideProps() {
   const seoHomePageData = {
-    seoPageType: "contactUsPage", 
+    seoPageType: "contactUsPage",
     title: "Contact Us | Whizlabs",
     metaTags: [
       {
@@ -584,8 +589,7 @@ export async function getServerSideProps() {
       {
         name: "",
         property: "og:image",
-        content:
-          process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d04f1",
+        content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d04f1",
       },
       { name: "", property: "fb:app_id", content: "502194103558420" },
       { name: "", property: "og:image:width", content: "500" },
@@ -601,13 +605,12 @@ export async function getServerSideProps() {
       { name: "twitter:site", property: "", content: "@whizlabs" },
       {
         name: "twitter:image",
-        content:
-          process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d0549",
+        content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d0549",
       },
       { name: "twitter:creator", property: "", content: "@whizlabs" },
     ],
   };
-  
+
   return {
     props: {
       seoHomePageData,

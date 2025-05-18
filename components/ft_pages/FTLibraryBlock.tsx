@@ -38,7 +38,7 @@ const FTLibraryBlock = ({ pageData, catList }) => {
               Click and Jump to the <span>Courses</span>
             </div>
             <div className="img-group">
-              {catList.includes(1) && (
+              {/* {catList.includes(1) && (
                 <figure>
                   <a href="#amazon">
                     <img className="img-full" src="/images/aws.svg" alt="" />
@@ -65,7 +65,7 @@ const FTLibraryBlock = ({ pageData, catList }) => {
                     <img className="img-full" src="/images/devops.svg" alt="" />
                   </a>
                 </figure>
-              )}
+              )} */}
             </div>
           </div>
         </div>

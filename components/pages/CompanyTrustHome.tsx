@@ -7,6 +7,11 @@ import Image from "next/image";
 function CompanyTrust() {
   const CategoryData = [
     {
+      link: "oracle-java-certifications",
+      imglink: "g5.webp",
+      name: "Java",
+    },
+    {
       link: "cloud-certification-training-courses",
       imglink: "g1.webp",
       name: "Cloud",
@@ -26,11 +31,7 @@ function CompanyTrust() {
       imglink: "g4.webp",
       name: "Microsoft",
     },
-    {
-      link: "oracle-java-certifications",
-      imglink: "g5.webp",
-      name: "Java",
-    },
+
     {
       link: "linux-certifications",
       imglink: "g6.webp",
@@ -59,7 +60,6 @@ function CompanyTrust() {
                   <div className="imagediv">
                     <i style={{ fontStyle: "50px" }}>
                       <img
-                    
                         className="vector"
                         src={`${process.env.NEXT_PUBLIC_WEB_MEDIA_URL}${cat.imglink}`}
                         alt="Category"
@@ -81,7 +81,7 @@ function CompanyTrust() {
       <TestimonialsBlock />
       <TextReviews />
       <div className="group-12230" style={{ paddingTop: "50px" }}>
-        <h1 className="bebasneue-normal-thunder-98px ">500+ Companies trust Whizlabs</h1>
+        <h1 className="bebasneue-normal-thunder-98px ">500+ Companies trust</h1>
         <div className="group-12229">
           {/* <div className="group"> */}
           {/* <Group49 src="logo-jp-1.png" /> */}
@@ -89,7 +89,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="logo-deloitte2x-1"
               src="/images/lp1.webp"
               alt="logo-deloitte2x 1"
@@ -99,7 +98,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="logo-global-knowledge-1"
               src="/images/lp2.webp"
               alt="logo-global-knowledge 1"
@@ -109,7 +107,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="logo-campgemni2x-1"
               src="/images/lp3.webp"
               alt="logo-campgemni2x 1"
@@ -119,7 +116,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="logo-telefonica-1"
               src="/images/lp4.webp"
               alt="logo-telefonica 1"
@@ -140,7 +136,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="logo-digi-1"
               src="/images/lp10.webp"
               alt="logo-digi 1"
@@ -151,7 +146,6 @@ function CompanyTrust() {
             <Image
               width={176}
               height={52}
-              
               className="lp12.webp"
               src="/images/lp12.webp"
               alt="logo-spatial 1"
@@ -171,14 +165,7 @@ function Group49(props) {
 
   return (
     <div className={`group-49 ${className || ""}`}>
-      <Image
-        width={176}
-        height={52}
-        
-        className="logo-1"
-        src={src}
-        alt="logo-jp 1"
-      />
+      <Image width={176} height={52} className="logo-1" src={src} alt="logo-jp 1" />
     </div>
   );
 }
@@ -188,14 +175,7 @@ function Group54(props) {
 
   return (
     <div className={`group-49 ${className || ""}`}>
-      <Image
-        width={176}
-        height={52}
-        
-        className="logo-1"
-        src={src}
-        alt="logo-tuv 1"
-      />
+      <Image width={176} height={52} className="logo-1" src={src} alt="logo-tuv 1" />
     </div>
   );
 }
@@ -205,14 +185,7 @@ function Group59(props) {
 
   return (
     <div className={`group-49 ${className || ""}`}>
-      <Image
-        width={176}
-        height={52}
-        
-        className="logo-2"
-        src={src}
-        alt="logo-kpmg 1"
-      />
+      <Image width={176} height={52} className="logo-2" src={src} alt="logo-kpmg 1" />
     </div>
   );
 }

@@ -50,10 +50,10 @@ function ExploreSection2(props) {
         <Tabs value={value} onChange={handleChange} aria-label="basictabs">
           <Tab label="For Individuals" {...a11yProps(0)} />
 
-          <Tab label="For Business" {...a11yProps(1)} />
+          {/* <Tab label="For Individuals" {...a11yProps(1)} /> */}
         </Tabs>
       </div>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={1}>
         <div className="explore-individual">
           <div className="individualImage">
             <Image
@@ -104,34 +104,6 @@ function ExploreSection2(props) {
                 <span>&nbsp;</span>
                 <span>Videos</span>
               </div>
-              <div className="listtext">
-                <Image
-                  height={24}
-                  width={24}
-                  loading="lazy"
-                  className="labs-icons-1"
-                  src="/images/labstest.png"
-                  alt="lab"
-                />
-                &nbsp;&nbsp;
-                <span>750+</span>
-                <span>&nbsp;</span>
-                <span>Hands-on Labs</span>
-              </div>
-              <div className="listtext">
-                <Image
-                  height={24}
-                  width={24}
-                  loading="lazy"
-                  className="labs-icons-1"
-                  src="/images/labsSandbox5.png"
-                  alt="sandbox"
-                />
-                &nbsp;&nbsp;
-                <span></span>
-                {/* <span >&nbsp;</span> */}
-                <span>Cloud Sandboxes</span>
-              </div>
               <div>
                 <Link href="/library">
                   <button className="bannerButton">
@@ -143,7 +115,7 @@ function ExploreSection2(props) {
           </div>
         </div>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={0}>
         <div className="explore-individual">
           <div
             className="individualImage"
@@ -152,7 +124,6 @@ function ExploreSection2(props) {
             <Image
               width={1000}
               height={1000}
-              // layout="responsive"
               style={{
                 width: "100%",
                 height: "100%",
@@ -164,21 +135,30 @@ function ExploreSection2(props) {
           </div>
           <div className="individualContent">
             <div className="group-19">
-              <h1>
+              {/* <h1>
                 upskill your <br />
                 workforce <br />
                 @5X SPEED
+              </h1> */}
+              <h1 className="custom-h1">
+                Shape your skills
+                <br />
+                and transform
+                <br />
+                your career
               </h1>
-              <div className="listtext TextDiv">
+              <div className="listtext">
                 <Image
                   height={24}
                   width={24}
                   loading="lazy"
                   src="/images/pttest.png"
-                  alt="PT"
-                  style={{ margin: 0 }}
+                  alt="whizlabs hands on labs for aws microsoft azure google cloud"
                 />
-                <div className="insideText">Create learning paths for your team</div>
+                &nbsp;&nbsp;
+                <span>25,000+</span>
+                <span>&nbsp;</span>
+                <span>Practice Questions</span>
               </div>
               <div className="listtext TextDiv">
                 <Image
@@ -189,7 +169,18 @@ function ExploreSection2(props) {
                   alt="OC"
                   style={{ margin: 0 }}
                 />
-                <div className="insideText">Track your Team's Learning Progress</div>
+                <div className="insideText">Track your Learning Progress</div>
+              </div>
+              <div className="listtext TextDiv">
+                <Image
+                  height={24}
+                  width={24}
+                  loading="lazy"
+                  src="/images/pttest.png"
+                  alt="PT"
+                  style={{ margin: 0 }}
+                />
+                <div className="insideText">Create learning paths for yourself</div>
               </div>
               <div className="listtext TextDiv">
                 <Image
@@ -201,7 +192,6 @@ function ExploreSection2(props) {
                   alt="lab"
                   style={{ margin: 0 }}
                 />
-
                 <div className="insideText">Fasten your on-boarding & upskilling requirements</div>
               </div>
               <div>
@@ -210,7 +200,6 @@ function ExploreSection2(props) {
                     <b>Explore Now</b>
                   </button>
                 </a>
-                {/* <button className="bannerButton"><a href={process.env.NEXT_PUBLIC_BUSINESS_URL}></a><b>Explore Now</b></button> */}
               </div>
             </div>
           </div>

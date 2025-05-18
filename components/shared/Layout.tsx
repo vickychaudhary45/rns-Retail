@@ -190,7 +190,7 @@ const Layout = ({
     }
   }
 
-  websiteSettings.forEach(function (item) {
+  websiteSettings?.forEach(function (item) {
     if (item.key == "website_header_script") {
       headerScripts = item.value;
     }
