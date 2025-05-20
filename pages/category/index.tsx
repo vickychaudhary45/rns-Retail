@@ -78,12 +78,12 @@ const Categories = ({
   const [courseBought, setCoursesBought] = useState([]);
 
   useEffect(() => {
-    if (!pageData?.parent_id && pageData?.children.length > 0) {
+    if (!pageData?.parent_id && pageData?.children?.length > 0) {
       setName("");
     }
   }, [pageData]);
 
-  if (!pageData?.parent_id && pageData?.children.length > 0) {
+  if (!pageData?.parent_id && pageData?.children?.length > 0) {
     // This is a main category like cloudcomputing
     categoryIds.push(...pageData.children.map((item) => item.id));
     categorySelectDropdown.push(

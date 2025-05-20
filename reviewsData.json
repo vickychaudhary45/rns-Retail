@@ -1,0 +1,480 @@
+{
+  "msg": "User Course Review data",
+  "pagination": {
+    "perPage": "10",
+    "currentPage": "1",
+    "from": 0,
+    "to": 10,
+    "total": 1142,
+    "lastPage": 115,
+    "prevPage": null,
+    "nextPage": "11"
+  },
+  "data": [
+    {
+      "post_question_id": 548631,
+      "post_question_title": "Perfect Exams",
+      "post_question_text": "Before taking the AWS Cloud Practitioner exam, I practiced with exams on Whizlabs. The questions were very similar to the actual AWS exam, and I passed.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 780871,
+      "created_at": "2025-04-25T08:05:26.577Z",
+      "post_addition": {
+        "review_id": 29307,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Hasan Kadir Demircan",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [
+        {
+          "post_answer_id": 221150,
+          "post_answer_or_question_id": 548631,
+          "post_answer_sequence": null,
+          "post_answer_text": "<p>Dear User,</p>\n<p>Greetings from Whizlabs!</p>\n<p>Thank you for sharing your feedback with us. We greatly value your input as it helps us improve our platform and services.</p>\n<p>If you need any assistance, please don't hesitate to reach out. We're here to support you in your learning journey.</p>\n<p>Regards,</p>\n<p>Jai Shree</p>",
+          "post_answer_score": 0,
+          "post_answer_created_on_date": null,
+          "post_answer_owner_userid": 365,
+          "post_answer_last_edit_date": null,
+          "post_answer_last_editor_userid": null,
+          "post_answer_accepted_comment": null,
+          "post_answer_comment_count": 0,
+          "post_answer_favorite_count": 0,
+          "post_answer_status": 1,
+          "deleted_at": null,
+          "created_at": "2025-04-28T12:25:01.610Z",
+          "updated_at": "2025-04-28T12:25:01.610Z"
+        }
+      ],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": true,
+      "user_name": "Hasan Kadir",
+      "profile_pic": null,
+      "linkedin": null
+    },
+    {
+      "post_question_id": 533375,
+      "post_question_title": "Good content",
+      "post_question_text": "The content helped me pass the certification. I recommend it.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1838938,
+      "created_at": "2025-03-13T23:46:45.450Z",
+      "post_addition": {
+        "review_id": 29242,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Gabriel Spina",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [
+        {
+          "post_answer_id": 219712,
+          "post_answer_or_question_id": 533375,
+          "post_answer_sequence": null,
+          "post_answer_text": "<p>Dear User,</p>\n<p>Greetings from Whizlabs!</p>\n<p>Thank you for sharing your feedback with us. We greatly value your input as it helps us improve our platform and services.</p>\n<p>If you need any assistance, please don't hesitate to reach out. We're here to support you in your learning journey.</p>\n<p>Regards,</p>\n<p>Anusapriya S</p>",
+          "post_answer_score": 0,
+          "post_answer_created_on_date": null,
+          "post_answer_owner_userid": 364,
+          "post_answer_last_edit_date": null,
+          "post_answer_last_editor_userid": null,
+          "post_answer_accepted_comment": null,
+          "post_answer_comment_count": 0,
+          "post_answer_favorite_count": 0,
+          "post_answer_status": 1,
+          "deleted_at": null,
+          "created_at": "2025-03-14T09:29:49.728Z",
+          "updated_at": "2025-03-14T09:29:49.728Z"
+        }
+      ],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": true,
+      "user_name": "Gabriel",
+      "profile_pic": "https://lh3.googleusercontent.com/a/AAcHTtdv1K63XevsoJ0mSgkkVldfetlhRSRv9tUUdzSWRMAP=s96-c",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 529634,
+      "post_question_title": "My Journey with Whizlabs: Achieving AWS Certifications",
+      "post_question_text": "I have been using Whizlabs for two years and have cleared several certifications with its help. The practice exams were excellent, providing real-world questions and valuable learning experiences. The mistakes were highlighted with clear explanations, which helped me understand the correct answers. The best part was the exam simulation practice questions, which played a crucial role in helping me achieve cloud certifications",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1411945,
+      "created_at": "2025-03-05T07:35:34.021Z",
+      "post_addition": {
+        "review_id": 29220,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "BHANU PRAKASH L",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "BHANU PRAKASH",
+      "profile_pic": "309239316_1638162782.png",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 526679,
+      "post_question_title": "I already post it with reviews",
+      "post_question_text": "I primarily used Whizlabs for their excellent video classes, but what truly stood out were the hands-on labs. These labs provided invaluable real-world experience, allowing me to work on technologies and topics that I don’t have access to in my current role. The platform offers well-structured, practical content that aligns with certification requirements. Whether you're preparing for an exam or looking to gain hands-on experience to advance your career, Whizlabs is a fantastic resource. I highly recommend it to anyone serious about skill-building and professional growth!",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1841024,
+      "created_at": "2025-02-24T05:41:51.262Z",
+      "post_addition": {
+        "review_id": 29199,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Moises Delos Reyes",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "Moises",
+      "profile_pic": "746146628_1738861447.png",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 525356,
+      "post_question_title": "Awesome Product",
+      "post_question_text": "A wide range of Labs and Video Course such as VM's, VN, databases.. Etc. this course more then az900. Thanks to WHIZLABS.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1774127,
+      "created_at": "2025-02-22T13:30:09.656Z",
+      "post_addition": {
+        "review_id": 29196,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "devisrinivas  pattem",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": true,
+      "user_name": "devisrinivas ",
+      "profile_pic": "https://lh3.googleusercontent.com/a/AEdFTp6sJuIv3Z6IMSaGFnOfl-Mww2bfm_G6tl86AQr9Zg=s96-c",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 513926,
+      "post_question_title": "Detailed Explanations",
+      "post_question_text": "It has rich practice sessions and tests.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1873918,
+      "created_at": "2025-02-13T12:49:16.943Z",
+      "post_addition": {
+        "review_id": 29171,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Raj Thoppay",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "Raj",
+      "profile_pic": null,
+      "linkedin": null
+    },
+    {
+      "post_question_id": 505099,
+      "post_question_title": "Very Helpful product and services",
+      "post_question_text": "I used whizlabs subscription for AWS cources and practice test. It really help me for my studies and passing the actual exam. The course content is super . I recommend this product to all users for study and exam preparations.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 678301,
+      "created_at": "2025-02-07T13:20:04.514Z",
+      "post_addition": {
+        "review_id": 29161,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Amit Kashikar",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "Amit",
+      "profile_pic": null,
+      "linkedin": null
+    },
+    {
+      "post_question_id": 497105,
+      "post_question_title": "Great resource for Practice Tests",
+      "post_question_text": "I am really grateful to the entire team at Whizlabs who have prepared AWS Cloud Foundation course. The questions are very insightful and helpful in preparing from my exam. I actually passed the exam with a great score. Thanks.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 524632,
+      "created_at": "2025-01-12T03:40:09.255Z",
+      "post_addition": {
+        "review_id": 29115,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Ashwin .Saxena",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [
+        {
+          "post_answer_id": 218033,
+          "post_answer_or_question_id": 497105,
+          "post_answer_sequence": null,
+          "post_answer_text": "<p>Dear User,</p>\n<p>Greetings from Whizlabs!</p>\n<p>Thank you for sharing your feedback with us. We greatly value your input as it helps us improve our platform and services.</p>\n<p>If you need any assistance, please don't hesitate to reach out. We're here to support you in your learning journey.</p>\n<p>Regards,</p>\n<p>Jai Shree</p>",
+          "post_answer_score": 0,
+          "post_answer_created_on_date": null,
+          "post_answer_owner_userid": 365,
+          "post_answer_last_edit_date": null,
+          "post_answer_last_editor_userid": null,
+          "post_answer_accepted_comment": null,
+          "post_answer_comment_count": 0,
+          "post_answer_favorite_count": 0,
+          "post_answer_status": 1,
+          "deleted_at": null,
+          "created_at": "2025-01-12T08:28:46.405Z",
+          "updated_at": "2025-01-12T08:28:46.405Z"
+        }
+      ],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": true,
+      "user_name": "Ashwin",
+      "profile_pic": "https://lh3.googleusercontent.com/a/ACg8ocIRziFzFO7XPu5ZFx2eA_3Xex6d3c98p25ZgGPXsf-rUrHyInJA=s96-c",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 496666,
+      "post_question_title": "very efficient teaching",
+      "post_question_text": "Whizlabs is an incredible platform for anyone looking to advance their career with high-quality certification preparation and skill-building courses. The range of topics they cover is impressive, from cloud certifications like AWS, Azure, and Google Cloud to DevOps, programming, and more. What I love most about Whizlabs is its user-friendly interface and the quality of its practice exams. They truly help you feel prepared and confident before taking the real certification tests. The detailed explanations for each question and the hands-on labs make learning engaging and practical. Additionally, Whizlabs’ affordability and value for money set it apart. Whether you're a beginner or an experienced professional, this platform provides everything you need to excel in your career. Thank you, Whizlabs, for helping me achieve my goals! Highly recommend this platform to everyone.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1441766,
+      "created_at": "2025-01-10T11:44:18.686Z",
+      "post_addition": {
+        "review_id": 29111,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Thiago Soares Rosa",
+        "rating": 5,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [
+        {
+          "post_answer_id": 218024,
+          "post_answer_or_question_id": 496666,
+          "post_answer_sequence": null,
+          "post_answer_text": "<p>Dear User,</p>\n<p>Greetings from Whizlabs!</p>\n<p>Thank you for sharing your feedback with us. We greatly value your input as it helps us improve our platform and services.</p>\n<p>If you need any assistance, please don't hesitate to reach out. We're here to support you in your learning journey.</p>\n<p>Regards,</p>\n<p>Anusapriya Shanmugam</p>",
+          "post_answer_score": 0,
+          "post_answer_created_on_date": null,
+          "post_answer_owner_userid": 364,
+          "post_answer_last_edit_date": null,
+          "post_answer_last_editor_userid": null,
+          "post_answer_accepted_comment": null,
+          "post_answer_comment_count": 0,
+          "post_answer_favorite_count": 0,
+          "post_answer_status": 1,
+          "deleted_at": null,
+          "created_at": "2025-01-11T17:16:10.706Z",
+          "updated_at": "2025-01-11T17:16:10.706Z"
+        }
+      ],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "Thiago",
+      "profile_pic": "https://media-exp1.licdn.com/dms/image/C4E03AQGD8Ej3ShC6ZA/profile-displayphoto-shrink_800_800/0/1607020697328?e=1644451200&v=beta&t=IKRttZ_xUqZFGHbrqPa0_1GCSBFJeUAN1YiKFSGz5D0",
+      "linkedin": null
+    },
+    {
+      "post_question_id": 477299,
+      "post_question_title": "Helpful course",
+      "post_question_text": "I have used this platform for a while to prepare for certifications and it has been very helpful for me.",
+      "post_question_slug": "aws-certified-cloud-practitioner",
+      "post_question_created_by_userid": 1487108,
+      "created_at": "2024-12-20T00:23:30.234Z",
+      "post_addition": {
+        "review_id": 29075,
+        "product_id": 219,
+        "user_type": 1,
+        "name": "Fernando Gonzalez Juarez",
+        "rating": 4,
+        "linkedin_profile_url": null,
+        "occupation": null,
+        "organization": null,
+        "course": {
+          "name": "AWS Certified Cloud Practitioner"
+        }
+      },
+      "answers": [
+        {
+          "post_answer_id": 217522,
+          "post_answer_or_question_id": 477299,
+          "post_answer_sequence": null,
+          "post_answer_text": "<p>Dear User,</p>\n<p>Greetings from Whizlabs!</p>\n<p>Thank you for sharing your feedback with us. We greatly value your input as it helps us improve our platform and services.</p>\n<p>If you need any assistance, please don't hesitate to reach out. We're here to support you in your learning journey.</p>\n<p>Regards,</p>\n<p>Anusapriya Shanmugam</p>",
+          "post_answer_score": 0,
+          "post_answer_created_on_date": null,
+          "post_answer_owner_userid": 364,
+          "post_answer_last_edit_date": null,
+          "post_answer_last_editor_userid": null,
+          "post_answer_accepted_comment": null,
+          "post_answer_comment_count": 0,
+          "post_answer_favorite_count": 0,
+          "post_answer_status": 1,
+          "deleted_at": null,
+          "created_at": "2024-12-21T18:36:41.774Z",
+          "updated_at": "2024-12-21T18:36:41.774Z"
+        }
+      ],
+      "ratings": {
+        "rating": 1158,
+        "star_rating": {
+          "one_star": 2,
+          "two_star": 0,
+          "three_star": 12,
+          "four_star": 244,
+          "five_star": 900
+        },
+        "overall_rating": 4.761658031088083
+      },
+      "is_verfied_buyer": false,
+      "user_name": "Fernando",
+      "profile_pic": "https://lh3.googleusercontent.com/a/AATXAJz2kbkgSQOm3vEpcrEECG5hOHVUHHisCsz53up7=s96-c",
+      "linkedin": null
+    }
+  ]
+}

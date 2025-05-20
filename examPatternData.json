@@ -1,0 +1,75 @@
+{
+  "msg": "success",
+  "data": [
+    {
+      "id": "740",
+      "course_id": 219,
+      "list": {
+        "box": [
+          {
+            "heading": "Prior Certification",
+            "value": "Not Required",
+            "isEdit": false,
+            "img": "exam6.svg",
+            "order_by": 1
+          },
+          {
+            "heading": "Exam Validity",
+            "value": "36 Months",
+            "isEdit": false,
+            "img": "exam8.svg",
+            "order_by": 2
+          },
+          {
+            "heading": "Exam Fee",
+            "value": "$100 USD",
+            "isEdit": false,
+            "img": "exam5.svg",
+            "order_by": 3
+          },
+          {
+            "heading": "Exam Duration",
+            "value": "90 Minutes",
+            "isEdit": false,
+            "img": "exam1.svg",
+            "order_by": 4
+          },
+          {
+            "heading": "No. of questions",
+            "value": "65",
+            "isEdit": false,
+            "img": "exam2.svg",
+            "order_by": 5
+          },
+          {
+            "heading": "Passing Marks",
+            "value": "70-75",
+            "isEdit": false,
+            "img": "exam4.svg",
+            "order_by": 6
+          },
+          {
+            "heading": "Recommended Experience",
+            "value": "This exam is designed for candidates new to Cloud who may not have an information technology (IT) background. This exam is for line-of-business roles like sales, marketing, product or project management, to get a foundational understanding of AWS Cloud. Candidates for this exam could have up to 6 months of exposure to AWS Cloud, but this is not required.",
+            "isEdit": false,
+            "img": "exam3.svg",
+            "order_by": 7
+          },
+          {
+            "heading": "Exam Format",
+            "value": "Multiple choice and Multiple select questions",
+            "isEdit": false,
+            "img": "exam2.svg",
+            "order_by": 8
+          }
+        ]
+      },
+      "edited_by": null,
+      "created_by": "19",
+      "examcode": "",
+      "language": "English, Japanese, Korean, Simplified Chinese, Traditional Chinese, Bahasa (Indonesian), Spanish (Spain), Spanish (Latin America), French (France), German, Italian, and Portuguese (Brazil)",
+      "created_at": "2025-02-13T11:12:21.308Z",
+      "updated_at": "2025-02-13T11:12:21.308Z"
+    }
+  ]
+}
