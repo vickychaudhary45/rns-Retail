@@ -62,13 +62,13 @@ const ResetPassword = ({ alertBox, seoHomePageData }) => {
     }
   };
 
-  useEffect(() => {
-    if (!token || !email) {
-      router.push("/");
-    } else {
-      fetchActiveURL();
-    }
-  }, [token, email]);
+  // useEffect(() => {
+  //   if (!token || !email) {
+  //     router.push("/");
+  //   } else {
+  //     fetchActiveURL();
+  //   }
+  // }, [token, email]);
 
   const onSubmit = async (formData, e) => {
     if (recaptchaVerified) {
@@ -301,12 +301,11 @@ export async function getServerSideProps() {
       },
     ],
   };
-  
 
   return {
     props: {
       seoHomePageData,
-    }, // will be passed to the page component as props
+    },
   };
 }
 

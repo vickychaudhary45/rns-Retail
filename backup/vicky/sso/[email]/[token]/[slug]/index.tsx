@@ -3,8 +3,8 @@ import FourOhFour from "pages/404";
 import axios from "axios";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 import { connect } from "react-redux";
-import { authResellerLogin, authLogout } from "../../../../../redux/Auth/auth-actions";
-import { clearCart } from "../../../../../redux/AddToCart/cart-actions";
+import { authResellerLogin, authLogout } from "../../../../../../redux/Auth/auth-actions";
+import { clearCart } from "../../../../../../redux/AddToCart/cart-actions";
 import { useRouter } from "next/router";
 
 const Sso = ({ ssoDatas, userData, authLogoutAction, clearCartAction, storeToLocalStorage }) => {

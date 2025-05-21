@@ -18,11 +18,11 @@ const Login = ({ storeToLocalStorage, alertBoxAction, userInfo, userData }) => {
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (userData && userData?.data?.user_id) {
-      router.push("/");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (userData && userData?.data?.user_id) {
+  //     router.push("/");
+  //   }
+  // }, []);
 
   const onSubmit = async (formData, e) => {
     setLoading(true);
@@ -191,14 +191,14 @@ export const getServerSideProps = async (context) => {
   const { reseller } = context.params;
   const resp = await axios.get(baseUrl + "/users/reseller?user_name=" + reseller);
 
-  if (!resp || resp.data.status == "error") {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
+  // if (!resp || resp.data.status == "error") {
+  //   return {
+  //     redirect: {
+  //       destination: "/",
+  //       permanent: false,
+  //     },
+  //   };
+  // }
 
     const seoHomePageData = {
       seoPageType: "login",
@@ -210,7 +210,7 @@ export const getServerSideProps = async (context) => {
     };
 
   // Pass post data to the page via props
-  return { props: { userInfo: resp.data?.data, seoHomePageData } };
+  return { props: { userInfo: [], seoHomePageData } };
 };
 
 const mapStateToProps = (state) => {

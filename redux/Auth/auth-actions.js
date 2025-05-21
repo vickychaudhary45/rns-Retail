@@ -1,6 +1,6 @@
 import * as authTypes from "./auth-types";
 import axios from "axios";
-import { clearCarts,updateSateOfCartAfterLogin} from "../AddToCart/cart-actions";
+import { clearCarts, updateSateOfCartAfterLogin } from "../AddToCart/cart-actions";
 import {
   storeUserProfile,
   clearUserProfile,
@@ -8,9 +8,9 @@ import {
 } from "../UserProfile/profile-actions";
 import { clearWhislist } from "../whislist/whislist-actions";
 import { updateRedirection } from "../Redirection/redirect-actions";
-import cookie from 'js-cookie';
-import {Usercourse,clearUserbought,NotifiedCourse} from "../userCourse/usercourse-action" 
-import { enrollCourseDetail,clearEnrolled } from "../UserEnrolled/enroll-action";
+import cookie from "js-cookie";
+import { Usercourse, clearUserbought, NotifiedCourse } from "../userCourse/usercourse-action";
+import { enrollCourseDetail, clearEnrolled } from "../UserEnrolled/enroll-action";
 import { subsButtonClick } from "../buttonClick/click-actions";
 import { getWishList } from "../whislist/whislist-actions";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -67,7 +67,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 //     }
 //   }
 // }
-export const authRegister = (values,currentLocation) => {
+export const authRegister = (values, currentLocation) => {
   return async (dispatch, getState) => {
     function onSuccess(data) {
       dispatch({
@@ -102,7 +102,7 @@ export const authRegister = (values,currentLocation) => {
               },
             }
           )
-          .then(async({ status, statusText, data }) => {
+          .then(async ({ status, statusText, data }) => {
             if (status === 500) {
               console.error(statusText);
               return onSuccess(null);
@@ -110,26 +110,31 @@ export const authRegister = (values,currentLocation) => {
             if (data) {
               if (data.data && data.data.user_id) {
                 dispatch(storeUtmDetails(data.data.token, data.data.user_id, utmData));
-                let cookieValue = cookie.get('Subscribe_now_button');
+                let cookieValue = cookie.get("Subscribe_now_button");
                 let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
-                if(cookieValue){
-                  dispatch(subsButtonClick(data.data, parsedData))
+                if (cookieValue) {
+                  dispatch(subsButtonClick(data.data, parsedData));
                 }
-               
-                let currency = JSON.parse(cookie.get('currency'))
-                let cart = JSON.parse(localStorage.getItem('cartData')) || []
-                if(cart && currency){
-                  await dispatch(updateSateOfCartAfterLogin(cart,currency,data))
-                } 
-                dispatch(storeUserProfile(data.data.token,currentLocation)); // update User Profile Details from DB to redux/localstorage
+
+                let currency = JSON.parse(cookie.get("currency"));
+                let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+                if (cart && currency) {
+                  await dispatch(updateSateOfCartAfterLogin(cart, currency, data));
+                }
+                dispatch(storeUserProfile(data.data.token, currentLocation)); // update User Profile Details from DB to redux/localstorage
                 // dispatch(getInitalCart(data.data.token))
-                dispatch(Usercourse(data.data.user_id))
-                dispatch(NotifiedCourse(data.data.user_id))
-                dispatch(enrollCourseDetail(data.data.user_id))
+                dispatch(Usercourse(data.data.user_id));
+                dispatch(NotifiedCourse(data.data.user_id));
+                dispatch(enrollCourseDetail(data.data.user_id));
                 // console.log(currentLocation)
-                dispatch(getWishList(data.data.user_id))
-                if(!cookie.get('client') && currentLocation != "/aws-free-labs" && !currentLocation.includes('cart') && !currentLocation.includes("/cloud/")){
-                  cookie.set("signupmodal",true)
+                dispatch(getWishList(data.data.user_id));
+                if (
+                  !cookie.get("client") &&
+                  currentLocation != "/aws-free-labs" &&
+                  !currentLocation.includes("cart") &&
+                  !currentLocation.includes("/cloud/")
+                ) {
+                  cookie.set("signupmodal", true);
                 }
               }
               return onSuccess(data);
@@ -146,7 +151,7 @@ export const authRegister = (values,currentLocation) => {
   };
 };
 
-export const authLogin = (values,currentLocation) => {
+export const authLogin = (values, currentLocation) => {
   return (dispatch) => {
     function onSuccess(data) {
       dispatch({
@@ -165,22 +170,42 @@ export const authLogin = (values,currentLocation) => {
       if (values.email && values.password) {
         const { email, password, isAmazonUser } = values;
 
-        const url = `${baseUrl}/auth/login${isAmazonUser ? "/amazon" : ""}`;
+        // const url = `${baseUrl}/auth/login${isAmazonUser ? "/amazon" : ""}`;
 
-        axios
-          .post(
-            url,
-            {
-              email: email.toLowerCase(),
-              password,
+        // axios
+        //   .post(
+        //     url,
+        //     {
+        //       email: email.toLowerCase(),
+        //       password,
+        //     },
+        //     {
+        //       headers: {
+        //         "content-type": "application/json",
+        //       },
+        //     }
+        //   )
+        const dummyLoginResponse = {
+          status: "success",
+          msg: "Login successfull",
+          data: {
+            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleToken123456789",
+            user_id: "u1234567890",
+            user_email: "john.doe@example.com",
+            name: {
+              first: "John",
+              last: "Doe",
             },
-            {
-              headers: {
-                "content-type": "application/json",
-              },
-            }
-          )
-          .then(async({ status, statusText, data }) => {
+            profile_img: "https://example.com/images/profile/johndoe.png",
+          },
+        };
+
+        Promise.resolve({
+          status: 200,
+          statusText: "OK",
+          data: dummyLoginResponse,
+        })
+          .then(async ({ status, statusText, data }) => {
             if (status === 500) {
               console.error(statusText);
               return onSuccess(null);
@@ -188,22 +213,22 @@ export const authLogin = (values,currentLocation) => {
 
             if (data) {
               if (data.data && data.data.user_id) {
-                // dispatch(getCart(data.data.user_id)); 
-                let cookieValue = cookie.get('Subscribe_now_button');
+                // dispatch(getCart(data.data.user_id));
+                let cookieValue = cookie.get("Subscribe_now_button");
                 let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
-                if(cookieValue){
-                  dispatch(subsButtonClick(data.data, parsedData))
+                if (cookieValue) {
+                  dispatch(subsButtonClick(data.data, parsedData));
                 }
-                let currency = JSON.parse(cookie.get('currency'))
-                let cart = JSON.parse(localStorage.getItem('cartData')) || []
-                if(cart && currency){
-                  await dispatch(updateSateOfCartAfterLogin(cart,currency,data))
+                let currency = JSON.parse(cookie.get("currency"));
+                let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+                if (cart && currency) {
+                  await dispatch(updateSateOfCartAfterLogin(cart, currency, data));
                 }
-                dispatch(storeUserProfile(data.data.token,currentLocation)); // update User Profile 
-                dispatch(Usercourse(data.data.user_id))
-                dispatch(NotifiedCourse(data.data.user_id))
-                dispatch(enrollCourseDetail(data.data.user_id))
-                dispatch(getWishList(data.data.user_id))
+                dispatch(storeUserProfile(data.data.token, currentLocation)); // update User Profile
+                dispatch(Usercourse(data.data.user_id));
+                dispatch(NotifiedCourse(data.data.user_id));
+                dispatch(enrollCourseDetail(data.data.user_id));
+                dispatch(getWishList(data.data.user_id));
               }
               return onSuccess(data);
             }
@@ -219,17 +244,17 @@ export const authLogin = (values,currentLocation) => {
 };
 
 export const authLogout = () => {
-  return async(dispatch) => {
+  return async (dispatch) => {
     function onSuccess() {
       dispatch({
         type: authTypes.LOGOUT,
       });
       cookie.remove("subs_bottom_banner");
     }
-    try{
-      let UserData = cookie.get('userData')
-      if(UserData){
-        let token = (JSON.parse(UserData)).data.token
+    try {
+      let UserData = cookie.get("userData");
+      if (UserData) {
+        let token = JSON.parse(UserData).data.token;
         // await axios
         // .get(`${baseUrl}/auth/logout`, {
         //   headers: { Authorization: token },
@@ -242,22 +267,19 @@ export const authLogout = () => {
         // .catch((e) => console.error(e));
       }
       localStorage.removeItem("cartData");
-      cookie.remove('cart_count')
+      cookie.remove("cart_count");
       dispatch(clearUserProfile());
       dispatch(clearWhislist());
-      dispatch(clearUserbought())
-      dispatch(clearEnrolled())
+      dispatch(clearUserbought());
+      dispatch(clearEnrolled());
       dispatch(clearCarts());
       return onSuccess();
-    }catch(e){
-
-    }
-  
+    } catch (e) {}
   };
 };
 
 export const authSocialLogin = (values) => {
-  return async(dispatch) => {
+  return async (dispatch) => {
     function onSuccess(data) {
       dispatch({
         type: authTypes.SOCIAL_LOGIN,
@@ -271,8 +293,7 @@ export const authSocialLogin = (values) => {
       if (!values.email) {
         console.log("An error occurred during social login!");
         return;
-      }
-      else if (values.email) {
+      } else if (values.email) {
         const { name, email, image } = values;
         // console.log(values)
         await axios
@@ -281,7 +302,7 @@ export const authSocialLogin = (values) => {
             email: email.toLowerCase(),
             img: image || null,
           })
-          .then(async({ status, statusText, data }) => {
+          .then(async ({ status, statusText, data }) => {
             if (status === 500) {
               console.error(statusText);
               return onSuccess(null);
@@ -289,29 +310,34 @@ export const authSocialLogin = (values) => {
 
             if (data && data.data && data.data.user_id) {
               if (data.status == 2) {
-                if(!cookie.get('client') && values.currentPath != "/aws-free-labs" && !values.currentPath.includes('/cart') && !values.currentPath.includes("/cloud/")){
-                  cookie.set("signupmodal",true)
+                if (
+                  !cookie.get("client") &&
+                  values.currentPath != "/aws-free-labs" &&
+                  !values.currentPath.includes("/cart") &&
+                  !values.currentPath.includes("/cloud/")
+                ) {
+                  cookie.set("signupmodal", true);
                 }
                 // dispatch(updateRedirection("PRICING"))
               }
-              // dispatch(getCart(data.data.user_id)); 
-              let cookieValue = cookie.get('Subscribe_now_button');
+              // dispatch(getCart(data.data.user_id));
+              let cookieValue = cookie.get("Subscribe_now_button");
               let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
-              if(cookieValue){
-                dispatch(subsButtonClick(data.data, parsedData))
+              if (cookieValue) {
+                dispatch(subsButtonClick(data.data, parsedData));
               }
-              
-              let currency = JSON.parse(cookie.get('currency'))
-              let cart = JSON.parse(localStorage.getItem('cartData')) || []
-              if(cart && currency){
-                await dispatch(updateSateOfCartAfterLogin(cart,currency,data))
+
+              let currency = JSON.parse(cookie.get("currency"));
+              let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+              if (cart && currency) {
+                await dispatch(updateSateOfCartAfterLogin(cart, currency, data));
               }
-              dispatch(storeUserProfile(data.data.token,values.currentPath)); // update User Profile Details from DB to redux/localstorage
+              dispatch(storeUserProfile(data.data.token, values.currentPath)); // update User Profile Details from DB to redux/localstorage
               // dispatch(getInitalCart(data.data.token))
-              dispatch(Usercourse(data.data.user_id))
-              dispatch(NotifiedCourse(data.data.user_id))
-              dispatch(enrollCourseDetail(data.data.user_id))
-              dispatch(getWishList(data.data.user_id))
+              dispatch(Usercourse(data.data.user_id));
+              dispatch(NotifiedCourse(data.data.user_id));
+              dispatch(enrollCourseDetail(data.data.user_id));
+              dispatch(getWishList(data.data.user_id));
               return onSuccess(data);
             }
           })
@@ -326,8 +352,7 @@ export const authSocialLogin = (values) => {
   };
 };
 
-
-export const authResellerLogin = (values,currentLocation) => {
+export const authResellerLogin = (values, currentLocation) => {
   return (dispatch) => {
     function onSuccess(data) {
       dispatch({
@@ -338,14 +363,13 @@ export const authResellerLogin = (values,currentLocation) => {
       });
     }
     if (values && values.data && values.data.token) {
-      dispatch(storeUserProfile(values.data.token,currentLocation,values.data?.sso)); // update User Profile Details from DB to redux/localstorage
-      let cookieValue = cookie.get('Subscribe_now_button');
+      dispatch(storeUserProfile(values.data.token, currentLocation, values.data?.sso)); // update User Profile Details from DB to redux/localstorage
+      let cookieValue = cookie.get("Subscribe_now_button");
       let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
-      if(cookieValue){
-        dispatch(subsButtonClick(data.data, parsedData))
+      if (cookieValue) {
+        dispatch(subsButtonClick(data.data, parsedData));
       }
     }
     return onSuccess(values);
   };
 };
-
