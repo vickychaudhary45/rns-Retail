@@ -30,9 +30,9 @@ const Webinar = (seoHomePageData) => {
             <div className="webinar-listing">
               <div className="upcoming-webinars">
                 <div className="list-item">
-                  <a className="img-block" href="/webinars/register">
+                  {/* <a className="img-block" href="/webinars/register">
                     <img className="img-full" src="/images/webinar-img12x.jpg" alt="" />
-                  </a>
+                  </a> */}
                   <div className="content">
                     <a className="title" href="/webinars/register">
                       Introduction to AWS Technical Essential for Developers
@@ -41,7 +41,14 @@ const Webinar = (seoHomePageData) => {
                       <label className="label-upcoming">Upcoming</label>
                       <div className="date">
                         <i className="icon icon-font-calendar"></i>
-                        <span>Aug 01, 2020 at 11 AM IST</span>
+                        <span>
+                          {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString("en-US", {
+                            month: "short",
+                            day: "2-digit",
+                            year: "numeric",
+                          })}{" "}
+                          at 11 AM IST
+                        </span>
                       </div>
                     </div>
                     <p className="caption">
@@ -60,7 +67,7 @@ const Webinar = (seoHomePageData) => {
                     Our recorded <strong>Webinars</strong>
                   </div>
                   <div className="filterby-block">
-                    <div className="box-title">Filter By</div>
+                    {/* <div className="box-title">Filter By</div> */}
                     <div className="custom-selectbox">
                       <select>
                         <option>All Categories</option>
@@ -75,9 +82,9 @@ const Webinar = (seoHomePageData) => {
                 </div>
                 <div className="items-group">
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img22x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         AWS, Azure, and Google Cloud: Demystifying Multi-Cloud for Your Organization
@@ -85,7 +92,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>Aug 01, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -102,9 +119,9 @@ const Webinar = (seoHomePageData) => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img32x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         An Introduction to Serverless with a Deep Dive on Container Services in AWS
@@ -112,7 +129,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>July 25, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -129,9 +156,9 @@ const Webinar = (seoHomePageData) => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img42x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         Acing the AWS Solutions Architect Associate Certification
@@ -139,7 +166,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>July 15, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -156,9 +193,9 @@ const Webinar = (seoHomePageData) => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img52x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         AWS Cost Savings: Ending Decision Paralysis When Trying to Optimize Spend
@@ -167,7 +204,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>Jun 20, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -184,9 +231,9 @@ const Webinar = (seoHomePageData) => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img62x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         Microsoft Ignite 2019: Get the Cloud Academy Post-Show Lowdown
@@ -194,7 +241,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>Jun 5, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -211,9 +268,9 @@ const Webinar = (seoHomePageData) => {
                     </div>
                   </div>
                   <div className="list-item">
-                    <a className="img-block" href="/webinars/register">
+                    {/* <a className="img-block" href="/webinars/register">
                       <img className="img-full" src="/images/webinar-img42x.jpg" alt="" />
-                    </a>
+                    </a> */}
                     <div className="content">
                       <a className="title" href="/webinars/register">
                         Acing the AWS Solutions Architect Associate Certification
@@ -221,7 +278,17 @@ const Webinar = (seoHomePageData) => {
                       <div className="date-time-block">
                         <div className="date">
                           <i className="icon icon-font-calendar"></i>
-                          <span>July 15, 2020</span>
+                          <span>
+                            {new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toLocaleString(
+                              "en-US",
+                              {
+                                month: "short",
+                                day: "2-digit",
+                                year: "numeric",
+                              }
+                            )}{" "}
+                            at 11 AM IST
+                          </span>
                         </div>
                         <div className="time">
                           <i className="icon icon-font-play"></i>
@@ -285,7 +352,7 @@ export async function getServerSideProps() {
       },
     ],
   };
-  
+
   return {
     props: {
       seoHomePageData,

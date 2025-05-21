@@ -1,7 +1,7 @@
 .top_banner{
     height: 485px;
     width: 100%;
-    background: #FFEEEE;
+    background: #cef2f2;
 }
 .pricing_card{
     display: flex;
@@ -63,7 +63,7 @@
     transition: all 0.2s ease-out;
 }
 .table tr:nth-child(odd){
-    background-color: #FFEEEE;
+    background-color: #cef2f2;
 }
 .table_value{
     font-weight: 400;

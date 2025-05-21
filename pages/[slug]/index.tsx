@@ -6699,8 +6699,6 @@ export async function getServerSideProps(context) {
       //     review: query.preview ? query.preview : 0,
       //   },
       // });
-      // const filePath = path.join(process.cwd(), "courseData.json");
-      // fs.writeFileSync(filePath, JSON.stringify(courseResponse.data, null, 2), "utf8");
       if (courseResponse.data && courseResponse.data && courseResponse.data.id) {
         page = courseResponse.data.seo_details.is_sandbox
           ? pageTypes.SANDBOX_PAGE

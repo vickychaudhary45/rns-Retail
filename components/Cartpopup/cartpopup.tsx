@@ -1,14 +1,16 @@
-import styles from "./Cartpopup.module.css";
+import axios from "axios";
+import { connect } from "react-redux";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import CircularProgress from "@mui/material/CircularProgress";
+
+import styles from "./Cartpopup.module.css";
 import { StarRating } from "@/components/import";
 import { addToCart, removeFromCart } from "../../redux/AddToCart/cart-actions";
 import { updateRedirection } from "../../redux/Redirection/redirect-actions";
-import { connect } from "react-redux";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useRouter } from "next/router";
-import CircularProgress from "@mui/material/CircularProgress";
+
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const Course = ({ course, currency, cartData, addToCartAction, setshowcartpopup }) => {
@@ -41,18 +43,18 @@ const Course = ({ course, currency, cartData, addToCartAction, setshowcartpopup 
         courseType.push("");
     }
     if (itm.product_type != "SANDBOX") {
-        sale_price += parseFloat(itm.sale_price[currency.type]);
-        regular_price += parseFloat(itm.regular_price[currency.type]);
-        prods.push(itm.product_type.toLowerCase());
+      sale_price += parseFloat(itm.sale_price[currency.type]);
+      regular_price += parseFloat(itm.regular_price[currency.type]);
+      prods.push(itm.product_type.toLowerCase());
     } else {
-        let validity = Object.keys(itm.sale_price)[0];
-        sale_price += parseFloat(itm.sale_price[validity][currency.type]);
-        regular_price += parseFloat(itm.regular_price[validity][currency.type]);
-        if (course.is_sandbox) {
-          prods.push(`sandbox-${validity}`);
-        } else {
-          prods.push(`sandbox`);
-        }
+      let validity = Object.keys(itm.sale_price)[0];
+      sale_price += parseFloat(itm.sale_price[validity][currency.type]);
+      regular_price += parseFloat(itm.regular_price[validity][currency.type]);
+      if (course.is_sandbox) {
+        prods.push(`sandbox-${validity}`);
+      } else {
+        prods.push(`sandbox`);
+      }
     }
   });
 
@@ -153,7 +155,7 @@ const Cartpopup = ({
       let course_page_id = pageContent.course_page_id;
       if (userData) {
         let courseIdPurchased = [];
-        enrolled.forEach((itm) => {
+        enrolled?.forEach((itm) => {
           let enrolled_details = Object.keys(itm.enrollment_details);
           for (let key of enrolled_details) {
             let course_purchase_details = itm.enrollment_details[key];
@@ -177,7 +179,7 @@ const Cartpopup = ({
         // related.data.courses = related.data.courses.filter((itm)=> itm.id != pageContent.id && !courseIdPurchased.includes(itm.id))
         // related.data.courses = related.data?.courses?.filter((itm) => itm.products.length > 0);
         let coursesCameAlredy = [];
-        related.data.courses.forEach((itm) => {
+        related?.data?.courses?.forEach((itm) => {
           coursesCameAlredy.push(itm.id);
         });
         let course_to_neglect = [...courseIdPurchased, ...coursesCameAlredy, pageContent.id];
@@ -186,28 +188,13 @@ const Cartpopup = ({
             ","
           )}`
         );
-        let put_index = 8 - related.data.courses.length;
-        setMoreCourses(moreCourses.data.courses.filter((itm, idx) => idx < put_index));
+        let put_index = 8 - related?.data?.courses?.length;
+        setMoreCourses(moreCourses?.data?.courses?.filter((itm, idx) => idx < put_index));
         setRelatedCourses(related.data.courses);
       } else {
         let related = await axios.get(
           `${baseUrl}/courses/popularcourse/?course_page_id=${course_page_id}&course_id_bought=${pageContent.id}`
         );
-        // related.data.courses = related.data.courses?.filter((itm)=> itm.id != pageContent.id)
-        // related.data.courses = related.data?.courses?.filter((itm) => itm.products.length > 0);
-        // if (related.data.courses.length < 8) {
-        //   let coursesCameAlredy = [];
-        //   related.data.courses.forEach((itm) => {
-        //     coursesCameAlredy.push(itm.id);
-        //   });
-        //   let moreCourses = await axios.get(
-        //     `${baseUrl}/courses/popularcourse/?course_page_id=&course_id_bought=${coursesCameAlredy.join(
-        //       ","
-        //     )}`
-        //   );
-        //   let put_index = 8 - related.data.courses.length;
-        //   setMoreCourses(moreCourses.data.courses.filter((itm, idx) => idx < put_index));
-        // }
         setRelatedCourses(related.data.courses);
       }
     }
