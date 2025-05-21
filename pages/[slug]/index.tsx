@@ -45,8 +45,7 @@ const Index = ({
     promoData.data.find((Itm) => Itm.course_slug === slug);
   switch (page) {
     case pageTypes.CATEGORY_LANDING_PAGE:
-      <>vicky</>;
-    // return <Categories pageData={pageData} seoHomePageData={seoHomePageData || null} />;
+      return <Categories pageData={pageData} seoHomePageData={seoHomePageData || null} />;
     case pageTypes.PRODUCT_LANDING_PAGE:
       return (
         <Course

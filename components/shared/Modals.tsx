@@ -1556,7 +1556,7 @@ export const PopupModal = ({subs,user_type,addSubscriptionToState,plan}) => {
             </div>
             <div className="icon">
               {/* <InfoIcon/> */}
-              {/* <h3 style={{color:"#e05613"}}>Uh Oh!</h3> */}
+              {/* <h3 style={{color:"#006b98"}}>Uh Oh!</h3> */}
             </div>
             <div className="content">
             <div className="amazon-user">{planType ?<>Your 6 Month FREE subscription {expired ? <>has expired</>:<>is going to expire </>}</>

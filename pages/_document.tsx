@@ -24,10 +24,10 @@ export default class BaseDoc extends Document {
           <link rel="icon" type="image/svg" sizes="32x32" href="/images/favicons/aahhh.svg?v=3" />
 
           <link rel="manifest" href="/images/favicons/site.webmanifest" />
-          <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#e05613" />
+          <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#006b98" />
 
           <meta name="msapplication-TileColor" content="#ffffff" />
-          <meta name="theme-color" content="#e05613" />
+          <meta name="theme-color" content="#006b98" />
 
           <link href="/css/style.css" rel="stylesheet" />
           <link href="/css/responsive.css" rel="stylesheet" />

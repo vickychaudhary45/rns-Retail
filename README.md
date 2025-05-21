@@ -41,9 +41,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 
 
+import fs from "fs";
+import path from "path";
+
+const filePath = path.join(process.cwd(), "courseData.json");
+fs.writeFileSync(filePath, JSON.stringify(courseResponse.data, null, 2), "utf8");
+
 
 
 # NEXT_PUBLIC_BASE_URL=https://ea8arnvptc.execute-api.us-east-1.amazonaws.com/quality
+
 NEXT_PUBLIC_BASE_URL=https://bx82ip9g4f.execute-api.us-east-1.amazonaws.com/production
 NEXT_PUBLIC_BASE_PATH=http://localhost:5001/
 NEXT_PUBLIC_STRIPE_PKEY=pk_test_Ht13CJZsnoei83Iu9wU8LlxE
@@ -58,9 +65,13 @@ NEXT_PUBLIC_BUSINESS_URL=https://business-dev.whizlabs.org/
 NEXT_PUBLIC_LEARN_MEDIA_URL=https://media.whizlabs.com/learn/
 NEXT_PUBLIC_WEB_MEDIA_URL=https://media.whizlabs.com/website/
 NEXT_PUBLIC_FORUM_MEDIA_URL=https://media.whizlabs.com/forum/
+
 # NEXT_PUBLIC_LEARN_MEDIA_URL=https://media.whizlabs.org/learn/
+
 # NEXT_PUBLIC_WEB_MEDIA_URL=https://media.whizlabs.org/website/
+
 # NEXT_PUBLIC_FORUM_MEDIA_URL=https://media.whizlabs.org/forum/
+
 GOOGLE_ID=813427700262-3ckuigvc4fg4579807hao2g76kh2c1tr.apps.googleusercontent.com
 GOOGLE_SECRET=FHCupruG8gO9iFYUZyQESWQv
 FACEBOOK_CLIENT_ID=139383662758157
@@ -80,84 +91,61 @@ NEXTAUTH_SECRET=2ZR07hao2g2g76khre8SwJaXfeo76khCU
 NEXT_PUBLIC_SECRET_KEY=2ZR07hao2g2g76khre8SwJaXfeo76khCU
 
 # Enable Disable Search Keyword Capture
+
 NEXT_PUBLIC_SEARCH_KEYWORD_CAPTURE_ENABLED=True
 NEXT_PUBLIC_APPLE_CLIEND_ID=com.whizlabs.login
-NEXT_PUBLIC_APPLE_REDIRECT_URI=https://quality.whizlabs.org 
+NEXT_PUBLIC_APPLE_REDIRECT_URI=https://quality.whizlabs.org
 
 NEXT_PUBLIC_ASSIST_URL = https://71t282y816.execute-api.us-east-1.amazonaws.com/dev
 
-
-
 <!-- buildspec.yml -->
+
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 20
-  pre_build:
-    commands:
-      - echo Logging in to Amazon ECR...
-      - aws --version
-      - sh dockerlogin.sh 
-      #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+install:
+runtime-versions:
+nodejs: 20
+pre_build:
+commands: - echo Logging in to Amazon ECR... - aws --version - sh dockerlogin.sh
+#- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
      # - REPOSITORY_URI=713814803562.dkr.ecr.us-east-1.amazonaws.com/websitev3
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-      - IMAGE_TAG=${COMMIT_HASH:=latest}
-      - docker pull $REPOSITORY_URI:latest || true
-      
-  build:
-    commands:
-      - echo "copy the s3 bucket files"
-      - aws s3 cp s3://$deploymentBucket/whizlabs_website_v3/$ENV/.env .
-      - echo Build started on `date`
-      - echo Building the Docker image...
-      - sh dockerlogin.sh
-      #- sh $Dockerlogin  || echo "No environment placed in the codebuild variable"
+      - IMAGE_TAG=${COMMIT_HASH:=latest} - docker pull $REPOSITORY_URI:latest || true
+
+build:
+commands: - echo "copy the s3 bucket files" - aws s3 cp s3://$deploymentBucket/whizlabs_website_v3/$ENV/.env . - echo Build started on `date` - echo Building the Docker image... - sh dockerlogin.sh
+#- sh $Dockerlogin  || echo "No environment placed in the codebuild variable"
       #- docker build -t $REPOSITORY_URI:latest .
       - docker build  --cache-from $REPOSITORY_URI:latest -t $REPOSITORY_URI:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker images...
-      - docker push $REPOSITORY_URI:latest
-      - docker push $REPOSITORY_URI:$IMAGE_TAG
-      - echo Writing image definitions file...
-      - printf '[{"name":"%s","imageUri":"%s"}]' "$TASKENV" "$REPOSITORY_URI:$IMAGE_TAG" > imagedefinitions.json
+post_build:
+commands: - echo Build completed on `date` - echo Pushing the Docker images... - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG - echo Writing image definitions file... - printf '[{"name":"%s","imageUri":"%s"}]' "$TASKENV" "$REPOSITORY_URI:$IMAGE_TAG" > imagedefinitions.json
 artifacts:
-    files: imagedefinitions.json
-      
-
-
+files: imagedefinitions.json
 
 <!-- appspec.yml -->
+
 version: 0.0
-os: linux 
+os: linux
 files:
-  - source: /
-    destination: /home/corp/whizlabs_website_v3/
-    overwrite: true
-permissions:
-  - object: /
-    pattern: "**"
-    owner: corp
-    group: corp
-    
+
+- source: /
+  destination: /home/corp/whizlabs_website_v3/
+  overwrite: true
+  permissions:
+- object: /
+  pattern: "\*\*"
+  owner: corp
+  group: corp
 
 hooks:
-  BeforeInstall:
-    - location: scripts/before_install.sh
-      timeout: 300
-      
-  AfterInstall:
-    - location: scripts/after_install.sh
-      timeout: 1200
-    
+BeforeInstall: - location: scripts/before_install.sh
+timeout: 300
 
- 
-
-
+AfterInstall: - location: scripts/after_install.sh
+timeout: 1200
 
  <svg width="114" height="30" viewBox="0 0 114 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M48.64 6.81V3.39H33.13V24H48.64V20.58H36.88V15.21H47.53V11.79H36.88V6.81H48.64ZM63.9016 3.03V10.89C62.6716 9.15 60.8116 8.13 58.5316 8.13C54.4216 8.13 51.4216 11.49 51.4216 16.23C51.4216 21 54.4216 24.36 58.5316 24.36C60.8116 24.36 62.6716 23.34 63.9016 21.6V24H67.5616V3.03H63.9016ZM59.5216 21.24C56.9116 21.24 55.0516 19.14 55.0516 16.23C55.0516 13.32 56.9116 11.25 59.5216 11.25C62.1016 11.25 63.9016 13.32 63.9016 16.23C63.9016 19.14 62.1016 21.24 59.5216 21.24ZM82.1819 8.49V18.3C81.9419 19.95 80.3519 21.24 78.4319 21.24C76.5119 21.24 75.1619 19.74 75.1619 17.64V8.49H71.6219V18.36C71.6219 21.87 73.9919 24.36 77.3819 24.36C79.4219 24.36 81.2219 23.37 82.1819 21.93V24H85.8419V8.49H82.1819ZM95.0652 24H98.5152L105.085 8.49H101.185L96.7752 19.77L92.2752 8.49H88.4052L95.0652 24ZM109.489 6.15C110.629 6.15 111.559 5.16 111.559 4.05C111.559 2.94 110.629 1.98 109.489 1.98C108.319 1.98 107.389 2.94 107.389 4.05C107.389 5.16 108.319 6.15 109.489 6.15ZM107.629 24H111.289V8.49H107.629V24Z" fill="#0A033C"/>

@@ -101,7 +101,7 @@ const Cart = ({
   whislist,
 }) => {
   const router = useRouter();
-  const [loadingMask, setLoadingMask] = useState(true);
+  const [loadingMask, setLoadingMask] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [savingsBag, setSavingsBag] = useState(0);
   const [savingsBagWithDisc, setSavingsBagWithDisc] = useState(0);
@@ -150,6 +150,7 @@ const Cart = ({
     //   router.push("/");
     // }
     if (currencyData) setCurrency(currencyData);
+    // console.log(currencyData, "currencyData");
   }, [currencyData]);
 
   const getCartData = async (userToken) => {
@@ -160,7 +161,7 @@ const Cart = ({
     });
 
     setloading(false);
-    let cartData = [];
+    // let cartData = [];
     if (CartData.data) {
       cartData = CartData.data.cart_details;
     }
@@ -184,106 +185,7 @@ const Cart = ({
     // let cart = await axios.post(`${baseUrl}/cart/getprices`, {
     //   cart_details: stateCart,
     // });
-    let cart = {
-      cart_details: [
-        {
-          courseId: 261,
-          selectedCourseType: ["pt", "oc", "lab"],
-          whizcard: "",
-          courseName: "Docker Certified Associate (DCA)",
-          courseSlug: "docker-certified-associate",
-          courseImage: "Docker-Certified-Associate.webp",
-          course_id: 261,
-          course_page_id: 37,
-          course_details: [
-            {
-              course_type: "lab",
-              sale_price: {
-                inr: "1499",
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-              },
-              regular_price: {
-                inr: "1999",
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-              },
-            },
-            {
-              course_type: "oc",
-              sale_price: {
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-                inr: "1499",
-              },
-              regular_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1999",
-              },
-            },
-            {
-              course_type: "pt",
-              sale_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1999",
-              },
-              regular_price: {
-                usd: "39.95",
-                gbp: "39.95",
-                eur: "39.95",
-                inr: "2999",
-              },
-            },
-          ],
-          courseType: ["lab", "oc", "pt"],
-          PtRegPrice: {
-            usd: "39.95",
-            gbp: "39.95",
-            eur: "39.95",
-            inr: "2999",
-          },
-          PtSalePrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1999",
-          },
-          OcSalePrice: {
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-            inr: "1499",
-          },
-          OcRegPrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1999",
-          },
-          LabSalePrice: {
-            inr: "1499",
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-          },
-          LabRegPrice: {
-            inr: "1999",
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-          },
-          SandboxSalePrice: 0,
-          SandboxRegPrice: 0,
-        },
-      ],
-    };
+    let cart = cartttt;
     // if (cart.data.cart_details) {
     //   setCartItems(cart.data.cart_details);
     //   storeCartCountAction(cart.data.cart_details.length);
@@ -315,14 +217,14 @@ const Cart = ({
       updateaftersignin == false &&
       handleAddProductToCartLoading == false
     ) {
-      setloading(true);
+      // setloading(true);
       // getCartData(userData.data.token);
     }
   }, [handleAddProductToCartLoading, updateaftersignin, userData]);
 
   useEffect(() => {
     if (userData == null) {
-      setloading(true);
+      // setloading(true);
       //post method to get the current price of products
       getCartfromCookie();
     }
@@ -1051,7 +953,8 @@ const Cart = ({
                                     {/* HANDS-ON-LABS */}
                                     {(() => {
                                       if (
-                                        (item.courseType.includes("lab") || item.courseType.includes("labs")) &&
+                                        (item.courseType.includes("lab") ||
+                                          item.courseType.includes("labs")) &&
                                         !item.enrolled_product_types?.includes("LAB")
                                       ) {
                                         if (item.selectedCourseType.includes("lab")) {
@@ -1636,3 +1539,104 @@ export async function getServerSideProps() {
     },
   };
 }
+
+let cartttt = {
+  cart_details: [
+    {
+      courseId: 261,
+      selectedCourseType: ["pt", "oc", "lab"],
+      whizcard: "",
+      courseName: "Docker Certified Associate (DCA)",
+      courseSlug: "docker-certified-associate",
+      courseImage: "Docker-Certified-Associate.webp",
+      course_id: 261,
+      course_page_id: 37,
+      course_details: [
+        {
+          course_type: "lab",
+          sale_price: {
+            inr: "1499",
+            usd: "19.95",
+            gbp: "19.95",
+            eur: "19.95",
+          },
+          regular_price: {
+            inr: "1999",
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+          },
+        },
+        {
+          course_type: "oc",
+          sale_price: {
+            usd: "19.95",
+            gbp: "19.95",
+            eur: "19.95",
+            inr: "1499",
+          },
+          regular_price: {
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+            inr: "1999",
+          },
+        },
+        {
+          course_type: "pt",
+          sale_price: {
+            usd: "29.95",
+            gbp: "29.95",
+            eur: "29.95",
+            inr: "1999",
+          },
+          regular_price: {
+            usd: "39.95",
+            gbp: "39.95",
+            eur: "39.95",
+            inr: "2999",
+          },
+        },
+      ],
+      courseType: ["lab", "oc", "pt"],
+      PtRegPrice: {
+        usd: "39.95",
+        gbp: "39.95",
+        eur: "39.95",
+        inr: "2999",
+      },
+      PtSalePrice: {
+        usd: "29.95",
+        gbp: "29.95",
+        eur: "29.95",
+        inr: "1999",
+      },
+      OcSalePrice: {
+        usd: "19.95",
+        gbp: "19.95",
+        eur: "19.95",
+        inr: "1499",
+      },
+      OcRegPrice: {
+        usd: "29.95",
+        gbp: "29.95",
+        eur: "29.95",
+        inr: "1999",
+      },
+      LabSalePrice: {
+        inr: "1499",
+        usd: "19.95",
+        gbp: "19.95",
+        eur: "19.95",
+      },
+      LabRegPrice: {
+        inr: "1999",
+        usd: "29.95",
+        gbp: "29.95",
+        eur: "29.95",
+      },
+      SandboxSalePrice: 0,
+      SandboxRegPrice: 0,
+    },
+  ],
+};

@@ -557,7 +557,7 @@ const AwsConsultingServices = ({ alertBox, seoHomePageData }) => {
                   <button
                     type="submit"
                     className="btn btn-submit"
-                    style={{ background: "#e05613", marginRight: "1em" }}
+                    style={{ background: "#006b98", marginRight: "1em" }}
                   >
                     Submit
                   </button>
