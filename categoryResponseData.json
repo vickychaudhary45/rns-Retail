@@ -1,0 +1,194 @@
+{
+  "msg": "Course Pages",
+  "data": {
+    "id": 23,
+    "parent_id": 23,
+    "name": "Project Management Certifications",
+    "slug": "project-management-certifications",
+    "featured_image": "",
+    "status": false,
+    "created_at": "2021-05-30T16:28:00.542Z",
+    "updated_at": "2021-10-05T11:42:26.000Z",
+    "created_by": null,
+    "last_edit_by": null,
+    "course_heading": null,
+    "children": [
+      {
+        "id": 23,
+        "parent_id": 23,
+        "name": "Project Management Certifications",
+        "slug": "project-management-certifications",
+        "featured_image": "",
+        "status": false,
+        "created_at": "2021-05-30T16:28:00.542Z",
+        "updated_at": "2021-10-05T11:42:26.000Z",
+        "created_by": null,
+        "last_edit_by": null,
+        "course_heading": null
+      }
+    ],
+    "faq": [
+      {
+        "id": 333,
+        "course_page_id": 23,
+        "faq_type": "C",
+        "faq": [
+          {
+            "question": "Which Certification is most Appropriate for your Requirements?",
+            "answer": "<p>Basis of his/her current profile and experience, an individual can decide how to proceed to enhance his career and growth. For people who are team leaders and want to be promoted as managers can go for CAPM&reg;. For project manager with less than 5 years of project management experience should look for certifications like Prince2 or PMP&reg;. Both PRINCE2 and PMP&reg; are accepted globally, but Prince 2 is used extensively by the <strong>UK government</strong>&nbsp;as the project management standard for its public projects. Whereas Prince2 defines the roles of everyone involved in a project, PMP&reg; focuses only on the project manager&rsquo;s role.</p>\r\n<p>People in senior management should go for PgMP (Program Management) or PMI-RMP (Risk Management Professional). Those who have the understanding of agile methodology/concepts and are working with project teams that are specifically devised for agile practices should go for PMI-ACP&reg;.</p>\r\n<p>The Scrum Master helps the team in its use of Scrum. He is like a trainer, who will provide motivation while at the same time making sure you are honest with your work. The trainer&rsquo;s authority, however, is limited. He cannot make you do your work, he can only guide you.</p>\r\n<p>Depending on your qualification, experience, and interest you can opt for any certification.</p>",
+            "is_active": 1
+          },
+          {
+            "question": "Why appear in Project Management Certifications?",
+            "answer": "<p>In the current economy, certifications are an increasingly important tool for building skill levels, improved marketability, and career opportunities.</p>\r\n<p>Some believe certifications prove that the candidate is knowledgeable but do not guarantee about his/her performance at work. Certifications help you to handle any situation at the workplace in well planned and professional way.&nbsp;Those who are working as Scrum master in agile technologies can go for certified Scrum master certificate.</p>\r\n<p>To be a successful project manager, it&rsquo;s important for a project manager to do the planning part most efficiently.</p>",
+            "is_active": 1
+          },
+          {
+            "question": "Top 5 reasons for a Project Failure are",
+            "answer": "<ol>\r\n<li>Incomplete or incorrect scope</li>\r\n<li>No visibility of resource workload</li>\r\n<li>Absence of strong change management control board (CCB)</li>\r\n<li>Failure to establish effective communications between internal and external stakeholders.</li>\r\n<li>Lack of clear roles and responsibilities of team members.</li>\r\n</ol>\r\n<p>The solution to these five problems can easily be taken care by Scope Management, Time Management, Stakeholder Management, Communication Management, and Human Resource Management. All these are the part of Project management preparation and covered in PMBOK (Project Management Body of Knowledge)</p>\r\n<p>A large percentage of people believe that the strategy and vision of the organization are linked to the execution of successful projects. There is a great need of project management discipline and capability to meet these expectations.</p>\r\n<p>Yes, there is umpteen number of educational institutes who are offering various certification courses, some guarantees success, some offering early bird discounts, some bothering you a lot by sending emails every now and then.</p>\r\n<blockquote>\r\n<p><em><strong>Also Read:</strong>&nbsp;<a href=\"https://www.whizlabs.com/blog/top-10-reasons-for-project-failure/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">Top 10 Reasons for Project Failure</a></em></p>\r\n</blockquote>",
+            "is_active": 1
+          },
+          {
+            "question": "What are the Advantages of doing Project Management Certifications?",
+            "answer": "<p>Project Management has emerged in itself through the decades. Project Management is precisely an application of skills and tools to many different project activities which results in project success. In any engineering practice, the application of project management is very important to achieve the project goal. There are many different processes used to execute projects which, in the integration of Project dependencies help project Managers to drive the projects. Effective Project Management can meet the business objectives, satisfy stakeholders and positively enhance the chances of project success. On another hand, if projects are not managed effectively, it can result in missed deadlines, cost overruns, rework, bad quality products. That&rsquo;s the reason Project Management is regarded as must have competency in the organizations.</p>\r\n<p>Certifications from renowned bodies, hands-on experience of tough Project situations where one can use his/her Project Management skills for learning and one can attain to gain and showcase this skill.</p>\r\n<h4>Advantages of doing Project Management Certifications are</h4>\r\n<ol>\r\n<li><strong>Job security</strong>&nbsp;&ndash; Having an additional qualification can always improve your chance to be retained at the time of recession.</li>\r\n<li><strong>Promotion eligibility and/or salary hike</strong>&nbsp;&ndash; You can contribute to the growth of your company with the additional knowledge, thereby increasing your chance of promotion.</li>\r\n<li><strong>Career Improvement&nbsp;</strong>&ndash; Most professionals just do their job without taking any new or challenging assignment. After doing a certification you can take some new initiatives in your organization.</li>\r\n<li><strong>Self-grooving</strong><span>&nbsp;</span>&ndash; Globally recognized certifications increase your self-confidence, as a result, your team members and supervisors start trusting you more.</li>\r\n<li><strong>Your Organisation can rely on you</strong><span>&nbsp;</span>&ndash; Organizations are outsourcing their computer services and support to save money, but they need to be sure that the third party vendors they hire are competent. A certified project manager can be trusted more than others.</li>\r\n<li><strong>Every day changing technology and demands of the customers can be handled in a better way</strong><span>&nbsp;</span>&ndash;To learn the latest technology and apply industry best practices.</li>\r\n<li><strong>Increase job opportunities</strong>&nbsp;&ndash; By adding new credentials in your resume, you can increase job opportunities and credibility.</li>\r\n</ol>",
+            "is_active": 1
+          },
+          {
+            "question": "About Project Management Professional (PMP)® Certification?",
+            "answer": "<p><a href=\"https://www.whizlabs.com/project-management-professional-pmp/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\"><strong>Project Management Professional (PMP)&reg; Certification<span>&nbsp;</span></strong></a>&ndash; Any candidate who is working as a team leader or a project manager and looking for a long career in project management can apply for PMP.</p>\r\n<p>Check here</p>\r\n<p><a href=\"https://www.whizlabs.com/blog/pmp-certification/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">How to prepare for PMP&nbsp;Certification exam</a>?</p>\r\n<p class=\"entry-title\"><a href=\"https://www.whizlabs.com/blog/pmp-exam-prepare/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">What is the best strategy to prepare for PMP</a>?</p>",
+            "is_active": 1
+          },
+          {
+            "question": "About PMI® Agile Certified Practitioner (PMI-ACP)® Certification?",
+            "answer": "<p><strong><a href=\"https://www.whizlabs.com/pmi-acp-certification-preparation-with-agile-practices/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">PMI&reg; Agile Certified Practitioner (PMI-ACP)&reg; Certification</a>&nbsp;</strong>&ndash; Any project manager working on agile technologies can go for this certification. It requires a combination of agile training, working experience on agile projects and examination on agile practices and methods. Agile strategic management recognizes that you need to build learning and a degree of flexibility into the decision making process. This can be achieved by the PMI&reg; ACP Training.</p>\r\n<p>Check here:</p>\r\n<p><a href=\"https://www.whizlabs.com/blog/how-to-prepare-for-pmi-acp-certification/\" target=\"_blank\" rel=\"noopener\">How to prepare for PMI-ACP&reg; Certification?</a></p>\r\n<p><a href=\"https://www.whizlabs.com/blog/pmi-acp-certification-preparation/\" target=\"_blank\" rel=\"noopener\">Steps to Achieve the PMI-ACP Certification</a></p>\r\n<p><a href=\"https://www.whizlabs.com/blog/guide-to-prepare-for-pmi-acp/\" target=\"_blank\" rel=\"noopener\">ULTIMATE GUIDE for Preparing PMI-ACP Certification Exam</a></p>",
+            "is_active": 1
+          },
+          {
+            "question": "About Certified Associate in Project Management (CAPM)® Certification?",
+            "answer": "<p><a href=\"https://www.whizlabs.com/certified-associate-in-project-management-capm/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\"><strong>Certified Associate in Project Management (CAPM)&reg; Certification</strong></a><span>&nbsp;</span>&ndash; This is the basic level certification in the project management domain. The only thing you need is a secondary diploma (high school diploma), or any global equivalent credential to appear in this certification exam.</p>\r\n<p>Check here:</p>\r\n<p><a href=\"https://www.whizlabs.com/blog/capm-certification/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">How to prepare for Certified Associate in Project Management (CAPM)&reg; Certification exam</a>.</p>",
+            "is_active": 1
+          },
+          {
+            "question": "About PMI Risk Management Professional (PMI-RMP)® Certification?",
+            "answer": "<p><strong><a href=\"https://www.whizlabs.com/pmi-rmp/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">PMI Risk Management Professional (PMI-RMP)&reg; Certification</a></strong>&ndash;</p>\r\n<p>PMI&rsquo;s Risk Management Professional (<em>PMI</em>&ndash;<em>RMP</em>) Certification recognizes the need for a specialist role in project risk management.</p>\r\n<p>Check here:</p>\r\n<p><a href=\"https://www.whizlabs.com/blog/risk-management-certification-rmp/\" target=\"_blank\" rel=\"follow noopener\" data-wpel-link=\"internal\">How to prepare for Risk Management (PMI-RMP) certification exam</a>?</p>",
+            "is_active": 1
+          },
+          {
+            "question": "About PRINCE2® Foundation Certification?",
+            "answer": "<p><a href=\"https://www.whizlabs.com/prince2-foundation-certification-course/\" rel=\"follow\" data-wpel-link=\"internal\"><strong>PRINCE2&reg; Foundation Certification Course</strong></a>&ndash; Prince 2&reg; (Projects in Controlled Environments, version 2) is a project management methodology developed by the UK government agency &ndash; Office of Government Commerce (OGC) and is used extensively by the UK government as the project management standard for its public projects.</p>",
+            "is_active": 1
+          },
+          {
+            "question": "What if I have more queries?",
+            "answer": "<p><em>If you have any queries related to Project Management Certification courses, payments, etc.,&nbsp;please feel free to write&nbsp;<a href=\"https://help.whizlabs.com/hc/en-us/requests/new\" rel=\"external noopener noreferrer nofollow\" data-wpel-link=\"external\">here.</a>&nbsp;A member of our support staff will respond as soon as possible.</em></p>",
+            "is_active": 1
+          },
+          {
+            "question": "Why Choose Us?",
+            "answer": "<p>With the aim of helping professionals to grow in their career, Whizlabs offers best-in-industry certification training courses and practice tests. Whizlabs project management certifications training not only prepares the candidates for the certification exam but makes them confident enough to pass the exam in the first attempt. Whizlabs project management certifications training courses are recommended because</p>\r\n<ul>\r\n<li>You can try Whizlabs free tests before purchasing full-length practice tests</li>\r\n<li>Whizlabs online courses and practice tests are created by the industry experts</li>\r\n<li>Whizlabs provides full expert support to resolve all of your queries</li>\r\n<li>Test reports allow you to check your weak and strong areas to make the improvements</li>\r\n<li>The main focus is to boost the confidence of the candidates, so they could pass the exam in the first attempt</li>\r\n</ul>",
+            "is_active": 1
+          },
+          {
+            "question": "Importance of Project Management Certifications",
+            "answer": "<p>The certified project management experts may ensure the success of projects within the organization. So, the employers now demand the certified professionals for the role of project manager and others. The certified project management professionals can help companies to meet customer satisfaction, thus revenue. The project management certifications are important because they</p>\r\n<ul>\r\n<li>Validate the competency of a candidate to successfully complete the various stages of a project</li>\r\n<li>Demonstrate your skills, knowledge, and capabilities to initiate, plan, execute, monitor, and close the project</li>\r\n<li>Give you a global recognition and make you certified in project management</li>\r\n<li>Add a credential to your resume and help you stand out of the crowd</li>\r\n<li>Bring more opportunities for you in the fastest-growing IT world</li>\r\n</ul>",
+            "is_active": 1
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-10-05T11:42:26.000Z",
+        "updated_at": "2021-10-05T11:42:26.000Z"
+      },
+      {
+        "id": 44,
+        "course_page_id": 23,
+        "faq_type": "G",
+        "faq": [
+          {
+            "question": null,
+            "answer": null,
+            "is_active": "1"
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-05-30T16:28:02.890Z",
+        "updated_at": "2021-05-30T16:28:02.890Z"
+      },
+      {
+        "id": 45,
+        "course_page_id": 23,
+        "faq_type": "T",
+        "faq": [
+          {
+            "question": null,
+            "answer": null,
+            "is_active": "1"
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-05-30T16:28:02.890Z",
+        "updated_at": "2021-05-30T16:28:02.890Z"
+      },
+      {
+        "id": 46,
+        "course_page_id": 23,
+        "faq_type": "E",
+        "faq": [
+          {
+            "question": null,
+            "answer": null,
+            "is_active": "1"
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-05-30T16:28:02.890Z",
+        "updated_at": "2021-05-30T16:28:02.890Z"
+      },
+      {
+        "id": 47,
+        "course_page_id": 23,
+        "faq_type": "P",
+        "faq": [
+          {
+            "question": null,
+            "answer": null,
+            "is_active": "1"
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-05-30T16:28:02.890Z",
+        "updated_at": "2021-05-30T16:28:02.890Z"
+      },
+      {
+        "id": 48,
+        "course_page_id": 23,
+        "faq_type": "S",
+        "faq": [
+          {
+            "question": null,
+            "answer": null,
+            "is_active": "1"
+          }
+        ],
+        "faq_use_status": null,
+        "created_at": "2021-05-30T16:28:02.890Z",
+        "updated_at": "2021-05-30T16:28:02.890Z"
+      }
+    ],
+    "seo_details": {
+      "id": 8,
+      "course_page_id": 23,
+      "seo_title": "Project Management Certifications - Whizlabs",
+      "seo_keyword": "project management certifications",
+      "seo_desc": "Want to give your project management career a boost? It’s time to get certified in one of the valuable project management certifications.",
+      "other_details": {
+        "short_name": "Project Management",
+        "course_text": "Want to give your project management career a boost? It’s the time to get certified in one of the valuable project management certifications.",
+        "attributes": "<p>Showcase your skills now with one of the project management certifications. Get certified and ensure the success of projects.</p>",
+        "description": "<div class=\"container\">\r\n<div class=\"market-dmand\">\r\n<h2>Market Demand for Project Management Certifications</h2>\r\n<div class=\"content\">\r\n<figure><img class=\"img-full\" src=\"/images/aws-demand-img2x.png\" alt=\"\" /></figure>\r\n<div class=\"caption\">\r\n<p>No matter what&rsquo;s your role, you can add value to your career with a project management certification. For the success of every IT project, there is the need for highly skilled project manager. This requirement generates the demand for certified project management professionals.</p>\r\n<blockquote>\r\n<p><em>According to the Salary Report, 2018 by indeed.com, the average annual salary of a senior project manager is <a href=\"#\">$105,838</a>.</em></p>\r\n</blockquote>\r\n<p>Even in the cloud market, the adoption of cloud-based project management solutions is continuously increasing. The market for project management software is expected to expand at a CAGR of <a href=\"#\">9.4%</a> from 2018 to 2026.</p>\r\n<p>According to the recent Transparency Market Research market report, the global market of online project management software is projected to reach <a href=\"#\">$668</a> billion by 2026 due to the increasing adoption of cloud-based project management solutions.</p>\r\n</div>\r\n</div>\r\n</div>\r\n<div class=\"grow-skill\">\r\n<h3>Grow your skills with our team of certified professionals, expert support, and unique methods</h3>\r\n<div class=\"block-group\">\r\n<div class=\"block\">\r\n<figure><img class=\"img-full\" src=\"/images/certified-professional.svg\" alt=\"\" /></figure>\r\n<div class=\"box-title\">Certified Professionals</div>\r\n<p>Our team of certified professionals knows the minors of exam and creates courses to get you fully prepared for the certification exam.</p>\r\n</div>\r\n<div class=\"block\">\r\n<figure><img class=\"img-full\" src=\"/images/unique-method.svg\" alt=\"\" /></figure>\r\n<div class=\"box-title\">Unique Method</div>\r\n<p>Unique methods along with exam-orientation helps us to create easy to learn online training content that is perfect for self-study.</p>\r\n</div>\r\n<div class=\"block\">\r\n<figure><img class=\"img-full\" src=\"/images/expert-support.svg\" alt=\"\" /></figure>\r\n<div class=\"box-title\">Expert Support</div>\r\n<p>Our subject matter experts ensure their 24/7 availability to resolve all the queries you have during certification exam preparation.</p>\r\n</div>\r\n</div>\r\n</div>\r\n</div>",
+        "page_intro": null
+      },
+      "created_at": "2021-05-30T16:28:01.315Z",
+      "updated_at": "2021-10-05T11:42:26.000Z"
+    }
+  }
+}

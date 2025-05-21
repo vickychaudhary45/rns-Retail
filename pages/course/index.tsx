@@ -7,7 +7,7 @@ import {
 } from "@/components/shared/Modals";
 import React, { useState, useEffect, useRef } from "react";
 import { connect, useDispatch } from "react-redux";
-import { addToCart, removeFromCart,updateCoupon} from "../../redux/AddToCart/cart-actions";
+import { addToCart, removeFromCart, updateCoupon } from "../../redux/AddToCart/cart-actions";
 import { alertBox } from "../../redux/AlertBox/alert-actions";
 import { StoreWhishlist } from "../../redux/whislist/whislist-actions";
 import FourOhFour from "pages/404";
@@ -44,10 +44,10 @@ import "keen-slider/keen-slider.min.css";
 import { WhizcardModal } from "@/components/shared/Modals";
 import { storeReview, getReview } from "../../redux/ReviewFeedback/review-actions";
 import Cartpopup from "@/components/Cartpopup/cartpopup";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { Tab, Tabs, Tooltip, } from "@mui/material";
-import { TabContext, TabPanel } from '@mui/lab';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Tab, Tabs, Tooltip } from "@mui/material";
+import { TabContext, TabPanel } from "@mui/lab";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -88,8 +88,10 @@ const Course = ({
   buttonClickAction,
   seoHomePageData,
   updateCouponDatasAction,
-  userSubscriptionData
+  userSubscriptionData,
 }) => {
+  console.log(pageData, "pageData93");
+
   // const wishlistIcon = useRef(null);
   const router = useRouter();
   const path = router.pathname;
@@ -203,7 +205,7 @@ const Course = ({
       setCurrentSlide(slider.track.details.rel);
     },
   });
-  const [showCartPopup,setshowCartPopup] = useState(false)
+  const [showCartPopup, setshowCartPopup] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -220,7 +222,7 @@ const Course = ({
 
   useEffect(() => {
     const getDimensions = (ele) => {
-      if(!ele) return
+      if (!ele) return;
       const { height } = ele.getBoundingClientRect();
       const offsetTop = ele.offsetTop;
       const offsetBottom = offsetTop + height;
@@ -455,7 +457,7 @@ const Course = ({
             "@type": "Review",
             author: {
               "@type": "Person",
-              name: rev.user_name || 'whizlabs',
+              name: rev.user_name || "whizlabs",
             },
             description: rev.post_question_text,
             reviewRating: {
@@ -655,47 +657,46 @@ const Course = ({
     // LAB
     const labTree = [];
     let labCount = 1;
-   
 
     // console.log(pageData.detailedInfo.lab_info)
-    pageData.detailedInfo.lab_info = pageData.detailedInfo.lab_info.sort((a,b)=>{
-      return a.order_by - b.order_by
-    })
-    
-    let labData =  pageData.detailedInfo.lab_info
-    
-    if(labData && labData.length > 0 && !labData[0].section_heading){
+    pageData.detailedInfo.lab_info = pageData.detailedInfo.lab_info.sort((a, b) => {
+      return a.order_by - b.order_by;
+    });
+
+    let labData = pageData.detailedInfo.lab_info;
+
+    if (labData && labData.length > 0 && !labData[0].section_heading) {
       let itm = {
-        section_heading : "Labs",
-        children : []
-      }
-      labTree.push(itm)
+        section_heading: "Labs",
+        children: [],
+      };
+      labTree.push(itm);
     }
 
-    for(let i =0;i<labData.length;i++){
-      let itm = labData[i]
-      itm.children = []
-      if(itm.section_heading){
-        labTree.push(itm)
-        continue
+    for (let i = 0; i < labData.length; i++) {
+      let itm = labData[i];
+      itm.children = [];
+      if (itm.section_heading) {
+        labTree.push(itm);
+        continue;
       }
       labTree.length > 0 ? labTree[labTree.length - 1].children.push(itm) : labTree.push(itm);
     }
-      // .sort((a, b) => a.order_by - b.order_by)
-      // .forEach((item, idx) => {
-      //   item.children = [];
+    // .sort((a, b) => a.order_by - b.order_by)
+    // .forEach((item, idx) => {
+    //   item.children = [];
 
-      //   if (item.section_heading) {
-      //     labTree.push(item);
-      //     return;
-      //   }
+    //   if (item.section_heading) {
+    //     labTree.push(item);
+    //     return;
+    //   }
 
-      //   // if(item.active){
-      //   labTree.length > 0 ? labTree[labTree.length - 1].children.push(item) : labTree.push(item);
-      //   // }
+    //   // if(item.active){
+    //   labTree.length > 0 ? labTree[labTree.length - 1].children.push(item) : labTree.push(item);
+    //   // }
 
-      //   labCount = labCount + 1;
-      // });
+    //   labCount = labCount + 1;
+    // });
 
     // console.log(labTree)
     setLabInfoData(labTree);
@@ -713,7 +714,7 @@ const Course = ({
     isLabComingsoon,
     PTavailabe,
     OCavailabe,
-    LABavailabe
+    LABavailabe,
   ]);
 
   // console.log(pageData)
@@ -856,7 +857,7 @@ const Course = ({
         courseTitle: pageContent.seo_details?.page_title,
         courseImage: `${
           process.env.NEXT_PUBLIC_WEB_MEDIA_URL
-        }${pageContent.seo_details?.featured_image?.replace("media/", "")}`, 
+        }${pageContent.seo_details?.featured_image?.replace("media/", "")}`,
         courseSlug: pageContent.seo_details?.slug,
         sellLevel: pageContent.seo_details?.sell_level,
         totaRatingCount: pageContent.ratings?.rating,
@@ -924,9 +925,9 @@ const Course = ({
     if (type !== "NOTIFY") document.querySelector("body").classList.add("open-modal-share-course");
   };
 
-  const handleCart = async(e) => {
+  const handleCart = async (e) => {
     e.preventDefault();
-    updateCouponDatasAction(null)
+    updateCouponDatasAction(null);
     const selProd = selectedCourseType.map((Itm) => Itm.toUpperCase()).sort();
     const enrollProd = enrolledProductTypes.map((Itm) => Itm.toUpperCase()).sort();
     if (selectedCourseType.includes("sandbox")) {
@@ -945,31 +946,36 @@ const Course = ({
       }
     }
     if (JSON.stringify(selProd) === JSON.stringify(enrollProd)) return;
-    addToCartAction({id: pageContent.id, type: selectedCourseType, currency: currency.type.toUpperCase(),
-    onSucessP: () => {
-      if (selectedCourseType.length > 0) {
-        setCartLoading(true);
-        let active_plan = false
-        if(userSubscriptionData && userSubscriptionData.active_plans){
-          let plans =  userSubscriptionData.active_plans.filter((itm)=> itm.is_plan_active == true)
-          if(plans.length > 0){
-            active_plan = true
+    addToCartAction({
+      id: pageContent.id,
+      type: selectedCourseType,
+      currency: currency.type.toUpperCase(),
+      onSucessP: () => {
+        if (selectedCourseType.length > 0) {
+          setCartLoading(true);
+          let active_plan = false;
+          if (userSubscriptionData && userSubscriptionData.active_plans) {
+            let plans = userSubscriptionData.active_plans.filter(
+              (itm) => itm.is_plan_active == true
+            );
+            if (plans.length > 0) {
+              active_plan = true;
+            }
           }
+          if (active_plan && userData) {
+            router.push("/cart");
+          } else {
+            setshowCartPopup(true);
+            document.querySelector("body").classList.add("avoid-overflow");
+          }
+        } else {
+          alertBoxAction({
+            type: "WARNING",
+            title: "",
+            msg: "Please select atleast one product.",
+          });
         }
-        if(active_plan && userData){
-          router.push('/cart')
-       }else{
-         setshowCartPopup(true)
-         document.querySelector('body').classList.add('avoid-overflow')
-       }
-      } else {
-        alertBoxAction({
-          type: "WARNING",
-          title: "",
-          msg: "Please select atleast one product.",
-        });
-      }
-     }
+      },
     });
   };
   const handleFreeTest = async (e) => {
@@ -1317,7 +1323,9 @@ const Course = ({
     router.push(redirectSlug);
   };
 
-  let  structuredFaqsData = [];
+  let structuredFaqsData = [];
+  console.log(pageData, "pageData");
+
   pageData?.faq_details.map((Itm) => {
     Itm.faq &&
       Itm.faq.length > 0 &&
@@ -1333,7 +1341,7 @@ const Course = ({
           });
         }
       });
-  });  
+  });
 
   let shortdespt = "";
   let shortdesoc = "";
@@ -1396,22 +1404,21 @@ const Course = ({
 
   // tabs from mui is used for FAQ block
   //useEffect(() => { console.log(pageContent) }, [pageContent])
-  const [faqType, setFaqType] = useState('');
+  const [faqType, setFaqType] = useState("");
   const [filteredTabs, setFilteredTabs] = useState([]);
 
   const changeFaqType = (newFaqType) => {
     setFaqType(newFaqType);
   };
 
-
   useEffect(() => {
     const tabs = pageContent?.faq_details
-      .filter((faqItem) => faqItem.faq?.some((e) => e.answer !== null && e.answer.trim() !== ''))
+      .filter((faqItem) => faqItem.faq?.some((e) => e.answer !== null && e.answer.trim() !== ""))
       .map((faqItem) => faqItem.faq_type);
 
     setFilteredTabs(tabs);
 
-    const initialFaqType = filteredTabs?.length > 0 ? filteredTabs[0] : '';
+    const initialFaqType = filteredTabs?.length > 0 ? filteredTabs[0] : "";
     setFaqType(initialFaqType);
 
     //console.log(filteredTabs);
@@ -1423,7 +1430,6 @@ const Course = ({
     }
   }, [filteredTabs]);
 
- 
   //
   useEffect(() => {
     let isMount = true;
@@ -1504,25 +1510,24 @@ const Course = ({
   let validity = null;
   //from backend sandbox in products came first we need it at last only
   if (pageContent) {
-    if(pageContent && pageContent.products && pageContent.products.length) {
-    if (pageContent.products[0].product_type === "SANDBOX") {
-      let sb = pageContent.products[0];
-      // console.log(sb)
-      pageContent.products.splice(0, 1);
-      pageContent.products.push(sb);
+    if (pageContent && pageContent.products && pageContent.products.length) {
+      if (pageContent.products[0].product_type === "SANDBOX") {
+        let sb = pageContent.products[0];
+        // console.log(sb)
+        pageContent.products.splice(0, 1);
+        pageContent.products.push(sb);
+      }
     }
   }
-}
   if (pageContent) {
-    if(pageContent && pageContent.products && pageContent.products.length) {
-
-    let SB = pageContent.products.find((itm) => itm.product_type === "SANDBOX");
-    if (SB) {
-      validity = Object.keys(SB.regular_price);
-      SB_sale_price = SB.sale_price[validity[0]];
-      SB_reg_price = SB.regular_price[validity[0]];
+    if (pageContent && pageContent.products && pageContent.products.length) {
+      let SB = pageContent.products.find((itm) => itm.product_type === "SANDBOX");
+      if (SB) {
+        validity = Object.keys(SB.regular_price);
+        SB_sale_price = SB.sale_price[validity[0]];
+        SB_reg_price = SB.regular_price[validity[0]];
+      }
     }
-  }
   }
   const [isNotifyButtonDisabled, setIsNotifyButtonDisabled] = useState(false);
   const handleNotifyButtonClick = (n) => {
@@ -1609,46 +1614,50 @@ const Course = ({
     getReviewFeedbackAction();
   }, [userData]);
 
-const [disLike, setDisLike] = useState([]);
-const [like, setLike] = useState([]);
+  const [disLike, setDisLike] = useState([]);
+  const [like, setLike] = useState([]);
 
-useEffect(() => {
-  if (userData) {
-    if (reviewFeedback) {
-      const likedReviews = reviewFeedback.filter(item => item.like_dislike === 1).map(item => item.review_id);
-      const dislikedReviews = reviewFeedback.filter(item => item.like_dislike === 0).map(item => item.review_id);
-      setLike(likedReviews);      
-      setDisLike(dislikedReviews);
+  useEffect(() => {
+    if (userData) {
+      if (reviewFeedback) {
+        const likedReviews = reviewFeedback
+          .filter((item) => item.like_dislike === 1)
+          .map((item) => item.review_id);
+        const dislikedReviews = reviewFeedback
+          .filter((item) => item.like_dislike === 0)
+          .map((item) => item.review_id);
+        setLike(likedReviews);
+        setDisLike(dislikedReviews);
+      }
     }
-  }
-}, [reviewFeedback]);
+  }, [reviewFeedback]);
 
-const handleDisLike = (id) => {
-  setDisLike((prevDisLike) => {
-    if (prevDisLike.includes(id)) {
-      return prevDisLike;
-      // return prevDisLike.filter(item => item !== id);
-    } else {
-      storeReviewFeedbackAction(id, 0)
-      setLike((prevLike) => prevLike.filter(item => item !== id));
-      return [...prevDisLike, id];
-    }
-  });
-}
+  const handleDisLike = (id) => {
+    setDisLike((prevDisLike) => {
+      if (prevDisLike.includes(id)) {
+        return prevDisLike;
+        // return prevDisLike.filter(item => item !== id);
+      } else {
+        storeReviewFeedbackAction(id, 0);
+        setLike((prevLike) => prevLike.filter((item) => item !== id));
+        return [...prevDisLike, id];
+      }
+    });
+  };
 
-const handleLike = (id) => {
-  // console.log(id, 'iddd');
-  setLike((prevLike) => {
-    if (prevLike.includes(id)) {
-      return prevLike;
-      // return prevLike.filter(item => item !== id);
-    } else {
-      storeReviewFeedbackAction(id, 1)
-      setDisLike((prevDisLike) => prevDisLike.filter(item => item !== id));
-      return [...prevLike, id];
-    }
-  });
-}
+  const handleLike = (id) => {
+    // console.log(id, 'iddd');
+    setLike((prevLike) => {
+      if (prevLike.includes(id)) {
+        return prevLike;
+        // return prevLike.filter(item => item !== id);
+      } else {
+        storeReviewFeedbackAction(id, 1);
+        setDisLike((prevDisLike) => prevDisLike.filter((item) => item !== id));
+        return [...prevLike, id];
+      }
+    });
+  };
 
   const currentDate = new Date();
   const startDate = currentDate.toISOString().slice(0, 10);
@@ -1659,7 +1668,6 @@ const handleLike = (id) => {
   )
     .toISOString()
     .slice(0, 10);
-  
 
   return (
     <>
@@ -2045,7 +2053,6 @@ const handleLike = (id) => {
 
       {pageContent ? (
         <>
-         
           {/* Schema Builder for Product Faqs */}
           {/* <script type="application/ld+json">
             {JSON.stringify({
@@ -2071,13 +2078,10 @@ const handleLike = (id) => {
           <PreviewCourseModal previewData={previewData} />
 
           <VideoReviewModal videoUrl={activeVideoUrl} />
-          
-          <WhizcardModal
-            courseId={pageContent.id}
-            whizCardLink={pageData.whizcard}
-          />
-          <Cartpopup 
-            showCartpopup={showCartPopup} 
+
+          <WhizcardModal courseId={pageContent.id} whizCardLink={pageData.whizcard} />
+          <Cartpopup
+            showCartpopup={showCartPopup}
             setshowcartpopup={setshowCartPopup}
             currency={currency}
             pageContent={pageContent}
@@ -2168,19 +2172,39 @@ const handleLike = (id) => {
                     )}
                   </div>
                   <div className="course-content">
-                    <div style={{ display: 'flex', alignItems: 'flex-start', marginRight:'1rem' }}>
-                      <h1 className="title" style={{ margin: 0 }}>{pageContent.seo_details?.page_title}</h1>
+                    <div style={{ display: "flex", alignItems: "flex-start", marginRight: "1rem" }}>
+                      <h1 className="title" style={{ margin: 0 }}>
+                        {pageContent.seo_details?.page_title}
+                      </h1>
                       {userData ? (
-                        <Tooltip title={whislist.includes(pageContent.id) ? 'Remove from Wishlist' : 'Add to Wishlist'}>
+                        <Tooltip
+                          title={
+                            whislist.includes(pageContent.id)
+                              ? "Remove from Wishlist"
+                              : "Add to Wishlist"
+                          }
+                        >
                           {whislist.includes(pageContent.id) ? (
                             <FavoriteIcon
-                              style={{ color: "red", cursor: "pointer", padding: "0.2rem 1rem 0 1rem" }}
-                              onClick={(e) => handleWhislist(e, pageContent.id, userData.data.user_id)}
+                              style={{
+                                color: "red",
+                                cursor: "pointer",
+                                padding: "0.2rem 1rem 0 1rem",
+                              }}
+                              onClick={(e) =>
+                                handleWhislist(e, pageContent.id, userData.data.user_id)
+                              }
                             />
                           ) : (
                             <FavoriteBorderIcon
-                              style={{ color: "white", cursor: "pointer", padding: "0.2rem 1rem 0 1rem" }}
-                              onClick={(e) => handleWhislist(e, pageContent.id, userData.data.user_id)}
+                              style={{
+                                color: "white",
+                                cursor: "pointer",
+                                padding: "0.2rem 1rem 0 1rem",
+                              }}
+                              onClick={(e) =>
+                                handleWhislist(e, pageContent.id, userData.data.user_id)
+                              }
                             />
                           )}
                         </Tooltip>
@@ -2215,7 +2239,7 @@ const handleLike = (id) => {
                         </span>
                       </div>
                     )}
-                 
+
                     <div className="right-part">
                       <div className="btn-group">
                         <div>
@@ -2340,7 +2364,7 @@ const handleLike = (id) => {
                         ""
                       )}
                     </div>
-                  </div>                  
+                  </div>
                 </div>
                 <div className="right-part right-part-d"></div>
               </div>
@@ -2375,15 +2399,15 @@ const handleLike = (id) => {
                     </li>
                   )}
                   {exampattern !== null && (
-                  <li className={visibleSection === "examInfo" ? "active" : ""}>
-                    <a
-                      onClick={() => {
-                        scrollTo(examInfo.current);
-                      }}
-                    >
-                      Exam Information
-                    </a>
-                  </li>
+                    <li className={visibleSection === "examInfo" ? "active" : ""}>
+                      <a
+                        onClick={() => {
+                          scrollTo(examInfo.current);
+                        }}
+                      >
+                        Exam Information
+                      </a>
+                    </li>
                   )}
                   <li className={visibleSection === "reviews" ? "active" : ""}>
                     <a
@@ -2459,7 +2483,6 @@ const handleLike = (id) => {
                             </div>
                           </>
                         )}
-             
                     </div>
                   </div>
 
@@ -2615,10 +2638,23 @@ const handleLike = (id) => {
                                             margin: "3px 0 0 0",
                                           }}
                                         >
-                                          {pageContent.web_counts?.lab_count} Labs Available <br></br>
-                                          {
-                                             pageContent.detailedInfo.lab_info.filter((itm)=> itm.activity_id == 2).length>0 ? <> {pageContent.detailedInfo.lab_info.filter((itm)=> itm.activity_id == 2).length}  Lectures Available </>:""
-                                          }
+                                          {pageContent.web_counts?.lab_count} Labs Available{" "}
+                                          <br></br>
+                                          {pageContent.detailedInfo.lab_info.filter(
+                                            (itm) => itm.activity_id == 2
+                                          ).length > 0 ? (
+                                            <>
+                                              {" "}
+                                              {
+                                                pageContent.detailedInfo.lab_info.filter(
+                                                  (itm) => itm.activity_id == 2
+                                                ).length
+                                              }{" "}
+                                              Lectures Available{" "}
+                                            </>
+                                          ) : (
+                                            ""
+                                          )}
                                         </small>
                                       </samp>
                                     </li>
@@ -2983,10 +3019,23 @@ const handleLike = (id) => {
                                         <div className="acc-title">
                                           <div style={{ margin: "0px" }}>Labs</div>
                                           <div className="mini">
-                                            {pageContent.web_counts?.lab_count} Labs Available <br></br>
-                                            {
-                                             pageContent.detailedInfo.lab_info.filter((itm)=> itm.activity_id == 2).length>0 ? <> {pageContent.detailedInfo.lab_info.filter((itm)=> itm.activity_id == 2).length}  Lectures Available </>:""
-                                          }
+                                            {pageContent.web_counts?.lab_count} Labs Available{" "}
+                                            <br></br>
+                                            {pageContent.detailedInfo.lab_info.filter(
+                                              (itm) => itm.activity_id == 2
+                                            ).length > 0 ? (
+                                              <>
+                                                {" "}
+                                                {
+                                                  pageContent.detailedInfo.lab_info.filter(
+                                                    (itm) => itm.activity_id == 2
+                                                  ).length
+                                                }{" "}
+                                                Lectures Available{" "}
+                                              </>
+                                            ) : (
+                                              ""
+                                            )}
                                           </div>
                                         </div>
                                       </div>
@@ -3171,9 +3220,9 @@ const handleLike = (id) => {
                               {videoData.length > 0 ? <h2>Video Reviews</h2> : ""}
                             </div> */}
 
-                            {/* // TODO : to be removed before moving to PRD */}
+                        {/* // TODO : to be removed before moving to PRD */}
 
-                            {/* <div className="video-group owl-carousel owl-theme">
+                        {/* <div className="video-group owl-carousel owl-theme">
                               {videoData.map((item, i) => (
                                 <figure key={i} onClick={() => openVideoModal(item.video_url)}>
                                   <div className="btn-play">
@@ -3211,7 +3260,7 @@ const handleLike = (id) => {
                                 </figure>
                               ))}
                             </div> */}
-                            {/* <Slider {...settings}>
+                        {/* <Slider {...settings}>
                               {videoData.map((item, i) => {
                                 return (
                                   <>
@@ -3256,7 +3305,7 @@ const handleLike = (id) => {
                               })}
                             </Slider> */}
 
-                            {/* {videoData && (
+                        {/* {videoData && (
                               <div className="review-block">
                                 <div className="container">
                                   <div className="video-review">
@@ -3406,9 +3455,13 @@ const handleLike = (id) => {
                                               {moment(rev.created_at).fromNow()}
                                             </div>
                                           </div>
-                                          <span className="name"  style={{
-                                            margin: window.innerWidth > 640 ? "0px 0px 10px -8px" : "",
-                                          }}>
+                                          <span
+                                            className="name"
+                                            style={{
+                                              margin:
+                                                window.innerWidth > 640 ? "0px 0px 10px -8px" : "",
+                                            }}
+                                          >
                                             <StarRating
                                               isSingle={false}
                                               avgRating={rev.post_addition.rating}
@@ -3416,10 +3469,10 @@ const handleLike = (id) => {
                                             />
                                             {rev.is_verfied_buyer ? (
                                               <div className="verified-buyer posted-since">
-                                              <>
-                                                <i className="icon icon-font-verified-buyes"></i>
-                                                <span>Verified buyer</span>
-                                              </>
+                                                <>
+                                                  <i className="icon icon-font-verified-buyes"></i>
+                                                  <span>Verified buyer</span>
+                                                </>
                                               </div>
                                             ) : (
                                               ""
@@ -3443,27 +3496,67 @@ const handleLike = (id) => {
                                                 __html: rev.post_question_text,
                                               }}
                                             />
-                                            {userData && 
-                                            <div className="usefu" style={{ display:'inline-flex', alignItems:"center", justifyContent:"center" }}>
-                                              <div style={{marginTop:"8px"}}>Helpful?</div>
-                                              &nbsp;&nbsp;&nbsp;&nbsp;
-                                              <div onClick={(e) => handleLike(rev?.post_addition?.review_id)} style={{ cursor: "pointer", marginTop:"10px"}}>
-                                              {like.includes(rev.post_addition.review_id) ? 
-                                                  <img height={23} width={23} src="/images/LikedIconS.png" alt="LikeFilled" />:
-                                                  <img height={23} width={23} src="/images/LikedIcon.png" alt="LikeOutlined" />
-                                                }
-                                              </div>
-                                              &nbsp;&nbsp;&nbsp;
+                                            {userData && (
                                               <div
-                                                onClick={(e) => handleDisLike(rev?.post_addition?.review_id)}
-                                                style={{ cursor: "pointer", transform: "rotate(180deg)" }}
+                                                className="usefu"
+                                                style={{
+                                                  display: "inline-flex",
+                                                  alignItems: "center",
+                                                  justifyContent: "center",
+                                                }}
                                               >
-                                                {disLike.includes(rev.post_addition.review_id) ? 
-                                                  <img height={23} width={23} src="/images/LikedIconS.png" alt="LikeFilled" />:
-                                                  <img height={23} width={23} src="/images/LikedIcon.png" alt="LikeOutlined" />
-                                                }
+                                                <div style={{ marginTop: "8px" }}>Helpful?</div>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <div
+                                                  onClick={(e) =>
+                                                    handleLike(rev?.post_addition?.review_id)
+                                                  }
+                                                  style={{ cursor: "pointer", marginTop: "10px" }}
+                                                >
+                                                  {like.includes(rev.post_addition.review_id) ? (
+                                                    <img
+                                                      height={23}
+                                                      width={23}
+                                                      src="/images/LikedIconS.png"
+                                                      alt="LikeFilled"
+                                                    />
+                                                  ) : (
+                                                    <img
+                                                      height={23}
+                                                      width={23}
+                                                      src="/images/LikedIcon.png"
+                                                      alt="LikeOutlined"
+                                                    />
+                                                  )}
+                                                </div>
+                                                &nbsp;&nbsp;&nbsp;
+                                                <div
+                                                  onClick={(e) =>
+                                                    handleDisLike(rev?.post_addition?.review_id)
+                                                  }
+                                                  style={{
+                                                    cursor: "pointer",
+                                                    transform: "rotate(180deg)",
+                                                  }}
+                                                >
+                                                  {disLike.includes(rev.post_addition.review_id) ? (
+                                                    <img
+                                                      height={23}
+                                                      width={23}
+                                                      src="/images/LikedIconS.png"
+                                                      alt="LikeFilled"
+                                                    />
+                                                  ) : (
+                                                    <img
+                                                      height={23}
+                                                      width={23}
+                                                      src="/images/LikedIcon.png"
+                                                      alt="LikeOutlined"
+                                                    />
+                                                  )}
+                                                </div>
                                               </div>
-                                            </div>}
+                                            )}
                                           </div>
                                         </div>
                                       </div>
@@ -3500,49 +3593,62 @@ const handleLike = (id) => {
                         style={{ marginBottom: "40px" }}
                         ref={faqs}
                       >
-                      <div className="container">
-                        <div className="container-left">
-                          <h2 className="title">Frequently Asked Questions</h2>
-                          <div className="tab_wrapper">
-                            {filteredTabs && filteredTabs.length > 0 && (
-
-                              <TabContext value={faqType}>
-                                <Tabs
-                                  value={faqType}
-                                  onChange={(event, newFaqType) => changeFaqType(newFaqType)}
-                                  variant="scrollable"
-                                  scrollButtons="auto"
-                                  
-                                >
-                                  {filteredTabs.map((tab) => (
-                                    <Tab
-                                      label={
-                                        <div style={{ display: "flex", alignItems: "center", paddingBottom:'15px'}}   className={faqType === tab ? "resp-tab-active" : ""}>
-                                          <i className={`icon ${tabs[tab]?.icon}`} ></i>
-                                          <span style={{ marginLeft: "8px" }}>{tabs[tab]?.title}</span>
-                                        </div>}
-                                      value={tab}
-                                      key={tab}
-                                      style={{ color: "#62646A",  backgroundColor:'#fff', }}
-                                    
-                                      
-                                    />
-                                  ))}
-                                </Tabs>
-                                {pageContent && pageContent.faq_details.filter((faqItem) => filteredTabs?.includes(faqItem.faq_type)).map((event) => (
-                                  <div className="accordian-block">
-                                    <div className="accordian-list">
-                                      <TabPanel value={event.faq_type} key={event.id}>
-                                        {event.faq?.map((e, index) => (
-                                          <AccordianFaq data={[e]} panel={`panel${e.id}_${index}`} key={index} />
-                                        ))}
-                                      </TabPanel>
-                                    </div> </div>
-                                ))}
-                              </TabContext>
-
-                            )}
-                          </div>
+                        <div className="container">
+                          <div className="container-left">
+                            <h2 className="title">Frequently Asked Questions</h2>
+                            <div className="tab_wrapper">
+                              {filteredTabs && filteredTabs.length > 0 && (
+                                <TabContext value={faqType}>
+                                  <Tabs
+                                    value={faqType}
+                                    onChange={(event, newFaqType) => changeFaqType(newFaqType)}
+                                    variant="scrollable"
+                                    scrollButtons="auto"
+                                  >
+                                    {filteredTabs.map((tab) => (
+                                      <Tab
+                                        label={
+                                          <div
+                                            style={{
+                                              display: "flex",
+                                              alignItems: "center",
+                                              paddingBottom: "15px",
+                                            }}
+                                            className={faqType === tab ? "resp-tab-active" : ""}
+                                          >
+                                            <i className={`icon ${tabs[tab]?.icon}`}></i>
+                                            <span style={{ marginLeft: "8px" }}>
+                                              {tabs[tab]?.title}
+                                            </span>
+                                          </div>
+                                        }
+                                        value={tab}
+                                        key={tab}
+                                        style={{ color: "#62646A", backgroundColor: "#fff" }}
+                                      />
+                                    ))}
+                                  </Tabs>
+                                  {pageContent &&
+                                    pageContent.faq_details
+                                      .filter((faqItem) => filteredTabs?.includes(faqItem.faq_type))
+                                      .map((event) => (
+                                        <div className="accordian-block">
+                                          <div className="accordian-list">
+                                            <TabPanel value={event.faq_type} key={event.id}>
+                                              {event.faq?.map((e, index) => (
+                                                <AccordianFaq
+                                                  data={[e]}
+                                                  panel={`panel${e.id}_${index}`}
+                                                  key={index}
+                                                />
+                                              ))}
+                                            </TabPanel>
+                                          </div>{" "}
+                                        </div>
+                                      ))}
+                                </TabContext>
+                              )}
+                            </div>
                             {/* <div id="parentHorizontalTab2" className="tab_wrapper">
                               <ul className="resp-tabs-list hor_1 tab_list">
                                 {pageContent.faq_details.map(
@@ -4304,7 +4410,8 @@ const handleLike = (id) => {
                                                     {SB_sale_price[currency.type]}
                                                   </span>
                                                 </>
-                                              ) : SB_reg_price[currency.type] == 0 && Sanboxavailable ? (
+                                              ) : SB_reg_price[currency.type] == 0 &&
+                                                Sanboxavailable ? (
                                                 <span className="price">FREE</span>
                                               ) : (
                                                 ""
@@ -4618,7 +4725,7 @@ const handleLike = (id) => {
   );
 };
 
-const mapStateToProps = (state) => {  
+const mapStateToProps = (state) => {
   return {
     cartData: state.cart.cart,
     userData: state.authData.userData,
@@ -4637,8 +4744,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCartAction: ({id, type, currency, onSucessP}) => dispatch(addToCart(id, type, currency,onSucessP)),
-    storeReviewFeedbackAction: (review_id, like_dislike) => dispatch(storeReview(review_id, like_dislike)),
+    addToCartAction: ({ id, type, currency, onSucessP }) =>
+      dispatch(addToCart(id, type, currency, onSucessP)),
+    storeReviewFeedbackAction: (review_id, like_dislike) =>
+      dispatch(storeReview(review_id, like_dislike)),
     getReviewFeedbackAction: () => dispatch(getReview()),
     removeFromCartAction: (id, type) => dispatch(removeFromCart(id, type)),
     addWhislist: (course_id, user_id) => dispatch(StoreWhishlist(course_id, user_id)),

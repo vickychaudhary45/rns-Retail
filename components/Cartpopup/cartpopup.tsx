@@ -175,7 +175,7 @@ const Cartpopup = ({
           )}`
         );
         // related.data.courses = related.data.courses.filter((itm)=> itm.id != pageContent.id && !courseIdPurchased.includes(itm.id))
-        related.data.courses = related.data.courses.filter((itm) => itm.products.length > 0);
+        // related.data.courses = related.data?.courses?.filter((itm) => itm.products.length > 0);
         let coursesCameAlredy = [];
         related.data.courses.forEach((itm) => {
           coursesCameAlredy.push(itm.id);
@@ -194,20 +194,20 @@ const Cartpopup = ({
           `${baseUrl}/courses/popularcourse/?course_page_id=${course_page_id}&course_id_bought=${pageContent.id}`
         );
         // related.data.courses = related.data.courses?.filter((itm)=> itm.id != pageContent.id)
-        related.data.courses = related.data.courses.filter((itm) => itm.products.length > 0);
-        if (related.data.courses.length < 8) {
-          let coursesCameAlredy = [];
-          related.data.courses.forEach((itm) => {
-            coursesCameAlredy.push(itm.id);
-          });
-          let moreCourses = await axios.get(
-            `${baseUrl}/courses/popularcourse/?course_page_id=&course_id_bought=${coursesCameAlredy.join(
-              ","
-            )}`
-          );
-          let put_index = 8 - related.data.courses.length;
-          setMoreCourses(moreCourses.data.courses.filter((itm, idx) => idx < put_index));
-        }
+        // related.data.courses = related.data?.courses?.filter((itm) => itm.products.length > 0);
+        // if (related.data.courses.length < 8) {
+        //   let coursesCameAlredy = [];
+        //   related.data.courses.forEach((itm) => {
+        //     coursesCameAlredy.push(itm.id);
+        //   });
+        //   let moreCourses = await axios.get(
+        //     `${baseUrl}/courses/popularcourse/?course_page_id=&course_id_bought=${coursesCameAlredy.join(
+        //       ","
+        //     )}`
+        //   );
+        //   let put_index = 8 - related.data.courses.length;
+        //   setMoreCourses(moreCourses.data.courses.filter((itm, idx) => idx < put_index));
+        // }
         setRelatedCourses(related.data.courses);
       }
     }
@@ -473,7 +473,7 @@ const Cartpopup = ({
                 <div>
                   <hr />
                 </div>
-                <div className={styles.relatedcourse}>
+                {/* <div className={styles.relatedcourse}>
                   {relatedCourses.length > 0 && (
                     <>
                       <div className={styles.relatedtitle}>
@@ -522,7 +522,7 @@ const Cartpopup = ({
                       </div>
                     </>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           </>
