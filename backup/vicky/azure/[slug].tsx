@@ -1,14 +1,14 @@
 import axios from "axios";
 import { StarRating } from "@/components/import";
-import { getReviews } from "../../services/review-services/services";
+import { getReviews } from "../../../services/review-services/services";
 import { getVideoRatings } from "@/services/review-services/services";
 import React, { useState, useEffect } from "react";
-import UserAvatar from "../../components/plugins/UserAvatar";
+import UserAvatar from "../../../components/plugins/UserAvatar";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
-import { updateRedirection } from "../../redux/Redirection/redirect-actions";
+import { updateRedirection } from "../../../redux/Redirection/redirect-actions";
 import Link from "next/link";
-import { VideoReviewModal } from "../../components/shared/Modals";
+import { VideoReviewModal } from "../../../components/shared/Modals";
 import Head from "next/head";
 import { useKeenSlider } from "keen-slider/react";
 import { Arrow } from "@/components/shared/Arrow";

@@ -4,11 +4,11 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 import { connect } from "react-redux";
 import { useEffect, useState } from "react";
 import "keen-slider/keen-slider.min.css";
-import { addSubscription } from "../../redux/AddToCart/cart-actions";
+import { addSubscription } from "../../../redux/AddToCart/cart-actions";
 import { useKeenSlider } from "keen-slider/react";
 import UserAvatar from "@/components/plugins/UserAvatar";
 import { useRouter } from "next/router";
-import { updateRedirection } from "../../redux/Redirection/redirect-actions";
+import { updateRedirection } from "../../../redux/Redirection/redirect-actions";
 import { PopupModal } from "@/components/shared/Modals";
 const AmazonEmployees = ({
   courseDatas,

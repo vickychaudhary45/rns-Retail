@@ -170,42 +170,46 @@ export const authLogin = (values, currentLocation) => {
       if (values.email && values.password) {
         const { email, password, isAmazonUser } = values;
 
-        // const url = `${baseUrl}/auth/login${isAmazonUser ? "/amazon" : ""}`;
+        const url = `${baseUrl}/auth/login${isAmazonUser ? "/amazon" : ""}`;
 
-        // axios
-        //   .post(
-        //     url,
-        //     {
-        //       email: email.toLowerCase(),
-        //       password,
-        //     },
-        //     {
-        //       headers: {
-        //         "content-type": "application/json",
-        //       },
-        //     }
-        //   )
-        const dummyLoginResponse = {
-          status: "success",
-          msg: "Login successfull",
-          data: {
-            token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleToken123456789",
-            user_id: "u1234567890",
-            user_email: "john.doe@example.com",
-            name: {
-              first: "John",
-              last: "Doe",
+        console.log(url, "url");
+
+        axios
+          .post(
+            url,
+            {
+              email: email.toLowerCase(),
+              password,
             },
-            profile_img: "https://example.com/images/profile/johndoe.png",
-          },
-        };
+            {
+              headers: {
+                "content-type": "application/json",
+              },
+            }
+          )
+          // const dummyLoginResponse = {
+          //   status: "success",
+          //   msg: "Login successfull",
+          //   data: {
+          //     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleToken123456789",
+          //     user_id: "u1234567890",
+          //     user_email: "john.doe@example.com",
+          //     name: {
+          //       first: "John",
+          //       last: "Doe",
+          //     },
+          //     profile_img: "https://example.com/images/profile/johndoe.png",
+          //   },
+          // };
 
-        Promise.resolve({
-          status: 200,
-          statusText: "OK",
-          data: dummyLoginResponse,
-        })
+          // Promise.resolve({
+          //   status: 200,
+          //   statusText: "OK",
+          //   data: dummyLoginResponse,
+          // })
           .then(async ({ status, statusText, data }) => {
+            console.log(status, statusText, data, "status, statusText, data");
+
             if (status === 500) {
               console.error(statusText);
               return onSuccess(null);

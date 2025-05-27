@@ -59,7 +59,7 @@ const FooterWrapper = ({
     if (promoData.data && promoData.data.length > 0) {
       setPromoResp({ data: promoData.data, slugs: promoData.slugs });
 
-      const courseData = promoData.data.find((Itm) => pageSlug.includes(Itm.course_slug)) || null;
+      const courseData = promoData?.data?.find((Itm) => pageSlug.includes(Itm.course_slug)) || null;
 
       if (userData && courseData) {
         axios

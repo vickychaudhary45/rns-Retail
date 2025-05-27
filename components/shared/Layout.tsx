@@ -190,21 +190,21 @@ const Layout = ({
     }
   }
 
-  websiteSettings?.forEach(function (item) {
-    if (item.key == "website_header_script") {
-      headerScripts = item.value;
-    }
+  // websiteSettings?.forEach(function (item) {
+  //   if (item.key == "website_header_script") {
+  //     headerScripts = item.value;
+  //   }
 
-    if (item.key == "website_header_css") {
-      headerCss = item.value;
-    }
-    if (item.key == "website_googleanalyticcode") {
-      googleAnalyticCode = item.value;
-    }
-    if (item.key == "website_footer_script") {
-      footerScripts = item.value;
-    }
-  });
+  //   if (item.key == "website_header_css") {
+  //     headerCss = item.value;
+  //   }
+  //   if (item.key == "website_googleanalyticcode") {
+  //     googleAnalyticCode = item.value;
+  //   }
+  //   if (item.key == "website_footer_script") {
+  //     footerScripts = item.value;
+  //   }
+  // });
 
 
 
@@ -371,17 +371,7 @@ const Layout = ({
             />
           )}
         {children}
-        <FooterWrapper
-          data={footerData}
-          pathName={pathName}
-          footerScripts={footerScripts}
-          subscribedUser={subscribedUser}
-          bannerActive={bannerActive}
-          promoData={promoData}
-          subcribed_not_expired = {sub_notexpired}
-          user_type={user_type}
-          timer_details={timer_details}
-        />
+        
 
         {cookieConsent && <CookieConsent />}
       </div>

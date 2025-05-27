@@ -499,7 +499,7 @@ const Checkout = ({ subData, userData, alertBoxAction, buttonClickAction, utmDat
         }
         break;
 
-      case !"active":
+      // case !"active":
       case "incomplete":
       case "requires_action":
       case "requires_source_action":

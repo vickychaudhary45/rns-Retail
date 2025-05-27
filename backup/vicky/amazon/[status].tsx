@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { clearCart, addSubscription } from "../../redux/AddToCart/cart-actions";
+import { clearCart, addSubscription } from "../../../redux/AddToCart/cart-actions";
 import { connect } from "react-redux";
 import { useRouter } from "next/router";
 import axios from "axios";

@@ -781,7 +781,7 @@ const Header = ({
     if (!userData && currency) {
       setloading(true);
       //post method to get the current price of products
-      getCartfromCookie();
+      // getCartfromCookie();
     }
   }, [cart, userData, currency]);
 
