@@ -27,7 +27,7 @@ const Index = ({
   courseEnrollmentDatas,
   slug,
   crazyDealData,
-  promoData,
+  // promoData,
   extraData,
   enrollmentDetails,
   sandbox,
@@ -38,11 +38,11 @@ const Index = ({
   subscriptionRes,
   seoHomePageData,
 }) => {
-  const crazyDeatData =
-    promoData &&
-    promoData.data &&
-    promoData.data.length &&
-    promoData.data.find((Itm) => Itm.course_slug === slug);
+  const crazyDeatData = null;
+  //   promoData &&
+  //   promoData.data &&
+  //   promoData.data.length &&
+  //   promoData.data.find((Itm) => Itm.course_slug === slug);
   switch (page) {
     case pageTypes.CATEGORY_LANDING_PAGE:
       return <Categories pageData={pageData} seoHomePageData={seoHomePageData || null} />;
