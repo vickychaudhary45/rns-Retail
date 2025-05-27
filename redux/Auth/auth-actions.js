@@ -169,10 +169,7 @@ export const authLogin = (values, currentLocation) => {
     try {
       if (values.email && values.password) {
         const { email, password, isAmazonUser } = values;
-
         const url = `${baseUrl}/auth/login${isAmazonUser ? "/amazon" : ""}`;
-
-        console.log(url, "url");
 
         axios
           .post(
@@ -187,29 +184,7 @@ export const authLogin = (values, currentLocation) => {
               },
             }
           )
-          // const dummyLoginResponse = {
-          //   status: "success",
-          //   msg: "Login successfull",
-          //   data: {
-          //     token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.exampleToken123456789",
-          //     user_id: "u1234567890",
-          //     user_email: "john.doe@example.com",
-          //     name: {
-          //       first: "John",
-          //       last: "Doe",
-          //     },
-          //     profile_img: "https://example.com/images/profile/johndoe.png",
-          //   },
-          // };
-
-          // Promise.resolve({
-          //   status: 200,
-          //   statusText: "OK",
-          //   data: dummyLoginResponse,
-          // })
           .then(async ({ status, statusText, data }) => {
-            console.log(status, statusText, data, "status, statusText, data");
-
             if (status === 500) {
               console.error(statusText);
               return onSuccess(null);
@@ -220,19 +195,19 @@ export const authLogin = (values, currentLocation) => {
                 // dispatch(getCart(data.data.user_id));
                 let cookieValue = cookie.get("Subscribe_now_button");
                 let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
-                if (cookieValue) {
-                  dispatch(subsButtonClick(data.data, parsedData));
-                }
-                let currency = JSON.parse(cookie.get("currency"));
-                let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+                // if (cookieValue) {
+                //   dispatch(subsButtonClick(data.data, parsedData));
+                // }
+                // let currency = JSON.parse(cookie.get("currency"));
+                // let cart = JSON.parse(localStorage.getItem("cartData")) || [];
                 if (cart && currency) {
                   await dispatch(updateSateOfCartAfterLogin(cart, currency, data));
                 }
-                dispatch(storeUserProfile(data.data.token, currentLocation)); // update User Profile
-                dispatch(Usercourse(data.data.user_id));
-                dispatch(NotifiedCourse(data.data.user_id));
-                dispatch(enrollCourseDetail(data.data.user_id));
-                dispatch(getWishList(data.data.user_id));
+                // dispatch(storeUserProfile(data.data.token, currentLocation)); // update User Profile
+                // dispatch(Usercourse(data.data.user_id));
+                // dispatch(NotifiedCourse(data.data.user_id));
+                // dispatch(enrollCourseDetail(data.data.user_id));
+                // dispatch(getWishList(data.data.user_id));
               }
               return onSuccess(data);
             }
