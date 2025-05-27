@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from 'react';
 import Head from "next/head";
 import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
@@ -87,9 +88,9 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
             "@context": "https://schema.org",
             "@type": "Organization",
             // image: "https://www.example.com/example_image.jpg",
-            url: "https://www.whizlabs.com/",
-            sameAs: ["https://www.whizlabs.com/", "https://www.whizlabs.com/about-us/"],
-            logo: "https://www.whizlabs.com/images/logo11.svg",
+            // url: "https://www.whizlabs.com/",
+            // sameAs: ["https://www.whizlabs.com/", "https://www.whizlabs.com/about-us/"],
+            // logo: "https://www.whizlabs.com/images/logo11.svg",
             name: "whizlabs",
             description: "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We&#039;ve helped over 5M+ professionals to get ahead in their careers.",
             email: "contact@whizlabs.com",
@@ -391,11 +392,11 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
 export async function getStaticProps({ params }) {
   let blogContent = null;
 
-  const response = await axios.get("https://www.whizlabs.com/blog/wp-json/wp/v2/posts?categories=2718");
+  // const response = await axios.get("https://www.whizlabs.com/blog/wp-json/wp/v2/posts?categories=2718");
 
-  if (response && response.data.length > 0) {
-    blogContent = response.data;
-  }
+  // if (response && response.data.length > 0) {
+  //   blogContent = response.data;
+  // }
 
   const employeesList = [
     {
@@ -681,7 +682,7 @@ export async function getStaticProps({ params }) {
           content:
             "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
         },
-        { name: "", property: "og:url", content: "https://www.whizlabs.com/about-us/" },
+        // { name: "", property: "og:url", content: "https://www.whizlabs.com/about-us/" },
         { name: "", property: "og:site_name", content: "Whizlabs" },
         {
           name: "",

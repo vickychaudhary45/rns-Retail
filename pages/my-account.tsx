@@ -1,3 +1,12 @@
+// pages/my-wishlist.tsx
+import React from 'react';
+
+const MyWishlist = () => {
+  return <div>My Wishlist Page</div>;
+};
+
+export default MyWishlist;
+
 // import axios from "axios";
 // import { useState, useEffect } from "react";
 // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;

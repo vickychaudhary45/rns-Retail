@@ -1,3 +1,10 @@
+import React from 'react';
+
+const MyAccount = () => {
+  return <div>My Account Page</div>;
+};
+
+export default MyAccount;
 // import { StarRating } from "@/components/import";
 // import axios from "axios";
 // import Head from "next/head";
