@@ -182,23 +182,21 @@ export const updateSateOfCartAfterLogin = (stateCart, currency, userData) => {
       });
     }
     try {
-      let data = await axios.post(
-        `${baseUrl}/cart/updatecart`,
-        {
-          cart: stateCart,
-          currency: currency.type,
-        },
-        {
-          headers: {
-            Authorization: userData.data.token,
-          },
-        }
-      );
-      return onSuccess(data.data.cart_details);
-    } catch (e) {
       // TODO: fix API
-      return onSuccess([]);
-    }
+      // let data = await axios.post(
+      //   `${baseUrl}/cart/updatecart`,
+      //   {
+      //     cart: stateCart,
+      //     currency: currency.type,
+      //   },
+      //   {
+      //     headers: {
+      //       Authorization: userData.data.token,
+      //     },
+      //   }
+      // );
+      // return onSuccess(data.data.cart_details);
+    } catch (e) {}
   };
 };
 
