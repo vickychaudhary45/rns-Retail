@@ -1,12 +1,12 @@
 import * as actionTypes from "./profile-types";
 import axios from "axios";
 import { updateRedirection } from "../Redirection/redirect-actions";
-import cookie from 'js-cookie';
+import cookie from "js-cookie";
 import { enrollCourseDetail } from "../UserEnrolled/enroll-action";
 import { authLogout } from "../Auth/auth-actions";
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
-export const storeUserProfile = (userToken = null,currentLocation = null,is_sso_user = null) => {
+export const storeUserProfile = (userToken = null, currentLocation = null, is_sso_user = null) => {
   return async (dispatch, getState) => {
     function onSuccess(data) {
       dispatch({
@@ -24,7 +24,12 @@ export const storeUserProfile = (userToken = null,currentLocation = null,is_sso_
         const profileResp = await axios.get(baseUrl + "/users/profile", {
           headers: { Authorization: userToken },
         });
-        if (profileResp && profileResp.data && profileResp.data.status == "success" && profileResp.data.data) {
+        if (
+          profileResp &&
+          profileResp.data &&
+          profileResp.data.status == "success" &&
+          profileResp.data.data
+        ) {
           returnData = profileResp.data.data;
           // REDIRECTION FLOW CONTINUED... :D
           if (redirectData.redirect_to == "REDIRECT") {
@@ -41,21 +46,28 @@ export const storeUserProfile = (userToken = null,currentLocation = null,is_sso_
             RedirectionUrl = redirectData.redirect_url;
           } else if (redirectData.redirect_to == "LMS_ACTIVITY" && redirectData.redirect_url) {
             RedirectionUrl = `${redirectData.redirect_url}`;
-          }else if (redirectData.redirect_to === "PRICING"){
-            RedirectionUrl = `${process.env.NEXT_PUBLIC_BASE_PATH}pricing`
-          }else if (redirectData.redirect_to == null){
-            if(!cookie.get("signupmodal")){
-              if(currentLocation && (currentLocation == "/[slug]" || currentLocation == "/pricing" || currentLocation == "/login/[reseller]" || currentLocation == "/register/[reseller]" || currentLocation =="/cloud/[slug]"))
-              setTimeout(()=>{
-                window.location.reload()
-              },1000)
+          } else if (redirectData.redirect_to === "PRICING") {
+            RedirectionUrl = `${process.env.NEXT_PUBLIC_BASE_PATH}pricing`;
+          } else if (redirectData.redirect_to == null) {
+            if (!cookie.get("signupmodal")) {
+              if (
+                currentLocation &&
+                (currentLocation == "/[slug]" ||
+                  currentLocation == "/pricing" ||
+                  currentLocation == "/login/[reseller]" ||
+                  currentLocation == "/register/[reseller]" ||
+                  currentLocation == "/cloud/[slug]")
+              )
+                setTimeout(() => {
+                  window.location.reload();
+                }, 1000);
             }
-          }   
+          }
           /* else if (profileResp.data.data.course_count) {
             RedirectionUrl = `${process.env.NEXT_PUBLIC_LMS_URL}/my-courses`;
           } */
-          
-          dispatch(updateRedirection(null, null))
+
+          dispatch(updateRedirection(null, null));
           if (RedirectionUrl) {
             let temp = RedirectionUrl;
             RedirectionUrl = null;
@@ -63,13 +75,12 @@ export const storeUserProfile = (userToken = null,currentLocation = null,is_sso_
               window.location.href = temp;
             }, 1000);
           }
-        }else{
-          if(profileResp.data && profileResp.data.status == "error"){
+        } else {
+          if (profileResp.data && profileResp.data.status == "error") {
             await dispatch(authLogout());
             window.location.reload();
-            return
+            return;
           }
-          
         }
       }
     } catch (error) {
@@ -91,35 +102,34 @@ export const clearUserProfile = () => {
   };
 };
 
-export const checkEmailVerified = (user_id) =>{
-  return async(dispatch)=>{
-    function onSuccess(data){
+export const checkEmailVerified = (user_id) => {
+  return async (dispatch) => {
+    function onSuccess(data) {
       dispatch({
-        type:actionTypes.UPDATE_EMAIL_VERIFIED,
-        payload:data
-      })
+        type: actionTypes.UPDATE_EMAIL_VERIFIED,
+        payload: data,
+      });
     }
-    try{
-      let email_verified = await axios.get(`${baseUrl}/users/email_check/?user_id=${user_id}`)
-      return onSuccess(email_verified.data.userData.is_email_verified)
+    try {
+      let email_verified = await axios.get(`${baseUrl}/users/email_check/?user_id=${user_id}`);
+      return onSuccess(email_verified.data.userData.is_email_verified);
+    } catch (e) {
+      console.log(e);
     }
-    catch(e){
-        console.log(e)
-    }
-  }
-}
+  };
+};
 
-export const IsMailsend = ()=>{
-  return async(dispatch)=>{
-    function onSuccess(){
+export const IsMailsend = () => {
+  return async (dispatch) => {
+    function onSuccess() {
       dispatch({
-        type : actionTypes.MAIL_SENT,
-        payload: true
-      })
+        type: actionTypes.MAIL_SENT,
+        payload: true,
+      });
     }
-    return onSuccess()
-  }
-}
+    return onSuccess();
+  };
+};
 export const storeUtmDetails = (user_token, user_id, utmData) => {
   return async () => {
     if (user_token && user_id) {
