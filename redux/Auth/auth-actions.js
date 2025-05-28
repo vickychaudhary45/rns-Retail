@@ -198,12 +198,13 @@ export const authLogin = (values, currentLocation) => {
                 // if (cookieValue) {
                 //   dispatch(subsButtonClick(data.data, parsedData));
                 // }
-                // let currency = JSON.parse(cookie.get("currency"));
-                // let cart = JSON.parse(localStorage.getItem("cartData")) || [];
+                let currency = JSON.parse(cookie.get("currency"));
+                let cart = JSON.parse(localStorage.getItem("cartData")) || [];
                 if (cart && currency) {
                   await dispatch(updateSateOfCartAfterLogin(cart, currency, data));
                 }
-                // dispatch(storeUserProfile(data.data.token, currentLocation)); // update User Profile
+                dispatch(storeUserProfile(data.data.token, currentLocation));
+                // TODO: fix API
                 // dispatch(Usercourse(data.data.user_id));
                 // dispatch(NotifiedCourse(data.data.user_id));
                 // dispatch(enrollCourseDetail(data.data.user_id));

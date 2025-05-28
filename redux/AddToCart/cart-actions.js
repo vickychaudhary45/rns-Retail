@@ -10,12 +10,12 @@ const DEFAULT_PRICE_STRUCTURE = {
   inr: 0,
 };
 
-export const addToCart = (itemID, type, currency,onSuccessP) => {
+export const addToCart = (itemID, type, currency, onSuccessP) => {
   return async (dispatch) => {
     function onSuccess(data) {
       dispatch({
         type: actionTypes.ADD_TO_CART,
-        payload:data,
+        payload: data,
       });
       onSuccessP && onSuccessP();
     }
@@ -195,7 +195,10 @@ export const updateSateOfCartAfterLogin = (stateCart, currency, userData) => {
         }
       );
       return onSuccess(data.data.cart_details);
-    } catch (e) {}
+    } catch (e) {
+      // TODO: fix API
+      return onSuccess([]);
+    }
   };
 };
 

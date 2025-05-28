@@ -21,9 +21,21 @@ export const storeUserProfile = (userToken = null, currentLocation = null, is_ss
     const redirectData = getState().redirectData;
     try {
       if (userToken && !is_sso_user) {
-        const profileResp = await axios.get(baseUrl + "/users/profile", {
-          headers: { Authorization: userToken },
-        });
+        // TODO: fix API
+        // const profileResp = await axios.get(baseUrl + "/users/profile", {
+        //   headers: { Authorization: userToken },
+        // });
+        const profileResp = {
+          data: {
+            status: "success",
+            data: {
+              id: 1,
+              name: "Dummy User",
+              email: "dummy@example.com",
+              course_count: 0,
+            },
+          },
+        };
         if (
           profileResp &&
           profileResp.data &&
@@ -111,8 +123,9 @@ export const checkEmailVerified = (user_id) => {
       });
     }
     try {
-      let email_verified = await axios.get(`${baseUrl}/users/email_check/?user_id=${user_id}`);
-      return onSuccess(email_verified.data.userData.is_email_verified);
+      //TODO: fix API
+      // let email_verified = await axios.get(`${baseUrl}/users/email_check/?user_id=${user_id}`);
+      // return onSuccess(email_verified.data.userData.is_email_verified);
     } catch (e) {
       console.log(e);
     }

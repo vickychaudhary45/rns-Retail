@@ -49,16 +49,17 @@ const AfterSignUpModal = ({ open, setOpen, userData, searchCourse, searchCourses
     setStep(6);
     setOpen(false);
     setOpenFlatModal(true);
-    saveAfterSignupDetails({
-      about_us: aboutUS,
-      certifications: JSON.stringify(certifications),
-      skills: JSON.stringify(skills),
-      time_period: timePeriod,
-      user_id: userData.data.user_id,
-      other_certification: somethingElse,
-      other_skills: moreskills,
-      profile_hire: data?.profileHire ? data.profileHire : false,
-    });
+    // TODO: fix API
+    // saveAfterSignupDetails({
+    //   about_us: aboutUS,
+    //   certifications: JSON.stringify(certifications),
+    //   skills: JSON.stringify(skills),
+    //   time_period: timePeriod,
+    //   user_id: userData.data.user_id,
+    //   other_certification: somethingElse,
+    //   other_skills: moreskills,
+    //   profile_hire: data?.profileHire ? data.profileHire : false,
+    // });
     cookie.remove("signupmodal");
   }
   function onYes() {
