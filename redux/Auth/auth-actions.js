@@ -191,7 +191,7 @@ export const authLogin = (values, currentLocation) => {
             }
 
             if (data) {
-              if (data.data && data.data.user_id) {
+              if (data.data && data.data.user_id) { 
                 // dispatch(getCart(data.data.user_id));
                 let cookieValue = cookie.get("Subscribe_now_button");
                 let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
