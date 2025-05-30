@@ -101,56 +101,57 @@ const Cart = ({
   whislist,
 }) => {
   const router = useRouter();
-  const [loadingMask, setLoadingMask] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const [savingsBag, setSavingsBag] = useState(0);
+  const [loadingMask, setLoadingMask] = useState(false);
   const [savingsBagWithDisc, setSavingsBagWithDisc] = useState(0);
-  const [subTotal, setSubTotal] = useState(0.0);
-  const [finalTotal, setFinalTotal] = useState(0.0);
-  const [discount, setDiscount] = useState(0.0);
+
+  const [loading, setloading] = useState(false);
+  const [showFreebies, setfreebies] = useState(false);
+  const [autoApplycoupon, setautoapplycoupon] = useState(false);
+  const [fullcourseSelected, setfullcourseSelected] = useState(false);
+
   const [coupon, setCoupon] = useState("");
-  const [upperCoupon, setUpperCoupon] = useState("");
-  const [className, setClassName] = useState("bg-color emptycart-page");
-  const [currency, setCurrency] = useState(null);
-  const [couponData, setCouponData] = useState(null);
-  const [couponLoading, setCouponLoading] = useState(false);
-  const [handleAddProductToCartLoading, setHandleAddProductToCartLoading] = useState(false);
-  const [removeCoupons, setRemoveCoupons] = useState(false);
   const [hover, setHover] = useState(false);
+  const [subTotal, setSubTotal] = useState(0.0);
+  const [discount, setDiscount] = useState(0.0);
+  const [currency, setCurrency] = useState(null);
+  const [finalTotal, setFinalTotal] = useState(0.0);
+  const [couponData, setCouponData] = useState(null);
+  const [upperCoupon, setUpperCoupon] = useState("");
+  const [removeCoupons, setRemoveCoupons] = useState(false);
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [className, setClassName] = useState("bg-color emptycart-page");
+  const [handleAddProductToCartLoading, setHandleAddProductToCartLoading] = useState(false);
+
+  const [currentLoadingD, setCurrentlyLoadingD] = useState({
+    courseId: null,
+  });
   const [currentLoading, setCurrentlyLoading] = useState({
     courseId: null,
     productType: null,
   });
-  const [currentLoadingD, setCurrentlyLoadingD] = useState({
-    courseId: null,
-  });
-  const [loading, setloading] = useState(false);
-  const [showFreebies, setfreebies] = useState(false);
-  const [fullcourseSelected, setfullcourseSelected] = useState(false);
-  const [autoApplycoupon, setautoapplycoupon] = useState(false);
+
+  // TODO: activate later
+  // useEffect(() => {
+  //   if (process.env.NEXT_PUBLIC_BASE_PATH.includes("whizlabs.com")) {
+  //     fbq.event({
+  //       action: "AddToCart",
+  //       params: {
+  //         content_name: "Facebook Pixel code in cart page",
+  //         currency: currency?.type || "",
+  //         value: finalTotal || "",
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   useEffect(() => {
-    // Facebook Pixel
-    if (process.env.NEXT_PUBLIC_BASE_PATH.includes("whizlabs.com")) {
-      fbq.event({
-        action: "AddToCart",
-        params: {
-          content_name: "Facebook Pixel code in cart page",
-          currency: currency?.type || "",
-          value: finalTotal || "",
-        },
-      });
+    updateCouponDatas(null);
+    if (userData === null) {
+      router.push("/");
     }
-  }, []);
-
-  useEffect(() => {
-    // clear the coupon datas
-    // updateCouponDatas(null);
-    // if (userData === null) {
-    //   router.push("/");
-    // }
     if (currencyData) setCurrency(currencyData);
-    // console.log(currencyData, "currencyData");
   }, [currencyData]);
 
   const getCartData = async (userToken) => {
@@ -161,7 +162,7 @@ const Cart = ({
     });
 
     setloading(false);
-    // let cartData = [];
+    let cartData = [];
     if (CartData.data) {
       cartData = CartData.data.cart_details;
     }
@@ -182,21 +183,11 @@ const Cart = ({
   };
 
   const getCartfromCookie = async () => {
+    // TODO: activate later
     // let cart = await axios.post(`${baseUrl}/cart/getprices`, {
     //   cart_details: stateCart,
     // });
     let cart = cartttt;
-    // if (cart.data.cart_details) {
-    //   setCartItems(cart.data.cart_details);
-    //   storeCartCountAction(cart.data.cart_details.length);
-    //   setCurrentlyLoading({
-    //     courseId: null,
-    //     productType: null,
-    //   });
-    //   setloading(false);
-    // } else {
-    //   setCartItems([]);
-    // }
     if (cart.cart_details) {
       setCartItems(cart.cart_details);
       storeCartCountAction(cart.cart_details.length);
@@ -217,8 +208,8 @@ const Cart = ({
       updateaftersignin == false &&
       handleAddProductToCartLoading == false
     ) {
-      // setloading(true);
-      // getCartData(userData.data.token);
+      setloading(true);
+      getCartData(userData.data.token);
     }
   }, [handleAddProductToCartLoading, updateaftersignin, userData]);
 
