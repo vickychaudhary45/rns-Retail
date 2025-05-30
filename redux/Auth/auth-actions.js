@@ -191,10 +191,12 @@ export const authLogin = (values, currentLocation) => {
             }
 
             if (data) {
-              if (data.data && data.data.user_id) { 
-                // dispatch(getCart(data.data.user_id));
-                let cookieValue = cookie.get("Subscribe_now_button");
-                let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
+              if (data.data && data.data.user_id) {
+                // dispatch(getCart(data.data.user_id)); // not in use
+
+                // TODO: activate later
+                // let cookieValue = cookie.get("Subscribe_now_button");
+                // let parsedData = cookieValue ? JSON.parse(cookieValue) : null;
                 // if (cookieValue) {
                 //   dispatch(subsButtonClick(data.data, parsedData));
                 // }
@@ -275,7 +277,6 @@ export const authSocialLogin = (values) => {
         return;
       } else if (values.email) {
         const { name, email, image } = values;
-        // console.log(values)
         await axios
           .post(baseUrl + "/auth/login/social", {
             name: name,
@@ -289,17 +290,20 @@ export const authSocialLogin = (values) => {
             }
 
             if (data && data.data && data.data.user_id) {
-              if (data.status == 2) {
-                if (
-                  !cookie.get("client") &&
-                  values.currentPath != "/aws-free-labs" &&
-                  !values.currentPath.includes("/cart") &&
-                  !values.currentPath.includes("/cloud/")
-                ) {
-                  cookie.set("signupmodal", true);
-                }
-                // dispatch(updateRedirection("PRICING"))
-              }
+              // TODO: see later
+              // if (data.status == 2) {
+              //   if (
+              //     !cookie.get("client") &&
+              //     values.currentPath != "/aws-free-labs" &&
+              //     !values.currentPath.includes("/cart") &&
+              //     !values.currentPath.includes("/cloud/")
+              //   ) {
+              //     cookie.set("signupmodal", true);
+              //   }
+              //   dispatch(updateRedirection("PRICING"))
+              // }
+
+              // TODO: not in use
               // dispatch(getCart(data.data.user_id));
               let cookieValue = cookie.get("Subscribe_now_button");
               let parsedData = cookieValue ? JSON.parse(cookieValue) : null;

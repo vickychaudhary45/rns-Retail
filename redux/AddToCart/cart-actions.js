@@ -142,19 +142,6 @@ export const addSubscription = (datas = null) => {
   };
 };
 
-//NOT IN USE
-export const getCart = (userId) => {
-  return async (dispatch) => {
-    function onSuccess(data) {
-      dispatch({
-        type: actionTypes.GET_CART_DETAILS,
-        payload: data,
-      });
-    }
-    return onSuccess(null);
-  };
-};
-
 export const updateCoupon = (coupon_data = null) => {
   return {
     type: actionTypes.UPDATE_COUPON_DETAILS,
@@ -169,10 +156,8 @@ export const updateCartAfterLogin = (condition) => {
   };
 };
 
-//We can add products to cart before login
-//once we got the userData
-//take the cart stored in locastorage and move to backend for further calculation
-//it will return accurate cart
+// We can add products to cart before login once we got the userData take the cart stored in locastorage
+// and move to backend for further calculation it will return accurate cart
 export const updateSateOfCartAfterLogin = (stateCart, currency, userData) => {
   return async (dispatch) => {
     function onSuccess(data) {
@@ -183,46 +168,25 @@ export const updateSateOfCartAfterLogin = (stateCart, currency, userData) => {
     }
     try {
       // TODO: fix API
-      // let data = await axios.post(
-      //   `${baseUrl}/cart/updatecart`,
-      //   {
-      //     cart: stateCart,
-      //     currency: currency.type,
-      //   },
-      //   {
-      //     headers: {
-      //       Authorization: userData.data.token,
-      //     },
-      //   }
-      // );
-      // return onSuccess(data.data.cart_details);
-    } catch (e) {}
-  };
-};
-
-//Not in USE
-export const getInitalCart = (token) => {
-  return async (dispatch) => {
-    function onSuccess(data) {
-      dispatch({
-        type: actionTypes.UPDATE_CART_STATE_AFTER_LOGIN,
-        payload: data,
-      });
-    }
-    try {
-      let data = await axios.get(`${baseUrl}/cart/getsimpifiedcart`, {
-        headers: {
-          Authorization: token,
+      let data = await axios.post(
+        `${baseUrl}/cart/updatecart`,
+        {
+          cart: stateCart,
+          currency: currency.type,
         },
-      });
-      return onSuccess(data.data.data.cart_details);
+        {
+          headers: {
+            Authorization: userData.data.token,
+          },
+        }
+      );
+      return onSuccess(data.data.cart_details);
     } catch (e) {}
   };
 };
 
-//Once the subscription is bought or anyother order is placed we need to check the cart
-//and avoid duplicate entries .. and avoid storing the product which he has the access
-// calling /cart/getcartdata -> will take care above points
+// Once the subscription is bought or anyother order is placed we need to check the cart and avoid duplicate
+// entries .. and avoid storing the product which he has the access calling /cart/getcartdata -> will take care above points
 export const storeCartdetails = (userToken) => {
   return async (dispatch) => {
     function onSuccess(data) {
@@ -254,8 +218,7 @@ export const clearCarts = () => {
   };
 };
 
-//store while /getcart in cartpage will result a accurate cart
-//so every time /getcart is called it will store the cart count
+//store while /getcart in cartpage will result a accurate cart so every time /getcart is called it will store the cart count
 export const updateCartCount = (count) => {
   return async (dispatch) => {
     function onSuccess(count) {
@@ -265,5 +228,38 @@ export const updateCartCount = (count) => {
       });
     }
     return onSuccess(count);
+  };
+};
+
+//NOT IN USE
+export const getCart = (userId) => {
+  return async (dispatch) => {
+    function onSuccess(data) {
+      dispatch({
+        type: actionTypes.GET_CART_DETAILS,
+        payload: data,
+      });
+    }
+    return onSuccess(null);
+  };
+};
+
+//Not in USE
+export const getInitalCart = (token) => {
+  return async (dispatch) => {
+    function onSuccess(data) {
+      dispatch({
+        type: actionTypes.UPDATE_CART_STATE_AFTER_LOGIN,
+        payload: data,
+      });
+    }
+    try {
+      let data = await axios.get(`${baseUrl}/cart/getsimpifiedcart`, {
+        headers: {
+          Authorization: token,
+        },
+      });
+      return onSuccess(data.data.data.cart_details);
+    } catch (e) {}
   };
 };
