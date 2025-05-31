@@ -90,8 +90,6 @@ const Course = ({
   updateCouponDatasAction,
   userSubscriptionData,
 }) => {
-  console.log(pageData, "pageData93");
-
   const router = useRouter();
   const path = router.pathname;
   const [PTavailabe, isPTavailable] = useState(false);
@@ -1323,7 +1321,6 @@ const Course = ({
   };
 
   let structuredFaqsData = [];
-  console.log(pageData, "pageData");
 
   pageData?.faq_details?.map((Itm) => {
     Itm.faq &&
@@ -4515,23 +4512,6 @@ const Course = ({
                                     Add to Cart
                                   </button>
                                 )}
-
-                              {/* <div
-                        className={
-                          activeWhislist && activeWhislist == "active"
-                            ? "add-whishlist active"
-                            : "add-whishlist"
-                        }
-                        onClick={() => toggleWhislist()}
-                      >
-                        <i
-                          ref={wishlistIcon}
-                          className="icon icon-font-heart animate__animated"
-                        ></i>
-                      </div> */}
-
-                              {/* Buy now only visible on crazy on Individuval products */}
-
                               {!purchaseDisabled &&
                                 crazyDealPromo &&
                                 !checkIfUserEnrolledAllProducts() &&

@@ -236,7 +236,7 @@ const ccAvRedirect = ({
                             fontSize: "14px",
                           }}
                         >
-                          support@whizlabs.com
+                          support@rnspath.com
                         </a>
                       </span>
                       <Link legacyBehavior href={"/cart"}>

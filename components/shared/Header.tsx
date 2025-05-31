@@ -409,336 +409,23 @@ const Header = ({
 
   useEffect(() => {
     // clear the coupon datas
-    // if (userData === null) {
-    //   router.push("/");
-    // }
+    if (userData === null) {
+      router.push("/");
+    }
     if (currencyData) setCurrency(currencyData);
   }, [currencyData]);
 
   const getCartData = async (userToken) => {
-    let CartData = {
-      msg: "",
-      cart_details: [
-        {
-          courseId: 287,
-          selectedCourseType: ["oc"],
-          enrolled_product_types: [],
-          whizcard: null,
-          courseName: "Git and Github Training Course",
-          courseSlug: "git-fundamentals",
-          courseImage: "Git-and-GitHub-Training-Course.webp",
-          course_id: 287,
-          course_page_id: 37,
-          course_details: [
-            {
-              course_type: "oc",
-              sale_price: {
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-                inr: "1499",
-              },
-              regular_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1999",
-              },
-            },
-          ],
-          courseType: ["oc"],
-          PtRegPrice: 0,
-          PtSalePrice: 0,
-          OcSalePrice: {
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-            inr: "1499",
-          },
-          OcRegPrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1999",
-          },
-          LabSalePrice: 0,
-          LabRegPrice: 0,
-          SandboxSalePrice: 0,
-          SandboxRegPrice: 0,
-        },
-        {
-          courseId: 219,
-          selectedCourseType: ["pt", "oc", "lab", "sandbox"],
-          enrolled_product_types: [],
-          whizcard: "WhizCard-CLF-C02-Cheat-Sheet-Nov-2024.pdf",
-          courseName: "CLF-C02: AWS Certified Cloud Practitioner Certification",
-          courseSlug: "aws-certified-cloud-practitioner",
-          courseImage: "AWS-Certified-Cloud-Practitioner.webp",
-          course_id: 219,
-          course_page_id: 15,
-          sandbox_validity: "global",
-          course_details: [
-            {
-              course_type: "sandbox",
-              sale_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1499",
-              },
-              regular_price: {
-                usd: "59.95",
-                gbp: "59.95",
-                eur: "59.95",
-                inr: "2999",
-              },
-            },
-            {
-              course_type: "lab",
-              sale_price: {
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-                inr: "1199",
-              },
-              regular_price: {
-                usd: "45.95",
-                gbp: "45.95",
-                eur: "45.95",
-                inr: "2999",
-              },
-            },
-            {
-              course_type: "pt",
-              sale_price: {
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-                inr: "1099",
-              },
-              regular_price: {
-                usd: "39.95",
-                gbp: "39.95",
-                eur: "39.95",
-                inr: "2999",
-              },
-            },
-            {
-              course_type: "oc",
-              sale_price: {
-                usd: "14.95",
-                gbp: "14.95",
-                eur: "14.95",
-                inr: "799",
-              },
-              regular_price: {
-                usd: "39.95",
-                gbp: "39.95",
-                eur: "39.95",
-                inr: "2999",
-              },
-            },
-          ],
-          courseType: ["sandbox", "lab", "pt", "oc"],
-          PtRegPrice: {
-            usd: "39.95",
-            gbp: "39.95",
-            eur: "39.95",
-            inr: "2999",
-          },
-          PtSalePrice: {
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-            inr: "1099",
-          },
-          OcSalePrice: {
-            usd: "14.95",
-            gbp: "14.95",
-            eur: "14.95",
-            inr: "799",
-          },
-          OcRegPrice: {
-            usd: "39.95",
-            gbp: "39.95",
-            eur: "39.95",
-            inr: "2999",
-          },
-          LabSalePrice: {
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-            inr: "1199",
-          },
-          LabRegPrice: {
-            usd: "45.95",
-            gbp: "45.95",
-            eur: "45.95",
-            inr: "2999",
-          },
-          SandboxSalePrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1499",
-          },
-          SandboxRegPrice: {
-            usd: "59.95",
-            gbp: "59.95",
-            eur: "59.95",
-            inr: "2999",
-          },
-        },
-        {
-          courseId: 261,
-          selectedCourseType: ["pt", "oc", "lab"],
-          enrolled_product_types: [],
-          whizcard: "",
-          courseName: "Docker Certified Associate (DCA)",
-          courseSlug: "docker-certified-associate",
-          courseImage: "Docker-Certified-Associate.webp",
-          course_id: 261,
-          course_page_id: 37,
-          course_details: [
-            {
-              course_type: "lab",
-              sale_price: {
-                inr: "1499",
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-              },
-              regular_price: {
-                inr: "1999",
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-              },
-            },
-            {
-              course_type: "oc",
-              sale_price: {
-                usd: "19.95",
-                gbp: "19.95",
-                eur: "19.95",
-                inr: "1499",
-              },
-              regular_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1999",
-              },
-            },
-            {
-              course_type: "pt",
-              sale_price: {
-                usd: "29.95",
-                gbp: "29.95",
-                eur: "29.95",
-                inr: "1999",
-              },
-              regular_price: {
-                usd: "39.95",
-                gbp: "39.95",
-                eur: "39.95",
-                inr: "2999",
-              },
-            },
-          ],
-          courseType: ["lab", "oc", "pt"],
-          PtRegPrice: {
-            usd: "39.95",
-            gbp: "39.95",
-            eur: "39.95",
-            inr: "2999",
-          },
-          PtSalePrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1999",
-          },
-          OcSalePrice: {
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-            inr: "1499",
-          },
-          OcRegPrice: {
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-            inr: "1999",
-          },
-          LabSalePrice: {
-            inr: "1499",
-            usd: "19.95",
-            gbp: "19.95",
-            eur: "19.95",
-          },
-          LabRegPrice: {
-            inr: "1999",
-            usd: "29.95",
-            gbp: "29.95",
-            eur: "29.95",
-          },
-          SandboxSalePrice: 0,
-          SandboxRegPrice: 0,
-        },
-      ],
-      cart: {
-        id: 114878,
-        user_id: 1908631,
-        cart_details: [
-          {
-            courseId: 287,
-            selectedCourseType: ["oc"],
-          },
-          {
-            courseId: 219,
-            selectedCourseType: ["pt", "oc", "lab", "sandbox"],
-          },
-          {
-            courseId: 261,
-            selectedCourseType: ["pt", "oc", "lab"],
-          },
-        ],
-        coupon_code: null,
-        total_price: "174.60",
-        discounted_price: "174.60",
-        currency_type: "USD",
-        created_at: "2024-07-12T16:14:46.584Z",
-        updated_at: "2025-05-20T09:09:32.850Z",
-        emailed_user: 0,
-        email_description: null,
-        sender_id: null,
+    let CartData = await axios.get(`${baseUrl}/cart/getcartdata`, {
+      headers: {
+        Authorization: userToken,
       },
-      cartData: [
-        {
-          courseId: 287,
-          selectedCourseType: ["oc"],
-        },
-        {
-          courseId: 219,
-          selectedCourseType: ["pt", "oc", "lab", "sandbox"],
-        },
-        {
-          courseId: 261,
-          selectedCourseType: ["pt", "oc", "lab"],
-        },
-      ],
-    };
-    // let CartData = await axios.get(`${baseUrl}/cart/getcartdata`, {
-    //   headers: {
-    //     Authorization: userToken,
-    //   },
-    // }
-    // );
+    });
+
     setloading(false);
     let cartData = [];
     if (CartData) {
-      cartData = CartData.cart_details;
+      cartData = CartData.data.cart_details;
       storeCartCountAction(cartData.length);
     }
     if (cartData && cartData.length > 0) {
@@ -770,7 +457,6 @@ const Header = ({
   };
 
   useEffect(() => {
-    // console.log('getcartData',updateCartstate)
     if (userData && userData.data && userData.data.token && currency) {
       setloading(true);
       getCartData(userData.data.token);
@@ -781,7 +467,7 @@ const Header = ({
     if (!userData && currency) {
       setloading(true);
       //post method to get the current price of products
-      // getCartfromCookie();
+      getCartfromCookie();
     }
   }, [cart, userData, currency]);
 
