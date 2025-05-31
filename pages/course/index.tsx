@@ -92,13 +92,12 @@ const Course = ({
 }) => {
   console.log(pageData, "pageData93");
 
-  // const wishlistIcon = useRef(null);
   const router = useRouter();
   const path = router.pathname;
-  const [demoVideoLink, setDemoVideoLink] = useState("");
   const [PTavailabe, isPTavailable] = useState(false);
   const [OCavailabe, isOCavailable] = useState(false);
   const [LABavailabe, isLABavailable] = useState(false);
+  const [demoVideoLink, setDemoVideoLink] = useState("");
   const [Sanboxavailable, isSandboxavaialble] = useState(false);
   const [courseAlreadyInCart, setCourseAlreadyInCart] = useState([]);
   const [selectedCourseType, setSelectedCourseType] = useState([]);
@@ -1326,7 +1325,7 @@ const Course = ({
   let structuredFaqsData = [];
   console.log(pageData, "pageData");
 
-  pageData?.faq_details.map((Itm) => {
+  pageData?.faq_details?.map((Itm) => {
     Itm.faq &&
       Itm.faq.length > 0 &&
       Itm.faq.map((item) => {
@@ -2235,7 +2234,7 @@ const Course = ({
                       <div className="total-learners">
                         <i className="icon icon-font-graduation-cap"></i>
                         <span>
-                          {pageContent.web_counts?.learners_count.toLocaleString()} Learners
+                          {pageContent.web_counts?.learners_count?.toLocaleString()} Learners
                         </span>
                       </div>
                     )}
@@ -2326,12 +2325,14 @@ const Course = ({
                       PTavailabe &&
                       pageContent.web_counts?.ques_count ? (
                         <div>
-                          {/* <span>{pageContent.web_counts?.ques_count} Questions</span> */}
                           <span>{question_count} Questions</span>
                           <samp>Practice Tests</samp>
                         </div>
                       ) : (
-                        ""
+                        <div>
+                          <span>2 Questions</span>
+                          <samp>Practice Tests</samp>
+                        </div>
                       )}
                       {/* <div>
                         <span>170 Minutes</span>
@@ -2345,7 +2346,10 @@ const Course = ({
                           <samp>Video Course</samp>
                         </div>
                       ) : (
-                        ""
+                        <div>
+                          <span>51 Videos</span>
+                          <samp>Video Course</samp>
+                        </div>
                       )}
                       {lab_count > 0 && LABavailabe ? (
                         <div>
@@ -2353,7 +2357,10 @@ const Course = ({
                           <samp>Hands-on Labs</samp>
                         </div>
                       ) : (
-                        ""
+                        <div>
+                          <span>2 Labs</span>
+                          <samp>Hands-on Labs</samp>
+                        </div>
                       )}
                       {pageContent.detailedInfo?.sandbox_info?.length > 0 && Sanboxavailable ? (
                         <div>
@@ -2361,7 +2368,10 @@ const Course = ({
                           <samp>Available</samp>
                         </div>
                       ) : (
-                        ""
+                        <div>
+                          <span>Cloud Sandbox</span>
+                          <samp>Available</samp>
+                        </div>
                       )}
                     </div>
                   </div>
