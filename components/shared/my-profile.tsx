@@ -7,12 +7,33 @@ import axios from "axios";
 import cookie from "js-cookie";
 import UploadImage from "./UploadImage";
 import UserAvatar from "../plugins/UserAvatar";
-import { Autocomplete, CircularProgress, FormControl, FormControlLabel, IconButton, MenuItem, Modal, Paper, Select, Switch, Tooltip } from "@mui/material";
+import {
+  Autocomplete,
+  CircularProgress,
+  FormControl,
+  FormControlLabel,
+  IconButton,
+  MenuItem,
+  Modal,
+  Paper,
+  Select,
+  Switch,
+  Tooltip,
+} from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Visibility from "@mui/icons-material/Visibility";
 import CloseIcon from "@mui/icons-material/Close";
 import { Box, Typography } from "@mui/material";
-import { Button, Chip, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, } from "@mui/material";
+import {
+  Button,
+  Chip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
 import reviewPopUp_logo from "../../public/images/reviewPopUp_logo.png";
 import feedback_thumbsUp_logo from "../../public/images/feedback_thumbsUp_logo.png";
 
@@ -31,7 +52,7 @@ const MyProfile = ({
   alertBox,
   navigateToAccountTab,
   orders,
-  subscriptionCompData
+  subscriptionCompData,
 }) => {
   const years = [];
   for (let index = 0; index < 20; index++) {
@@ -39,10 +60,7 @@ const MyProfile = ({
   }
   // console.log("professional", professional);
   const [secondarySkills, setSecondarySkills] = useState(() => {
-    if (
-      professional?.skills &&
-      professional?.skills.length > 0
-      ) {
+    if (professional?.skills && professional?.skills.length > 0) {
       return professional?.skills;
     } else {
       return [
@@ -61,10 +79,12 @@ const MyProfile = ({
     firstname: (profile && profile.firstname) || "",
     lastname: (profile && profile.lastname) || "",
     phone: (profile && profile.phone) || "",
-    dob: (profile && profile.dob) || '',
+    dob: (profile && profile.dob) || "",
     gender: (profile && profile.gender) || "",
     profile_picture:
-      ((profile && profile.profile_picture) && (profile.profile_picture.includes("202") || profile.profile_picture.includes("201")))
+      profile &&
+      profile.profile_picture &&
+      (profile.profile_picture.includes("202") || profile.profile_picture.includes("201"))
         ? profile.profile_picture
         : (profile && profile.profile_picture) || "",
     address_line_1: (profile && profile.address_line_1) || "",
@@ -84,7 +104,9 @@ const MyProfile = ({
     highest_education: (profile && profile.highest_education) || "",
     total_experience: (profile && profile.total_experience) || "",
     skills: (profile && profile.skills) || "",
-    enable_professional: (profile && profile.user_preferences && profile.user_preferences.enable_professional) || false,
+    enable_professional:
+      (profile && profile.user_preferences && profile.user_preferences.enable_professional) ||
+      false,
   });
   const [professionalData, setProfessionalData] = useState({
     user_id: userId,
@@ -112,7 +134,9 @@ const MyProfile = ({
   const [startDate, setStartDate] = useState(new Date("1900/01/01"));
   const [workExperience, setWorkExperience] = useState(professional?.work_experience || []);
   const [certifications, setCertifications] = useState(professional?.certifications || []);
-  const [enableProfessional, setEnableProfessional] = useState(profile && profile.user_preferences?.enable_professional);
+  const [enableProfessional, setEnableProfessional] = useState(
+    profile && profile.user_preferences?.enable_professional
+  );
   const [openCert, setOpenCert] = useState(false);
   const [certPreview, setCertPreview] = useState({
     name: "",
@@ -157,7 +181,7 @@ const MyProfile = ({
     }
   };
 
-//Total Experience
+  //Total Experience
   const ExperienceOptions = [
     { name: "0-1 Years" },
     { name: "1-2 Years" },
@@ -165,7 +189,7 @@ const MyProfile = ({
     { name: "3-5 Years" },
     { name: "5-7 Years" },
     { name: "7-10 Years" },
-    { name: "10+ Years" }
+    { name: "10+ Years" },
   ];
   const [totalExperience, setTotalExperience] = useState(professional?.total_experience || "");
 
@@ -181,57 +205,55 @@ const MyProfile = ({
     setTotalExperience(newValue?.name);
   };
 
-// Work availability
+  // Work availability
 
-const AvailabilityOptions = [
-  { name: "Part-Time" },
-  { name: "Full-Time" },
-  { name: "Freelance" },
-  { name: "Contract" }
-];
-const [availability, setAvailability] = useState(professional?.availability || "");
+  const AvailabilityOptions = [
+    { name: "Part-Time" },
+    { name: "Full-Time" },
+    { name: "Freelance" },
+    { name: "Contract" },
+  ];
+  const [availability, setAvailability] = useState(professional?.availability || "");
 
-useEffect(() => {
-  if (professional?.availability !== availability) {
-    setAvailability(professionalData?.availability || "");
-  }
-}, [professionalData?.availability]);
+  useEffect(() => {
+    if (professional?.availability !== availability) {
+      setAvailability(professionalData?.availability || "");
+    }
+  }, [professionalData?.availability]);
 
-const handleAvailabilityChange = (event, newValue) => {
-  const availabilityName = newValue ? newValue.name : "";
-  setProfessionalData({ ...professionalData, availability: availabilityName });
-  setAvailability(availabilityName);
-};
-
-
-
+  const handleAvailabilityChange = (event, newValue) => {
+    const availabilityName = newValue ? newValue.name : "";
+    setProfessionalData({ ...professionalData, availability: availabilityName });
+    setAvailability(availabilityName);
+  };
 
   const handleUploadImage = (e, i) => {
     // console.log("e", e.target.files[0]);
     if (e.target.files[0]) {
       var cert_img = e.target.files[0];
     }
-    const toBase64 = file => new Promise((resolve, reject) => {
+    const toBase64 = (file) =>
+      new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
         reader.onload = () => resolve(reader.result);
         reader.onerror = reject;
       });
     async function Main(cert_img) {
-      if(cert_img !== "") {
+      if (cert_img !== "") {
         const fileData = cert_img;
-        await toBase64(fileData).then(result => {
+        await toBase64(fileData).then((result) => {
           let file = result;
           const formData = new FormData();
-          formData.append('file', fileData);
-          formData.append('fs3folderpath', 'user_certificates/');
+          formData.append("file", fileData);
+          formData.append("fs3folderpath", "user_certificates/");
           let xhr = new XMLHttpRequest();
           xhr.withCredentials = false;
-          xhr.open('POST',`${ADMIN_URL}/s3-file-upload-cert`)
-          xhr.onload = function() {
+          xhr.open("POST", `${ADMIN_URL}/s3-file-upload-cert`);
+          xhr.onload = function () {
             let response = JSON.parse(xhr.responseText);
             if (xhr.status === 200) {
-              if(response.message === "success") {
+              if (response.message === "success") {
                 // console.log("Image Upload", response.url);
                 setCertifications(
                   certifications.map((item, index) => {
@@ -247,8 +269,7 @@ const handleAvailabilityChange = (event, newValue) => {
                   msg: "File Uploaded Successfully",
                 });
               }
-            }
-            else {
+            } else {
               alertBox({
                 type: "ERROR",
                 title: "Error",
@@ -257,11 +278,11 @@ const handleAvailabilityChange = (event, newValue) => {
             }
           };
           xhr.send(formData);
-        })
+        });
       }
     }
     Main(cert_img);
-  }
+  };
 
   const onRemoveImage = (event) => {
     setDatas({ ...datas, profile_picture: "/images/user-not-found.svg" });
@@ -331,7 +352,19 @@ const handleAvailabilityChange = (event, newValue) => {
   };
 
   const addMoreCertificate = () => {
-    setCertifications([...certifications, { certification_provider: null, certification_type: null, start_date: new Date(), end_date: new Date(), no_expiry: false, certificate_id: null, url: null, cert_img: null }]);
+    setCertifications([
+      ...certifications,
+      {
+        certification_provider: null,
+        certification_type: null,
+        start_date: new Date(),
+        end_date: new Date(),
+        no_expiry: false,
+        certificate_id: null,
+        url: null,
+        cert_img: null,
+      },
+    ]);
   };
 
   const removeCertificate = (index) => {
@@ -351,7 +384,8 @@ const handleAvailabilityChange = (event, newValue) => {
     const userDataCookie = cookie.get("userData");
     if (userDataCookie) {
       const userToken = JSON.parse(cookie.get("userData")).data.token;
-      await axios.get(baseUrl + "/users/profiles/cloud_certs", {
+      await axios
+        .get(baseUrl + "/users/profiles/cloud_certs", {
           headers: {
             Authorization: userToken,
           },
@@ -360,10 +394,9 @@ const handleAvailabilityChange = (event, newValue) => {
           // console.log("response", response.data.data);
           setCertList(response.data.data);
           setCertProviders(response.data.providers);
-        }
-        )
+        });
     }
-  }
+  };
 
   const changeSkills = (event, index) => {
     const { name, value } = event.target;
@@ -375,30 +408,30 @@ const handleAvailabilityChange = (event, newValue) => {
     });
   };
 
-  const [autocompleteCountry, setAutocompleteCountry] = useState(countries.find((country) => country.id === datas.country_id) || null);
+  const [autocompleteCountry, setAutocompleteCountry] = useState(null);
+  // const [autocompleteCountry, setAutocompleteCountry] = useState(countries.find((country) => country.id === datas.country_id) || null);
 
-
-  const [countryChanged, setCountryChanged] = useState(false)
+  const [countryChanged, setCountryChanged] = useState(false);
   const changeCountry = async (e) => {
     setStates([]);
     setCities([]);
     setDatas({
       ...datas,
-      state: '',
-      state_id: '',
-      city: '',
-      city_id: '',
+      state: "",
+      state_id: "",
+      city: "",
+      city_id: "",
     });
-    if (!e || !e?.id) { 
+    if (!e || !e?.id) {
       setStates([]);
       setCities([]);
       setDatas({
         ...datas,
-        country_id: '',
-        state: '',
-        state_id: '',
-        city: '',
-        city_id: '',
+        country_id: "",
+        state: "",
+        state_id: "",
+        city: "",
+        city_id: "",
       });
       alertBox({
         type: "ERROR",
@@ -408,18 +441,18 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
     //const countryId = await e.target.value;
-    const countryId =  e.id.toString();
-    
-    if (countryId === '') {
+    const countryId = e.id.toString();
+
+    if (countryId === "") {
       setStates([]);
       setCities([]);
       setDatas({
         ...datas,
-        country_id: '',
-        state: '',
-        state_id: '',
-        city: '',
-        city_id: '',
+        country_id: "",
+        state: "",
+        state_id: "",
+        city: "",
+        city_id: "",
       });
       alertBox({
         type: "ERROR",
@@ -445,29 +478,30 @@ const handleAvailabilityChange = (event, newValue) => {
     }
   };
 
-  const [autocompleteState, setAutocompleteState] = useState(states.find((state) => state.id === datas.state_id) || null);
-
+  const [autocompleteState, setAutocompleteState] = useState(
+    states.find((state) => state.id === datas.state_id) || null
+  );
 
   const [citySelectionOptional, setCitySelectionOptional] = useState(false);
   const [stateChanged, setStateChanged] = useState(false);
-  const [individualStateId, setIndividualStateId] = useState('');
+  const [individualStateId, setIndividualStateId] = useState("");
 
   const changeState = async (e) => {
     setStateChanged(true);
     setCities([]);
-    setDatas(prev => ({
+    setDatas((prev) => ({
       ...prev,
-      city: '',
-      city_id: ''
+      city: "",
+      city_id: "",
     }));
-    if (!e || !e?.id) { 
+    if (!e || !e?.id) {
       setCities([]);
       setDatas({
         ...datas,
-        state: '',
-        state_id: '',
-        city: '',
-        city_id: '',
+        state: "",
+        state_id: "",
+        city: "",
+        city_id: "",
       });
       alertBox({
         type: "ERROR",
@@ -477,15 +511,15 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
     //const stateId = await e.target.value;
-    const stateId =  e.id.toString();
-    if (stateId === '') {
+    const stateId = e.id.toString();
+    if (stateId === "") {
       setCities([]);
       setDatas({
         ...datas,
-        state: '',
-        state_id: '',
-        city: '',
-        city_id: '',
+        state: "",
+        state_id: "",
+        city: "",
+        city_id: "",
       });
       setCitySelectionOptional(false);
       alertBox({
@@ -496,13 +530,13 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
     if (stateId) {
-      setIndividualStateId(stateId)
+      setIndividualStateId(stateId);
       const cityResp = await axios.get(baseUrl + "/data/cities/" + stateId);
 
       setDatas((prevDatas) => ({
         ...prevDatas,
-        city: '',
-        city_id: '',
+        city: "",
+        city_id: "",
       }));
 
       if (cityResp.data.data.length === 0) {
@@ -510,14 +544,14 @@ const handleAvailabilityChange = (event, newValue) => {
         setDatas({
           ...datas,
           state_id: stateId,
-          city: '',
-          city_id: '',
+          city: "",
+          city_id: "",
         });
         setCitySelectionOptional(true);
         return;
       }
       if (countryChanged) {
-        setCountryChanged(false)
+        setCountryChanged(false);
       }
 
       setDatas({ ...datas, state_id: stateId });
@@ -527,16 +561,17 @@ const handleAvailabilityChange = (event, newValue) => {
     }
   };
 
-  const [autocompleteCity, setAutocompleteCity] = useState(cities.find((city) => city.id === datas.city_id) || null);
-
+  const [autocompleteCity, setAutocompleteCity] = useState(
+    cities.find((city) => city.id === datas.city_id) || null
+  );
 
   const [cityRequired, setCityRequired] = useState(false);
   const changeCity = async (e) => {
-    if (!e || !e?.id) { 
+    if (!e || !e?.id) {
       setDatas({
         ...datas,
-        city: '',
-        city_id: '',
+        city: "",
+        city_id: "",
       });
       alertBox({
         type: "ERROR",
@@ -546,12 +581,12 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
     //const cityId = await e.target.value;
-    const cityId =  e.id.toString();
-    if (cityId === '' && !citySelectionOptional) {
+    const cityId = e.id.toString();
+    if (cityId === "" && !citySelectionOptional) {
       setDatas({
         ...datas,
-        city: '',
-        city_id: '',
+        city: "",
+        city_id: "",
       });
       alertBox({
         type: "ERROR",
@@ -618,16 +653,16 @@ const handleAvailabilityChange = (event, newValue) => {
       }
       setDatas((prevDatas) => ({
         ...prevDatas,
-        city: '',
-        city_id: '',
+        city: "",
+        city_id: "",
       }));
-      setCitySelectionOptional(false)
+      setCitySelectionOptional(false);
     }
     if (!citySelectionOptional && (!datas.city_id || datas.city_id === "")) {
       alertBox({
         type: "ERROR",
         title: "Error",
-        msg: "Please select your city"
+        msg: "Please select your city",
       });
       return;
     }
@@ -642,7 +677,7 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
     if (stateChanged) {
-      const selectedCity = cities.find(city => city.id === datas.city_id);
+      const selectedCity = cities.find((city) => city.id === datas.city_id);
       if (!selectedCity || selectedCity.state_id !== individualStateId) {
         alertBox({
           type: "ERROR",
@@ -652,7 +687,7 @@ const handleAvailabilityChange = (event, newValue) => {
         return;
       }
     }
-    if(enableProfessional === true && professionalData?.total_experience === ''){
+    if (enableProfessional === true && professionalData?.total_experience === "") {
       alertBox({
         type: "ERROR",
         title: "Error",
@@ -660,7 +695,7 @@ const handleAvailabilityChange = (event, newValue) => {
       });
       return;
     }
-    if(enableProfessional === true && professionalData?.availability === ''){
+    if (enableProfessional === true && professionalData?.availability === "") {
       alertBox({
         type: "ERROR",
         title: "Error",
@@ -669,20 +704,25 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
 
-    if(professionalData.summary.length < 250 && (enableProfessional === true)){
+    if (professionalData.summary.length < 250 && enableProfessional === true) {
       alertBox({
         type: "ERROR",
         title: "Error",
         msg: "Summary should be atleast 250 characters",
       });
-    }else if(((professionalData.primary_skill.trim() === "" ) || (workExperience[0].company_name.trim() === "" ) || (workExperience[0].designation.trim() === "" ) || (professionalData.summary.trim() === "" )) && (enableProfessional === true)){
+    } else if (
+      (professionalData.primary_skill.trim() === "" ||
+        workExperience[0].company_name.trim() === "" ||
+        workExperience[0].designation.trim() === "" ||
+        professionalData.summary.trim() === "") &&
+      enableProfessional === true
+    ) {
       alertBox({
         type: "ERROR",
         title: "Error",
         msg: "Please fill all the required fields",
       });
-    }else if((datas.firstname === "" ) || (datas.lastname === "" ))
-     {
+    } else if (datas.firstname === "" || datas.lastname === "") {
       alertBox({
         type: "ERROR",
         title: "Error",
@@ -695,7 +735,7 @@ const handleAvailabilityChange = (event, newValue) => {
         msg: "Phone number cannot start with 0. Please enter a valid phone number.",
       });
       return;
-    }else if (!/^[1-9][0-9]{6,15}$/.test(datas.phone)) {
+    } else if (!/^[1-9][0-9]{6,15}$/.test(datas.phone)) {
       alertBox({
         type: "ERROR",
         title: "Error",
@@ -789,18 +829,17 @@ const handleAvailabilityChange = (event, newValue) => {
   };
 
   useEffect(() => {
-    if(professionalData.skills.length === 0){
+    if (professionalData.skills.length === 0) {
       addMoreSkills();
     }
-    if(workExperience.length === 0){
+    if (workExperience.length === 0) {
       addMoreExperience();
     }
     getCertificate();
     // if(certifications.length === 0){
     //   addMoreCertificate();
     // }
-  },[]);
-
+  }, []);
 
   const openUploadImageModal = (e) => {
     e.preventDefault();
@@ -813,8 +852,7 @@ const handleAvailabilityChange = (event, newValue) => {
         let temp = [...prevState];
         temp[i].cert_img = "";
         return temp;
-      }
-      )
+      });
     }
   };
 
@@ -836,20 +874,22 @@ const handleAvailabilityChange = (event, newValue) => {
       product_id: null,
     },
   ]);
-  
+
   const handleClick = (value) => {
     setRating(value);
     setRatingSelected(true);
   };
 
   const handleRating = (index, type, productId) => {
-    setFeedback(prevFeedback => {
-      const feedbackIndex = prevFeedback.findIndex(item => item.type === type && item.product_id === productId);
+    setFeedback((prevFeedback) => {
+      const feedbackIndex = prevFeedback.findIndex(
+        (item) => item.type === type && item.product_id === productId
+      );
       if (feedbackIndex !== -1) {
         const updatedFeedback = [...prevFeedback];
         updatedFeedback[feedbackIndex] = {
           ...updatedFeedback[feedbackIndex],
-          rating_count: index + 1
+          rating_count: index + 1,
         };
         return updatedFeedback;
       } else {
@@ -857,41 +897,43 @@ const handleAvailabilityChange = (event, newValue) => {
           ...prevFeedback,
           {
             user_id: subscriptionCompData?.userData?.id,
-            subscription_id: type === "subscription" ? productId : null, 
-            course_id: type === "course" ? productId : null, 
+            subscription_id: type === "subscription" ? productId : null,
+            course_id: type === "course" ? productId : null,
             rating_count: index + 1,
             rating_feedback: "",
             type,
-            product_id: productId
-          }
+            product_id: productId,
+          },
         ];
       }
     });
   };
-  
+
   const handleSuggestion = (e, type, productId, ratingCount) => {
     const value = e.target.value;
-    setFeedback(prevFeedback => {
-      const feedbackIndex = prevFeedback.findIndex(item => item.type === type && item.product_id === productId);
+    setFeedback((prevFeedback) => {
+      const feedbackIndex = prevFeedback.findIndex(
+        (item) => item.type === type && item.product_id === productId
+      );
       if (feedbackIndex !== -1) {
         const updatedFeedback = [...prevFeedback];
         updatedFeedback[feedbackIndex] = {
           ...updatedFeedback[feedbackIndex],
           rating_feedback: value,
-      };
+        };
         return updatedFeedback;
       } else {
         return [
           ...prevFeedback,
           {
             user_id: subscriptionCompData?.userData?.id,
-            subscription_id: type === "subscription" ? productId : null, 
-            course_id: type === "course" ? productId : null, 
+            subscription_id: type === "subscription" ? productId : null,
+            course_id: type === "course" ? productId : null,
             rating_count: ratingCount,
             rating_feedback: value,
             type,
-            product_id: productId
-          }
+            product_id: productId,
+          },
         ];
       }
     });
@@ -902,33 +944,34 @@ const handleAvailabilityChange = (event, newValue) => {
   const today = new Date();
   const thirtyDaysAgo = new Date(today);
   thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-  const thirtyDaysAgoString = thirtyDaysAgo.toISOString().split('T')[0];
+  const thirtyDaysAgoString = thirtyDaysAgo.toISOString().split("T")[0];
 
   const checkSubscriptionAndFeedback = async () => {
     const activeSubscriptions = subscriptionCompData?.profile?.active_plans.filter((e) => {
-      const startDateString = e.start_date.split('T')[0];
+      const startDateString = e.start_date.split("T")[0];
       return e.is_plan_active === true && startDateString === thirtyDaysAgoString;
     });
     if (activeSubscriptions && activeSubscriptions.length > 0) {
-
       for (const subscription of activeSubscriptions) {
-        const hasFeedback = await checkFeedbackForSubscription(subscriptionCompData?.userData?.id, subscription.id);
+        const hasFeedback = await checkFeedbackForSubscription(
+          subscriptionCompData?.userData?.id,
+          subscription.id
+        );
 
         if (!hasFeedback) {
-
           feedbackPopUp("subscription", subscription.id);
           setJsxType("subscription");
-          setJsxProductId(subscription.id)
+          setJsxProductId(subscription.id);
           setShowFeedback(true);
         }
       }
     } else {
       let hasActiveOrders = false;
       let activeOrders = [];
-    
+
       if (orders?.length > 0) {
         activeOrders = orders.filter((order) => {
-          const orderDate = new Date(order.order_date).toISOString().split('T')[0];
+          const orderDate = new Date(order.order_date).toISOString().split("T")[0];
           return orderDate === thirtyDaysAgoString;
         });
 
@@ -936,24 +979,28 @@ const handleAvailabilityChange = (event, newValue) => {
 
         if (hasActiveOrders) {
           activeOrders?.map(async (e) => {
-            const feedbackAvailable = await checkFeedbackForOrders(subscriptionCompData?.userData?.id, e.id);
+            const feedbackAvailable = await checkFeedbackForOrders(
+              subscriptionCompData?.userData?.id,
+              e.id
+            );
             if (!feedbackAvailable) {
               feedbackPopUp("course", e.id);
               setJsxType("course");
-              setJsxProductId(e.id)
+              setJsxProductId(e.id);
               setShowFeedback(true);
-
             }
-          })
+          });
         }
       }
     }
   };
-  
+
   const checkFeedbackForSubscription = async (user_Id, subscriptionId) => {
     try {
-      const response = await axios.post(`${BASE_URL}/users/feedback/checkFeedback/?user_id=${user_Id}&type=subscription&product_id=${subscriptionId}`);
-      return response.data.success; 
+      const response = await axios.post(
+        `${BASE_URL}/users/feedback/checkFeedback/?user_id=${user_Id}&type=subscription&product_id=${subscriptionId}`
+      );
+      return response.data.success;
     } catch (error) {
       console.error("Error checking feedback:", error);
       return false;
@@ -961,8 +1008,10 @@ const handleAvailabilityChange = (event, newValue) => {
   };
   const checkFeedbackForOrders = async (user_Id, subscriptionId) => {
     try {
-      const response = await axios.post(`${BASE_URL}/users/feedback/checkFeedback/?user_id=${user_Id}&type=course&product_id=${subscriptionId}`);
-      return response.data.success; 
+      const response = await axios.post(
+        `${BASE_URL}/users/feedback/checkFeedback/?user_id=${user_Id}&type=course&product_id=${subscriptionId}`
+      );
+      return response.data.success;
     } catch (error) {
       console.error("Error checking feedback:", error);
       return false;
@@ -979,10 +1028,15 @@ const handleAvailabilityChange = (event, newValue) => {
       return;
     }
 
-    const currentFeedback = feedback.find(item => item.type === jsxType && item.product_id === jsxProductId);
+    const currentFeedback = feedback.find(
+      (item) => item.type === jsxType && item.product_id === jsxProductId
+    );
 
     try {
-      const response = await axios.post(`${BASE_URL}/users/feedback/createFeedback`, currentFeedback);
+      const response = await axios.post(
+        `${BASE_URL}/users/feedback/createFeedback`,
+        currentFeedback
+      );
 
       if (response.data.message === "Feedback added successfully") {
         setShowFeedback(false);
@@ -1008,7 +1062,7 @@ const handleAvailabilityChange = (event, newValue) => {
 
   const feedbackPopUp = (type, productId) => {
     if (!type || !productId) {
-      return null; 
+      return null;
     }
     return (
       <Dialog
@@ -1038,7 +1092,7 @@ const handleAvailabilityChange = (event, newValue) => {
         <DialogContent>
           <DialogContentText>
             <Typography className="feedback_subheader">
-            How likely are you to recommend WHIZLABS to your friends or colleagues? 
+              How likely are you to recommend WHIZLABS to your friends or colleagues?
             </Typography>
             {/* {!ratingSelected && (<Typography style={{color:'red', fontFamily:"'Poppins', sans-serif", marginBottom:"1rem"}}>Please Select a rating</Typography>)} */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -1049,7 +1103,9 @@ const handleAvailabilityChange = (event, newValue) => {
                     handleClick(index + 1);
                     handleRating(index, type, productId);
                   }}
-                  className={`rating_buttons ${getColorClass(index)} ${index + 1 === rating ? "selected" : ""}`}
+                  className={`rating_buttons ${getColorClass(index)} ${
+                    index + 1 === rating ? "selected" : ""
+                  }`}
                 >
                   {index + 1}
                 </div>
@@ -1068,7 +1124,7 @@ const handleAvailabilityChange = (event, newValue) => {
                 multiline
                 rows={4}
                 onChange={(e) => {
-                  handleSuggestion(e, type, productId,(rating+1));
+                  handleSuggestion(e, type, productId, rating + 1);
                 }}
               />
             </div>
@@ -1232,11 +1288,11 @@ const handleAvailabilityChange = (event, newValue) => {
                       <LocalizationProvider dateAdapter={AdapterMoment}>
                         <DatePicker
                           sx={{
-                            border: "#DDD",                          
+                            border: "#DDD",
                             "& input:focus": {
                               borderColor: "#fff !important",
-                              boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                            },                                           
+                              boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                            },
                           }}
                           onChange={(date) => changeDOB(date)}
                           minDate={moment(startDate)}
@@ -1305,13 +1361,21 @@ const handleAvailabilityChange = (event, newValue) => {
                         onChange={(e) => InputChange(e)}
                       />
                     </div>
-                    <div className="location-group-myprofile" style={{ width: "100%", display: "flex", justifyContent: "space-between", marginBottom:"16px" }}>
+                    <div
+                      className="location-group-myprofile"
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        marginBottom: "16px",
+                      }}
+                    >
                       <div
                         //className="input-box country"
-                        style={{ width: '100%', marginRight: '1rem' }}
+                        style={{ width: "100%", marginRight: "1rem" }}
                       >
-                        <label style={{ color: '#1F2430', fontWeight: "500" }}>
-                          Country <small style={{color:"#FF615E"}}>*</small>
+                        <label style={{ color: "#1F2430", fontWeight: "500" }}>
+                          Country <small style={{ color: "#FF615E" }}>*</small>
                         </label>
                         <div>
                           {/* <select onChange={(e) => changeCountry(e)} title="Select your country">
@@ -1331,8 +1395,8 @@ const handleAvailabilityChange = (event, newValue) => {
                             sx={{
                               "& input:focus": {
                                 borderColor: "#fff !important",
-                                boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                              },                      
+                                boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                              },
                             }}
                             size="small"
                             autoHighlight
@@ -1340,24 +1404,29 @@ const handleAvailabilityChange = (event, newValue) => {
                             onChange={(event, newValue) => {
                               setAutocompleteCountry(newValue);
                               changeCountry(newValue);
-                              setAutocompleteState(null)
-                              setAutocompleteCity(null)
+                              setAutocompleteState(null);
+                              setAutocompleteCity(null);
                             }}
                             options={countries}
                             getOptionLabel={(option) => {
                               return option.name;
                             }}
-                            renderInput={(params) => (<TextField {...params} placeholder="Select Country"/>)}
-                            PaperComponent={({ children }) => (<Paper style={{ border: '2px solid #d3d3d3' }}>{children}</Paper>)}
+                            renderInput={(params) => (
+                              <TextField {...params} placeholder="Select Country" />
+                            )}
+                            PaperComponent={({ children }) => (
+                              <Paper style={{ border: "2px solid #d3d3d3" }}>{children}</Paper>
+                            )}
                           />
                         </div>
                       </div>
                       {/* <div className="inputbox-25" style={{justifyContent:"space-between"}}> */}
                       <div
-                        //className="input-box w-25" 
-                        style={{ width: "100%", marginRight: '1rem' }}>
-                        <label style={{ color: '#1F2430', fontWeight: "500" }}>
-                          State <small style={{color:"#FF615E"}}>*</small>
+                        //className="input-box w-25"
+                        style={{ width: "100%", marginRight: "1rem" }}
+                      >
+                        <label style={{ color: "#1F2430", fontWeight: "500" }}>
+                          State <small style={{ color: "#FF615E" }}>*</small>
                         </label>
                         <div>
                           {/* <select onChange={(e) => changeState(e)} title="Select your state">
@@ -1377,8 +1446,8 @@ const handleAvailabilityChange = (event, newValue) => {
                             sx={{
                               "& input:focus": {
                                 borderColor: "#fff !important",
-                                boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                              },                      
+                                boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                              },
                             }}
                             size="small"
                             autoHighlight
@@ -1386,23 +1455,27 @@ const handleAvailabilityChange = (event, newValue) => {
                             onChange={(event, newValue) => {
                               setAutocompleteState(newValue);
                               changeState(newValue);
-                              setAutocompleteCity(null)
+                              setAutocompleteCity(null);
                             }}
                             options={states}
                             getOptionLabel={(option) => {
                               return option.name;
                             }}
-                            renderInput={(params) => (<TextField {...params} placeholder="Select State"/>)}
-                            PaperComponent={({ children }) => (<Paper style={{ border: '2px solid #d3d3d3' }}>{children}</Paper>)}
-                            
+                            renderInput={(params) => (
+                              <TextField {...params} placeholder="Select State" />
+                            )}
+                            PaperComponent={({ children }) => (
+                              <Paper style={{ border: "2px solid #d3d3d3" }}>{children}</Paper>
+                            )}
                           />
                         </div>
                       </div>
                       <div
                         //className="input-box w-25"
-                        style={{ width: "100%" }}>
-                        <label style={{ color: '#1F2430', fontWeight: "500" }}>
-                          City <small style={{color:"#FF615E"}}>*</small>
+                        style={{ width: "100%" }}
+                      >
+                        <label style={{ color: "#1F2430", fontWeight: "500" }}>
+                          City <small style={{ color: "#FF615E" }}>*</small>
                         </label>
                         <div>
                           {/* <select onChange={(e) => changeCity(e)} title="Select your city">
@@ -1422,8 +1495,8 @@ const handleAvailabilityChange = (event, newValue) => {
                             sx={{
                               "& input:focus": {
                                 borderColor: "#fff !important",
-                                boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                              },                      
+                                boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                              },
                             }}
                             size="small"
                             autoHighlight
@@ -1436,8 +1509,12 @@ const handleAvailabilityChange = (event, newValue) => {
                             getOptionLabel={(option) => {
                               return option.name;
                             }}
-                            renderInput={(params) => (<TextField {...params} placeholder="Select City"/>)}
-                            PaperComponent={({ children }) => (<Paper style={{ border: '2px solid #d3d3d3' }}>{children}</Paper>)}
+                            renderInput={(params) => (
+                              <TextField {...params} placeholder="Select City" />
+                            )}
+                            PaperComponent={({ children }) => (
+                              <Paper style={{ border: "2px solid #d3d3d3" }}>{children}</Paper>
+                            )}
                           />
                         </div>
                       </div>
@@ -1499,13 +1576,13 @@ const handleAvailabilityChange = (event, newValue) => {
                       label="Add Professional Details"
                     />
                   </div>
-                  { !enableProfessional ? (
+                  {!enableProfessional ? (
                     <div className="footer-section">
                       <button type="submit" className="btn btn-save">
                         Save
                       </button>
                     </div>
-                  ) : null }
+                  ) : null}
                 </form>
               </div>
               {/* <div className="white-box update-password">
@@ -1524,7 +1601,7 @@ const handleAvailabilityChange = (event, newValue) => {
             <div className="right">
               <div
                 className="white-box professional"
-                style={{ display: enableProfessional ? "block" : "none"}}
+                style={{ display: enableProfessional ? "block" : "none" }}
               >
                 <div className="head-section">Professional Details</div>
                 <form onSubmit={submitForm}>
@@ -1540,7 +1617,9 @@ const handleAvailabilityChange = (event, newValue) => {
                         name="summary"
                         minLength={250}
                         maxLength={600}
-                        onChange={(e) => {setProfessionalData({...professionalData, summary: e.target.value})}}
+                        onChange={(e) => {
+                          setProfessionalData({ ...professionalData, summary: e.target.value });
+                        }}
                       ></textarea>
                     </div>
                   </div>
@@ -1555,7 +1634,12 @@ const handleAvailabilityChange = (event, newValue) => {
                         placeholder="Add Primary Skill"
                         value={professionalData.primary_skill}
                         name="skills"
-                        onChange={(e) => {setProfessionalData({...professionalData, primary_skill: e.target.value})}}
+                        onChange={(e) => {
+                          setProfessionalData({
+                            ...professionalData,
+                            primary_skill: e.target.value,
+                          });
+                        }}
                       />
                     </div>
                     {professionalData?.skills?.map((x, i) => (
@@ -1602,20 +1686,25 @@ const handleAvailabilityChange = (event, newValue) => {
                   </div>
                   <div className="input-box-group">
                     <div className="input-box">
-                      <label>Highest Education<small>*</small></label>
+                      <label>
+                        Highest Education<small>*</small>
+                      </label>
                       <input
                         type="text"
                         required
                         placeholder="Add Education"
                         defaultValue={professionalData.education}
                         name="education"
-                        onChange={(e) => {setProfessionalData({...professionalData, education: e.target.value})}}
+                        onChange={(e) => {
+                          setProfessionalData({ ...professionalData, education: e.target.value });
+                        }}
                       />
                     </div>
-                    <div className="input-box">                      
-                    </div>
+                    <div className="input-box"></div>
                     <div className="input-box">
-                      <label>Total Experience<small>*</small></label>
+                      <label>
+                        Total Experience<small>*</small>
+                      </label>
                       {/* <select
                         required
                         name="experience"
@@ -1636,24 +1725,28 @@ const handleAvailabilityChange = (event, newValue) => {
                         sx={{
                           "& input:focus": {
                             borderColor: "#fff !important",
-                            boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                          },                      
+                            boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                          },
                         }}
                         size="small"
                         autoHighlight
-                        value={ExperienceOptions.find(option => option.name === totalExperience)|| null}
+                        value={
+                          ExperienceOptions.find((option) => option.name === totalExperience) ||
+                          null
+                        }
                         onChange={handleExperienceChange}
                         options={ExperienceOptions}
                         getOptionLabel={(option) => {
                           return option.name;
                         }}
-                        renderInput={(params) => (<TextField {...params} />)}
-                        PaperComponent={({ children }) => (<Paper style={{ border: '2px solid #d3d3d3' }}>{children}</Paper>)}
+                        renderInput={(params) => <TextField {...params} />}
+                        PaperComponent={({ children }) => (
+                          <Paper style={{ border: "2px solid #d3d3d3" }}>{children}</Paper>
+                        )}
                       />
                     </div>
-                    
-                    <div className="input-box">                      
-                    </div>
+
+                    <div className="input-box"></div>
                     {/* <input
                         type="text"
                         required
@@ -1664,7 +1757,9 @@ const handleAvailabilityChange = (event, newValue) => {
                       />
                     </div> */}
                     <div className="input-box">
-                      <label>Work Availability<small>*</small></label>
+                      <label>
+                        Work Availability<small>*</small>
+                      </label>
                       {/* <select
                         required
                         name="vailability"
@@ -1682,29 +1777,37 @@ const handleAvailabilityChange = (event, newValue) => {
                         sx={{
                           "& input:focus": {
                             borderColor: "#fff !important",
-                            boxShadow: "0 0 0 4px rgb(255, 255, 255)" 
-                          },                      
+                            boxShadow: "0 0 0 4px rgb(255, 255, 255)",
+                          },
                         }}
                         size="small"
                         autoHighlight
-                        value={AvailabilityOptions.find(option => option.name === availability) || null}
+                        value={
+                          AvailabilityOptions.find((option) => option.name === availability) || null
+                        }
                         onChange={handleAvailabilityChange}
                         options={AvailabilityOptions}
                         getOptionLabel={(option) => option.name}
                         renderInput={(params) => <TextField {...params} />}
-                        PaperComponent={({ children }) => (<Paper style={{ border: '2px solid #d3d3d3' }}>{children}</Paper>)}
+                        PaperComponent={({ children }) => (
+                          <Paper style={{ border: "2px solid #d3d3d3" }}>{children}</Paper>
+                        )}
                       />
                     </div>
                   </div>
                   <div className="input-box-group">
                     <div className="input-box">
-                      <label>Work Experience<small>*</small></label>
+                      <label>
+                        Work Experience<small>*</small>
+                      </label>
                     </div>
                     <div className="addmore-box">
                       {workExperience.map((item, i) => (
                         <>
-                          <div className="input-box"  style={{ marginTop: "10px" }}>
-                            <label>Company Name<small>*</small></label>
+                          <div className="input-box" style={{ marginTop: "10px" }}>
+                            <label>
+                              Company Name<small>*</small>
+                            </label>
                             <input
                               type="text"
                               required
@@ -1714,8 +1817,10 @@ const handleAvailabilityChange = (event, newValue) => {
                               onChange={(e) => changeExperience(e, i)}
                             />
                           </div>
-                          <div className="input-box"  style={{ marginTop: "10px" }}>
-                            <label>Designation<small>*</small></label>
+                          <div className="input-box" style={{ marginTop: "10px" }}>
+                            <label>
+                              Designation<small>*</small>
+                            </label>
                             <input
                               type="text"
                               required
@@ -1739,7 +1844,7 @@ const handleAvailabilityChange = (event, newValue) => {
                                     let temp = [...prevState];
                                     temp[i].start_date = date.utc().toDate();
                                     return temp;
-                                  })
+                                  });
                                 }}
                                 minDate={moment(startDate)}
                                 maxDate={moment()}
@@ -1780,7 +1885,7 @@ const handleAvailabilityChange = (event, newValue) => {
                                     let temp = [...prevState];
                                     temp[i].end_date = date.utc().toDate();
                                     return temp;
-                                  })
+                                  });
                                 }}
                                 minDate={moment(startDate)}
                                 maxDate={moment()}
@@ -1843,7 +1948,7 @@ const handleAvailabilityChange = (event, newValue) => {
                           )}
                         </>
                       ))}
-                      {workExperience.length === 1  && (
+                      {workExperience.length === 1 && (
                         <span
                           className="btn-addmore"
                           style={{ marginLeft: "10px", cursor: "pointer", color: "#f98600" }}
@@ -1881,23 +1986,31 @@ const handleAvailabilityChange = (event, newValue) => {
                             {x.certification_provider !== "Other" && (
                               <div className="input-box" style={{ marginTop: "10px" }}>
                                 <label>Certification Name</label>
-                                <select name="certification_type"
+                                <select
+                                  name="certification_type"
                                   value={x.certification_type}
-                                  onChange={(e) => changeCertificate(e, i)}>
+                                  onChange={(e) => changeCertificate(e, i)}
+                                >
                                   <option value="">Select Certification Name</option>
-                                  {
-                                    certList .filter((item) => item.provider === x.certification_provider)
+                                  {certList
+                                    .filter((item) => item.provider === x.certification_provider)
                                     .map((item) => (
-                                      <option value={item.certification_name}>{item.certification_name}</option>
-                                    ))
-                                    }
+                                      <option value={item.certification_name}>
+                                        {item.certification_name}
+                                      </option>
+                                    ))}
                                 </select>
                               </div>
                             )}
                             {x.certification_provider === "Other" && (
                               <div className="input-box" style={{ marginTop: "10px" }}>
                                 <label>Certification Name</label>
-                                <input type="text" name="certification_type" value={x.certification_type} onChange={(e) => changeCertificate(e, i)} />
+                                <input
+                                  type="text"
+                                  name="certification_type"
+                                  value={x.certification_type}
+                                  onChange={(e) => changeCertificate(e, i)}
+                                />
                               </div>
                             )}
                             <div className="input-box calender-blk" style={{ marginTop: "10px" }}>
@@ -1912,7 +2025,7 @@ const handleAvailabilityChange = (event, newValue) => {
                                       let temp = [...prevState];
                                       temp[i].start_date = date.utc().toDate();
                                       return temp;
-                                    })
+                                    });
                                   }}
                                   maxDate={moment()}
                                   value={moment(x.start_date)}
@@ -1984,7 +2097,10 @@ const handleAvailabilityChange = (event, newValue) => {
                               onChange={(e) => changeCertificate(e, i)}
                             />
                           </div> */}
-                            <div className="input-box" style={{ marginTop: "10px", marginLeft: "20px" }}>
+                            <div
+                              className="input-box"
+                              style={{ marginTop: "10px", marginLeft: "20px" }}
+                            >
                               <label>Certification URL (Optional)</label>
                               <input
                                 type="text"
@@ -1996,17 +2112,33 @@ const handleAvailabilityChange = (event, newValue) => {
                             </div>
                             {x.cert_img ? (
                               <div className="input-box">
-                                <div>Certificate Already Uploaded <Tooltip title="View Certificate" arrow>
+                                <div>
+                                  Certificate Already Uploaded{" "}
+                                  <Tooltip title="View Certificate" arrow>
                                     {/* <a href={MEDIA_URL + x.cert_img} target="_blank" rel="noreferrer" > */}
                                     <IconButton>
-                                      <Visibility color="primary" fontSize="small" onClick={() => { setCertPreview({ name: x.certification_type, url: MEDIA_URL + x.cert_img, issued_date: x.start_date, }); setOpenCert(true)}} />
+                                      <Visibility
+                                        color="primary"
+                                        fontSize="small"
+                                        onClick={() => {
+                                          setCertPreview({
+                                            name: x.certification_type,
+                                            url: MEDIA_URL + x.cert_img,
+                                            issued_date: x.start_date,
+                                          });
+                                          setOpenCert(true);
+                                        }}
+                                      />
                                     </IconButton>
                                     {/* </a> */}
                                   </Tooltip>
                                   <Tooltip title="Remove Certificate" arrow>
                                     <IconButton>
-                                      <DeleteIcon color="secondary" fontSize="small" onClick={() => 
-                                        removeCertificateImg(i)} />
+                                      <DeleteIcon
+                                        color="secondary"
+                                        fontSize="small"
+                                        onClick={() => removeCertificateImg(i)}
+                                      />
                                     </IconButton>
                                   </Tooltip>
                                 </div>
@@ -2021,32 +2153,36 @@ const handleAvailabilityChange = (event, newValue) => {
                                 />
                               </div>
                             )}
-                            { certifications.length > 0 && (
-                              <span className="btn-addmore"
+                            {certifications.length > 0 && (
+                              <span
+                                className="btn-addmore"
                                 style={{ marginLeft: "10px", cursor: "pointer", color: "#f98600" }}
-                                onClick={() => removeCertificate(i)}>
+                                onClick={() => removeCertificate(i)}
+                              >
                                 - Remove
                               </span>
                             )}
-                            { certifications.length > 0 && i === certifications.length - 1 && (
+                            {certifications.length > 0 && i === certifications.length - 1 && (
                               <span
                                 className="btn-addmore"
                                 style={{ marginLeft: "10px", cursor: "pointer", color: "#f98600" }}
                                 onClick={() => addMoreCertificate()}
                               >
                                 + Add More
-                              </span>)}
+                              </span>
+                            )}
                           </>
                         ))}
 
-                      {certifications?.length === 0  && (
+                      {certifications?.length === 0 && (
                         <span
                           className="btn-addmore"
                           style={{ marginLeft: "10px", cursor: "pointer", color: "#f98600" }}
                           onClick={() => addMoreCertificate()}
                         >
                           + Add Certification
-                        </span>)}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="input-box-group">
@@ -2059,7 +2195,9 @@ const handleAvailabilityChange = (event, newValue) => {
                             defaultChecked={professionalData.job_change === true ? true : false}
                             name="job_change"
                             value="YES"
-                            onChange={(e) => {setProfessionalData({...professionalData, job_change: true})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, job_change: true });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">Yes</span>
@@ -2070,7 +2208,9 @@ const handleAvailabilityChange = (event, newValue) => {
                             name="job_change"
                             defaultChecked={professionalData.job_change === false ? true : false}
                             value="NO"
-                            onChange={(e) => {setProfessionalData({...professionalData, job_change: false})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, job_change: false });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">No</span>
@@ -2087,9 +2227,13 @@ const handleAvailabilityChange = (event, newValue) => {
                           <input
                             type="radio"
                             name="profile_sharing"
-                            defaultChecked={professionalData.profile_sharing === true ? true : false}
+                            defaultChecked={
+                              professionalData.profile_sharing === true ? true : false
+                            }
                             value="YES"
-                            onChange={(e) => {setProfessionalData({...professionalData, profile_sharing: true})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, profile_sharing: true });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">Yes</span>
@@ -2098,9 +2242,13 @@ const handleAvailabilityChange = (event, newValue) => {
                           <input
                             type="radio"
                             name="profile_sharing"
-                            defaultChecked={professionalData.profile_sharing === false ? true : false}
+                            defaultChecked={
+                              professionalData.profile_sharing === false ? true : false
+                            }
                             value="NO"
-                            onChange={(e) => {setProfessionalData({...professionalData, profile_sharing: false})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, profile_sharing: false });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">No</span>
@@ -2116,7 +2264,9 @@ const handleAvailabilityChange = (event, newValue) => {
                             name="profile_hire"
                             defaultChecked={professionalData.public_profile === true ? true : false}
                             value="YES"
-                            onChange={(e) => {setProfessionalData({...professionalData, public_profile: true})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, public_profile: true });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">Yes</span>
@@ -2125,9 +2275,13 @@ const handleAvailabilityChange = (event, newValue) => {
                           <input
                             type="radio"
                             name="profile_hire"
-                            defaultChecked={professionalData.public_profile === false ? true : false}
+                            defaultChecked={
+                              professionalData.public_profile === false ? true : false
+                            }
                             value="NO"
-                            onChange={(e) => {setProfessionalData({...professionalData, public_profile: false})}}
+                            onChange={(e) => {
+                              setProfessionalData({ ...professionalData, public_profile: false });
+                            }}
                           />
                           <span className="radio-style"></span>
                           <span className="name">No</span>
@@ -2146,23 +2300,40 @@ const handleAvailabilityChange = (event, newValue) => {
           </div>
         </div>
       </div>
-      <Modal open={openCert} onClose={()=>setOpenCert(!openCert)} aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description">
-        <Box sx={{ marginTop: 20, width: 700, bgcolor: 'background.paper', boxShadow: 24, p: 2, borderRadius: '10px' }}>
-        <div style={{display: "flex", justifyContent: "space-between"}}>
-          <Typography>Issued on: {moment(certPreview.issued_date).format('DD MMM YYYY')}</Typography>
-          <IconButton>
-            <CloseIcon onClick={()=>setOpenCert(!openCert)} />
-          </IconButton>
-        </div>
-        <Box style={{textAlign: 'center'}}>
-            <Typography variant="h6" component="h2" align='center'>{certPreview.name}</Typography>
+      <Modal
+        open={openCert}
+        onClose={() => setOpenCert(!openCert)}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        <Box
+          sx={{
+            marginTop: 20,
+            width: 700,
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 2,
+            borderRadius: "10px",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography>
+              Issued on: {moment(certPreview.issued_date).format("DD MMM YYYY")}
+            </Typography>
+            <IconButton>
+              <CloseIcon onClick={() => setOpenCert(!openCert)} />
+            </IconButton>
+          </div>
+          <Box style={{ textAlign: "center" }}>
+            <Typography variant="h6" component="h2" align="center">
+              {certPreview.name}
+            </Typography>
             <br />
             <div className="modal-content">
-              {certPreview.url.includes('.pdf') ? (
-              <iframe src={certPreview.url} width="600" height="400" title="Certificate">
-              </iframe>) : (
-              <img src={certPreview.url} alt="Certificate" width={600} />
+              {certPreview.url.includes(".pdf") ? (
+                <iframe src={certPreview.url} width="600" height="400" title="Certificate"></iframe>
+              ) : (
+                <img src={certPreview.url} alt="Certificate" width={600} />
               )}
             </div>
           </Box>

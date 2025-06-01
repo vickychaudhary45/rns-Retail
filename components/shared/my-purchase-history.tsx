@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { OrderDetailsModal } from "@/components/shared/Modals";
 import moment from "moment";
 import MySubscription from "./my-subscription";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
@@ -12,7 +12,7 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
   const [previewData, setPreviewData] = useState(null);
   const [activeControl, setActiveControl] = useState("P");
   useEffect(() => {
-    if (orders.length > 0) {
+    if (orders?.length > 0) {
       setActiveControl("P");
     } else {
       setActiveControl("S");
@@ -42,7 +42,7 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
     <>
       <div style={{ display: tabActive ? "block" : "none" }} id="purchase-history">
         <div className="header-controls">
-          {orders && orders.length > 0 && (
+          {orders && orders?.length > 0 && (
             <span
               className={`white-box ${activeControl === "P" && "active"}`}
               onClick={(e) => setActiveControl("P")}
@@ -50,15 +50,19 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
               Individual Courses
             </span>
           )}
-          {subscriptionCompData && subscriptionCompData.userData && subscriptionCompData.userData.subscrptions && subscriptionCompData.userData.subscrptions.active_plans && subscriptionCompData.userData.subscrptions.active_plans.length > 0 && (
-            <span
-              className={`white-box ${activeControl === "S" && "active"}`}
-              onClick={(e) => setActiveControl("S")}
-            >
-              Subscriptions
-            </span>
-          )}
-          
+          {subscriptionCompData &&
+            subscriptionCompData.userData &&
+            subscriptionCompData.userData.subscrptions &&
+            subscriptionCompData.userData.subscrptions.active_plans &&
+            subscriptionCompData.userData.subscrptions.active_plans.length > 0 && (
+              <span
+                className={`white-box ${activeControl === "S" && "active"}`}
+                onClick={(e) => setActiveControl("S")}
+              >
+                Subscriptions
+              </span>
+            )}
+
           <style jsx>
             {`
               .header-controls {
@@ -98,7 +102,7 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
             `}
           </style>
         </div>
-        {orders && orders.length > 0 && activeControl === "P" && (
+        {orders && orders?.length > 0 && activeControl === "P" && (
           <MyOrders
             orders={orders}
             openModal={openModal}
@@ -106,10 +110,18 @@ const MyPurchaseHistory = ({ tabActive, orders, alertBox, subscriptionCompData }
             setPreviewData={setPreviewData}
           />
         )}
-        {subscriptionCompData && subscriptionCompData.userData && subscriptionCompData.userData.subscrptions && subscriptionCompData.userData.subscrptions.active_plans && subscriptionCompData.userData.subscrptions.active_plans.length > 0 &&
+        {subscriptionCompData &&
+          subscriptionCompData.userData &&
+          subscriptionCompData.userData.subscrptions &&
+          subscriptionCompData.userData.subscrptions.active_plans &&
+          subscriptionCompData.userData.subscrptions.active_plans.length > 0 &&
           activeControl === "S" && <MySubscription {...subscriptionCompData} />}
 
-        {orders && orders.length === 0 && subscriptionCompData && subscriptionCompData.userData && subscriptionCompData.userData.subscrptions &&
+        {orders &&
+          orders?.length === 0 &&
+          subscriptionCompData &&
+          subscriptionCompData.userData &&
+          subscriptionCompData.userData.subscrptions &&
           subscriptionCompData.userData.subscrptions.active_plans.length === 0 && <NoOrderFound />}
 
         <br />
@@ -127,7 +139,7 @@ const MyOrders = ({ orders, openModal, previewData, setPreviewData }) => {
   const [modifiedOrderData, setModifiedOrderData] = useState([]);
 
   useEffect(() => {
-    if (orders && orders.length > 0) {
+    if (orders && orders?.length > 0) {
       const output = [];
 
       orders.forEach((order) => {
@@ -267,15 +279,15 @@ const MyOrders = ({ orders, openModal, previewData, setPreviewData }) => {
                                             return (
                                               //@ts-ignore
                                               <li type={"1"} className="particular-list">
-                                                  {tmpItem.product_type === "PT" && "Practice Test"}
-                                                  {tmpItem.product_type === "OC" && "Video Course"}
-                                                  {tmpItem.product_type === "LAB" && "Hands On Lab"}
-                                                  {tmpItem.product_type === "SANDBOX" &&
-                                                    "Cloud Sandbox"}
-                                                  {(tmpItem.product_type === "SANDBOX-1" ||
-                                                    tmpItem.product_type === "SANDBOX-3" ||
-                                                    tmpItem.product_type === "SANDBOX-6") &&
-                                                    "Sandbox"}
+                                                {tmpItem.product_type === "PT" && "Practice Test"}
+                                                {tmpItem.product_type === "OC" && "Video Course"}
+                                                {tmpItem.product_type === "LAB" && "Hands On Lab"}
+                                                {tmpItem.product_type === "SANDBOX" &&
+                                                  "Cloud Sandbox"}
+                                                {(tmpItem.product_type === "SANDBOX-1" ||
+                                                  tmpItem.product_type === "SANDBOX-3" ||
+                                                  tmpItem.product_type === "SANDBOX-6") &&
+                                                  "Sandbox"}
                                               </li>
                                             );
                                           })}
