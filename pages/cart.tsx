@@ -148,9 +148,9 @@ const Cart = ({
 
   useEffect(() => {
     updateCouponDatas(null);
-    if (userData === null) {
-      router.push("/");
-    }
+    // if (userData === null) {
+    //   router.push("/");
+    // }
     if (currencyData) setCurrency(currencyData);
   }, [currencyData]);
 
@@ -184,13 +184,13 @@ const Cart = ({
 
   const getCartfromCookie = async () => {
     // TODO: activate later
-    // let cart = await axios.post(`${baseUrl}/cart/getprices`, {
-    //   cart_details: stateCart,
-    // });
-    let cart = cartttt;
-    if (cart.cart_details) {
-      setCartItems(cart.cart_details);
-      storeCartCountAction(cart.cart_details.length);
+    let cart = await axios.post(`${baseUrl}/cart/getprices`, {
+      cart_details: stateCart,
+    });
+    // let cart = cartttt;
+    if (cart.data.cart_details) {
+      setCartItems(cart.data.cart_details);
+      storeCartCountAction(cart.data.cart_details.length);
       setCurrentlyLoading({
         courseId: null,
         productType: null,

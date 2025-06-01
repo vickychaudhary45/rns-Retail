@@ -409,9 +409,9 @@ const Header = ({
 
   useEffect(() => {
     // clear the coupon datas
-    if (userData === null) {
-      router.push("/");
-    }
+    // if (userData === null) {
+    //   router.push("/");
+    // }
     if (currencyData) setCurrency(currencyData);
   }, [currencyData]);
 
@@ -1163,7 +1163,7 @@ const Header = ({
                                 margin: 0,
                               }}
                               // href="#"
-                              // onClick={(e) => openCartPage(e)}
+                              onClick={(e) => openCartPage(e)}
                               className="icon icon-font-cart"
                             ></p>
                             {/* </Link> */}
