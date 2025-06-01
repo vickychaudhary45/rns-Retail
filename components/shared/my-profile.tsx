@@ -1407,7 +1407,7 @@ const MyProfile = ({
                               setAutocompleteState(null);
                               setAutocompleteCity(null);
                             }}
-                            options={countries}
+                            options={states} // change it countries later
                             getOptionLabel={(option) => {
                               return option.name;
                             }}
