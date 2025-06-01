@@ -74,19 +74,19 @@ const Subscription = ({
 
       let premiumplus_index = oneMonthplans.findIndex((itm) => itm.is_sandbox_access == true);
 
-      oneMonthplans[premiumplus_index].type = "subs";
-      oneMonthplans[premiumplus_index].color = "#E30C3B";
-      oneMonthplans[premiumplus_index].ids = 1;
-      oneMonthplans[premiumplus_index].subInfo = {
-        plan_title: "Premium",
-        plan_desc: "Become Expert",
-        plan_info: [
-          "25,000+ Practice Questions",
-          "4500+ Videos",
-          "1000+ Hands-on Labs",
-          "Cloud Sandbox",
-        ],
-      };
+      // oneMonthplans[premiumplus_index].type = "subs";
+      // oneMonthplans[premiumplus_index].color = "#E30C3B";
+      // oneMonthplans[premiumplus_index].ids = 1;
+      // oneMonthplans[premiumplus_index].subInfo = {
+      //   plan_title: "Premium",
+      //   plan_desc: "Become Expert",
+      //   plan_info: [
+      //     "25,000+ Practice Questions",
+      //     "4500+ Videos",
+      //     "1000+ Hands-on Labs",
+      //     "Cloud Sandbox",
+      //   ],
+      // };
 
       oneMonthplans[premium_Index].type = "subs";
       oneMonthplans[premium_Index].color = "#000000";
@@ -100,19 +100,19 @@ const Subscription = ({
 
       premiumplus_index = oneYearPlans.findIndex((itm) => itm.is_sandbox_access == true);
 
-      oneYearPlans[premiumplus_index].type = "subs";
-      oneYearPlans[premiumplus_index].color = "#E30C3B";
-      oneYearPlans[premiumplus_index].ids = 1;
-      oneYearPlans[premiumplus_index].subInfo = {
-        plan_title: "Premium",
-        plan_desc: "Become Expert",
-        plan_info: [
-          "25,000+ Practice Questions",
-          "4500+ Videos",
-          "1000+ Hands-on Labs",
-          "Cloud Sandbox",
-        ],
-      };
+      // oneYearPlans[premiumplus_index].type = "subs";
+      // oneYearPlans[premiumplus_index].color = "#E30C3B";
+      // oneYearPlans[premiumplus_index].ids = 1;
+      // oneYearPlans[premiumplus_index].subInfo = {
+      //   plan_title: "Premium",
+      //   plan_desc: "Become Expert",
+      //   plan_info: [
+      //     "25,000+ Practice Questions",
+      //     "4500+ Videos",
+      //     "1000+ Hands-on Labs",
+      //     "Cloud Sandbox",
+      //   ],
+      // };
 
       oneYearPlans[premium_Index].type = "subs";
       oneYearPlans[premium_Index].color = "#000000";
@@ -446,9 +446,9 @@ const Subscription = ({
                       <TableCell sx={{ width: "251px", fontWeight: "500", fontSize: "20px" }}>
                         Basic
                       </TableCell>
-                      <TableCell sx={{ width: "251px", fontWeight: "500", fontSize: "20px" }}>
+                      {/* <TableCell sx={{ width: "251px", fontWeight: "500", fontSize: "20px" }}>
                         Premium
-                      </TableCell>
+                      </TableCell> */}
                       <TableCell sx={{ width: "251px", fontWeight: "500", fontSize: "20px" }}>
                         Enterprise
                       </TableCell>
@@ -486,7 +486,7 @@ const Subscription = ({
                             </>
                           )}
                         </TableCell>
-                        <TableCell>
+                        {/* <TableCell>
                           {" "}
                           {row.access.includes(1) ? (
                             <>
@@ -505,7 +505,7 @@ const Subscription = ({
                               </div>
                             </>
                           )}
-                        </TableCell>
+                        </TableCell> */}
                         <TableCell>
                           {" "}
                           {row.access.includes(2) ? (
@@ -647,8 +647,7 @@ export async function getServerSideProps(context) {
   try {
     testimonialResp = testimonials.data;
     // testimonialResp = await axios.get(baseUrl + "/users/testimonials");
-    subscriptionResp = subscriptions.data;
-    // subscriptionResp = await axios.get(baseUrl + "/subscription/plans");
+    subscriptionResp = await axios.get(baseUrl + "/subscription/plans");
   } catch (e) {
     console.error(e);
   }
@@ -800,7 +799,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       profile: profile,
-      subscriptionData: subscriptionResp,
+      subscriptionData: subscriptionResp?.data?.data,
       testimonialsData: testimonialResp,
       brandsData: brandsData,
       moreBrandsData: moreBrandsData,
@@ -1402,7 +1401,7 @@ const dummyProfileResponse = {
           payment_mode: "credit_card",
           transaction_id: "TXN123456",
           is_cancelled: false,
-          is_plan_active: true,
+          is_plan_active: false,
           start_date: "2024-01-02",
           end_date: "2025-01-01",
           order_status: "completed",

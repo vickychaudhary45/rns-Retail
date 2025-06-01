@@ -752,11 +752,11 @@ const Checkout = ({ subData, userData, alertBoxAction, buttonClickAction, utmDat
                               value={userCountryId}
                             >
                               <option>Select Country</option>
-                              {countryList.map((item) => (
+                              {/* {countryList.map((item) => (
                                 <option value={item.id} key={item.id}>
                                   {item.name}
                                 </option>
-                              ))}
+                              ))} */}
                             </select>
                           </div>
                           <div className="input-box">
