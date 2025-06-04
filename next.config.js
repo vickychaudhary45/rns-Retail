@@ -1,4 +1,4 @@
-const securityHeaders = [
+let securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
     value: "on",
@@ -146,10 +146,6 @@ module.exports = withBundleAnalyzer({
         // Apply these headers to all routes in your application.
         source: "/(.*)",
         headers: securityHeaders,
-      },
-      {
-        source: "/learn/manifest.json",
-        headers: corsHeaders,
       },
     ];
   },
