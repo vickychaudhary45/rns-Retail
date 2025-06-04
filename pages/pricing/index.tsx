@@ -745,7 +745,7 @@ export async function getServerSideProps(context) {
 
   const seoHomePageData = {
     seoPageType: "pricingPage", // This should reflect the actual page type
-    title: "Plans & Pricing - Whizlabs",
+    title: "Plans & Pricing - RNSPATH",
     metaTags: [
       {
         name: "facebook-domain-verification",

@@ -1,4 +1,4 @@
-let securityHeaders = [
+const securityHeaders = [
   {
     key: "X-DNS-Prefetch-Control",
     value: "on",
@@ -22,6 +22,17 @@ let securityHeaders = [
   {
     key: "Referrer-Policy",
     value: "origin-when-cross-origin",
+  },
+];
+
+const corsHeaders = [
+  {
+    key: "Access-Control-Allow-Origin",
+    value: "https://rns-lms.netlify.app", // or "*" if you want to allow any origin
+  },
+  {
+    key: "Access-Control-Allow-Methods",
+    value: "GET, OPTIONS",
   },
 ];
 
@@ -135,6 +146,10 @@ module.exports = withBundleAnalyzer({
         // Apply these headers to all routes in your application.
         source: "/(.*)",
         headers: securityHeaders,
+      },
+      {
+        source: "/learn/manifest.json",
+        headers: corsHeaders,
       },
     ];
   },
