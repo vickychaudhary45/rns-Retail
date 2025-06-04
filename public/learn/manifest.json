@@ -1,0 +1,9 @@
+{
+  "name": "RNS Retail Learning",
+  "short_name": "RNS Retail",
+  "start_url": "/learn/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0070f3",
+  "description": "RNS Retail Learning Management System"
+}
