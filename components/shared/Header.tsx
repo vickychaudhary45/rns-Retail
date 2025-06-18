@@ -426,7 +426,7 @@ const Header = ({
     let cartData = [];
     if (CartData) {
       cartData = CartData.data.cart_details;
-      storeCartCountAction(cartData.length);
+      storeCartCountAction(cartData?.length);
     }
     if (cartData && cartData.length > 0) {
       const data = cartData;

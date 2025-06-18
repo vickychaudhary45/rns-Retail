@@ -64,10 +64,10 @@ const Subscription = ({
   useEffect(() => {
     if (subscriptionData) {
       let oneMonthplans = subscriptionData
-        .filter((Itm) => Itm.subscription_for === 1)
+        .filter((Itm) => Itm?.subscription_for === 1)
         ?.sort((a, b) => a.order_by - b.order_by);
       let oneYearPlans = subscriptionData
-        .filter((Itm) => Itm.subscription_for === 12)
+        .filter((Itm) => Itm?.subscription_for === 12)
         ?.sort((a, b) => a.order_by - b.order_by);
 
       let premium_Index = oneMonthplans.findIndex((itm) => itm.is_sandbox_access == false);

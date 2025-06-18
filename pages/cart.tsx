@@ -166,7 +166,7 @@ const Cart = ({
     if (CartData.data) {
       cartData = CartData.data.cart_details;
     }
-    storeCartCountAction(cartData.length);
+    storeCartCountAction(cartData?.length);
     if (cartData && cartData.length > 0) {
       setCartItems(cartData);
       if (CouponStateData && !autoApplycoupon) {

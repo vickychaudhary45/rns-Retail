@@ -2326,10 +2326,11 @@ const Course = ({
                           <samp>Practice Tests</samp>
                         </div>
                       ) : (
-                        <div>
-                          <span>2 Questions</span>
-                          <samp>Practice Tests</samp>
-                        </div>
+                        <></>
+                        // <div>
+                        //   <span>2 Questions</span>
+                        //   <samp>Practice Tests</samp>
+                        // </div>
                       )}
                       {/* <div>
                         <span>170 Minutes</span>
@@ -2343,10 +2344,11 @@ const Course = ({
                           <samp>Video Course</samp>
                         </div>
                       ) : (
-                        <div>
-                          <span>51 Videos</span>
-                          <samp>Video Course</samp>
-                        </div>
+                        <></>
+                        // <div>
+                        //   <span>51 Videos</span>
+                        //   <samp>Video Course</samp>
+                        // </div>
                       )}
                       {lab_count > 0 && LABavailabe ? (
                         <div>
@@ -2354,10 +2356,11 @@ const Course = ({
                           <samp>Hands-on Labs</samp>
                         </div>
                       ) : (
-                        <div>
-                          <span>2 Labs</span>
-                          <samp>Hands-on Labs</samp>
-                        </div>
+                        <></>
+                        // <div>
+                        //   <span>2 Labs</span>
+                        //   <samp>Hands-on Labs</samp>
+                        // </div>
                       )}
                       {pageContent.detailedInfo?.sandbox_info?.length > 0 && Sanboxavailable ? (
                         <div>
@@ -2365,10 +2368,11 @@ const Course = ({
                           <samp>Available</samp>
                         </div>
                       ) : (
-                        <div>
-                          <span>Cloud Sandbox</span>
-                          <samp>Available</samp>
-                        </div>
+                        <></>
+                        // <div>
+                        //   <span>Cloud Sandbox</span>
+                        //   <samp>Available</samp>
+                        // </div>
                       )}
                     </div>
                   </div>
@@ -3141,6 +3145,17 @@ const Course = ({
                     </div>
                   )}
 
+                  {/* <!-- why-choose-us --> */}
+                  <div className="why-choose-us">
+                    <div
+                      style={{ color: "white" }}
+                      className="container"
+                      dangerouslySetInnerHTML={{
+                        __html: pageContent.seo_details?.why_with_us,
+                      }}
+                    />
+                  </div>
+
                   {/* <!-- real-exam-block --> */}
                   <div id="exam-info" className="exam-format-block" ref={examInfo}>
                     <div className="container">
@@ -3159,9 +3174,22 @@ const Course = ({
                               return (
                                 <>
                                   <div className="exam-box">
-                                    <div>
+                                    {/* <div>
                                       <figure>
                                         <img className="img-full" src={`/images/${itm.img}`} />
+                                      </figure>
+                                    </div> */}
+                                    <div>
+                                      <figure>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="14"
+                                          height="14"
+                                          fill="currentColor"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path d="M12 1L3 5v6c0 5.25 3.8 10.74 9 12 5.2-1.26 9-6.75 9-12V5l-9-4zm0 17.93c-3.95-1.14-7-5.06-7-9.93V6.24l7-3.11 7 3.11v2.76c0 4.87-3.05 8.79-7 9.93z" />
+                                        </svg>
                                       </figure>
                                     </div>
                                     <div style={{ marginLeft: "15px" }}>
@@ -3201,17 +3229,6 @@ const Course = ({
                         </>
                       )}
                     </div>
-                  </div>
-
-                  {/* <!-- why-choose-us --> */}
-                  <div className="why-choose-us">
-                    <div
-                      style={{ color: "white" }}
-                      className="container"
-                      dangerouslySetInnerHTML={{
-                        __html: pageContent.seo_details?.why_with_us,
-                      }}
-                    />
                   </div>
 
                   {/* <!-- student-review-block --> */}
