@@ -100,6 +100,11 @@ NEXT_PUBLIC_APPLE_REDIRECT_URI=https://quality.whizlabs.org
 
 NEXT_PUBLIC_ASSIST_URL = https://71t282y816.execute-api.us-east-1.amazonaws.com/dev
 
+contact@whizlabs.com
+corporate@whizlabs.com
+support@whizlabs.com
+finance@whizlabs.com
+
 <!-- buildspec.yml -->
 
 version: 0.2

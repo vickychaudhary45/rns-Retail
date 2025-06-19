@@ -181,50 +181,6 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
   };
   return (
     <>
-      {/* <Head>
-        <title>Contact Us | Whizlabs</title>
-
-        <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
-
-        <meta name="title" content="Contact Us - Whizlabs" />
-        <meta
-          name="description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
-        />
-        <meta name="keywords" content="contact us" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact Us - Whizlabs" />
-        <meta
-          property="og:description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
-        />
-        <meta property="og:url" content="https://www.whizlabs.com/contact-us/" />
-        <meta property="og:site_name" content="Whizlabs" />
-        <meta
-          property="og:image"
-          content={
-            process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d04f1"
-          }
-        />
-        <meta property="fb:app_id" content="502194103558420" />
-        <meta property="og:image:width" content="500" />
-        <meta property="og:image:height" content="500" />
-        <meta name="twitter:card" content="summary" />
-        <meta
-          name="twitter:description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
-        />
-        <meta name="twitter:title" content="Contact Us - Whizlabs" />
-        <meta name="twitter:site" content="@whizlabs" />
-        <meta
-          name="twitter:image"
-          content={
-            process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d0549"
-          }
-        />
-        <meta name="twitter:creator" content="@whizlabs" />
-      </Head> */}
       {/* <!-- contactus-banner --> */}
       <div className="contactus-banner">
         <div className="container">
@@ -240,25 +196,25 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               <div className="title">Customer Support</div>
               <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
               <br />
-              <a href="tel:916364678444">+91-6364678444</a>
+              {/* <a href="tel:916364678444">+91-</a> */}
             </div>
-            {/* <div className="block">
+            <div className="block">
               <figure>
                 <img className="img-full" src="/images/corporate-building.svg" alt="" />
               </figure>
               <div className="title">For Business</div>
-              <a href="mailto:corporate@whizlabs.com">contact@whizlabs.com</a>
+              <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
               <br />
-              <a href="tel:919091849091">+91-9091849091</a>
+              {/* <a href="tel:919091849091">+91-9091849091</a> */}
             </div>
             <div className="block">
               <figure>
                 <img className="img-full" src="/images/invoice.svg" alt="" />
               </figure>
               <div className="title">Invoice</div>
-              <a href="mailto:finance@whizlabs.com">finance@whizlabs.com</a>
+              <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
             </div>
-            <div className="block">
+            {/* <div className="block">
               <figure>
                 <img className="img-full" src="/images/labs-icons.svg" alt="" />
               </figure>
@@ -277,13 +233,13 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               <ul className="social-block">
                 <li>
                   <a
-                    href="https://www.facebook.com/whizlabs.software/"
+                    href="https://www.facebook.com/"
                     className="icon icon-font-facebook"
                     target="_blank"
                   ></a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/whizlabs" className="icon" target="_blank">
+                  <a href="https://twitter.com/" className="icon" target="_blank">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="50"
@@ -327,7 +283,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/company/whizlabs-software/"
+                    href="https://www.linkedin.com/"
                     className="icon icon-font-linkedin"
                     target="_blank"
                   ></a>
@@ -495,14 +451,14 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                       )}
                   </div>
                 </div>
-                <div className="captcha-img">
+                {/* <div className="captcha-img">
                   <ReCAPTCHA
                     ref={recaptcha}
                     sitekey="6LeuGo4UAAAAAIZ6-Na4KHV_sIEJNjt-XlRO-Jgk"
                     onChange={verifyCallback}
                     theme="light"
                   />
-                </div>
+                </div> */}
                 <button disabled={loading || !isValidPhone} className="btn btn-submit">
                   {!loading ? "Submit" : <img width={40} height={40} src="/images/loader.svg" />}
                 </button>
@@ -511,7 +467,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
           </div>
         </div>
 
-        <div className="address-block">
+        {/* <div className="address-block">
           <div className="container-small">
             <div className="block-group">
               <div className="block">
@@ -543,7 +499,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
@@ -560,14 +516,14 @@ export default connect(null, mapDispatchToProps)(Contact);
 export async function getServerSideProps() {
   const seoHomePageData = {
     seoPageType: "contactUsPage",
-    title: "Contact Us | Whizlabs",
+    title: "Contact Us | R N S PATH",
     metaTags: [
       {
         name: "facebook-domain-verification",
         property: "",
         content: "twh401qzi7r7o3n227q4sg3hghbpzh",
       },
-      { name: "title", property: "", content: "Contact Us - Whizlabs" },
+      { name: "title", property: "", content: "Contact Us - R N S PATH" },
       {
         name: "description",
         property: "",
@@ -577,15 +533,15 @@ export async function getServerSideProps() {
       { name: "keywords", property: "", content: "contact us" },
       { name: "", property: "og:locale", content: "en_US" },
       { name: "", property: "og:type", content: "website" },
-      { name: "", property: "og:title", content: "Contact Us - Whizlabs" },
+      { name: "", property: "og:title", content: "Contact Us - R N S PATH" },
       {
         name: "",
         property: "og:description",
         content:
           "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at pathrns@gmail.com",
       },
-      { name: "", property: "og:url", content: "https://www.whizlabs.com/contact-us/" },
-      { name: "", property: "og:site_name", content: "Whizlabs" },
+      // { name: "", property: "og:url", content: "https://www.whizlabs.com/contact-us/" },
+      // { name: "", property: "og:site_name", content: "Whizlabs" },
       {
         name: "",
         property: "og:image",
@@ -601,13 +557,13 @@ export async function getServerSideProps() {
         content:
           "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at pathrns@gmail.com",
       },
-      { name: "twitter:title", property: "", content: "Contact Us - Whizlabs" },
-      { name: "twitter:site", property: "", content: "@whizlabs" },
+      { name: "twitter:title", property: "", content: "Contact Us - R N S PATH" },
+      { name: "twitter:site", property: "", content: "@rnsPATH" },
       {
         name: "twitter:image",
         content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac9513d0549",
       },
-      { name: "twitter:creator", property: "", content: "@whizlabs" },
+      { name: "twitter:creator", property: "", content: "@rnsPATH" },
     ],
   };
 

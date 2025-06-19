@@ -191,7 +191,7 @@ const Home = ({
             name: "whizlabs",
             description:
               "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We&#039;ve helped over 5M+ professionals to get ahead in their careers.",
-            email: "contact@whizlabs.com",
+            email: "pathrns@gmail.com",
             telephone: "+91-63646 78444",
             address: {
               "@type": "PostalAddress",
