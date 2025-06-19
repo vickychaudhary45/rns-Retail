@@ -193,7 +193,7 @@ const Thankyou = ({
                   <br />
                   If you have any questions, please contact us at{" "}
                   <span>
-                    <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+                    <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
                   </span>
                 </p>
 

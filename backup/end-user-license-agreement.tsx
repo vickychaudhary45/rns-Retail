@@ -190,7 +190,7 @@ const PrivacyPolicy = () => (
             <li>
               You agree to take reasonable steps to protect the secrecy of your
               Account Credentials and immediately notify Whizlabs at
-              <a href="mailto:support@whizlabs.com">Support@Whizlabs.com</a> of
+              <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a> of
               any known or suspected loss, disclosure, or theft of your Account
               Credentials and/or access codes you obtain in connection with the
               Services.
@@ -931,7 +931,7 @@ const PrivacyPolicy = () => (
             </Link>
             . For any questions about this EULA or to report anything to
             Whizlabs, you may reach us at{" "}
-            <a href="mailto:support@whizlabs.com">Support@whizlabs.com</a>
+            <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
           </p>
         </div>
       </div>

@@ -168,7 +168,7 @@ const TermsOfUse = () => {
               <li>
                 You can also reach Whizlabs directly to notify your intellectual property and
                 copyright claim by writing us at{" "}
-                <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+                <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
               </li>
             </ul>
 

@@ -189,7 +189,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
         <meta name="title" content="Contact Us - Whizlabs" />
         <meta
           name="description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at support@whizlabs.com"
+          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
         />
         <meta name="keywords" content="contact us" />
         <meta property="og:locale" content="en_US" />
@@ -197,7 +197,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
         <meta property="og:title" content="Contact Us - Whizlabs" />
         <meta
           property="og:description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at support@whizlabs.com"
+          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
         />
         <meta property="og:url" content="https://www.whizlabs.com/contact-us/" />
         <meta property="og:site_name" content="Whizlabs" />
@@ -213,7 +213,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:description"
-          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at support@whizlabs.com"
+          content="Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we&#039;ll respond in no time. You can also reach us at pathrns@gmail.com"
         />
         <meta name="twitter:title" content="Contact Us - Whizlabs" />
         <meta name="twitter:site" content="@whizlabs" />
@@ -238,7 +238,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                 <img className="img-full" src="/images/customer-support.svg" alt="" />
               </figure>
               <div className="title">Customer Support</div>
-              <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+              <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
               <br />
               <a href="tel:916364678444">+91-6364678444</a>
             </div>
@@ -263,7 +263,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                 <img className="img-full" src="/images/labs-icons.svg" alt="" />
               </figure>
               <div className="title">Hands on Labs</div>
-              <a href="mailto:labsupport@whizlabs.com">labsupport@whizlabs.com</a>
+              <a href="mailto:labpathrns@gmail.com">labpathrns@gmail.com</a>
             </div> */}
           </div>
         </div>
@@ -572,7 +572,7 @@ export async function getServerSideProps() {
         name: "description",
         property: "",
         content:
-          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at support@whizlabs.com",
+          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at pathrns@gmail.com",
       },
       { name: "keywords", property: "", content: "contact us" },
       { name: "", property: "og:locale", content: "en_US" },
@@ -582,7 +582,7 @@ export async function getServerSideProps() {
         name: "",
         property: "og:description",
         content:
-          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at support@whizlabs.com",
+          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at pathrns@gmail.com",
       },
       { name: "", property: "og:url", content: "https://www.whizlabs.com/contact-us/" },
       { name: "", property: "og:site_name", content: "Whizlabs" },
@@ -599,7 +599,7 @@ export async function getServerSideProps() {
         name: "twitter:description",
         property: "",
         content:
-          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at support@whizlabs.com",
+          "Have any query or concern? We provide 24/7 customer and expert support. Submit your query and reach out to us, we'll respond in no time. You can also reach us at pathrns@gmail.com",
       },
       { name: "twitter:title", property: "", content: "Contact Us - Whizlabs" },
       { name: "twitter:site", property: "", content: "@whizlabs" },

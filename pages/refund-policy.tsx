@@ -260,7 +260,7 @@ const RefundPolicy = () => {
               <h3>How to Initiate the Refund Request?</h3>
               <p>
                 You can write an email to:{" "}
-                <a href="mailto:support@whizlabs.com">support@whizlabs.com</a> with the below
+                <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a> with the below
                 details:
               </p>
               <div className="list">

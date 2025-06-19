@@ -640,8 +640,8 @@ const Instructor = (seoHomePageData) => {
                 {/* <a href="tel:+916364678444" className="btn link">
                   <i className="icon icon-font-call"></i>+91-6364678444
                 </a> */}
-                <a href="mailto:support@whizlabs.com" className="btn link">
-                  <i className="icon icon-font-mail"></i>support@whizlabs.com
+                <a href="mailto:pathrns@gmail.com" className="btn link">
+                  <i className="icon icon-font-mail"></i>pathrns@gmail.com
                 </a>
               </div>
             </div>

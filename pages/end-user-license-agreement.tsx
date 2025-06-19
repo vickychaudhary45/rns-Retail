@@ -197,7 +197,7 @@ const PrivacyPolicy = (seoHomePageData) => (
                         <p>
                             3.5. User agrees to take reasonable steps for safeguarding the secrecy of the Account
                             Credentials alongside providing immediate notifications to Whizlabs on{" "}
-                            <a href="mailto:support@whizlabs.com">Support@Whizlabs.com</a>, pertaining to any
+                            <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>, pertaining to any
                             disclosure, known or suspected loss or theft of their Account Credentials, and/or
                             unauthorised access codes that User is in receipt of, in relation to the Services.
                         </p>
@@ -821,7 +821,7 @@ const PrivacyPolicy = (seoHomePageData) => (
                         </p>
                         <p>
                             For any concerns regarding this End User License Agreement (EULA), you may feel free
-                            to reach us at <a href="mailto:support@whizlabs.com">Support@whizlabs.com</a>
+                            to reach us at <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
                         </p>
                     </div>
                 </div>

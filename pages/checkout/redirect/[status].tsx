@@ -231,7 +231,7 @@ const ccAvRedirect = ({
                       questions or concerns, please contact us at &nbsp;
                       <span>
                         <a
-                          href="mailto:support@whizlabs.com"
+                          href="mailto:pathrns@gmail.com"
                           style={{
                             fontSize: "14px",
                           }}
@@ -263,7 +263,7 @@ const ccAvRedirect = ({
                       Thank you for your trust in Whizlabs!
                       <br /> If you have any questions, please contact us at{" "}
                       <span>
-                        <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+                        <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
                       </span>
                     </p>
 

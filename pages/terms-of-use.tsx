@@ -62,7 +62,7 @@ const TermsOfUser = (seoHomePageData) => {
                         <FiberManualRecordIcon/><li>A declarative statement specifying that the information provided by you is accurate and the copyright claim you are submitting is on behalf of the owner.</li>
                         </ul>
                         <ul>
-                        <FiberManualRecordIcon/><li>You can also reach Whizlabs directly to notify your intellectual property and copyright claim by writing us at support@whizlabs.com</li>
+                        <FiberManualRecordIcon/><li>You can also reach Whizlabs directly to notify your intellectual property and copyright claim by writing us at pathrns@gmail.com</li>
                         </ul>
                         <h3>Transaction Terms</h3>
                         <p>You need to make a transaction to purchase the Website product or service. It is required to follow some terms and conditions while making a transaction with Whizlabs, these are –</p>

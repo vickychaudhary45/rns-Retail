@@ -2713,7 +2713,7 @@ const Sandbox = ({
                         }
                       </div>
                     )}
-                    <div style={{fontSize:'11px', fontWeight:'400', color:'#51596C', marginTop:"17px", borderBottom:"1px solid #DFE6EF", margin:'0 0 14px 0', paddingBottom:'10px'}}>If you need a custom sandbox with an extended duration reach out to our team at <span style={{color:"#168FF8", textDecoration:'underline', cursor:'pointer'}}><a href='mailto:support@whizlabs.com' style={{color:"#168FF8"}}>support@whizlabs.com</a></span></div>
+                    <div style={{fontSize:'11px', fontWeight:'400', color:'#51596C', marginTop:"17px", borderBottom:"1px solid #DFE6EF", margin:'0 0 14px 0', paddingBottom:'10px'}}>If you need a custom sandbox with an extended duration reach out to our team at <span style={{color:"#168FF8", textDecoration:'underline', cursor:'pointer'}}><a href='mailto:pathrns@gmail.com' style={{color:"#168FF8"}}>pathrns@gmail.com</a></span></div>
 
                     <div className="share-course">
                       <span>Share this course</span>

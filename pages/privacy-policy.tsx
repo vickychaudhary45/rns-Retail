@@ -107,7 +107,7 @@ const PrivacyPolicy = (seoHomePageData) => (
             We use your email address to send you system Emails to use our services. If you want to
             stop receiving our system emails, you will have to stop using our Services or deactivate
             your Account by emailing us at{" "}
-            <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+            <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
           </li>
           <li>
             We use the email that you provided us i.e. your registered email, in order to send
@@ -158,7 +158,7 @@ const PrivacyPolicy = (seoHomePageData) => (
           </li>
           <li>
             We do not tolerate Spam. To report Whizlabs related spam, please contact us at
-            support@whizlabs.com You may not use our communication tools to send spam or otherwise
+            pathrns@gmail.com You may not use our communication tools to send spam or otherwise
             send content that would violate our terms of use. We may check for spam, viruses,
             phishing attacks, and other malicious activity or illegal or prohibited content of the
             Website, but we will not permanently store messages sent through these tools.
@@ -176,7 +176,7 @@ const PrivacyPolicy = (seoHomePageData) => (
           We save your Information in our database in order to improve our Website as well as user
           experience in accordance with our <a href="/terms-of-use">TOU.</a> If you wish that your
           Information be permanently deleted from our database when you stop using our Services,
-          please notify us at <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+          please notify us at <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
         </p>
         <p>
           Whizlabs is an Indian company. If you are located outside India and choose to provide
@@ -242,7 +242,7 @@ const PrivacyPolicy = (seoHomePageData) => (
         <p>
           Whereas you have provided us with consent, you have the right to withdraw this consent at
           any time. To reiterate, you can do this at any time by contacting us directly at{" "}
-          <a href="mailto:support@whizlabs.com">support@whizlabs.com</a>
+          <a href="mailto:pathrns@gmail.com">pathrns@gmail.com</a>
         </p>
       </div>
     </div>
