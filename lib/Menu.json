@@ -151,56 +151,6 @@
         "position": 38,
         "status": true,
         "children": []
-      },
-      {
-        "id": 90,
-        "parent_id": 74,
-        "name": "Oracle Certified Associate (OCA)",
-        "slug": "#",
-        "group_id": null,
-        "icon": {
-          "icon_type": null,
-          "icon": null
-        },
-        "is_new": false,
-        "is_popular": false,
-        "is_comingsoon": false,
-        "position": 37,
-        "status": true,
-        "children": [
-          {
-            "id": 107,
-            "parent_id": 90,
-            "name": "Java SE 8 Programmer - 1Z0-808",
-            "slug": "ocajp-scja",
-            "group_id": null,
-            "icon": {
-              "icon_type": null,
-              "icon": null
-            },
-            "is_new": false,
-            "is_popular": false,
-            "is_comingsoon": false,
-            "position": 60,
-            "status": true
-          },
-          {
-            "id": 3034,
-            "parent_id": 90,
-            "name": "Oracle Database SQL Certified Associate - 1Z0-071",
-            "slug": "oracle-database-sql-certified-associate-course",
-            "group_id": null,
-            "icon": {
-              "icon_type": null,
-              "icon": null
-            },
-            "is_new": true,
-            "is_popular": false,
-            "is_comingsoon": false,
-            "position": 61,
-            "status": true
-          }
-        ]
       }
     ]
   },

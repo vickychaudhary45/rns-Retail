@@ -150,15 +150,15 @@ export async function getServerSideProps(context) {
         const reviewsResponse = revResp;
         // const reviewsResponse = await getReviews(courseResponse.data.data.id, 4, 1); // course_id,ratings,current-page
         // if (reviewsResponse?.data?.data) {
-        //   reviewsDatas = reviewsResponse.data;
+        //   reviewsDatas = reviewsResponse.data;        
         if (reviewsResponse && reviewsResponse.data && reviewsResponse.data) {
           reviewsDatas = reviewsResponse.data;
         }
 
-        const getExamPattern = exmResp;
-        // const getExamPattern = await axios.get(
-        //   `${baseUrl}/courses/exampatern?course_id=${courseResponse.data.data.id}`
-        // );
+        // const getExamPattern = exmResp;
+        const getExamPattern = await axios.get(
+          `${baseUrl}/courses/exampatern?course_id=${courseResponse.data.data.id}`
+        );        
         if (getExamPattern.data) {
           if (getExamPattern.data.length > 0 && getExamPattern.data[0].language) {
             exampattern = getExamPattern.data[0]?.list.box.sort((a, b) => {
@@ -170,21 +170,23 @@ export async function getServerSideProps(context) {
           // const examPatternData = getExamPattern.data;
         }
         // calling getCourseRatings API for getting reviews count(feedback count)
-        const courseRatingResponse = {
-          msg: "Ratings Data",
-          data: {
-            rating: 1158,
-            star_rating: {
-              one_star: 2,
-              two_star: 0,
-              three_star: 12,
-              four_star: 244,
-              five_star: 900,
-            },
-            overall_rating: 4.761658031088083,
-          },
-        };
-        // const courseRatingResponse = await getCourseRatings(courseResponse.data.data.id);
+        // const courseRatingResponse = {
+        //   msg: "Ratings Data",
+        //   data: {
+        //     rating: 1158,
+        //     star_rating: {
+        //       one_star: 2,
+        //       two_star: 0,
+        //       three_star: 12,
+        //       four_star: 244,
+        //       five_star: 900,
+        //     },
+        //     overall_rating: 4.761658031088083,
+        //   },
+        // };
+        const courseRatingResponse = await getCourseRatings(courseResponse.data.data.id);
+        // console.log(courseRatingResponse, 'courseRatingResponse');
+        
         if (courseRatingResponse && courseRatingResponse.data && courseRatingResponse.data) {
           feedbackData = courseRatingResponse.data;
         }
