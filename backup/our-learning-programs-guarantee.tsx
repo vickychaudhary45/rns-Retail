@@ -3,25 +3,25 @@ import Link from "next/link";
 const ProgramGuarantee = () => (
   <>
     <Head>
-      <title>Our Learning Programs Guarantee | Whizlabs</title>
+      <title>Our Learning Programs Guarantee | R N S PATH</title>
 
       <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 
-      <meta name="title" content="Our Learning Programs Guarantee - Whizlabs" />
+      <meta name="title" content="Our Learning Programs Guarantee - R N S PATH" />
       <meta
         name="description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
+        content="R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
       />
       <meta name="keywords" content="learning programs guarantee" />
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Our Learning Programs Guarantee - Whizlabs" />
+      <meta property="og:title" content="Our Learning Programs Guarantee - R N S PATH" />
       <meta
         property="og:description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
+        content="R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
       />
-      <meta property="og:url" content="https://www.whizlabs.com/our-learning-programs-guarantee/" />
-      <meta property="og:site_name" content="Whizlabs" />
+      {/* <meta property="og:url" content="https://www.rnspath.com/our-learning-programs-guarantee/" /> */}
+      <meta property="og:site_name" content="R N S PATH" />
       <meta
         property="og:image"
         content={process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60acd49dd883f"}
@@ -32,15 +32,15 @@ const ProgramGuarantee = () => (
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
+        content="R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
       />
-      <meta name="twitter:title" content="Our Learning Programs Guarantee - Whizlabs" />
-      <meta name="twitter:site" content="@whizlabs" />
+      <meta name="twitter:title" content="Our Learning Programs Guarantee - R N S PATH" />
+      <meta name="twitter:site" content="@rnspath" />
       <meta
         name="twitter:image"
         content={process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60acd49dd8887"}
       />
-      <meta name="twitter:creator" content="@whizlabs" />
+      <meta name="twitter:creator" content="@rnspath" />
     </Head>
     <div id="content-area" className="terms-use-page">
       <div className="page-content">
@@ -50,14 +50,14 @@ const ProgramGuarantee = () => (
           </div>
           <p>
             <span>
-              Whizlabs is dedicated to helping professionals learn and validate the skills required
-              to boost up their career. And so, we strive to provide the best-in-industry training
-              with the utmost level of customer satisfaction possible. Our learning program
+              R N S PATH is dedicated to helping professionals learn and validate the skills
+              required to boost up their career. And so, we strive to provide the best-in-industry
+              training with the utmost level of customer satisfaction possible. Our learning program
               comprises of online courses and practice tests on which our learning program guarantee
               is applied.{" "}
             </span>
           </p>
-          <h2>Whizlabs learning program guarantee includes </h2>
+          <h2>R N S PATH learning program guarantee includes </h2>
           <br />
           <h4>100% Customer Satisfaction</h4>
           <p>
@@ -92,20 +92,20 @@ const ProgramGuarantee = () => (
           <h4>Other Resources</h4>
           <p>
             <span>
-              Whizlabs terms and conditions and refund policy are associated with the learning
+              R N S PATH terms and conditions and refund policy are associated with the learning
               program guarantee. Check out the below links to get the details.
             </span>
           </p>
           <ul>
             <li>
-              <Link legacyBehavior  href="/refund-policy">
+              <Link legacyBehavior href="/refund-policy">
                 <a target="_blank">
                   <span>Refund Policy</span>
                 </a>
               </Link>
             </li>
             <li>
-              <Link legacyBehavior  href="/terms-of-use">
+              <Link legacyBehavior href="/terms-of-use">
                 <a target="_blank">
                   <span>Terms and Conditions</span>
                 </a>
@@ -122,9 +122,9 @@ const ProgramGuarantee = () => (
           <p>
             <strong>
               If you want to submit any feedback, please share it at{" "}
-              <a href="https://www.whizlabs.com/forums/" target="_blank" rel="noopener">
-                https://www.whizlabs.com/forums/
-              </a>
+              {/* <a href="https://www.rnspath.com/forums/" target="_blank" rel="noopener">
+                https://www.rnspath.com/forums/
+              </a> */}
             </strong>
           </p>
         </div>

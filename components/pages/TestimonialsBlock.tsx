@@ -33,7 +33,7 @@ function TestimonialsBlock() {
   return (
     <>
       <div className="testimonialContainer" style={{ position: "relative" }}>
-        <h4>10 Million+ Global Learners</h4>
+        <h4>Global Learners</h4>
         <div className="reviewsectionleft">
           <Image
             width={1000}

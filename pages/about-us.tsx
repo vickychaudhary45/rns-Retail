@@ -1,5 +1,5 @@
 import axios from "axios";
-import React from 'react';
+import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { useKeenSlider } from "keen-slider/react";
@@ -92,7 +92,8 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
             // sameAs: ["https://www.whizlabs.com/", "https://www.whizlabs.com/about-us/"],
             // logo: "https://www.whizlabs.com/images/logo11.svg",
             name: "whizlabs",
-            description: "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We&#039;ve helped over 5M+ professionals to get ahead in their careers.",
+            description:
+              "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We&#039;ve helped over 5M+ professionals to get ahead in their careers.",
             email: "contact@whizlabs.com",
             telephone: "+91-63646 78444",
             address: {
@@ -113,10 +114,20 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
         <div className="container">
           <div className="left">
             <span>About us</span>
-            <h1>We are dedicated to helping you learn the skills you need to achieve your goals.</h1>
+            <h1>
+              We are dedicated to helping you learn the skills you need to achieve your goals.
+            </h1>
           </div>
-          <div className="right">
-            <img width={811} height={416} className="img-full" src="/images/about-us-banner2x.webp" alt="" />
+          <div className="righ">
+          {/* <div className="right"> */}
+            <img
+              width={811}
+              height={416}
+              className="img-full"
+              src="/images/bannerRight.svg"
+              // src="/images/about-us-banner2x.webp"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -128,26 +139,36 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
           <div className="container-small">
             <div className="left">
               <h2>
-                <span>Our Journey</span> 20+ years of success
+                <span>Our Goal</span> <strong>Get you towards success</strong>
               </h2>
               <p>
-              Whizlabs is a leading hands-on learning provider in various technologies such as
-               <strong> Cloud Computing (AWS, Azure, GCP), DevOps Java, BigData, Snowflake, CompTIA, Cybersecurity, and Blockchain</strong> 
+                R N S PATH is a learning provider in various technologies such as
+                <strong>
+                  {" "}
+                  Cloud Computing (AWS, Azure), DevOps, Java
+                </strong>
               </p>
               <p>
-              Since our launch in 2000, we have been helping over 10 million+ professionals and learners
-               around the world to achieve success in their careers through our wide range of courses, practice tests, hands-on labs, and cloud sandbox. 
-               With over 22+ years of experience, Whizlabs is a pioneer in the online training industry.
+                We have been helping professionals and
+                learners around the world to achieve success in their careers through our wide range
+                of courses, practice tests, hands-on labs, and cloud sandbox. R N S PATH is a pioneer in the online training industry.
               </p>
             </div>
-            <div className="right">
+            {/* <div className="right">
               <figure>
-                <img width={55} height={65} className="img-full" src="/images/about-us-badge.svg" alt="" />
+                <img
+                  width={55}
+                  height={65}
+                  className="img-full"
+                  src="/images/about-us-badge.svg"
+                  alt=""
+                />
               </figure>
               <p>
-                Awarded as the Most Innovative Indian IT Company by <strong>NASSCOM</strong> in 2004.
+                Awarded as the Most Innovative Indian IT Company by <strong>NASSCOM</strong> in
+                2004.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -155,20 +176,22 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
         <div className="helped-block">
           <div className="container-small">
             <h3>
-              We Helped <strong>10M+</strong> Professionals and <strong>500+</strong> Companies
+              We are Helping <strong></strong> Professionals and <strong></strong> Companies
             </h3>
             <div className="block-group">
               <div className="block c-light-blue">
                 <div className="title">Our Mission</div>
                 <p>
-                Upskilling & Reskilling the Global workforce by offering the best-in-class 
-                integrated learning platform with an immersive learning experience at an affordable cost.
+                  Upskilling & Reskilling the Global workforce by offering the best-in-class
+                  integrated learning platform with an immersive learning experience at an
+                  affordable cost.
                 </p>
               </div>
               <div className="block c-cinderella">
                 <div className="title">Our Vision</div>
                 <p>
-                To be a socially responsible Edu-tech company that transforms lives across the globe.
+                  To be a socially responsible Edu-tech company that transforms lives across the
+                  globe.
                 </p>
               </div>
             </div>
@@ -177,16 +200,24 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
 
         {/* <!-- vision-block --> */}
         <div className="vision-block">
-          <div className="container-small">
+          {/* <div className="container-small">
             <div className="title-block">
               <h4>A leadership team with vision</h4>
-              <p>Our executives lead by example and guide us to accomplish great things every day.</p>
+              <p>
+                Our executives lead by example and guide us to accomplish great things every day.
+              </p>
             </div>
 
             <div className="ceo-block">
               <div className="block cyan">
                 <div className="img-block">
-                  <img width={405} height={455} className="img-full" src="/images/ceo-img2x.webp" alt="" />
+                  <img
+                    width={405}
+                    height={455}
+                    className="img-full"
+                    src="/images/ceo-img2x.webp"
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="block alice-blue">
@@ -195,16 +226,20 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
                   <span className="position">Co-Founder & CEO</span>
                 </div>
                 <p>
-                As a technology professional with over 20+ years of experience, 
-                I am committed to sharing my knowledge and expertise with the cloud world. 
-                As the CEO of Whizlabs, my primary focus is on product development, future direction, 
-                and business strategy. I am proud to have been a key contributor to the success of Whizlabs. 
-                Additionally, I am a co-founder of <a target="_blank" href="https://www.easydeploy.io/">easydeploy.io.</a>
+                  As a technology professional with over 20+ years of experience, I am committed to
+                  sharing my knowledge and expertise with the cloud world. As the CEO of Whizlabs,
+                  my primary focus is on product development, future direction, and business
+                  strategy. I am proud to have been a key contributor to the success of Whizlabs.
+                  Additionally, I am a co-founder of{" "}
+                  <a target="_blank" href="https://www.easydeploy.io/">
+                    easydeploy.io.
+                  </a>
                 </p>
                 <p>
-                I firmly believe that education is a fundamental right for all and that it is the most powerful tool for creating 
-                positive change in the world. With a focus on digital education, my goal is to make it possible for people to study 
-                anything, anytime, anywhere, online. I am dedicated to making this dream a reality.
+                  I firmly believe that education is a fundamental right for all and that it is the
+                  most powerful tool for creating positive change in the world. With a focus on
+                  digital education, my goal is to make it possible for people to study anything,
+                  anytime, anywhere, online. I am dedicated to making this dream a reality.
                 </p>
                 <p>
                   You can connect with me on my{" "}
@@ -221,7 +256,7 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
               }}
             >
               <div className="blogs-block keen-slider " ref={sliderRef}>
-                {blogContent.map((item, i) => (
+                {blogContent?.map((item, i) => (
                   <div key={i} className="block keen-slider__slide">
                     <div
                       className="title"
@@ -351,15 +386,14 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* <!-- team-block --> */}
-        <div className="team-block" >
+        {/* <div className="team-block">
           <div className="container-small-photos">
             <h5>Our Amazing Team</h5>
-            <div className="block-group" style={{ width: "100%"}}>
-              {/* <img style={{ maxWidth: "100%" }} src="/employee_images/teams-image.png" /> */}
+            <div className="block-group" style={{ width: "100%" }}>
               {employeesList.map((element, i) => (
                 <div key={i} className="block">
                   <figure
@@ -375,15 +409,15 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
                       alt={element.name}
                     />
                   </figure>
-                  {/* <div className="details">
+                  <div className="details">
                     <div className="name">{element.name}</div>
                     <span className="designation">{element.designation}</span>
-                  </div> */}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
@@ -656,58 +690,58 @@ export async function getStaticProps({ params }) {
     },
   ];
 
-    const seoHomePageData = {
-      seoPageType: "aboutUsPage", // This should be changed to reflect the actual page type
-      title: "About Us | Whizlabs",
-      metaTags: [
-        {
-          name: "facebook-domain-verification",
-          property: "",
-          content: "twh401qzi7r7o3n227q4sg3hghbpzh",
-        },
-        { name: "title", property: "", content: "About Us - Whizlabs" },
-        {
-          name: "description",
-          property: "",
-          content:
-            "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
-        },
-        { name: "keywords", property: "", content: "About Us" },
-        { name: "", property: "og:locale", content: "en_US" },
-        { name: "", property: "og:type", content: "website" },
-        { name: "", property: "og:title", content: "About Us - Whizlabs" },
-        {
-          name: "",
-          property: "og:description",
-          content:
-            "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
-        },
-        // { name: "", property: "og:url", content: "https://www.whizlabs.com/about-us/" },
-        { name: "", property: "og:site_name", content: "Whizlabs" },
-        {
-          name: "",
-          property: "og:image",
-          content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac8e8025822",
-        },
-        { name: "", property: "fb:app_id", content: "502194103558420" },
-        { name: "", property: "og:image:width", content: "500" },
-        { name: "", property: "og:image:height", content: "500" },
-        { name: "twitter:card", property: "", content: "summary" },
-        {
-          name: "twitter:description",
-          property: "",
-          content:
-            "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
-        },
-        { name: "twitter:title", property: "", content: "About Us - Whizlabs" },
-        { name: "twitter:site", property: "", content: "@whizlabs" },
-        {
-          name: "twitter:image",
-          content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac8e8025869",
-        },
-        { name: "twitter:creator", property: "", content: "@whizlabs" },
-      ],
-    };
+  const seoHomePageData = {
+    seoPageType: "aboutUsPage", // This should be changed to reflect the actual page type
+    title: "About Us | Whizlabs",
+    metaTags: [
+      {
+        name: "facebook-domain-verification",
+        property: "",
+        content: "twh401qzi7r7o3n227q4sg3hghbpzh",
+      },
+      { name: "title", property: "", content: "About Us - Whizlabs" },
+      {
+        name: "description",
+        property: "",
+        content:
+          "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
+      },
+      { name: "keywords", property: "", content: "About Us" },
+      { name: "", property: "og:locale", content: "en_US" },
+      { name: "", property: "og:type", content: "website" },
+      { name: "", property: "og:title", content: "About Us - Whizlabs" },
+      {
+        name: "",
+        property: "og:description",
+        content:
+          "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
+      },
+      // { name: "", property: "og:url", content: "https://www.whizlabs.com/about-us/" },
+      { name: "", property: "og:site_name", content: "Whizlabs" },
+      {
+        name: "",
+        property: "og:image",
+        content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac8e8025822",
+      },
+      { name: "", property: "fb:app_id", content: "502194103558420" },
+      { name: "", property: "og:image:width", content: "500" },
+      { name: "", property: "og:image:height", content: "500" },
+      { name: "twitter:card", property: "", content: "summary" },
+      {
+        name: "twitter:description",
+        property: "",
+        content:
+          "Established in 2000, Whizlabs is the pioneer of the online certification training industry. We've helped over 5M+ professionals to get ahead in their careers.",
+      },
+      { name: "twitter:title", property: "", content: "About Us - Whizlabs" },
+      { name: "twitter:site", property: "", content: "@whizlabs" },
+      {
+        name: "twitter:image",
+        content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60ac8e8025869",
+      },
+      { name: "twitter:creator", property: "", content: "@whizlabs" },
+    ],
+  };
 
   return {
     props: {

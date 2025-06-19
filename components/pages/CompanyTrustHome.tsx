@@ -46,7 +46,7 @@ function CompanyTrust() {
   return (
     <>
       <div className="companyTrust">
-        <h4>Explore our 200+ Trending courses</h4>
+        <h4>Explore our Trending courses</h4>
 
         <div className="Ccontainer">
           {CategoryData.map((cat, i) => (
@@ -81,7 +81,7 @@ function CompanyTrust() {
       <TestimonialsBlock />
       <TextReviews />
       <div className="group-12230" style={{ paddingTop: "50px" }}>
-        <h1 className="bebasneue-normal-thunder-98px ">500+ Companies trust</h1>
+        <h1 className="bebasneue-normal-thunder-98px ">Companies trust</h1>
         <div className="group-12229">
           {/* <div className="group"> */}
           {/* <Group49 src="logo-jp-1.png" /> */}

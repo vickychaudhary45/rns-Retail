@@ -173,51 +173,61 @@ const Banner = ({ width, timer_details1, subscriptionSaving, timerState1 }) => {
       <div className="bannerText">
         <div>
           <h1>
-            OutSmart <br />
-            Yourself
+            Rewire <br />
+            Neural Speed
           </h1>
           <p>with our</p>
-          <span>Premium Subscription</span>
+          <span>Power Study</span>
           <div
             style={{
               height: "50px",
             }}
           >
-            {/* {subscriptionSaving !== "" && ( */}
             <Link legacyBehavior href="/pricing">
               <motion.button
                 className="bannerButton"
                 whileHover={{ scale: 1.2, transition: { duration: 0.8 } }}
                 whileTap={{ scale: 0.9 }}
               >
-                <b>Save upto</b>${subscriptionSaving}
+                <b>Explore pricing</b>
+                {/* ${subscriptionSaving} */}
                 <i className="icon-font-arrow-right"></i>
               </motion.button>
             </Link>
-            {/* )} */}
           </div>
         </div>
       </div>
       <div className="bannerImage">
-        <Image
-          src={`/images/whizlabs-it-certifications-training.webp`}
-          alt="whizlabs it certifications online training provider"
+        <div
           style={{
-            objectFit: "contain",
             width: "100%",
             height: "100%",
+            overflow: "hidden",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
-          width={100}
-          height={100}
-          layout="raw"
-          // width={width > 1024 ? 500 : 300}
-          // height={width > 1024 ? 500 : 300}
-          placeholder="blur"
-          loader={({ src }) => `${src}?w=${width}&q=${10}`}
-          priority={true}
-          loading="eager"
-          blurDataURL={`/images/whizlabs-it-certifications-training.webp`}
-        />
+        >
+          <Image
+            src={`/images/bannerRight.svg`}
+            alt="RNSPATH it certifications online training provider"
+            style={{
+              objectFit: "contain",
+              width: "90%",
+              height: "100%",
+              transform: "scale(3)",
+              transformOrigin: "center",
+            }}
+            width={100}
+            height={100}
+            layout="raw"
+            placeholder="blur"
+            loader={({ src }) => `${src}?w=${width}&q=${10}`}
+            priority={true}
+            loading="eager"
+            blurDataURL={`/images/Vector.svg`}
+          />
+        </div>
       </div>
     </div>
   );

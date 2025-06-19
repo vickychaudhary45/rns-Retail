@@ -12,13 +12,12 @@ import Head from "next/head";
 import FooterWrapper from "./FooterWrapper";
 import path from "path";
 import axios from "axios";
-import { PopupModal,Courseexpirypopup } from "./Modals";
-import {OfferStart,StoreCampaignInfo,offerClear} from "../../redux/campaign/campaign-action"
+import { PopupModal, Courseexpirypopup } from "./Modals";
+import { OfferStart, StoreCampaignInfo, offerClear } from "../../redux/campaign/campaign-action";
 import CommonTimer from "../Timer/Timer";
 import OfferHeader from "../Offerheader/OfferHeader";
 import { storeUserProfile } from "../../redux/UserProfile/profile-actions";
-import {enrollCourseDetail} from "../../redux/UserEnrolled/enroll-action"
-
+import { enrollCourseDetail } from "../../redux/UserEnrolled/enroll-action";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 const Layout = ({
@@ -47,7 +46,7 @@ const Layout = ({
   userEnrolledStoreAction,
   cart_count,
   setCart_count,
-  cart_count_from_redux
+  cart_count_from_redux,
 }) => {
   const router = useRouter();
   const pathName = router.pathname;
@@ -62,8 +61,8 @@ const Layout = ({
   const [oneMonthBannerActive, setOneMonthBannerActive] = useState(false);
   const [cookieConsent, setCookieConsent] = useState(false);
   const [subscribedUser, setSubscribedUser] = useState(false);
-  const [sub_notexpired,set_sub_notexpired] = useState(false)
-  const [subs_curr,setsub_current] = useState(null)
+  const [sub_notexpired, set_sub_notexpired] = useState(false);
+  const [subs_curr, setsub_current] = useState(null);
   const [showOfferHeaderTimer, setShowOfferHeaderTimer] = useState(false);
   // const [waIconVisible, setWAIconVisible] = useState(true)
 
@@ -75,100 +74,99 @@ const Layout = ({
   // })
 
   useEffect(() => {
-  setCart_count(cart_count_from_redux);
-  }, [cart_count_from_redux])
+    setCart_count(cart_count_from_redux);
+  }, [cart_count_from_redux]);
 
-  useEffect(()=>{
-    if(timer_details){
+  useEffect(() => {
+    if (timer_details) {
       // console.log(timer_details)
-      let end_date = new Date(timer_details.details.utc_endtime).getTime()
-      let start_date = new Date(timer_details.details.utc_starttime).getTime()
-      let nowTime = new Date().toISOString()
-      let now_time = new Date(nowTime).getTime()
-      if( now_time < start_date || now_time > end_date || !timer_details.details.state){
+      let end_date = new Date(timer_details.details.utc_endtime).getTime();
+      let start_date = new Date(timer_details.details.utc_starttime).getTime();
+      let nowTime = new Date().toISOString();
+      let now_time = new Date(nowTime).getTime();
+      if (now_time < start_date || now_time > end_date || !timer_details.details.state) {
         stopTimer();
-      }else{
-        timerRunning()
-        processTimer(timer_details)
-        storeCampaignAction(timer_details.details.offer_details.offer_type)
+      } else {
+        timerRunning();
+        processTimer(timer_details);
+        storeCampaignAction(timer_details.details.offer_details.offer_type);
       }
     }
-  },[timer_details])
+  }, [timer_details]);
 
-  const processTimer = async(itm)=>{
-    if(itm){
-      if(itm.details?.state){
-        let end_date = new Date(timer_details.details.utc_endtime).getTime()
-        const timerIntraval  = setInterval(()=>{
-          let nowTime = new Date().toISOString()
-          let now = new Date(nowTime).getTime()
-          let diff = end_date - now
-          if(diff > 0){
-            let diff_sec = diff/1000
+  const processTimer = async (itm) => {
+    if (itm) {
+      if (itm.details?.state) {
+        let end_date = new Date(timer_details.details.utc_endtime).getTime();
+        const timerIntraval = setInterval(() => {
+          let nowTime = new Date().toISOString();
+          let now = new Date(nowTime).getTime();
+          let diff = end_date - now;
+          if (diff > 0) {
+            let diff_sec = diff / 1000;
 
             let days = Math.floor(diff_sec / 86400);
             let hours = Math.floor((diff_sec - days * 86400) / 3600);
             let min = Math.floor((diff_sec - days * 86400 - hours * 3600) / 60);
-            let sec = Math.floor(diff_sec - days * 86400 - hours * 3600 - min* 60);
-            
-            let d = days > 9 ? `${days}`: `0${days}`
-            let h = hours > 9 ? `${hours}` : `0${hours}`
-            let m = min > 9 ? `${min}` : `0${min}`
-            let s = sec > 9 ? `${sec}` : `0${sec}`
+            let sec = Math.floor(diff_sec - days * 86400 - hours * 3600 - min * 60);
+
+            let d = days > 9 ? `${days}` : `0${days}`;
+            let h = hours > 9 ? `${hours}` : `0${hours}`;
+            let m = min > 9 ? `${min}` : `0${min}`;
+            let s = sec > 9 ? `${sec}` : `0${sec}`;
 
             if (document) {
               var elementsDays = document.querySelectorAll("#mytimer-days");
-              elementsDays.forEach(function(element) {
-                  var id = element.id;
-                  if (id) {
-                      switch(id) {
-                          case "mytimer-days":
-                              element.innerHTML = d;
-                              break;
-                          default:
-                              break;
-                      }
+              elementsDays.forEach(function (element) {
+                var id = element.id;
+                if (id) {
+                  switch (id) {
+                    case "mytimer-days":
+                      element.innerHTML = d;
+                      break;
+                    default:
+                      break;
                   }
+                }
               });
-              var elementsHours= document.querySelectorAll("#mytimer-hours");
-              elementsHours.forEach(function(element) {
-                  var id = element.id;
-                  if (id) {
-                      switch(id) {
-                          case "mytimer-hours":
-                              element.innerHTML = h;
-                              break;
-                          default:
-                              break;
-                      }
+              var elementsHours = document.querySelectorAll("#mytimer-hours");
+              elementsHours.forEach(function (element) {
+                var id = element.id;
+                if (id) {
+                  switch (id) {
+                    case "mytimer-hours":
+                      element.innerHTML = h;
+                      break;
+                    default:
+                      break;
                   }
+                }
               });
               var elementsMin = document.querySelectorAll("#mytimer-min");
-              elementsMin.forEach(function(element) {
-                  var id = element.id;
-                  if (id) {
-                      switch(id) {
-                          case "mytimer-min":
-                              element.innerHTML = m;
-                              break;
-                          default:
-                              break;
-                      }
+              elementsMin.forEach(function (element) {
+                var id = element.id;
+                if (id) {
+                  switch (id) {
+                    case "mytimer-min":
+                      element.innerHTML = m;
+                      break;
+                    default:
+                      break;
                   }
+                }
               });
               var elementsSec = document.querySelectorAll("#mytimer-sec");
-              elementsSec.forEach(function(element) {
-                  var id = element.id;
-                  if (id) {
-                      switch(id) {
-                          case "mytimer-sec":
-                              element.innerHTML = s;
-                              break;
-                      }
+              elementsSec.forEach(function (element) {
+                var id = element.id;
+                if (id) {
+                  switch (id) {
+                    case "mytimer-sec":
+                      element.innerHTML = s;
+                      break;
                   }
+                }
               });
-          }
-          
+            }
 
             // SetCountDown({
             //   days:Math.floor(days),
@@ -176,52 +174,49 @@ const Layout = ({
             //   min:Math.floor(min),
             //   sec:Math.floor(sec)
             // })
-          }else{
+          } else {
             //make the timer state to false
             //remove all timer functions
             //clear the intraval
-            stopTimer()
-            router.push('/')
+            stopTimer();
+            router.push("/");
             // SetCountDown(null)
-            clearInterval(timerIntraval)
+            clearInterval(timerIntraval);
           }
-        },1000)
+        }, 1000);
       }
     }
-  }
+  };
 
-  // websiteSettings?.forEach(function (item) {
-  //   if (item.key == "website_header_script") {
-  //     headerScripts = item.value;
-  //   }
-
-  //   if (item.key == "website_header_css") {
-  //     headerCss = item.value;
-  //   }
-  //   if (item.key == "website_googleanalyticcode") {
-  //     googleAnalyticCode = item.value;
-  //   }
-  //   if (item.key == "website_footer_script") {
-  //     footerScripts = item.value;
-  //   }
-  // });
-
-
-
-  useEffect(()=>{
-    if(userData)
-    {
-      updateuserprofile(userData.data.token)
-      userEnrolledStoreAction(userData.data.user_id)
+  websiteSettings.forEach(function (item) {
+    if (item.key == "website_header_script") {
+      headerScripts = item.value;
     }
-  },[userData])
 
-  useEffect(()=>{
-    if(userSubscriptionData &&  userSubscriptionData.active_plans){
-      setsub_current(userSubscriptionData?.active_plans)
-    } 
-  },[userSubscriptionData])
-  
+    if (item.key == "website_header_css") {
+      headerCss = item.value;
+    }
+    if (item.key == "website_googleanalyticcode") {
+      googleAnalyticCode = item.value;
+    }
+    if (item.key == "website_footer_script") {
+      footerScripts = item.value;
+    }
+  });
+
+  useEffect(() => {
+    if (userData) {
+      updateuserprofile(userData.data.token);
+      userEnrolledStoreAction(userData.data.user_id);
+    }
+  }, [userData]);
+
+  useEffect(() => {
+    if (userSubscriptionData && userSubscriptionData.active_plans) {
+      setsub_current(userSubscriptionData?.active_plans);
+    }
+  }, [userSubscriptionData]);
+
   useEffect(() => {
     // Store UTM Data
     if (window && window.location.search && window.location.search.includes("utm_source")) {
@@ -257,19 +252,16 @@ const Layout = ({
     //   setWAIconVisible(false)
     // }
   }, []);
-  
+
   useEffect(() => {
-    if (
-      subs_curr &&
-      subs_curr.length > 0
-    ) {
+    if (subs_curr && subs_curr.length > 0) {
       let status = sub_notexpired;
-      subs_curr.map((itm)=>{
-        status = status || itm.is_plan_active
-      })
+      subs_curr.map((itm) => {
+        status = status || itm.is_plan_active;
+      });
       // setExpireduser = false users still have active subcription /// setExpireduser = true user
       // subscription expired
-      set_sub_notexpired(status)
+      set_sub_notexpired(status);
       setSubscribedUser(true);
     } else {
       setSubscribedUser(false);
@@ -290,11 +282,19 @@ const Layout = ({
       <div id="googleAnalyticCode" dangerouslySetInnerHTML={{ __html: googleAnalyticCode }} />
       <div id="headerScripts" dangerouslySetInnerHTML={{ __html: headerScripts }} />
       <div id="headerCss" dangerouslySetInnerHTML={{ __html: headerCss }} />
-      {router.asPath == '/' &&  <Courseexpirypopup userEnrolled = {user_enrolled} subs = {subs_curr}/>}
-      <CommonTimer offerHeader={offerHeader} setOfferHeaderTimer={setShowOfferHeaderTimer} showTimer={showOfferHeaderTimer}/>
-      <div id="wrapper" className={pathName.includes("/amazon/employees") ? "employees-page" : ""} style={pathName.includes("register") || pathName.includes("login")?{margin:"0px"}:{}}>
+      {router.asPath == "/" && <Courseexpirypopup userEnrolled={user_enrolled} subs={subs_curr} />}
+      <CommonTimer
+        offerHeader={offerHeader}
+        setOfferHeaderTimer={setShowOfferHeaderTimer}
+        showTimer={showOfferHeaderTimer}
+      />
+      <div
+        id="wrapper"
+        className={pathName.includes("/amazon/employees") ? "employees-page" : ""}
+        style={pathName.includes("register") || pathName.includes("login") ? { margin: "0px" } : {}}
+      >
         <AlertBox alertMessage={alertMessage} alertBoxAction={alertBoxAction} />
-        <OfferHeader userData={userData} showTimer={showOfferHeaderTimer} data={offerHeader}/>
+        <OfferHeader userData={userData} showTimer={showOfferHeaderTimer} data={offerHeader} />
         {!pathName.includes("/register") &&
           !pathName.includes("/verifyuser") &&
           !pathName.includes("/login") &&
@@ -305,60 +305,60 @@ const Layout = ({
               subscribedUser={subscribedUser}
               pathName={pathName}
               menusList={menusList}
-              userSubscriptionData = {subs_curr}
-              user_type = {user_type}
-              maintenance_details = {maintenance_details}
+              userSubscriptionData={subs_curr}
+              user_type={user_type}
+              maintenance_details={maintenance_details}
               headless={
                 pathName.includes("/aws") ||
                 pathName.includes("/azure") ||
                 pathName.includes("/devops") ||
                 pathName.includes("/gcp") ||
                 pathName.includes("/ft-course-library") ||
-                (router.asPath === `/aws-ccp/`) ||
-                (router.asPath === `/aws-cda/`) ||
-                (router.asPath === `/aws-sysops/`) ||
-                (router.asPath === `/aws-csap/`) ||
-                (router.asPath === `/aws-devops/`) ||
-                (router.asPath === `/aws-csaa/`) ||
-                (router.asPath === `/az-900/`) ||
-                (router.asPath === `/az-104/`) ||
-                (router.asPath === `/az-305/`) ||
-                (router.asPath === `/az-204/`) ||
-                (router.asPath === `/az-400/`) ||
-                (router.asPath === `/dp-203/`) ||
-                (router.asPath === `/gccace/`) ||
-                (router.asPath === `/gccpca/`) ||
-                (router.asPath === `/gcccdl/`) ||
-                (router.asPath === `/gccpde/`) ||
-                (router.asPath === `/dp-900/`) ||
-                (router.asPath === `/ai-900/`) ||
-                (router.asPath === `/sc-900/`) ||
-                (router.asPath === `/ai-102/`) ||
-                pathName.includes('/training/library')||
-                pathName.includes('/gdgcloudpune')
+                router.asPath === `/aws-ccp/` ||
+                router.asPath === `/aws-cda/` ||
+                router.asPath === `/aws-sysops/` ||
+                router.asPath === `/aws-csap/` ||
+                router.asPath === `/aws-devops/` ||
+                router.asPath === `/aws-csaa/` ||
+                router.asPath === `/az-900/` ||
+                router.asPath === `/az-104/` ||
+                router.asPath === `/az-305/` ||
+                router.asPath === `/az-204/` ||
+                router.asPath === `/az-400/` ||
+                router.asPath === `/dp-203/` ||
+                router.asPath === `/gccace/` ||
+                router.asPath === `/gccpca/` ||
+                router.asPath === `/gcccdl/` ||
+                router.asPath === `/gccpde/` ||
+                router.asPath === `/dp-900/` ||
+                router.asPath === `/ai-900/` ||
+                router.asPath === `/sc-900/` ||
+                router.asPath === `/ai-102/` ||
+                pathName.includes("/training/library") ||
+                pathName.includes("/gdgcloudpune")
               }
               staticpage={
-                (router.asPath === `/aws-ccp/`) ||
-                (router.asPath === `/aws-cda/`) ||
-                (router.asPath === `/aws-sysops/`) ||
-                (router.asPath === `/aws-csap/`) ||
-                (router.asPath === `/aws-devops/`) ||
-                (router.asPath === `/aws-csaa/`) ||
-                (router.asPath === `/az-900/`) ||
-                (router.asPath === `/az-104/`) ||
-                (router.asPath === `/az-305/`) ||
-                (router.asPath === `/az-204/`) ||
-                (router.asPath === `/az-400/`) ||
-                (router.asPath === `/dp-203/`) ||
-                (router.asPath === `/gccace/`) ||
-                (router.asPath === `/gccpca/`) ||
-                (router.asPath === `/gcccdl/`) ||
-                (router.asPath === `/gccpde/`) ||
-                (router.asPath === `/dp-900/`) ||
-                (router.asPath === `/ai-900/`) ||
-                (router.asPath === `/sc-900/`) ||
-                (router.asPath === `/ai-102/`) ||
-                pathName.includes('/training/library')
+                router.asPath === `/aws-ccp/` ||
+                router.asPath === `/aws-cda/` ||
+                router.asPath === `/aws-sysops/` ||
+                router.asPath === `/aws-csap/` ||
+                router.asPath === `/aws-devops/` ||
+                router.asPath === `/aws-csaa/` ||
+                router.asPath === `/az-900/` ||
+                router.asPath === `/az-104/` ||
+                router.asPath === `/az-305/` ||
+                router.asPath === `/az-204/` ||
+                router.asPath === `/az-400/` ||
+                router.asPath === `/dp-203/` ||
+                router.asPath === `/gccace/` ||
+                router.asPath === `/gccpca/` ||
+                router.asPath === `/gcccdl/` ||
+                router.asPath === `/gccpde/` ||
+                router.asPath === `/dp-900/` ||
+                router.asPath === `/ai-900/` ||
+                router.asPath === `/sc-900/` ||
+                router.asPath === `/ai-102/` ||
+                pathName.includes("/training/library")
               }
               containerSmall={
                 pathName.includes("/aws/[slug]") ||
@@ -371,7 +371,17 @@ const Layout = ({
             />
           )}
         {children}
-        
+        <FooterWrapper
+          data={footerData}
+          pathName={pathName}
+          footerScripts={footerScripts}
+          subscribedUser={subscribedUser}
+          bannerActive={bannerActive}
+          promoData={promoData}
+          subcribed_not_expired={sub_notexpired}
+          user_type={user_type}
+          timer_details={timer_details}
+        />
 
         {cookieConsent && <CookieConsent />}
       </div>
@@ -385,8 +395,8 @@ const mapStateToProps = (state) => {
     userData: state.authData.userData,
     userSubscriptionData: state.userProfileData.userSubscriptionData,
     user_type: state.userProfileData.user_type || "",
-    user_enrolled : state.enrolled.enrolled,
-    timerState:state.timer.timer,
+    user_enrolled: state.enrolled.enrolled,
+    timerState: state.timer.timer,
     cart_count_from_redux: state.cart.cart_count,
   };
 };
@@ -396,11 +406,11 @@ const mapDispatchToProps = (dispatch) => {
     storeIpDetails: (ip_details) => dispatch(storeIp(ip_details)),
     alertBoxAction: (data) => dispatch(alertBox(data)),
     storeUtmAction: (data) => dispatch(storeUtm(data)),
-    stopTimer:()=> dispatch(offerClear()),
-    timerRunning:()=> dispatch(OfferStart()),
-    storeCampaignAction:(data)=> dispatch(StoreCampaignInfo(data)),
+    stopTimer: () => dispatch(offerClear()),
+    timerRunning: () => dispatch(OfferStart()),
+    storeCampaignAction: (data) => dispatch(StoreCampaignInfo(data)),
     updateuserprofile: (token) => dispatch(storeUserProfile(token)),
-    userEnrolledStoreAction:(user_id)=>dispatch(enrollCourseDetail(user_id))
+    userEnrolledStoreAction: (user_id) => dispatch(enrollCourseDetail(user_id)),
   };
 };
 

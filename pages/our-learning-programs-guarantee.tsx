@@ -2,46 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 const ProgramGuarantee = (seoHomePageData) => (
   <>
-    {/* <Head>
-      <title>Our Learning Programs Guarantee | Whizlabs</title>
-
-      <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
-
-      <meta name="title" content="Our Learning Programs Guarantee - Whizlabs" />
-      <meta
-        name="description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
-      />
-      <meta name="keywords" content="learning programs guarantee" />
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Our Learning Programs Guarantee - Whizlabs" />
-      <meta
-        property="og:description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
-      />
-      <meta property="og:url" content="https://www.whizlabs.com/our-learning-programs-guarantee/" />
-      <meta property="og:site_name" content="Whizlabs" />
-      <meta
-        property="og:image"
-        content={process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60acd49dd883f"}
-      />
-      <meta property="fb:app_id" content="502194103558420" />
-      <meta property="og:image:width" content="500" />
-      <meta property="og:image:height" content="500" />
-      <meta name="twitter:card" content="summary" />
-      <meta
-        name="twitter:description"
-        content="Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more."
-      />
-      <meta name="twitter:title" content="Our Learning Programs Guarantee - Whizlabs" />
-      <meta name="twitter:site" content="@whizlabs" />
-      <meta
-        name="twitter:image"
-        content={process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60acd49dd8887"}
-      />
-      <meta name="twitter:creator" content="@whizlabs" />
-    </Head> */}
     <div id="content-area" className="terms-use-page">
       <div className="page-content">
         <div className="container-small">
@@ -50,14 +10,14 @@ const ProgramGuarantee = (seoHomePageData) => (
           </div>
           <p>
             <span>
-              Whizlabs is dedicated to helping professionals learn and validate the skills required
-              to boost up their career. And so, we strive to provide the best-in-industry training
-              with the utmost level of customer satisfaction possible. Our learning program
+              R N S PATH is dedicated to helping professionals learn and validate the skills
+              required to boost up their career. And so, we strive to provide the best-in-industry
+              training with the utmost level of customer satisfaction possible. Our learning program
               comprises of online courses and practice tests on which our learning program guarantee
               is applied.{" "}
             </span>
           </p>
-          <h2>Whizlabs learning program guarantee includes </h2>
+          <h2>R N S PATH learning program guarantee includes </h2>
           <br />
           <h4>100% Customer Satisfaction</h4>
           <p>
@@ -92,20 +52,20 @@ const ProgramGuarantee = (seoHomePageData) => (
           <h4>Other Resources</h4>
           <p>
             <span>
-              Whizlabs terms and conditions and refund policy are associated with the learning
+              R N S PATH terms and conditions and refund policy are associated with the learning
               program guarantee. Check out the below links to get the details.
             </span>
           </p>
           <ul>
             <li>
-              <Link legacyBehavior  href="/refund-policy">
+              <Link legacyBehavior href="/refund-policy">
                 <a target="_blank">
                   <span>Refund Policy</span>
                 </a>
               </Link>
             </li>
             <li>
-              <Link legacyBehavior  href="/terms-of-use">
+              <Link legacyBehavior href="/terms-of-use">
                 <a target="_blank">
                   <span>Terms and Conditions</span>
                 </a>
@@ -121,10 +81,10 @@ const ProgramGuarantee = (seoHomePageData) => (
           </p>
           <p>
             <strong>
-              If you want to submit any feedback, please share it at{" "}
-              <a href="https://www.whizlabs.com/forums/" target="_blank" rel="noopener">
-                https://www.whizlabs.com/forums/
-              </a>
+              If you want to submit any feedback, please share it at pathrns@gmail.com
+              {/* <a href="https://www.rnspath.com/forums/" target="_blank" rel="noopener">
+                https://www.rnspath.com/forums/
+              </a> */}
             </strong>
           </p>
         </div>
@@ -138,28 +98,36 @@ export default ProgramGuarantee;
 export async function getServerSideProps() {
   const seoHomePageData = {
     seoPageType: "learningProgram",
-    title: "Our Learning Programs Guarantee - Whizlabs",
+    title: "Our Learning Programs Guarantee - R N S PATH",
     metaTags: [
-      { name: "facebook-domain-verification", property: "", content: "twh401qzi7r7o3n227q4sg3hghbpzh" },
-      { name: "title", property: "", content: "Our Learning Programs Guarantee - Whizlabs" },
+      {
+        name: "facebook-domain-verification",
+        property: "",
+        content: "twh401qzi7r7o3n227q4sg3hghbpzh",
+      },
+      { name: "title", property: "", content: "Our Learning Programs Guarantee - R N S PATH" },
       {
         name: "description",
         property: "",
         content:
-          "Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
+          "R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
       },
       { name: "keywords", property: "", content: "learning programs guarantee" },
       { name: "", property: "og:locale", content: "en_US" },
       { name: "", property: "og:type", content: "website" },
-      { name: "", property: "og:title", content: "Our Learning Programs Guarantee - Whizlabs" },
+      { name: "", property: "og:title", content: "Our Learning Programs Guarantee - R N S PATH" },
       {
         name: "",
         property: "og:description",
         content:
-          "Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
+          "R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
       },
-      { name: "", property: "og:url", content: "https://www.whizlabs.com/our-learning-programs-guarantee/" },
-      { name: "", property: "og:site_name", content: "Whizlabs" },
+      {
+        name: "",
+        property: "og:url",
+        // content: "https://www.rnspath.com/our-learning-programs-guarantee/",
+      },
+      { name: "", property: "og:site_name", content: "R N S PATH" },
       {
         name: "",
         property: "og:image",
@@ -173,21 +141,23 @@ export async function getServerSideProps() {
         name: "twitter:description",
         property: "",
         content:
-          "Whizlabs online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
+          "R N S PATH online certification training courses and practice tests come with 100% satisfaction guarantee and 100% unconditional money back guarantee. Check this page to know more.",
       },
-      { name: "twitter:title", property: "", content: "Our Learning Programs Guarantee - Whizlabs" },
-      { name: "twitter:site", property: "", content: "@whizlabs" },
+      {
+        name: "twitter:title",
+        property: "",
+        content: "Our Learning Programs Guarantee - R N S PATH",
+      },
+      { name: "twitter:site", property: "", content: "@rnspath" },
       {
         name: "twitter:image",
         property: "",
         content: process.env.NEXT_PUBLIC_WEB_MEDIA_URL + "2019/03/07/meta_image.jpg?60acd49dd8887",
       },
-      { name: "twitter:creator", property: "", content: "@whizlabs" },
+      { name: "twitter:creator", property: "", content: "@rnspath" },
     ],
   };
-  
-  
-    
+
   return {
     props: {
       seoHomePageData,

@@ -750,8 +750,8 @@ const Header = ({
                             <div
                               className="dropdown btn-dropdown"
                               id="training-library-menu"
-                              onClick={() => {
-                                setMenuOpen(!menuOpen);
+                              onMouseEnter={() => {
+                                setMenuOpen(true);
                                 setHeaderSearchOpen(false);
                               }}
                               style={{ cursor: "pointer" }}
@@ -762,9 +762,6 @@ const Header = ({
                                 id="training-library-menu"
                               ></i>
                             </div>
-                            {/* <div className="dropdown btn-dropdown-plate">
-                            <span>Platform</span><i className="icon icon-font-dropdown-arrow"></i>
-                          </div> */}
                             <Menu
                               menuButton={
                                 <MenuButton>
@@ -786,10 +783,9 @@ const Header = ({
                               menuClassName="menu-holder"
                             >
                               <div className="menuholder">
-                                {/* <div id="dropdown-platform" className="dropdown-platform"> */}
                                 <ul className="list-menu-plate">
                                   <li>
-                                    <a href="/practice-exam-simulator" /*target="_blank"*/>
+                                    <a href="/practice-exam-simulator">
                                       <figure>
                                         <img
                                           className="img-full"
@@ -807,7 +803,7 @@ const Header = ({
                                     </a>
                                   </li>
                                   <li>
-                                    <a href="/self-study-video-courses" /*target="_blank"*/>
+                                    <a href="/self-study-video-courses">
                                       <figure>
                                         <img
                                           className="img-full"
@@ -822,11 +818,7 @@ const Header = ({
                                     </a>
                                   </li>
                                   <li>
-                                    <a
-                                      // rel="noopener"
-                                      /*target="_blank"*/
-                                      href={process.env.NEXT_PUBLIC_PLAY_URL}
-                                    >
+                                    <a href={process.env.NEXT_PUBLIC_PLAY_URL}>
                                       <figure>
                                         <img
                                           className="img-full"
@@ -841,11 +833,7 @@ const Header = ({
                                     </a>
                                   </li>
                                   <li>
-                                    <a
-                                      // rel="noopener"
-                                      /*target="_blank"*/
-                                      href={`${process.env.NEXT_PUBLIC_PLAY_URL}/sandbox`}
-                                    >
+                                    <a href={`${process.env.NEXT_PUBLIC_PLAY_URL}/sandbox`}>
                                       <figure>
                                         <img
                                           className="img-full"
@@ -864,17 +852,8 @@ const Header = ({
                                   </li>
                                 </ul>
                               </div>
-                              {/* </div> */}
                             </Menu>
-                            {/* <li>
-                              <a
-                                rel="noopener"
-                                target="_blank"
-                                href={process.env.NEXT_PUBLIC_BUSINESS_URL}
-                              >
-                                For Business
-                              </a>
-                            </li> */}
+
                             {user_type != "amazon" && (
                               <>
                                 <li
@@ -887,7 +866,6 @@ const Header = ({
                                 </li>
                               </>
                             )}
-                            {/* <li><a href="/review">Discussions</a></li> */}
                           </ul>
                         </div>
                       </div>
@@ -1576,7 +1554,13 @@ const Header = ({
           </div>
           {!isBreakpoint && menuOpen && (
             <div className="container">
-              <div ref={ref} className="dropdown-menu open  desktop ">
+              <div
+                ref={ref}
+                className="dropdown-menu open  desktop "
+                onMouseLeave={() => {
+                  setMenuOpen(false);
+                }}
+              >
                 <Menus
                   logout={logout}
                   userData={userData}
