@@ -49,7 +49,7 @@ const AboutUs = ({ blogContent = [], employeesList, seoHomePageData }) => {
   return (
     <>
       {/* <Head>
-        <title>About us | Whizlabs</title>
+        <title>About us | RNSPATH</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 

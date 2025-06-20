@@ -6,11 +6,11 @@ import Head from "next/head";
 const PartnerWithUs = (seoHomePageData) => (
   <>
     {/* <Head>
-      <title>Partner with Us | Whizlabs</title>
+      <title>Partner with Us | RNSPATH</title>
 
       <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 
-      <meta name="title" content="Partner with Us - Whizlabs" />
+      <meta name="title" content="Partner with Us - RNSPATH" />
       <meta
         name="description"
         content="Whizlabs Associate&#039;s program gives an opportunity to the individuals and organizations to partner with us to sell our products, become a trainer or join as a content writer."

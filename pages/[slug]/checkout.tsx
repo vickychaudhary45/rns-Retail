@@ -750,7 +750,7 @@ const SingleCheckout = ({
   return (
     <>
       {/* <Head>
-        <title>Checkout | Whizlabs</title>
+        <title>Checkout | RNSPATH</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 
@@ -1555,7 +1555,7 @@ export const getServerSideProps = async (context) => {
 
   const seoHomePageData = {
     seoPageType: "checkout",
-    title: "Checkout | Whizlabs",
+    title: "Checkout | RNSPATH",
     metaTags: [
       { name: "facebook-domain-verification", httpEquiv: "", property: "", content: "twh401qzi7r7o3n227q4sg3hghbpzh" },
       { name: "", httpEquiv: "cache-control", property: "", content: "no-cache"},

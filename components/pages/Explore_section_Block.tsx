@@ -84,7 +84,7 @@ function ExploreSection2(props) {
                   width={24}
                   loading="lazy"
                   src="/images/pttest.png"
-                  alt="whizlabs hands on labs for aws microsoft azure google cloud"
+                  alt="RNSPATH hands on labs for aws microsoft azure google cloud"
                 />
                 &nbsp;&nbsp;
                 <span>25,000+</span>
@@ -153,7 +153,7 @@ function ExploreSection2(props) {
                   width={24}
                   loading="lazy"
                   src="/images/pttest.png"
-                  alt="whizlabs hands on labs for aws microsoft azure google cloud"
+                  alt="RNSPATH hands on labs for aws microsoft azure google cloud"
                 />
                 &nbsp;&nbsp;
                 <span>25,000+</span>

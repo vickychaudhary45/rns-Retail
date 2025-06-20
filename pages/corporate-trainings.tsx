@@ -3,7 +3,7 @@ import Head from "next/head";
 const CorporateTrainings = (seoHomePageData) => (
   <>
     {/* <Head>
-      <title>Whizlabs Corporate Training | Whizlabs</title>
+      <title>RNSPATH Corporate Training | RNSPATH</title>
 
       <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 

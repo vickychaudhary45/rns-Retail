@@ -434,7 +434,7 @@ const Awscsa = ({
             <div className="caption">
               <h2>
                 Give your preparation a New edge with{" "}
-                <strong>Whizlabs AWS Certified Solutions Architect Associate practice tests</strong>
+                <strong>RNSPATH AWS Certified Solutions Architect Associate practice tests</strong>
               </h2>
               <div className="block-group">
                 <label>Key Features of the Course</label>
@@ -1216,7 +1216,7 @@ const Awscsa = ({
 													<span>What all is included in the Lifetime Subscription?</span>
 												</div>
 												<div className="item-content">
-													<p>You will get access to the entire Whizlabs platform which includes 250+ Online Courses, Practice Tests, and 400+ Hands-On Labs.</p>
+													<p>You will get access to the entire RNSPATH platform which includes 250+ Online Courses, Practice Tests, and 400+ Hands-On Labs.</p>
 												</div>
 											</div>
 											<div className="item">
@@ -1225,7 +1225,7 @@ const Awscsa = ({
 													<span>Are there any hidden costs involved with this membership plan?</span>
 												</div>
 												<div className="item-content">
-													<p>No. The amount you pay during your purchase is all it takes for you to get access to the entire Whizlabs training library for a lifetime.</p>
+													<p>No. The amount you pay during your purchase is all it takes for you to get access to the entire RNSPATH training library for a lifetime.</p>
 												</div>
 											</div>
 											<div className="item">

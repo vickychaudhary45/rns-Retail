@@ -4,7 +4,7 @@ export const Azure_data = {
       category_title: "Compute",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         {
           service_name: "Virtual machine",
@@ -24,7 +24,7 @@ export const Azure_data = {
       category_title: "Networking",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         { service_name: "Virtual Network", service_description: "" },
         { service_name: "Load balancer", service_description: "" },
@@ -36,7 +36,7 @@ export const Azure_data = {
       category_title: "Database",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         { service_name: "Cosmos DB", service_description: '1.No of RUs: "20 RUs"' },
         { service_name: "Azure SQL", service_description: "" },
@@ -49,7 +49,7 @@ export const Azure_data = {
       category_title: "Storage",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         {
           service_name: "Storage account",
@@ -67,7 +67,7 @@ export const Azure_data = {
       category_title: "Web",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         { service_name: "Azure App Service Plan", service_description: "" },
         { service_name: "App Services", service_description: "" },
@@ -77,7 +77,7 @@ export const Azure_data = {
       category_title: "Monitor",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         { service_name: "Application Insights", service_description: "" },
         { service_name: "Monitor", service_description: "" },
@@ -89,7 +89,7 @@ export const Azure_data = {
       category_title: "Internet of Things",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [
         { service_name: "IoT Hub", service_description: "" },
         { service_name: "IoT Central Applications", service_description: "" },
@@ -99,7 +99,7 @@ export const Azure_data = {
       category_title: "Security",
       max_lifetime: "5",
       sandbox_slug: "azure-sandbox",
-      sandbox_title: "Whizlabs Azure Sandbox",
+      sandbox_title: "RNSPATH Azure Sandbox",
       services: [{ service_name: "Key Vault", service_description: "" }],
     },
   ],
@@ -111,7 +111,7 @@ export const gcp_data = {
       category_title: "Compute",
       max_lifetime: "3",
       sandbox_slug: "gcp-sandbox",
-      sandbox_title: "Whizlabs GCP Sandbox",
+      sandbox_title: "RNSPATH GCP Sandbox",
       services: [
         {
           service_name: "VM Instance",
@@ -128,7 +128,7 @@ export const gcp_data = {
       category_title: "Serverless",
       max_lifetime: "3",
       sandbox_slug: "gcp-sandbox",
-      sandbox_title: "Whizlabs GCP Sandbox",
+      sandbox_title: "RNSPATH GCP Sandbox",
       services: [
         { service_name: "Cloud Function", service_description: "Max Build Time: 100ms" },
         { service_name: "Cloud Run", service_description: "Max Services: 1" },
@@ -139,7 +139,7 @@ export const gcp_data = {
       category_title: "Databases",
       max_lifetime: "3",
       sandbox_slug: "gcp-sandbox",
-      sandbox_title: "Whizlabs GCP Sandbox",
+      sandbox_title: "RNSPATH GCP Sandbox",
       services: [
         {
           service_name: "Cloud SQL",
@@ -156,7 +156,7 @@ export const gcp_data = {
       category_title: "Analytics",
       max_lifetime: "3",
       sandbox_slug: "gcp-sandbox",
-      sandbox_title: "Whizlabs GCP Sandbox",
+      sandbox_title: "RNSPATH GCP Sandbox",
       services: [
         { service_name: "BigQuery", service_description: "Max Query Size: 1 GB" },
         {

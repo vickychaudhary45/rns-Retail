@@ -14,11 +14,6 @@ const Survey = (seoHomePageData) => {
 
   return (
     <>
-      {/* <Head>
-        <title>Whizlabs Survey - Whizlabs</title>
-
-        <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
-      </Head> */}
       {/* Survey Form */}
       <div id="content-area" className="survey-page">
         <div className="page-content">
@@ -28,7 +23,7 @@ const Survey = (seoHomePageData) => {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="block">
                   <p>
-                    What do you like best about Whizlabs AWS Certified Solutions Architect Associate
+                    What do you like best about RNSPATH AWS Certified Solutions Architect Associate
                     Online Course and why?
                   </p>
                   <div className="textarea-box">
@@ -199,7 +194,7 @@ export default Survey;
 export async function getServerSideProps(context){
   const seoHomePageData = {
     seoPageType: "survey", // This should be changed to reflect the actual page type
-    title: "Whizlabs Survey - Whizlabs",
+    title: "RNSPATH Survey - RNSPATH",
     metaTags: [
       {
         name: "facebook-domain-verification",

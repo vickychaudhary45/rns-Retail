@@ -12,7 +12,7 @@ export const categoryIcon = [
       "icon": "icon icon-font-microsoft"
     },
     {
-      "name": "Whizlabs Other Courses",
+      "name": "RNSPATH Other Courses",
       "icon": "icon icon-font-cloud"
     },
     {

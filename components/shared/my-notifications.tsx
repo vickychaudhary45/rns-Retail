@@ -56,7 +56,7 @@ const MyNotifications = ({ tabActive, profile, userId, alertBox }) => {
       <div className="container">
         <div className="acc-notfication">
           <div className="white-box">
-            <div className="head-section">Get notified of activity at Whizlabs</div>
+            <div className="head-section">Get notified of activity at RNSPATH</div>
             <div className="box-content">
               <form onSubmit={submitNotificationForm}>
                 <ul style={{listStyle:"none"}}>

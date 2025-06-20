@@ -33,7 +33,7 @@ const SpringSaleFooter = ({closeBanner,bannerStatus}) => {
       <div className="container">
         <div className="left-block">
           <h2>
-            <strong>This Spring,</strong> let your career blossom Whizlabs Spring Sale
+            <strong>This Spring,</strong> let your career blossom RNSPATH Spring Sale
           </h2>
           <figure>
             <img className="img-full" src="/images/spring-pan.svg" />
@@ -98,7 +98,7 @@ export default SpringSaleFooter;
       <div className="subscription-banner">
         <div className="container">
           <div className="annual-text">
-            <span>Whizlabs</span>Annual subscription
+            <span>RNSPATH</span>Annual subscription
           </div>
           <div className="right-block">
             <ul>
@@ -190,7 +190,7 @@ export default SpringSaleFooter;
       <div className="subscription-banner" >
         <div className="container">
           <div className="annual-text">
-            <span>Whizlabs</span>Annual subscription
+            <span>RNSPATH</span>Annual subscription
           </div>
           <div className="right-block">
             <ul>

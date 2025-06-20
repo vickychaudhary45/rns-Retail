@@ -242,7 +242,7 @@ export default MyAccount;
 //   return (
 //     <>
 //       {/* <Head>
-//         <title>My Wishlist | Whizlabs</title>
+//         <title>My Wishlist | RNSPATH</title>
 
 //         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 //       </Head> */}

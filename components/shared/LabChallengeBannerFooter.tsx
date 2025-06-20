@@ -27,7 +27,7 @@ const LabChallengeBannerFooter = ({closeBanner,bannerStatus}) => {
           <div className="left-block">
             <div className="first-sharp">
               <span>
-                Whizlabs <strong>Challenge League</strong>
+                RNSPATH <strong>Challenge League</strong>
               </span>
             </div>
             <div className="sharp sec-sharp">

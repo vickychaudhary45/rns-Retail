@@ -67,7 +67,7 @@ export default OneMonthSubBanner2;
       <div className="subscription-banner">
         <div className="container">
           <div className="annual-text">
-            <span>Whizlabs</span>Annual subscription
+            <span>RNSPATH</span>Annual subscription
           </div>
           <div className="right-block">
             <ul>
@@ -159,7 +159,7 @@ export default OneMonthSubBanner2;
       <div className="subscription-banner" >
         <div className="container">
           <div className="annual-text">
-            <span>Whizlabs</span>Annual subscription
+            <span>RNSPATH</span>Annual subscription
           </div>
           <div className="right-block">
             <ul>

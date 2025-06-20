@@ -167,7 +167,7 @@ const MenuMobile = ({
                         height={8}
                         className="img-full"
                         src="/images/logo11.svg"
-                        alt="Whizlabs Logo"
+                        alt="RNSPATH Logo"
                       />
                     </a>
                   </Link>

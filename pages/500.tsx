@@ -5,7 +5,7 @@ export default function FiveHundo(seoHomePageData) {
   return (
     <>
       {/* <Head>
-        <title>Error | Whizlabs</title>
+        <title>Error | RNSPATH</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
       </Head> */}
@@ -37,7 +37,7 @@ export default function FiveHundo(seoHomePageData) {
 export const getStaticProps = async () => {
   const seoHomePageData = {
     seoPageType: "fivezerofive", // This should be changed to reflect the actual page type
-    title: "Error | Whizlabs",
+    title: "Error | RNSPATH",
     metaTags: [
       {
         name: "facebook-domain-verification",

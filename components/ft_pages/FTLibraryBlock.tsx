@@ -6,7 +6,7 @@ const FTLibraryBlock = ({ pageData, catList }) => {
   return (
     <>
       <Head>
-        <title>Free Course Library | Whizlabs</title>
+        <title>Free Course Library | RNSPATH</title>
         <meta name="robots" content="noindex" />
         <meta name="robots" content="nofollow" />
         <meta httpEquiv="cache-control" content="no-cache" />

@@ -69,7 +69,7 @@ const MyAccount = ({
   return (
     <>
       {/* <Head>
-        <title>My Account | Whizlabs</title>
+        <title>My Account | RNSPATH</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
       </Head> */}
@@ -326,7 +326,7 @@ export async function getServerSideProps(context) {
 
   const seoHomePageData = {
     seoPageType: "accountPage",
-    title: "My Account | Whizlabs",
+    title: "My Account | RNSPATH",
     metaTags: [
       {
         name: "facebook-domain-verification",

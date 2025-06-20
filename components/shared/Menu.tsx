@@ -47,7 +47,7 @@ const Menu = ({
       <MenuHtml finalList={finalList} listLimit={listLimit} closeMenuBar={closeMenuBar} />
       <li>
         <div className="nav-footer">
-          <div className="title">More from Whizlabs</div>
+          <div className="title">More from RNSPATH</div>
           <ul>
             <li>
               <a href="https://play.whizlabs.com/" rel="noopener" target="_blank">

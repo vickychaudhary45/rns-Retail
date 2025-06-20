@@ -1092,7 +1092,7 @@ const MyProfile = ({
         <DialogContent>
           <DialogContentText>
             <Typography className="feedback_subheader">
-              How likely are you to recommend WHIZLABS to your friends or colleagues?
+              How likely are you to recommend RNSPATH to your friends or colleagues?
             </Typography>
             {/* {!ratingSelected && (<Typography style={{color:'red', fontFamily:"'Poppins', sans-serif", marginBottom:"1rem"}}>Please Select a rating</Typography>)} */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -2219,7 +2219,7 @@ const MyProfile = ({
                     </div>
                     <div className="input-box input-radio full">
                       <label>
-                        Would you be interested if Whizlabs share your profile to Employers for job
+                        Would you be interested if RNSPATH share your profile to Employers for job
                         openings?
                       </label>
                       <div className="rbtn-group">

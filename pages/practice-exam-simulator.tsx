@@ -74,11 +74,11 @@ const Examsimulator = ({userSubscriptionData, seoHomePageData}) => {
   return (
     <>
       {/* <Head>
-        <title>Practice Tests for IT Certification Exam Preparation - Whizlabs</title>
+        <title>Practice Tests for IT Certification Exam Preparation - RNSPATH</title>
 
         <meta
           name="title"
-          content="Practice Tests for IT Certification Exam Preparation - Whizlabs"
+          content="Practice Tests for IT Certification Exam Preparation - RNSPATH"
         />
         <meta
           name="description"
@@ -86,13 +86,13 @@ const Examsimulator = ({userSubscriptionData, seoHomePageData}) => {
         />
         <meta
           name="keywords"
-          content="Practice Tests for IT Certification Exam Preparation - Whizlabs"
+          content="Practice Tests for IT Certification Exam Preparation - RNSPATH"
         />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content="Practice Tests for IT Certification Exam Preparation - Whizlabs"
+          content="Practice Tests for IT Certification Exam Preparation - RNSPATH"
         />
         <meta
           property="og:description"

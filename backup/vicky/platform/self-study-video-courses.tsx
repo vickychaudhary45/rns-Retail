@@ -52,13 +52,13 @@ const Videocouse = ({}) => {
         <div className="video-course-banner">
           <div className="container">
             <div className="caption-block">
-              <span className="blue-txt">Whizlabs Video Courses</span>
+              <span className="blue-txt">RNSPATH Video Courses</span>
               <h1 className="title">
                 Deep dive into the latest tech skills with our expert-curated Video Courses
               </h1>
               <p>
                 Visual learning is one of the fastest and most effective tools for technology
-                training. With Whizlabs Video Courses, you can learn directly from the industry
+                training. With RNSPATH Video Courses, you can learn directly from the industry
                 experts, anytime and anywhere. Get started on your upskilling journey and stay ahead
                 of the crowd!
               </p>
@@ -262,7 +262,7 @@ const Videocouse = ({}) => {
                 <div className="caption">
                   <h3>Continue from where you left!</h3>
                   <p>
-                    Learning is a gradual process and cannot be done in one day. With Whizlabs Video
+                    Learning is a gradual process and cannot be done in one day. With RNSPATH Video
                     Courses, you can continue from where you left without losing track of your
                     completed lessons.
                   </p>
@@ -315,7 +315,7 @@ const Videocouse = ({}) => {
               <div className="caption-block">
                 <p>
                   Ace your certification exams with confidence and accomplish your career goals with
-                  Whizlabs
+                  RNSPATH
                 </p>
                 <a
                   className="btn btn-plans"

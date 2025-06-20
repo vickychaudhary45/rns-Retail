@@ -305,7 +305,7 @@ const Sandbox = ({
             "@type": "Review",
             author: {
               "@type": "Person",
-              name: rev.user_name || 'whizlabs',
+              name: rev.user_name || 'RNSPATH',
             },
             description: rev.post_question_text,
             reviewRating: {
@@ -791,7 +791,7 @@ const Sandbox = ({
     if (userData && userData.data.user_id) {
       const backLink = `${process.env.NEXT_PUBLIC_LMS_URL}/course/${pageContent.seo_details?.slug}/${pageContent.id}/lab`;
       const token = md5("1@sas" + userData.data.user_email + "%1@asa");
-      // const playRedirectLink = new URL("https://play.whizlabs.com/site/lms_login");
+      // const playRedirectLink = new URL("https://play.RNSPATH.com/site/lms_login");
       let playRedirectLink;
       if (labData.lab_type == 4) {
         playRedirectLink = new URL(`${process.env.NEXT_PUBLIC_PLAY_URL_PYTHON}/site/lms_login`);
@@ -956,81 +956,6 @@ const Sandbox = ({
 
   return (
     <React.Fragment>
-      {/* <Head>
-        {pageData?.seo_details?.seo_title && <title>{`${pageData?.seo_details?.seo_title}`}</title>}
-        {pageData?.seo_details?.seo_keyword && (
-          <meta key="keywords" name="keywords" content={`${pageData?.seo_details?.seo_keyword}`} />
-        )}
-        {pageData?.seo_details?.seo_description && (
-          <meta
-            key="description"
-            name="description"
-            content={`${pageData?.seo_details?.seo_description}`}
-          />
-        )}
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content={`website`} />
-        {pageData?.seo_details?.seo_title && (
-          <meta
-            name="og:title"
-            property="og:title"
-            content={`${pageData?.seo_details?.seo_title}`}
-          />
-        )}
-        {pageData?.seo_details?.seo_description && (
-          <meta
-            name="og:description"
-            property="og:description"
-            content={`${pageData?.seo_details?.seo_description}`}
-          />
-        )}
-        <meta property="og:site_name" content={`Whizlabs`} />
-        {pageData?.seo_details?.slug && (
-          <meta
-            property="og:url"
-            content={`${process.env.NEXT_PUBLIC_BASE_PATH + pageData?.seo_details?.slug}`}
-          />
-        )}
-        {pageData?.seo_details?.featured_image && (
-          <meta
-            name="og:image"
-            content={`${
-              process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-              pageData.seo_details?.featured_image.replace("media/", "")
-            }`}
-          />
-        )}
-        {pageData?.seo_details?.featured_image && (
-          <meta
-            name="image"
-            property="og:image"
-            content={`${
-              process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-              pageData.seo_details?.featured_image.replace("media/", "")
-            }`}
-          />
-        )}
-        <meta property="og:image:width" content="400" />
-        <meta property="og:image:height" content="300" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:card" content="summary" />
-        {pageData?.seo_details?.seo_title && (
-          <meta name="twitter:title" content={`${pageData?.seo_details?.seo_title}`} />
-        )}
-        {pageData?.seo_details?.seo_description && (
-          <meta name="twitter:description" content={`${pageData?.seo_details?.seo_description}`} />
-        )}
-        <meta name="twitter:site" content={`@whizlabs`} />
-        {pageData?.seo_details?.featured_image && (
-          <meta
-            name="twitter:image"
-            content={`${
-              process.env.NEXT_PUBLIC_WEB_MEDIA_URL +
-              pageData.seo_details?.featured_image.replace("media/", "")
-            }`}
-          />
-        )}
-      </Head> */}
 
       {pageContent ? (
         <React.Fragment>

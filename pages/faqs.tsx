@@ -42,7 +42,7 @@ const Faq = (seoHomePageData) => {
           faq: [
             {
               question:
-                "After purchasing the Training Course from Whizlabs, how can I clarify my technical questions?",
+                "After purchasing the Training Course from RNSPATH, how can I clarify my technical questions?",
               answer:
                 '<p>We have a dedicated team of subject-matter experts (SME) who will answer all of your queries that are submitted through our Learning Management System (LMS) interface. You will receive responses within 24 hours of the submission of the question.</p>\r\n<p><img src="https://media.whizlabs.com/website/ask-your-expert.webp" alt="" width="600" height="272" /></p>',
               is_active: "1",

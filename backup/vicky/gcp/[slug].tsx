@@ -128,14 +128,6 @@ const GCPFT = (props) => {
 
   return pageData ? (
     <>
-      {/* <Head>
-        <title>{pageData.page_name} | Whizlabs</title>
-        <meta name="robots" content="noindex" />
-        <meta name="robots" content="nofollow" />
-        <meta httpEquiv="cache-control" content="no-cache" />
-        <meta httpEquiv="expires" content="0" />
-        <meta httpEquiv="pragma" content="no-cache" />
-      </Head> */}
       <div className="ft-banner-block">
         <div className="container-small">
           <div className="breadcrumbs">

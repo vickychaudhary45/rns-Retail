@@ -5,16 +5,16 @@ import Link from "next/link";
 const PrivacyPolicy = (seoHomePageData) => (
     <>
         {/* <Head>
-            <title>End User License Agreement | Whizlabs</title>
+            <title>End User License Agreement | RNSPATH</title>
 
             <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
 
-            <meta name="title" content="End User License Agreement - Whizlabs" />
+            <meta name="title" content="End User License Agreement - RNSPATH" />
             <meta name="description" content="End User License Agreement - EULA" />
             <meta name="keywords" content="End User License Agreement" />
             <meta property="og:locale" content="en_US" />
             <meta property="og:type" content="website" />
-            <meta property="og:title" content="End User License Agreement - Whizlabs" />
+            <meta property="og:title" content="End User License Agreement - RNSPATH" />
             <meta property="og:description" content="End User License Agreement - EULA" />
             <meta property="og:url" content="https://www.whizlabs.com/end-user-license-agreement/" />
             <meta property="og:site_name" content="Whizlabs" />

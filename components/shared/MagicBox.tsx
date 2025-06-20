@@ -117,7 +117,7 @@ const MagicBox = ({ userData }) => {
                       <br />
 
                       <p>
-                        <span>To claim your gift,</span>Share about your win on LinkedIn and tag us at <strong>@Whizlabs</strong>
+                        <span>To claim your gift,</span>Share about your win on LinkedIn and tag us at <strong>@RNSPATH</strong>
                       </p>
                       <LinkedinShareButton url={"https://www.whizlabs.com/"}>
                         <button className="btn">

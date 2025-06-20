@@ -474,7 +474,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                 <h3>
                   Registered Office
                   <br />
-                  <span>Whizlabs Software India Pvt. Ltd.</span>
+                  <span>RNSPATH Software India Pvt. Ltd.</span>
                 </h3>
                 <p>
                   C-7/6, Mianwali Nagar,
@@ -488,7 +488,7 @@ const Contact = ({ alertBoxAction, seoHomePageData }) => {
                 <h3>
                   Head Office
                   <br />
-                  <span>Whizlabs Software Private Limited</span>
+                  <span>RNSPATH Software Private Limited</span>
                 </h3>
                 <p>
                   3rd Floor , Dev Complex

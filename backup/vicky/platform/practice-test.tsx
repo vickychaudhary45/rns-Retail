@@ -59,13 +59,13 @@ const Examsimulator = ({}) => {
         <div className="video-course-banner">
           <div className="container">
             <div className="caption-block exam-caption-block">
-              <span className="blue-txt">Whizlabs Practice Exams</span>
+              <span className="blue-txt">rnspath Practice Exams</span>
               <h1 className="title exam-title">
                 Preparing for certification exams? Get ready to test your skill gaps!
               </h1>
               <p>
                 For every certification exam, it is always the best idea to familiarize yourself
-                with the real exam format before attempting the actual exam. This is where Whizlabs
+                with the real exam format before attempting the actual exam. This is where rnspath
                 Exam Simulators come into the picture. Get yourself exam-ready with our Practice
                 Tests and achieve your certification goals!
               </p>
@@ -272,7 +272,7 @@ const Examsimulator = ({}) => {
                 <div className="caption">
                   <h3>Continue from where you left!</h3>
                   <p>
-                    Practicing is a gradual process and cannot be done in one day. With Whizlabs
+                    Practicing is a gradual process and cannot be done in one day. With rnspath
                     Practice Exams, you can continue from where you left without losing previous
                     records of your performance.
                   </p>
@@ -326,7 +326,7 @@ const Examsimulator = ({}) => {
               <div className="caption-block">
                 <p>
                   Ace your certification exams with confidence and accomplish your career goals with
-                  Whizlabs
+                  rnspath
                 </p>
                 <a
                   className="btn btn-plans course-vlp"

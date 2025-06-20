@@ -5,7 +5,7 @@ const Thankyou = (seoHomePageData) => {
   return (
     <>
       {/* <Head>
-        <title>Thank you | Whizlabs</title>
+        <title>Thank you | RNSPATH</title>
 
         <meta name="facebook-domain-verification" content="twh401qzi7r7o3n227q4sg3hghbpzh" />
       </Head> */}
@@ -37,7 +37,7 @@ export default Thankyou;
 export async function getServerSideProps() {
   const seoHomePageData = {
     seoPageType: "thankyouu",
-    title: "Thank you | Whizlabs",
+    title: "Thank you | RNSPATH",
     metaTags: [
       {
         name: "facebook-domain-verification",
