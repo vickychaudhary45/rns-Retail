@@ -275,8 +275,8 @@ const Footer = ({ data, pathName, bannerActive, user_type }) => {
                     ></path>
                   </svg>
                 </a> */}
-                <a className="phone-nub" target="_blank" href="pathrns@gmail.com">
-                  pathrns@gmail.com
+                <a className="phone-nub" target="_blank" href="deveshchauhan@gmail.com">
+                  deveshchauhan@gmail.com
                 </a>
               </div>
               <div className="right-app">

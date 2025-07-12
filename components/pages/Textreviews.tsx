@@ -53,7 +53,7 @@ const TextReviews = () => {
       <div className="container">
         <div className="text_reviews">
           <h2 style={{ padding: "15px 15px", fontSize: "40px", textAlign: "center" , margin:"0px"}}>
-            Explore the Feedback from Learners around the Globe
+            Explore the Feedback from Learners around the Globel
           </h2>
 
             <div className="review-block-front">

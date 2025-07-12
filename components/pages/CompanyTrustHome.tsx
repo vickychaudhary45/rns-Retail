@@ -74,7 +74,7 @@ function CompanyTrust() {
         </div>
         <Link legacyBehavior href="/pricing">
           <button className="bannerButton">
-            <b>Get Started Now</b>
+            <b>Let's Start</b>
           </button>
         </Link>
       </div>

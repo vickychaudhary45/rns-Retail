@@ -1078,7 +1078,7 @@ const Header = ({
                                   <p>Your Cart is Empty</p>
                                   <p>Keep browsing to find a course!</p>
                                   <Link legacyBehavior href="/library">
-                                    <button>Find a Course</button>
+                                    <button>cart now</button>
                                   </Link>
                                 </div>
                               )
@@ -1087,7 +1087,7 @@ const Header = ({
                                 <p>Your Cart is Empty</p>
                                 <p>Keep browsing to find a course!</p>
                                 <Link legacyBehavior href="/library">
-                                  <button>Find a Course</button>
+                                  <button>cart now</button>
                                 </Link>
                               </div>
                             )}
