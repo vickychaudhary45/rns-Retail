@@ -9904,6 +9904,11 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
   width: 500px;
   margin: 0;
 }
+/* @media (min-width:450px) and (max-width:1030px){
+  .bannerImage{
+    display: none;
+  }
+} */
 
 /* .bannerContainer .bannerImage img {
   max-height: 500px;
@@ -9924,6 +9929,9 @@ explore section css starts heres
 }
 .exploreSection .explore-individual .individualImage img{
   max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .exploreSection .MuiTabs-flexContainer {
   display: flex;
@@ -10175,7 +10183,7 @@ text-align: left;
   flex-direction: column !important;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .Ccontainer .cubebox .circle{
   background-color:#FFF0D6;
@@ -12201,21 +12209,25 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
 
 @media (max-width: 1023px) {
   .bannerContainer {
-    height: 75vh;
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
   }
   .bannerText {
     padding: 20px;
   }
+  
   .bannerImage  {
     height: 300px;
     width: 300px;
     /* padding: 20px; */
   }
+  
+  
 }
 .margin-add-sub{margin: 122px 0px !important;}
 .margin-add-sub-mobile{margin: 78px 0px !important;}
@@ -12224,6 +12236,7 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
 @media(min-width:1px) and (max-width:450px){
   .exploreSection .explore-individual .individualImage img{
     max-height: 242px;
+    display: flex;
   }
   
   .bannerContainer .bannerText{

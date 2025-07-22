@@ -52,7 +52,8 @@ function CompanyTrust() {
           {CategoryData.map((cat, i) => (
             <Link
               legacyBehavior
-              href={`${process.env.NEXT_PUBLIC_BASE_PATH}${cat.link}`}
+              // href={`${process.env.NEXT_PUBLIC_BASE_PATH}${cat.link}`}
+              href={''}
               key={`cats-${i}`}
             >
               <div className="cubebox">
