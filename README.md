@@ -162,3 +162,60 @@ timeout: 1200
 <path d="M20.3562 10.3516H19.8891V18.4268C19.8891 19.3311 19.1524 20.0685 18.2467 20.0707C16.975 20.0738 14.8781 20.3224 13.3931 21.728C15.9614 21.0991 18.669 21.5079 20.212 21.8595C20.4047 21.9034 20.6038 21.8581 20.7581 21.7351C20.9119 21.6123 21.0002 21.4289 21.0002 21.232V10.9956C21.0002 10.6405 20.7113 10.3516 20.3562 10.3516Z" fill="white"/>
 <path d="M4.11103 18.4268V10.3516H3.644C3.28897 10.3516 3 10.6405 3 10.9956V21.2318C3 21.4288 3.08824 21.6121 3.24206 21.7349C3.3963 21.8578 3.59521 21.9034 3.78818 21.8594C5.33122 21.5077 8.0388 21.0989 10.6071 21.7278C9.12208 20.3223 7.02523 20.0737 5.75352 20.0707C4.84788 20.0685 4.11103 19.3311 4.11103 18.4268Z" fill="white"/>
 </svg>
+
+
+
+
+
+
+
+# NEXT_PUBLIC_BASE_URL=https://ea8arnvptc.execute-api.us-east-1.amazonaws.com/quality
+# NEXT_PUBLIC_BASE_URL=https://bx82ip9g4f.execute-api.us-east-1.amazonaws.com/production
+# NEXT_PUBLIC_BASE_URL=http://localhost:3000
+PORT=4000
+NEXT_PUBLIC_BASE_URL=https://skj605kbvj.execute-api.us-east-1.amazonaws.com/dev
+# NEXT_PUBLIC_BASE_URL= http://localhost:3000/dev
+NEXT_PUBLIC_BASE_PATH=http://localhost:4000/
+# NEXT_PUBLIC_BASE_PATH=https://rns-retail.netlify.app/
+NEXT_PUBLIC_STRIPE_PKEY=pk_test_Ht13CJZsnoei83Iu9wU8LlxE
+NEXT_PUBLIC_CCAVENUE_ACCESS_CODE= AVCZ03IF78AA98ZCAA
+NEXT_PUBLIC_CCAVENUE_TXN_URL=https://test.ccavenue.com
+# NEXT_PUBLIC_ADMIN_URL=https://quality-api.whizlabs.org/api/v3
+# NEXT_PUBLIC_LMS_URL=https://quality.whizlabs.org/learn
+# NEXT_PUBLIC_FORUM_URL=https://quality.whizlabs.org/forums
+# NEXT_PUBLIC_PLAY_URL=https://quality.whizlabs.org/labs
+# NEXT_PUBLIC_PLAY_URL_PYTHON=https://play.whizlabs.org
+# NEXT_PUBLIC_BUSINESS_URL=https://business-dev.whizlabs.org/
+# NEXT_PUBLIC_LEARN_MEDIA_URL=https://media.whizlabs.com/learn/
+NEXT_PUBLIC_WEB_MEDIA_URL=https://media.whizlabs.com/website/
+# NEXT_PUBLIC_FORUM_MEDIA_URL=https://media.whizlabs.com/forum/
+
+
+
+# NEXT_PUBLIC_LEARN_MEDIA_URL=https://media.whizlabs.org/learn/
+# NEXT_PUBLIC_WEB_MEDIA_URL=https://media.whizlabs.org/website/
+# NEXT_PUBLIC_FORUM_MEDIA_URL=https://media.whizlabs.org/forum/
+GOOGLE_ID=813427700262-3ckuigvc4fg4579807hao2g76kh2c1tr.apps.googleusercontent.com
+GOOGLE_SECRET=FHCupruG8gO9iFYUZyQESWQv
+FACEBOOK_CLIENT_ID=139383662758157
+FACEBOOK_CLIENT_SECRET=6bb3b9743cb0204cbf6aa8a5d63c9959
+
+# APPLE_ID=com.whizlabs.login
+APPLE_TEAM_ID=6CX3H79L9B
+APPLE_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgxfScyDcsU7mlXAZM\nXJQVrTi6mbe6h7jfTtBmFMPypsegCgYIKoZIzj0DAQehRANCAARejgpywenkknF4\ndE4Th2WSg1aiIBowK3HlyUpvD2/jR5Bx7F3sROHW1JXnPG7pxzuec/Ay+Fn/um0y\nAqpyk0Is\n-----END PRIVATE KEY-----
+APPLE_KEY_ID=GBQP6XVQHK
+
+LINKEDIN_CLIENT_ID=81c884jnzhhcvf
+LINKEDIN_CLIENT_SECRET=CURSwJaX12WroEEZ
+NEXT_PUBLIC_LINKEDIN_CLIENT_ID=81c884jnzhhcvf
+NEXT_PUBLIC_LINKEDIN_CLIENT_SECRET=CURSwJaX12WroEEZ
+# NEXTAUTH_URL=https://quality.whizlabs.org
+NEXTAUTH_SECRET=2ZR07hao2g2g76khre8SwJaXfeo76khCU
+NEXT_PUBLIC_SECRET_KEY=2ZR07hao2g2g76khre8SwJaXfeo76khCU
+
+# Enable Disable Search Keyword Capture
+NEXT_PUBLIC_SEARCH_KEYWORD_CAPTURE_ENABLED=True
+# NEXT_PUBLIC_APPLE_CLIEND_ID=com.whizlabs.login
+# NEXT_PUBLIC_APPLE_REDIRECT_URI=https://quality.whizlabs.org 
+
+NEXT_PUBLIC_ASSIST_URL = https://71t282y816.execute-api.us-east-1.amazonaws.com/dev
