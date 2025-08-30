@@ -2476,7 +2476,7 @@ const Course = ({
                             >
                               <div className="left">
                                 <p>
-                                  <strong>Download WhizCard</strong> Quick Exam Reference -
+                                  <strong>Download cheatpath</strong> Quick Exam Reference -
                                   Hand-Picked for you
                                 </p>
                               </div>
@@ -2487,7 +2487,7 @@ const Course = ({
                                       style={{ marginTop: "10px" }}
                                       className=" icon-font-download"
                                     ></i>
-                                    <div style={{ marginLeft: "8px" }}>Download Whizcard</div>
+                                    <div style={{ marginLeft: "8px" }}>Download cheatpath</div>
                                   </div>
                                 </button>
                               </div>

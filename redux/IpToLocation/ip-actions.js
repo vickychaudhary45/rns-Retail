@@ -10,8 +10,8 @@ export const storeIp = (ip) => {
     }
 
     let returnData = {
-      type: "usd",
-      symbol: "$",
+      type: "inr",
+      symbol: "₹",
       loaded: false
     };
 

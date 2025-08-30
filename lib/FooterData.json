@@ -12,13 +12,6 @@
     "children": [
       {
         "parent_id": 7,
-        "position": 1,
-        "is_new_tab": 1,
-        "title": "AWS Certified Solutions Architect Associate",
-        "slug": "/aws-solutions-architect-associate"
-      },
-      {
-        "parent_id": 7,
         "position": 2,
         "is_new_tab": 1,
         "title": "AWS Certified Cloud Practitioner",

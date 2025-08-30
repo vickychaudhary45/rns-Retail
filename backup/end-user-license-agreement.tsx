@@ -48,13 +48,13 @@ const PrivacyPolicy = () => (
               </span>
             </p>
           </div>
-          <p>
+          {/* <p>
             In this EULA: <br />- Whizlabs shall have reference to Whizlabs
             Software Private Limited or Whizlabs Education, Inc., as applicable,
             including its affiliates (collectively, "we", "us" or "Whizlabs").{" "}
             <br />- Licensee shall have reference to the Individual/ Entity
             licensing the Services of Whizlabs.
-          </p>
+          </p> */}
           <p>
             <strong>
               This EULA governs all uses of the Services. Access or use of
@@ -198,7 +198,7 @@ const PrivacyPolicy = () => (
           </ol>
           <h4>4. Intellectual Property Rights</h4>
           <ol>
-            <li>
+            {/* <li>
               The website, Course materials and other content provided through
               the Services (collectively, <strong>"Materials"</strong>) and any
               supporting software, applications and systems (collectively
@@ -209,7 +209,7 @@ const PrivacyPolicy = () => (
               intellectual property laws of the US, India and various other
               counties. All rights not expressly granted herein are reserved by
               Whizlabs.
-            </li>
+            </li> */}
             <li>
               Except as may be set forth in this EULA, any reproduction,
               redistribution, modification, publication, or adaptation of

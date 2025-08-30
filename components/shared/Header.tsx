@@ -817,7 +817,7 @@ const Header = ({
                                       </div>
                                     </a>
                                   </li>
-                                  <li>
+                                  {/* <li>
                                     <a href={process.env.NEXT_PUBLIC_PLAY_URL}>
                                       <figure>
                                         <img
@@ -849,7 +849,7 @@ const Header = ({
                                         </p>
                                       </div>
                                     </a>
-                                  </li>
+                                  </li> */}
                                 </ul>
                               </div>
                             </Menu>

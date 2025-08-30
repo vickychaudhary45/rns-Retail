@@ -112,7 +112,10 @@ const Subscription = ({
         <div className="container-small">
           <div className="heading">
             <h1>Enhance your skills and transform your career</h1>
-            <p>Save up to $1200 annually with the most affordable learning plans</p>
+            <p>
+              Save up to $1200 annually with the most affordable learning plans by contacting us at
+              <strong> pathrns@gmail.com</strong>
+            </p>
           </div>
         </div>
       </div>
@@ -120,7 +123,7 @@ const Subscription = ({
         <div className="subscription-block">
           <div className="title">
             <h2>
-              What do you get with <strong>Whizlabs Premium Subscription</strong>
+              What do you get with <strong>Rnspath Premium Subscription</strong>
             </h2>
           </div>
           <div className="block-group">

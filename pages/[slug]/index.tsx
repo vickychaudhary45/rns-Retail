@@ -150,7 +150,7 @@ export async function getServerSideProps(context) {
         const reviewsResponse = revResp;
         // const reviewsResponse = await getReviews(courseResponse.data.data.id, 4, 1); // course_id,ratings,current-page
         // if (reviewsResponse?.data?.data) {
-        //   reviewsDatas = reviewsResponse.data;        
+        //   reviewsDatas = reviewsResponse.data;
         if (reviewsResponse && reviewsResponse.data && reviewsResponse.data) {
           reviewsDatas = reviewsResponse.data;
         }
@@ -158,7 +158,7 @@ export async function getServerSideProps(context) {
         // const getExamPattern = exmResp;
         const getExamPattern = await axios.get(
           `${baseUrl}/courses/exampatern?course_id=${courseResponse.data.data.id}`
-        );        
+        );
         if (getExamPattern.data) {
           if (getExamPattern.data.length > 0 && getExamPattern.data[0].language) {
             exampattern = getExamPattern.data[0]?.list.box.sort((a, b) => {
@@ -186,7 +186,7 @@ export async function getServerSideProps(context) {
         // };
         const courseRatingResponse = await getCourseRatings(courseResponse.data.data.id);
         // console.log(courseRatingResponse, 'courseRatingResponse');
-        
+
         if (courseRatingResponse && courseRatingResponse.data && courseRatingResponse.data) {
           feedbackData = courseRatingResponse.data;
         }

@@ -104,13 +104,13 @@ function ExploreSection2(props) {
                 <span>&nbsp;</span>
                 <span>Videos</span>
               </div>
-              <div>
+              {/* <div>
                 <Link href="/library">
                   <button className="bannerButton">
                     <b>Explore Now</b>
                   </button>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -194,13 +194,13 @@ function ExploreSection2(props) {
                 />
                 <div className="insideText">Fasten your on-boarding & upskilling requirements</div>
               </div>
-              <div>
+              {/* <div>
                 <a href={process.env.NEXT_PUBLIC_BUSINESS_URL} target="_blank">
                   <button className="bannerButton">
                     <b>Explore Now</b>
                   </button>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
