@@ -54,11 +54,11 @@ const PrivacyPolicy = (seoHomePageData) => (
                         </p>
                         <p>For the purpose of this EULA:</p>
                         <ul>
-                            <li>
+                            {/* <li>
                                 Whizlabs shall have reference to Whizlabs Software Private Limited and/ or Whizlabs
                                 Education Inc. as applicable, and its affiliates, hereinafter referred to as "we" or
                                 "us" or "Whizlabs".
-                            </li>
+                            </li> */}
                             <li>
                                 Licensee shall have reference to the End User, individual, organization or agency
                                 licensing the Services provided by Whizlabs, hereinafter referred to as "you" or
@@ -202,7 +202,7 @@ const PrivacyPolicy = (seoHomePageData) => (
                             unauthorised access codes that User is in receipt of, in relation to the Services.
                         </p>
                         <h4>4. Intellectual Property Rights</h4>
-                        <p>
+                        {/* <p>
                             4.1. Whizlabs Software Private Limited and/or Whizlabs Education Inc, wherever
                             applicable, along with its affiliates and/ or licensors shall have exclusive ownership
                             of the website, Course materials and associated content offered through the Services
@@ -211,7 +211,7 @@ const PrivacyPolicy = (seoHomePageData) => (
                             Applications are under the safeguards of international copyright laws and various
                             intellectual property laws in US, India, and many other countries. Whizlabs also
                             reserves the rights that are not expressly granted herein.
-                        </p>
+                        </p> */}
                         <p>
                             4.2. Any action of reproducing, modifying, adapting, redistributing, or publishing the
                             Materials or Applications, either completely or in parts, without the express consent

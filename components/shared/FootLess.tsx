@@ -30,11 +30,11 @@ const FootLess = ({ data, containerSmall = false }) => {
               <a className="link icon-font-linkedin"   href="https://www.linkedin.com/company/whizlabs-software/" target="_blank"></a>
             </div> */}
           </div>
-          <div style={{ margin: "0px" }}>
+          {/* <div style={{ margin: "0px" }}>
             <p style={{ margin: "0px" }}>
               © {new Date().getFullYear()}, Whizlabs Software Pvt. Ltd. All rights reserved.
             </p>
-          </div>
+          </div> */}
           <div className="footer-right">
             <div className="footer-copyright" style={{ padding: "0px", border: "none" }}>
               <div className="social-icon">

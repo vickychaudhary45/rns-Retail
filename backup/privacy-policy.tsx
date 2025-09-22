@@ -49,7 +49,7 @@ const PrivacyPolicy = () => (
             <h2>Privacy Policy</h2>
           </div>
           <h2>Our Commitment to Privacy</h2>
-          <p>
+          {/* <p>
             Protecting your privacy and your information is a top priority for Whizlabs (Whizlabs
             Software Pvt Ltd.). The purpose of this Privacy Policy is to explain how your personal
             and business information that you provide us (collectively “Information”) is collected,
@@ -57,7 +57,7 @@ const PrivacyPolicy = () => (
             <a target="" href="/terms-of-use">
               Terms of Use
             </a>
-          </p>
+          </p> */}
           <p>
             By visiting our website, you consent to our collection and use of your Information in
             accordance with this Privacy Policy and you are accepting the practices described

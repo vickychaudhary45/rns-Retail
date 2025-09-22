@@ -16,7 +16,8 @@ const PricingCard = ({
       button_url: process.env.NEXT_PUBLIC_BASE_PATH + "" + "pricing",
       is_pricing_page: true,
     };
-    window.open(`${process.env.NEXT_PUBLIC_BUSINESS_URL}request-demo-page`, "_blank");
+    // window.open(`${process.env.NEXT_PUBLIC_BUSINESS_URL}request-demo-page`, "_blank");
+    window.open(`request-demo-page`, "_blank");
     if (userData) {
       await buttonClickAction(userData.data, subsValues);
     }
@@ -80,9 +81,14 @@ const PricingCard = ({
                     </>
                   ) : (
                     <>
-                      <div className={styles.planprice}>
+                      {/* <div className={styles.planprice}>
                         ${(plan_data.offer_price.usd / plan_data.subscription_for).toFixed(2)}/
                         <span className={styles.month}>mo</span>
+                      </div> */}
+                      <div className={styles.planprice}>
+                        ₹
+                        {((plan_data.offer_price.usd / plan_data.subscription_for) * 88).toFixed(0)}
+                        /<span className={styles.month}>mo</span>
                       </div>
                     </>
                   )}
@@ -102,8 +108,14 @@ const PricingCard = ({
                     </>
                   ) : (
                     <>
-                      {!plan_data.campaign_offer && plan_data.subscription_for == 12 && (
+                      {/* {!plan_data.campaign_offer && plan_data.subscription_for == 12 && (
                         <>${parseFloat(plan_data.offer_price.usd).toFixed(2)} billed for the year</>
+                      )} */}
+                      {!plan_data.campaign_offer && plan_data.subscription_for == 12 && (
+                        <>
+                          ₹{(parseFloat(plan_data.offer_price.usd) * 88).toFixed(0)} billed for the
+                          year
+                        </>
                       )}
                     </>
                   )}

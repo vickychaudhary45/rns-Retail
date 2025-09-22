@@ -17,11 +17,11 @@ const CopyRights = (seoHomePageData) => (
             <strong>Copyrights</strong>
           </h3>
           <ul>
-            <li>
+            {/* <li>
               RNSPATH website, and all that it entails including all products, applications,
               software, images, study guides, articles and other documentation are a Copyright (c)
               RNSPATH Software Pvt. Ltd. 2014. All rights reserved.
-            </li>
+            </li> */}
             <li>
               RNSPATH has independently developed all the content presented on its site and the
               same is pertaining to high standards and conforming to ISO 9001:2000 Standard.

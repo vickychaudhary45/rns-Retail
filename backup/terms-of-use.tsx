@@ -382,7 +382,7 @@ const TermsOfUse = () => {
               or out-of-court, will be entitled to recover all the costs from the non-prevailing
               party.
             </p>
-            <p>Copyright © {currentYear} Whizlabs Software Pvt Ltd. All rights reserved.</p>
+            {/* <p>Copyright © {currentYear} Whizlabs Software Pvt Ltd. All rights reserved.</p> */}
           </div>
         </div>
       </div>
