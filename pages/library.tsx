@@ -192,7 +192,7 @@ const Category = ({
   //       }
   //     });
   // };
-  
+
   const getcourses = async () => {
     if(checkedCategories.join(',') == 'NaN') return
     let checkedprods = "";
@@ -229,7 +229,7 @@ const Category = ({
       });
 
    setTimeout(()=>{
-    setloading(false);
+      setloading(false);
    },1000)
   };
   const getCounts = async () => {

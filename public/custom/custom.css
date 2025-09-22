@@ -9779,6 +9779,7 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
 
 /* style guide ends here */
 /* .bannerImage{
+ 
   display: none;
 } */
 .bannerContainer{
@@ -9903,6 +9904,12 @@ ul.szh-menu.szh-menu--state-open.szh-menu--dir-bottom.menu-holder {
   height: 500px;
   width: 500px;
   margin: 0;
+  }
+  @media (max-width: 1023px) {
+    .bannerImage {
+        height: 17%;
+        width: 50%;
+    }
 }
 
 /* .bannerContainer .bannerImage img {
@@ -10268,7 +10275,7 @@ color: var(--thunder);
   flex-wrap: wrap;
   flex-direction: column;
   gap: 12px;
-  /* min-height: 714px;*/
+  min-height: 380px;
   max-width: 1513px;
   width:100%;
 }
@@ -10281,19 +10288,21 @@ color: var(--thunder);
 }
 .group-12229 img {
   height: 32px;
+  
 }
 .group-49 {
-  align-items: flex-start;
-  background-color: var(--white-lilac);
-  /* border-radius: 20px; */
-  box-shadow: 4px 4px 8px
-#00000033;
-  display: flex;
-  flex-direction: column;
-  height: 45px;
-  justify-content: flex-end;
-  /* width:100%; */
-  margin: 10px;
+    align-items: flex-start;
+    background-color: var(--white-lilac);
+    border-radius: 12px;
+    box-shadow: 4px 4px 8px #00000033;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    /* width: 100%; */
+    margin: 13px;
+    margin-bottom: 30px;
 }
 /* .group-49 img{
   width: 94px;
@@ -10301,6 +10310,7 @@ color: var(--thunder);
 } */
 .group-12229{
 width: 100%;
+height: 100%;
 display: flex;
 flex-wrap: wrap;
 justify-content: center;
@@ -12201,7 +12211,7 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
 
 @media (max-width: 1023px) {
   .bannerContainer {
-    height: 75vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12212,9 +12222,11 @@ body.open-modal-preview-course, body.modal-preview-course{ overflow: hidden; }
     padding: 20px;
   }
   .bannerImage  {
-    height: 300px;
-    width: 300px;
-    /* padding: 20px; */
+    height: 145px;
+    width: auto;
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
   }
 }
 .margin-add-sub{margin: 122px 0px !important;}
