@@ -173,7 +173,7 @@ const Banner = ({ width, timer_details1, subscriptionSaving, timerState1 }) => {
       <div className="bannerText">
         <div>
           <h1>
-            Rewire <br />
+            Rewire check<br />
             Neural Speed
           </h1>
           <p>with our</p>
