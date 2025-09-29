@@ -17,6 +17,7 @@ const Thankyou = ({ clearCartAction, userData, seoHomePageData}) => {
   useEffect(() => {
     clearCartAction(); // clear cart data & coupon datas
     if (!userData || !userData.user_id) {
+      
       router.push("/");
     }
     if (document) {
