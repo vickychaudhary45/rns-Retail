@@ -1,0 +1,20 @@
+/* Add this to your global CSS */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.2rem !important;
+  }
+  
+  .hero-section p {
+    font-size: 1.1rem !important;
+    padding: 0 10px;
+  }
+  
+  .stats-container {
+    flex-direction: column;
+    gap: 40px !important;
+  }
+  
+  .stat-value {
+    font-size: 2.5rem !important;
+  }
+}
