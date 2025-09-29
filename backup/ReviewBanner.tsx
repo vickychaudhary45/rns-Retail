@@ -11,7 +11,7 @@ const ReviewBanner = ({
     <div className="review-banner">
       <div className="container">
         <div className="left-part">
-          <p className="banner-subtitle">{courseDatas.seo_details.title}</p>
+          <p className="banner-subtitle">{courseDatas.seo_details.title}</p> 
           <h1 className="banner-title">
             We have over {ratings.total_count}+ happy learners reviews
           </h1>
