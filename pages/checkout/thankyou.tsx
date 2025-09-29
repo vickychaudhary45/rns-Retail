@@ -12,6 +12,7 @@ import * as uetq from "../../lib/uetq";
 
 const Thankyou = ({ clearCartAction, userData, seoHomePageData}) => {
   const router = useRouter();
+  
   const [lastOrderDetails, setLastOrderDetails] = useState(null);
 
   useEffect(() => {
