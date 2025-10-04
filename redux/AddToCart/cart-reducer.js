@@ -147,7 +147,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
     case actionTypes.GET_CART_COUNT:
       cookie.set("cart_count", action.payload);
       return { ...state, cart_count: action.payload };
-    default:
+      default:
       return state;
   }
 };
